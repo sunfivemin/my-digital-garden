@@ -1,0 +1,8 @@
+[build]
+  publish = "my-digital-garden/public"
+  command = "mkdir -p my-digital-garden/public && cp -R * my-digital-garden/public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
