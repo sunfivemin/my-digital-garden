@@ -1,0 +1,11 @@
+{
+  "digitalgarden:publish-note": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "P"
+    }
+  ]
+}
