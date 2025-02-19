@@ -1,9 +1,6 @@
 [build]
-  publish = "my-digital-garden/public"
-  command = """
-  mkdir -p my-digital-garden/public &&
-  rsync -av --exclude=my-digital-garden my-digital-garden/ my-digital-garden/public/
-  """
+  publish = "public"
+  command = "mkdir -p public && cp -R src/site/notes/public/* public/"
 
 [[redirects]]
   from = "/*"
