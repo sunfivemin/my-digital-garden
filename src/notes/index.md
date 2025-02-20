@@ -18,4 +18,4 @@
 
 ---
 
-© 2025 **My Digital Garden**. All rights reserved.
+© 2025 sunblog. All rights reserved.
