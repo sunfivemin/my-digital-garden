@@ -1,0 +1,12 @@
+[[redirects]]
+  from = "/index.html"
+  to = "/hi.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/"
+  to = "/hi.html"
+  status = 200
+  force = true
+
