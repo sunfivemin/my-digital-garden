@@ -5,7 +5,9 @@
     "fontSize": 14,
     "emojiStyle": "native",
     "iconColor": "#b42760",
-    "recentlyUsedIcons": [],
+    "recentlyUsedIcons": [
+      "LiApple"
+    ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
     "extraMargin": {
@@ -27,5 +29,6 @@
     "lucideIconPackType": "native",
     "debugMode": false,
     "useInternalPlugins": false
-  }
+  },
+  "FRONTEND/FRONTEND.md": "LiApple"
 }
