@@ -1,9 +1,9 @@
 {
   "vaultName": "blog",
-  "lastExport": 1740120773066,
+  "lastExport": 1740123851281,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon codeblock-customizer codeblock-customizer-show-line-numbers codeblock-customizer-gutter-highlight codeblock-customizer-gutter-active-line codeblock-customizer-collapseIconNone mk-readable-line mk-folder-lines mk-inline-context-enabled mk-flow-minimal theme-default line-style-solid blockquote-normal callout-normal tag-default link-default responsive-tile-height codeblock-customizer-active-line-highlight",
-  "useCustomHeadContent": false,
+  "useCustomHeadContent": true,
   "useCustomFavicon": true,
   "files": [
     "CS/리눅스.md",
@@ -12,12 +12,6 @@
     "FRONTEND/FRONTEND.md",
     "FRONTEND/RESTful API.md",
     "2025-02-21.md",
-    "무제.canvas",
-    "무제.md",
-    "체크리스트.md",
-    "캔퍼스.canvas",
-    "home.md",
-    "lib/scripts/graph-wasm.wasm",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
     "lib/fonts/2d5198822ab091ce4305.woff2",
@@ -34,24 +28,16 @@
     "lib/media/6155340132a851f6089e.svg",
     "lib/html/file-tree.html",
     "lib/scripts/webpage.js",
-    "lib/scripts/graph-view.js",
-    "lib/scripts/graph-wasm.js",
-    "lib/scripts/graph-render-worker.js",
-    "lib/scripts/tinycolor.js",
-    "lib/scripts/pixi.js",
     "lib/scripts/minisearch.js",
     "lib/media/favicon.ico",
-    "lib/scripts/graph-data.js",
+    "lib/html/custom-head-content.html",
     "lib/styles/obsidian.css",
     "lib/styles/other-plugins.css",
     "lib/styles/theme.css",
     "lib/styles/global-variable-styles.css",
-    "lib/styles/main-styles.css",
-    "lib/media/restfulapi.png",
-    "restfulapi.png"
+    "lib/styles/main-styles.css"
   ],
   "mainDependencies": [
-    "lib/scripts/graph-wasm.wasm",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
     "lib/fonts/2d5198822ab091ce4305.woff2",
@@ -68,14 +54,9 @@
     "lib/media/6155340132a851f6089e.svg",
     "lib/html/file-tree.html",
     "lib/scripts/webpage.js",
-    "lib/scripts/graph-view.js",
-    "lib/scripts/graph-wasm.js",
-    "lib/scripts/graph-render-worker.js",
-    "lib/scripts/tinycolor.js",
-    "lib/scripts/pixi.js",
     "lib/scripts/minisearch.js",
     "lib/media/favicon.ico",
-    "lib/scripts/graph-data.js",
+    "lib/html/custom-head-content.html",
     "lib/styles/obsidian.css",
     "lib/styles/other-plugins.css",
     "lib/styles/theme.css",
@@ -90,97 +71,97 @@
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/6155340132a851f6089e.svg": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 315,
       "exportedPath": "lib/media/6155340132a851f6089e.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1740120773066,
-      "sourceSize": 5631,
+      "modifiedTime": 1740123851281,
+      "sourceSize": 4556,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
@@ -216,7 +197,7 @@
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
@@ -234,125 +215,81 @@
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 137305,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 262,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
     },
     "lib/media/favicon.ico": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 15406,
       "exportedPath": "lib/media/favicon.ico",
       "dependencies": []
     },
     "lib/html/custom-head-content.html": {
-      "modifiedTime": 1740039987878,
-      "sourceSize": 1240,
+      "modifiedTime": 1740123851281,
+      "sourceSize": 785,
       "exportedPath": "lib/html/custom-head-content.html",
       "dependencies": []
     },
     "lib/styles/other-plugins.css": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 172236,
       "exportedPath": "lib/styles/other-plugins.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 76856,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "2025-02-21.md": {
-      "modifiedTime": 1740118448109,
+      "modifiedTime": 1740123851281,
       "sourceSize": 48,
       "exportedPath": "2025-02-21.html",
       "dependencies": []
     },
     "CS/리눅스.md": {
-      "modifiedTime": 1740119486870,
+      "modifiedTime": 1740123851281,
       "sourceSize": 7263,
       "exportedPath": "cs/리눅스.html",
       "dependencies": []
     },
     "CS/프로토콜.md": {
-      "modifiedTime": 1740119486870,
+      "modifiedTime": 1740123851281,
       "sourceSize": 6459,
       "exportedPath": "cs/프로토콜.html",
       "dependencies": []
     },
     "CS/CS.md": {
-      "modifiedTime": 1740119486870,
+      "modifiedTime": 1740123851281,
       "sourceSize": 64,
       "exportedPath": "cs/cs.html",
       "dependencies": []
     },
     "FRONTEND/FRONTEND.md": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 4462,
       "exportedPath": "frontend/frontend.html",
       "dependencies": []
     },
     "FRONTEND/RESTful API.md": {
-      "modifiedTime": 1740120773066,
+      "modifiedTime": 1740123851281,
       "sourceSize": 3881,
       "exportedPath": "frontend/restful-api.html",
-      "dependencies": []
-    },
-    "무제.canvas": {
-      "modifiedTime": 1740119486870,
-      "sourceSize": 2,
-      "exportedPath": "무제.html",
-      "dependencies": []
-    },
-    "무제.md": {
-      "modifiedTime": 1740119486870,
-      "sourceSize": 57,
-      "exportedPath": "무제.html",
-      "dependencies": []
-    },
-    "체크리스트.md": {
-      "modifiedTime": 1740119486870,
-      "sourceSize": 265,
-      "exportedPath": "체크리스트.html",
-      "dependencies": []
-    },
-    "캔퍼스.canvas": {
-      "modifiedTime": 1740119486870,
-      "sourceSize": 462,
-      "exportedPath": "캔퍼스.html",
-      "dependencies": [
-        "restfulapi.png"
-      ]
-    },
-    "home.md": {
-      "modifiedTime": 1740119486870,
-      "sourceSize": 6711,
-      "exportedPath": "home.html",
-      "dependencies": []
-    },
-    "lib/media/restfulapi.png": {
-      "modifiedTime": 1740119486870,
-      "sourceSize": 195234,
-      "exportedPath": "lib/media/restfulapi.png",
-      "dependencies": []
-    },
-    "restfulapi.png": {
-      "modifiedTime": 1740119486870,
-      "sourceSize": 195234,
-      "exportedPath": "restfulapi.png",
       "dependencies": []
     }
   }
