@@ -5,8 +5,8 @@ status = 200
 force = true
 
 [build]
-publish = "public"
-command = "cp custom-head.html public/custom-head.html && cp -r notes public/notes"
+  command = "cp public/custom-head.html public/custom-head.html && cp -r src/notes public/notes"
+  publish = "public"
 
 [[headers]]
 for = "/*"
