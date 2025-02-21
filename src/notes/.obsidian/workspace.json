@@ -171,18 +171,60 @@
       "obsidian-rich-links:Rich Links": false
     }
   },
-  "active": "002d08b60b0d7430",
+  "floating": {
+    "id": "ac78c3d5a5c204f4",
+    "type": "floating",
+    "children": [
+      {
+        "id": "fef82531e95406a9",
+        "type": "window",
+        "children": [
+          {
+            "id": "38058df9441c6519",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "8b1eea74be7d9130",
+                "type": "leaf",
+                "state": {
+                  "type": "canvas",
+                  "state": {
+                    "file": "캔퍼스.canvas",
+                    "viewState": {
+                      "x": 0,
+                      "y": 0,
+                      "zoom": 0
+                    }
+                  },
+                  "icon": "lucide-layout-dashboard",
+                  "title": "캔퍼스"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 1054,
+        "y": 1167,
+        "width": 900,
+        "height": 500,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "8b1eea74be7d9130",
   "lastOpenFiles": [
-    "2025-02-21.md",
-    "FRONTEND/RESTful API.md",
-    "FRONTEND/FRONTEND.md",
-    "CS/CS.md",
-    "CS/프로토콜.md",
     "체크리스트.md",
-    "home.md",
-    "캔퍼스.canvas",
     "무제.md",
     "무제.canvas",
+    "FRONTEND/FRONTEND.md",
+    "2025-02-21.md",
+    "FRONTEND/RESTful API.md",
+    "CS/CS.md",
+    "CS/프로토콜.md",
+    "home.md",
+    "캔퍼스.canvas",
     "Tags",
     "Untitled.canvas",
     "Vault.md",
