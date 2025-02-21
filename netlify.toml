@@ -5,7 +5,7 @@ status = 200
 force = true
 
 [build]
-  command = "cp -r src/notes public/notes"
+  command = "mkdir -p public/lib/styles && cp -r src/lib/styles/* public/lib/styles/ && cp -r src/notes public/notes"
   publish = "public"
 
 [[headers]]
