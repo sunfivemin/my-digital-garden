@@ -36,8 +36,8 @@
   "deleteFileOption": "trash",
   "expandedSpaces": [
     "/",
-    "//assets",
-    "//Tags"
+    "//Tags",
+    "//FRONTEND"
   ],
   "expandFolderOnClick": true,
   "spacesFolder": "Tags",
@@ -58,14 +58,14 @@
   "banners": true,
   "dataviewInlineContext": false,
   "inlineContextNameLayout": "vertical",
-  "spacesUseAlias": false,
+  "spacesUseAlias": true,
   "fmKeyAlias": "aliases",
   "fmKeyBanner": "banner",
   "fmKeyColor": "color",
   "fmKeyBannerOffset": "banner_y",
   "fmKeySticker": "sticker",
   "openSpacesOnLaunch": true,
-  "indexSVG": false,
+  "indexSVG": true,
   "readableLineWidth": true,
   "autoAddContextsToSubtags": true,
   "releaseNotesPrompt": 0.999,

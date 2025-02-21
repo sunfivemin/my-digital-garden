@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"288162629658174a","type":"text","text":"- [ ] dkddod\n- [ ] dfsd\n- [ ] dfs\n- [ ] fdf\n- [ ] ds\n- [ ] fsdf\n- [ ] ds\n- [ ] ","x":-125,"y":-30,"width":250,"height":60},
+		{"id":"527849f6be033163","type":"file","file":"CS/리눅스.md","x":20,"y":-520,"width":400,"height":400},
+		{"id":"69bc74ffad1b7e41","type":"file","file":"체크리스트.md","x":-440,"y":-480,"width":400,"height":400},
+		{"id":"2a9babc182a74f26","type":"file","file":"RestfulAPI.png","x":-40,"y":160,"width":399,"height":122}
+	],
+	"edges":[]
+}
