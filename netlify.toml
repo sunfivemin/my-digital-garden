@@ -4,11 +4,3 @@ to = "/home.html"
 status = 200
 force = true
 
-[build]
-  command = "mkdir -p public/lib/styles && cp -r src/lib/styles/* public/lib/styles/ && cp -r src/notes public/notes"
-  publish = "public"
-
-[[headers]]
-for = "/*"
-[headers.values]
-Access-Control-Allow-Origin = "*"
