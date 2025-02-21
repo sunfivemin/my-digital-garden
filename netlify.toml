@@ -5,7 +5,7 @@ status = 200
 force = true
 
 [build]
-  command = "cp public/custom-head.html public/custom-head.html && cp -r src/notes public/notes"
+  command = "cp -r src/notes public/notes"
   publish = "public"
 
 [[headers]]
