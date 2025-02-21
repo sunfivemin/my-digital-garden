@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 21 Feb 2025 06:08:40 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 21 Feb 2025 06:08:40 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[리눅스]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 21 Feb 2025 06:31:29 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 21 Feb 2025 06:31:26 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[리눅스]]></title><description><![CDATA[ 
  <br><br>리눅스에서는 모든 것은 파일이라는 철학을 따른다. (마우스, 키보드와 같은 모드 디바이스 관련 기술도 파일과 같이 다룸)<br>
 유닉스는 여러 프로그램이 서로 유기적으로 각자 일을 수행하면서 전체 시스템이 동작하도록 하는 철학을 따른다.<br>
 <br>ubuntu 접속 명령어 : ssh -i seono.pem ubuntu@퍼블릭 IPv4 주소
@@ -229,7 +229,46 @@ Code on demand (선택적 실행 코드 지원)
 <br>REST는 API 설계의 권장 원칙이며, 완벽하게 지키지 않아도 된다.  
 <br>URL은 직관적이고 명확하게 설계하는 것이 중요하다.
 <br>🚀 RESTful API를 적용할 때 위 원칙들을 참고하자!  <br><br><img alt="RESTful API 개념" src="lib/media/restfulapi.png">]]></description><link>frontend/restful-api.html</link><guid isPermaLink="false">FRONTEND/RESTful API.md</guid><pubDate>Fri, 21 Feb 2025 02:56:08 GMT</pubDate><enclosure url="lib/media/restfulapi.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="lib/media/restfulapi.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[무제]]></title><description><![CDATA[ 
- <br>나에게 돌아오기가..]]></description><link>무제.html</link><guid isPermaLink="false">무제.md</guid><pubDate>Fri, 21 Feb 2025 03:08:12 GMT</pubDate></item><item><title><![CDATA[Home]]></title><description><![CDATA[<a class="tag" href="?query=tag:Feature" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Feature</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Feature" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Feature</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> 
+ <br>나에게 돌아오기가..]]></description><link>무제.html</link><guid isPermaLink="false">무제.md</guid><pubDate>Fri, 21 Feb 2025 03:08:12 GMT</pubDate></item><item><title><![CDATA[체크리스트]]></title><description><![CDATA[ 
+ <br><br>
+<br>
+
+
+<br>vue
+
+
+<br>
+
+
+<br>nodejs
+
+
+<br>
+
+
+<br>nextjs
+
+
+<br><br>
+<br>
+
+
+<br>11
+
+
+<br>
+
+
+<br>12
+
+
+<br>
+
+
+<br>13
+
+
+<br>]]></description><link>체크리스트.html</link><guid isPermaLink="false">체크리스트.md</guid><pubDate>Fri, 21 Feb 2025 02:51:42 GMT</pubDate></item><item><title><![CDATA[Home]]></title><description><![CDATA[<a class="tag" href="?query=tag:Feature" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Feature</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Feature" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Feature</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> 
  <br><br>Github: <a data-tooltip-position="top" aria-label="https://github.com/KosmosisDire/obsidian-webpage-export" rel="noopener nofollow" class="external-link" href="https://github.com/KosmosisDire/obsidian-webpage-export" target="_blank">Webpage HTML Export</a><br>Warning
 This documentation is VERY much a work in progress. As such it is incomplete.
 <br><br><br><a href=".?query=tag:Feature" class="tag" target="_blank" rel="noopener nofollow">#Feature</a><br>See some examples of dataview in action.<br><br>This file is simply being used to demo <a class="internal-link" data-href="/features/dataview.html" href="/features/dataview.html" target="_self" rel="noopener nofollow">Dataview</a>.<br>This is a task from a second file<br>
@@ -251,4 +290,8 @@ DO NOT USE IN ANY PLUGIN OR PUBLIC PROJECT!!!!!
 <br>Render a file to an html string:<br>const currentFile = app.workspace.getActiveFile();
 let html = await WebpageHTMLExport.api.renderFileToString(currentFile, {});
 // options are left empty see below for options definitions
-]]></description><link>home.html</link><guid isPermaLink="false">home.md</guid><pubDate>Fri, 21 Feb 2025 02:49:59 GMT</pubDate></item></channel></rss>
+]]></description><link>home.html</link><guid isPermaLink="false">home.md</guid><pubDate>Fri, 21 Feb 2025 02:49:59 GMT</pubDate></item><item><title><![CDATA[2025-02-21]]></title><description><![CDATA[<a class="tag" href="?query=tag:안녕안녕안녕" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#안녕안녕안녕</a> 
+ <br><a href=".?query=tag:안녕안녕안녕" class="tag" target="_blank" rel="noopener nofollow">#안녕안녕안녕</a><br>
+<br>오마이갓<br>
+하하 
+]]></description><link>2025-02-21.html</link><guid isPermaLink="false">2025-02-21.md</guid><pubDate>Fri, 21 Feb 2025 06:13:51 GMT</pubDate></item></channel></rss>

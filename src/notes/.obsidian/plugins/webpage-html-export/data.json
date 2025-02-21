@@ -23,7 +23,7 @@
   "addOutline": true,
   "addFileNav": true,
   "addSearchBar": true,
-  "addGraphView": false,
+  "addGraphView": true,
   "addTitle": true,
   "addRSSFeed": true,
   "siteURL": "",

@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e9750d64d216e0fb",
+        "id": "4155c971e5626343",
         "type": "tabs",
         "children": [
           {
-            "id": "45557d1c40116e15",
+            "id": "002d08b60b0d7430",
             "type": "leaf",
-            "pinned": true,
             "state": {
-              "type": "mk-ever-view",
-              "state": {},
-              "pinned": true,
-              "icon": "columns",
-              "title": "Overview"
+              "type": "markdown",
+              "state": {
+                "file": "체크리스트.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "체크리스트"
             }
           }
         ]
@@ -71,19 +73,8 @@
               "icon": "lucide-bookmark",
               "title": "북마크"
             }
-          },
-          {
-            "id": "6a52de09abfc23da",
-            "type": "leaf",
-            "state": {
-              "type": "mk-path-view",
-              "state": {},
-              "icon": "layout-grid",
-              "title": "Navigator"
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -180,17 +171,19 @@
       "obsidian-rich-links:Rich Links": false
     }
   },
-  "active": "45557d1c40116e15",
+  "active": "002d08b60b0d7430",
   "lastOpenFiles": [
-    "캔퍼스.canvas",
-    "Tags",
-    "무제.md",
     "home.md",
+    "캔퍼스.canvas",
     "체크리스트.md",
+    "무제.md",
+    "무제.canvas",
     "FRONTEND/RESTful API.md",
     "FRONTEND/FRONTEND.md",
     "CS/CS.md",
     "CS/프로토콜.md",
+    "2025-02-21.md",
+    "Tags",
     "Untitled.canvas",
     "Vault.md",
     "FRONTEND",
