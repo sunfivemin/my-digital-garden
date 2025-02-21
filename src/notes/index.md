@@ -7,7 +7,7 @@
 
 ## 📌 최신 글
 - [RESTful API 개념 정리](restful-api.html)
-- [RESTful API 개념 정리](restful-api.html)
+
 
 ---
 
