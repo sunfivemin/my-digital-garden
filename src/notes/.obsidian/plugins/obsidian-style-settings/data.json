@@ -1,0 +1,10 @@
+{
+  "chime-theme@@theme-settings": "theme-default",
+  "chime-theme@@background-image": false,
+  "chime-theme@@hide-filter": false,
+  "chime-theme@@hide-buttons": false,
+  "chime-theme@@hide-titlebar": false,
+  "chime-theme@@hide-tabs": false,
+  "chime-theme@@hide-scrollbars": false,
+  "chime-theme@@ultra-focus": false
+}

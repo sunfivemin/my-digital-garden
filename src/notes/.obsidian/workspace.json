@@ -4,24 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "496df262638b0760",
+        "id": "e9750d64d216e0fb",
         "type": "tabs",
         "children": [
           {
-            "id": "711c57f37a852538",
+            "id": "45557d1c40116e15",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "캔퍼스.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": -480.44562499999995,
-                  "zoom": 0
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "캔퍼스"
+              "type": "mk-ever-view",
+              "state": {},
+              "pinned": true,
+              "icon": "columns",
+              "title": "Overview"
             }
           }
         ]
@@ -78,7 +73,7 @@
             }
           },
           {
-            "id": "8ccd27928f4287e0",
+            "id": "6a52de09abfc23da",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -108,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "캔퍼스.canvas",
+                "file": "home.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +113,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "캔퍼스 의 백링크"
+              "title": "home 의 백링크"
             }
           },
           {
@@ -185,17 +180,18 @@
       "obsidian-rich-links:Rich Links": false
     }
   },
-  "active": "711c57f37a852538",
+  "active": "45557d1c40116e15",
   "lastOpenFiles": [
-    "home.md",
     "캔퍼스.canvas",
+    "Tags",
+    "무제.md",
+    "home.md",
     "체크리스트.md",
     "FRONTEND/RESTful API.md",
     "FRONTEND/FRONTEND.md",
     "CS/CS.md",
     "CS/프로토콜.md",
     "Untitled.canvas",
-    "무제.md",
     "Vault.md",
     "FRONTEND",
     "CS/리눅스.md",
