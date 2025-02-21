@@ -1,0 +1,44 @@
+.search-input {
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+}
+
+/* 검색 아이콘 변경 */
+.search-icon {
+  color: #555;
+}
+
+/* 사이드바 접기 아이콘 수정 */
+.clickable-icon.sidebar-collapse-icon svg {
+  stroke: #5e81ac; /* 아이콘 색상 변경 */
+  stroke-width: 2; /* 선 두께 조정 (현재 3에서 2로 변경) */
+}
+
+/* 전체 트리 접기 버튼 수정 */
+.clickable-icon.collapse-tree-button svg {
+  stroke: #88c0d0; /* 다른 색상으로 변경 */
+  stroke-width: 2;
+}
+
+/* 아이콘에 호버 효과 추가 */
+.clickable-icon:hover svg {
+  stroke: #bf616a; /* 마우스 오버시 색상 변경 */
+  transform: scale(1.1); /* 약간 확대 효과 */
+  transition: all 0.2s ease;
+}
+
+/* 사이드바 접기 아이콘 완전히 변경하기 */
+.clickable-icon.sidebar-collapse-icon svg path {
+  display: none; /* 기존 경로 숨기기 */
+}
+
+.clickable-icon.sidebar-collapse-icon svg:after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url("./assets/favicon.ico");
+  background-size: contain;
+}

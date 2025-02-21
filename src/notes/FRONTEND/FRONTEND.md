@@ -95,10 +95,7 @@ Netlify에서 특정 파일이 사라지는 이유는 **자동 빌드 시 특정
 Netlify 배포 시 `custom-head.html`이 유지되도록 설정합니다.
 
 1. `netlify.toml` 파일을 열고 아래 내용을 추가하세요.
-    
-    toml
-    
-    복사편집
+
     
     `[[redirects]] from = "/" to = "/index.html" status = 200 force = true  [build] publish = "public" command = "cp custom-head.html public/custom-head.html && cp -r notes public/notes"  [[headers]] for = "/*" [headers.values] Access-Control-Allow-Origin = "*"`
     

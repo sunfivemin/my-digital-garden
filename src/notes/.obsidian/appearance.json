@@ -1,3 +1,6 @@
 {
-  "cssTheme": "🔔 Chime"
+  "cssTheme": "🔔 Chime",
+  "enabledCssSnippets": [
+    "snippets"
+  ]
 }

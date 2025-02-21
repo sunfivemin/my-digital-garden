@@ -1,4 +1,65 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 21 Feb 2025 07:52:44 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 21 Feb 2025 07:52:43 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[무제]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 21 Feb 2025 08:12:42 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 21 Feb 2025 08:12:42 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[FRONTEND]]></title><description><![CDATA[ 
+ <br><br>
+<br>
+Obsidian Vault 경로 확인
+
+<br>현재 public 폴더 내에 custom-head.html이 있어야 합니다.
+<br>사라졌다면 public 폴더 안에서 다시 생성해야 합니다.
+
+
+<br>
+파일 만들기
+
+<br>public 폴더 안에서 새로운 파일을 생성하고 이름을 custom-head.html로 지정하세요.
+
+
+<br>
+내용 입력 (기본 예제)
+html
+복사편집
+&lt;!DOCTYPE html&gt; &lt;html lang="ko"&gt; &lt;head&gt;     &lt;meta charset="UTF-8"&gt;     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;     &lt;meta name="description" content="My Digital Garden"&gt;     &lt;title&gt;Custom Head&lt;/title&gt;      &lt;!-- FontAwesome CDN --&gt;     &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"&gt;      &lt;!-- 추가 CSS --&gt;     &lt;link rel="stylesheet" href="lib/styles/obsidian.css"&gt;     &lt;link rel="stylesheet" href="lib/styles/main-styles.css"&gt;     &lt;link rel="stylesheet" href="lib/styles/global-variable-styles.css"&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;/html&gt;
+
+<br>
+파일 저장
+
+<br>custom-head.html을 public/ 폴더 안에 배치하고 저장합니다.
+
+
+<br>
+Git 커밋 및 배포
+
+<br>파일이 정상적으로 추가되었는지 확인 후 다음 명령을 실행합니다.
+
+sh
+복사편집
+git add public/custom-head.html git commit -m "Add custom-head.html" git push origin main
+
+<br><br><br>현재 obsidian.css가 한 줄로 표시되는 이유는 압축된(minified) 파일이기 때문입니다. 보기 쉽게 만들려면 포맷(Beautify) 해야 합니다.<br><br>
+<br>obsidian.css 파일을 열고 전체 선택 (Cmd + A / Ctrl + A)
+<br>Shift + Alt + F (VS Code에서 코드 자동 정렬)
+<br><br>
+<br>CSS Beautifier 같은 사이트에 접속합니다.
+<br>obsidian.css의 내용을 복사하여 붙여넣기합니다.
+<br>"Beautify" 버튼을 눌러 가독성을 높인 후, 다시 저장합니다.
+<br><br>수정한 후 Git을 사용해 다시 배포합니다.<br>sh<br>복사편집<br>git add public/lib/styles/obsidian.css git commit -m "Fix obsidian.css formatting" git push origin main<br><br><br>현재 아이콘이 이상하게 보이는 이유는 FontAwesome이나 Obsidian 내장 아이콘이 적용되지 않았기 때문일 수 있습니다.<br><br>
+<br>custom-head.html에 FontAwesome을 추가하면 해결될 가능성이 있습니다.
+<br>이미 추가했다면 obsidian.css에서 clickable-icon 클래스를 확인하세요.
+<br><br>
+<br>obsidian.css에서 다음 스타일을 추가하세요.
+  css
+  복사편집
+  .clickable-icon {     font-family: "Font Awesome 6 Free";     font-weight: 900;     display: inline-block;     width: 24px;     height: 24px;     text-align: center;     line-height: 24px; } .clickable-icon.sidebar-collapse-icon:before {     content: "\f104"; /* 왼쪽 화살표 */     font-family: "Font Awesome 6 Free"; } .clickable-icon.collapse-tree-button:before {     content: "\f107"; /* 아래쪽 화살표 */     font-family: "Font Awesome 6 Free"; }<br>
+
+<br>이렇게 하면 사이드바 열고 닫기 아이콘과 트리 구조 접기 아이콘이 변경됩니다.
+<br><br><br>Netlify에서 특정 파일이 사라지는 이유는 자동 빌드 시 특정 파일을 무시하거나 덮어쓰는 문제 때문일 가능성이 큽니다.<br><br>Netlify 배포 시 custom-head.html이 유지되도록 설정합니다.<br>
+<br>
+netlify.toml 파일을 열고 아래 내용을 추가하세요.
+[[redirects]] from = "/" to = "/index.html" status = 200 force = true  [build] publish = "public" command = "cp custom-head.html public/custom-head.html &amp;&amp; cp -r notes public/notes"  [[headers]] for = "/*" [headers.values] Access-Control-Allow-Origin = "*"
+
+<br>
+git add . -&gt; git commit -m "Fix Netlify settings" -&gt; git push origin main 실행 후 Netlify에서 다시 배포하세요.
+
+]]></description><link>frontend/frontend.html</link><guid isPermaLink="false">FRONTEND/FRONTEND.md</guid><pubDate>Fri, 21 Feb 2025 08:12:32 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2763.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2763.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[무제]]></title><description><![CDATA[ 
  <br>나에게 돌아오기가..]]></description><link>무제.html</link><guid isPermaLink="false">무제.md</guid><pubDate>Fri, 21 Feb 2025 03:08:12 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f92a.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f92a.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[체크리스트]]></title><description><![CDATA[ 
  <br><br>
 <br>
@@ -214,70 +275,7 @@ echo ${myinfo[*]}
 <br>셋
 <br>넷
 <br>
-]]></description><link>cs/cs.html</link><guid isPermaLink="false">CS/CS.md</guid><pubDate>Fri, 21 Feb 2025 02:54:21 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f649.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f649.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[FRONTEND]]></title><description><![CDATA[ 
- <br><br>
-<br>
-Obsidian Vault 경로 확인
-
-<br>현재 public 폴더 내에 custom-head.html이 있어야 합니다.
-<br>사라졌다면 public 폴더 안에서 다시 생성해야 합니다.
-
-
-<br>
-파일 만들기
-
-<br>public 폴더 안에서 새로운 파일을 생성하고 이름을 custom-head.html로 지정하세요.
-
-
-<br>
-내용 입력 (기본 예제)
-html
-복사편집
-&lt;!DOCTYPE html&gt; &lt;html lang="ko"&gt; &lt;head&gt;     &lt;meta charset="UTF-8"&gt;     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;     &lt;meta name="description" content="My Digital Garden"&gt;     &lt;title&gt;Custom Head&lt;/title&gt;      &lt;!-- FontAwesome CDN --&gt;     &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"&gt;      &lt;!-- 추가 CSS --&gt;     &lt;link rel="stylesheet" href="lib/styles/obsidian.css"&gt;     &lt;link rel="stylesheet" href="lib/styles/main-styles.css"&gt;     &lt;link rel="stylesheet" href="lib/styles/global-variable-styles.css"&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;/html&gt;
-
-<br>
-파일 저장
-
-<br>custom-head.html을 public/ 폴더 안에 배치하고 저장합니다.
-
-
-<br>
-Git 커밋 및 배포
-
-<br>파일이 정상적으로 추가되었는지 확인 후 다음 명령을 실행합니다.
-
-sh
-복사편집
-git add public/custom-head.html git commit -m "Add custom-head.html" git push origin main
-
-<br><br><br>현재 obsidian.css가 한 줄로 표시되는 이유는 압축된(minified) 파일이기 때문입니다. 보기 쉽게 만들려면 포맷(Beautify) 해야 합니다.<br><br>
-<br>obsidian.css 파일을 열고 전체 선택 (Cmd + A / Ctrl + A)
-<br>Shift + Alt + F (VS Code에서 코드 자동 정렬)
-<br><br>
-<br>CSS Beautifier 같은 사이트에 접속합니다.
-<br>obsidian.css의 내용을 복사하여 붙여넣기합니다.
-<br>"Beautify" 버튼을 눌러 가독성을 높인 후, 다시 저장합니다.
-<br><br>수정한 후 Git을 사용해 다시 배포합니다.<br>sh<br>복사편집<br>git add public/lib/styles/obsidian.css git commit -m "Fix obsidian.css formatting" git push origin main<br><br><br>현재 아이콘이 이상하게 보이는 이유는 FontAwesome이나 Obsidian 내장 아이콘이 적용되지 않았기 때문일 수 있습니다.<br><br>
-<br>custom-head.html에 FontAwesome을 추가하면 해결될 가능성이 있습니다.
-<br>이미 추가했다면 obsidian.css에서 clickable-icon 클래스를 확인하세요.
-<br><br>
-<br>obsidian.css에서 다음 스타일을 추가하세요.
-  css
-  복사편집
-  .clickable-icon {     font-family: "Font Awesome 6 Free";     font-weight: 900;     display: inline-block;     width: 24px;     height: 24px;     text-align: center;     line-height: 24px; } .clickable-icon.sidebar-collapse-icon:before {     content: "\f104"; /* 왼쪽 화살표 */     font-family: "Font Awesome 6 Free"; } .clickable-icon.collapse-tree-button:before {     content: "\f107"; /* 아래쪽 화살표 */     font-family: "Font Awesome 6 Free"; }<br>
-
-<br>이렇게 하면 사이드바 열고 닫기 아이콘과 트리 구조 접기 아이콘이 변경됩니다.
-<br><br><br>Netlify에서 특정 파일이 사라지는 이유는 자동 빌드 시 특정 파일을 무시하거나 덮어쓰는 문제 때문일 가능성이 큽니다.<br><br>Netlify 배포 시 custom-head.html이 유지되도록 설정합니다.<br>
-<br>
-netlify.toml 파일을 열고 아래 내용을 추가하세요.
-toml
-복사편집
-[[redirects]] from = "/" to = "/index.html" status = 200 force = true  [build] publish = "public" command = "cp custom-head.html public/custom-head.html &amp;&amp; cp -r notes public/notes"  [[headers]] for = "/*" [headers.values] Access-Control-Allow-Origin = "*"
-
-<br>
-git add . -&gt; git commit -m "Fix Netlify settings" -&gt; git push origin main 실행 후 Netlify에서 다시 배포하세요.
-
-]]></description><link>frontend/frontend.html</link><guid isPermaLink="false">FRONTEND/FRONTEND.md</guid><pubDate>Fri, 21 Feb 2025 06:52:32 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2763.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2763.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[서버와 유저가 통신하는 법 / RESTful API]]></title><description><![CDATA[ 
+]]></description><link>cs/cs.html</link><guid isPermaLink="false">CS/CS.md</guid><pubDate>Fri, 21 Feb 2025 02:54:21 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f649.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f649.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[서버와 유저가 통신하는 법 / RESTful API]]></title><description><![CDATA[ 
  <br><br>서버는 단순한 프로그램으로, 요청을 받아 처리하는 역할을 한다.<br>
 예를 들어,  <br>
 <br>사용자가 웹툰을 요청하면 웹툰 데이터를 전송  
