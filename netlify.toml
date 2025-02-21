@@ -4,3 +4,11 @@ to = "/home.html"
 status = 200
 force = true
 
+[build]
+publish = "public"
+command = "cp custom-head.html public/custom-head.html && cp -r notes public/notes"
+
+[[headers]]
+for = "/*"
+[headers.values]
+Access-Control-Allow-Origin = "*"
