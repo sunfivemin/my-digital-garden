@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "FRONTEND/FRONTEND.md",
+                "file": "home.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "FRONTEND"
+              "title": "home"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 391.5
   },
   "right": {
     "id": "90ae25d5bc054b74",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "home.md",
+                "file": "📂 FRONTEND/무제.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "home 의 백링크"
+              "title": "무제 의 백링크"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "RESTful API.md",
+                "file": "📂 FRONTEND/무제.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "RESTful API 의 나가는 링크"
+              "title": "무제 의 나가는 링크"
             }
           },
           {
@@ -142,16 +142,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "RESTful API.md",
+                "file": "home.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "RESTful API 의 개요"
+              "title": "home 의 개요"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -167,33 +168,50 @@
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
       "webpage-html-export:Export Vault to HTML": false,
-      "obsidian-kanban:새 보드 만들기": false,
       "obsidian-rich-links:Rich Links": false
     }
   },
   "active": "002d08b60b0d7430",
   "lastOpenFiles": [
-    "FRONTEND/FRONTEND.md",
-    "snippets.css",
-    "Vault.md",
-    "home.md",
+    "📂 Study Notes/프론트엔드 면접 준비.md",
+    "📂 Study Notes/포트폴리오.md",
+    "📂 Study Notes/Vault.md",
+    "📂 Study Notes/성능 최적화 트러블슈팅.md",
+    "📂 Study Notes/TIL (Today I Learned)/2025-02-24.md",
+    "📂 FRONTEND/무제.md",
+    "📂 FRONTEND/🛠️ 웹 기초/📝 TS + React 활용 1.md",
+    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 SEO & SSR.md",
+    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 Vue.js.md",
+    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 상태 관리 (Redux, Zustand).md",
+    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 React.md",
+    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 Next.js.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 네트워크 최적화.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 상태 관리 패턴.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 웹 보안.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 컴포넌트 설계 패턴.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 테스트 자동화.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 웹 소켓 & 실시간 데이터.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 서버리스 & GraphQL.md",
+    "📂 FRONTEND/🎨 UI & 디자인/📝 반응형 웹.md",
+    "📂 FRONTEND/🎨 UI & 디자인/📝 애니메이션 & 인터랙션.md",
+    "📂 FRONTEND/🎨 UI & 디자인/📝 웹 접근성.md",
+    "📂 FRONTEND/🎨 UI & 디자인/📝 디자인 시스템.md",
+    "📂 FRONTEND/⚡ JS & TS/📝 ES6+ 문법 정리.md",
+    "📂 FRONTEND/⚡ JS & TS/📝 JS 기본 문법.md",
+    "📂 FRONTEND/⚡ JS & TS/📝 모듈 시스템.md",
+    "features",
+    "📂 FRONTEND/🎨 UI & 디자인",
+    "Study Notes/무제",
+    "📂 Study Notes/TIL (Today I Learned)",
+    "📂 Study Notes",
+    "FRONTEND/📂 Study Notes",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화",
+    "📂 FRONTEND/📦 프레임워크 & 라이브러리",
+    "📂 FRONTEND/⚡ JS & TS",
+    "📂 FRONTEND/🛠️ 웹 기초",
     "캔퍼스.canvas",
-    "체크리스트.md",
-    "무제.md",
     "무제.canvas",
-    "2025-02-21.md",
-    "FRONTEND/RESTful API.md",
-    "CS/CS.md",
-    "CS/프로토콜.md",
-    "Tags",
     "Untitled.canvas",
-    "FRONTEND",
-    "CS/리눅스.md",
-    "RestfulAPI.png",
-    "assets/RestfulAPI.png.md",
-    "CS",
-    "custom-head.md",
-    "hi.md",
-    "assets"
+    "RestfulAPI.png"
   ]
 }

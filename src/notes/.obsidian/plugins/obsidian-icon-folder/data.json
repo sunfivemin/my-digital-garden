@@ -2,11 +2,15 @@
   "settings": {
     "migrated": 6,
     "iconPacksPath": ".obsidian/icons",
-    "fontSize": 14,
-    "emojiStyle": "native",
-    "iconColor": "#b42760",
+    "fontSize": 16,
+    "emojiStyle": "twemoji",
+    "iconColor": null,
     "recentlyUsedIcons": [
-      "LiApple"
+      "🧡",
+      "😀",
+      "💻",
+      "❣",
+      "😟"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -14,21 +18,22 @@
       "top": 0,
       "right": 4,
       "bottom": 0,
-      "left": 0
+      "left": 8
     },
-    "iconInTabsEnabled": true,
-    "iconInTitleEnabled": false,
-    "iconInTitlePosition": "above",
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": true,
+    "iconInTitlePosition": "inline",
     "iconInFrontmatterEnabled": false,
     "iconInFrontmatterFieldName": "icon",
     "iconColorInFrontmatterFieldName": "iconColor",
     "iconsBackgroundCheckEnabled": false,
-    "iconsInNotesEnabled": true,
-    "iconsInLinksEnabled": true,
+    "iconsInNotesEnabled": false,
+    "iconsInLinksEnabled": false,
     "iconIdentifier": ":",
-    "lucideIconPackType": "native",
-    "debugMode": false,
-    "useInternalPlugins": false
+    "lucideIconPackType": "none",
+    "debugMode": true,
+    "useInternalPlugins": true
   },
-  "FRONTEND/FRONTEND.md": "LiApple"
+  "home.md": "🧡",
+  "📂 FRONTEND/무제.md": "😀"
 }

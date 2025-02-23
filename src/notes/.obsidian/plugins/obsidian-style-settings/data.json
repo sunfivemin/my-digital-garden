@@ -6,5 +6,10 @@
   "chime-theme@@hide-titlebar": false,
   "chime-theme@@hide-tabs": false,
   "chime-theme@@hide-scrollbars": false,
-  "chime-theme@@ultra-focus": false
+  "chime-theme@@ultra-focus": false,
+  "chime-theme@@hide-dividers": false,
+  "chime-theme@@h1-center": false,
+  "chime-theme@@h1-bottom-border": false,
+  "chime-theme@@custom-font-toggle": false,
+  "chime-theme@@increased-line-height": true
 }

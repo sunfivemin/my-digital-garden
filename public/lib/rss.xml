@@ -1,281 +1,136 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 21 Feb 2025 08:12:42 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 21 Feb 2025 08:12:42 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[FRONTEND]]></title><description><![CDATA[ 
- <br><br>
-<br>
-Obsidian Vault 경로 확인
-
-<br>현재 public 폴더 내에 custom-head.html이 있어야 합니다.
-<br>사라졌다면 public 폴더 안에서 다시 생성해야 합니다.
-
-
-<br>
-파일 만들기
-
-<br>public 폴더 안에서 새로운 파일을 생성하고 이름을 custom-head.html로 지정하세요.
-
-
-<br>
-내용 입력 (기본 예제)
-html
-복사편집
-&lt;!DOCTYPE html&gt; &lt;html lang="ko"&gt; &lt;head&gt;     &lt;meta charset="UTF-8"&gt;     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;     &lt;meta name="description" content="My Digital Garden"&gt;     &lt;title&gt;Custom Head&lt;/title&gt;      &lt;!-- FontAwesome CDN --&gt;     &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"&gt;      &lt;!-- 추가 CSS --&gt;     &lt;link rel="stylesheet" href="lib/styles/obsidian.css"&gt;     &lt;link rel="stylesheet" href="lib/styles/main-styles.css"&gt;     &lt;link rel="stylesheet" href="lib/styles/global-variable-styles.css"&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;/html&gt;
-
-<br>
-파일 저장
-
-<br>custom-head.html을 public/ 폴더 안에 배치하고 저장합니다.
-
-
-<br>
-Git 커밋 및 배포
-
-<br>파일이 정상적으로 추가되었는지 확인 후 다음 명령을 실행합니다.
-
-sh
-복사편집
-git add public/custom-head.html git commit -m "Add custom-head.html" git push origin main
-
-<br><br><br>현재 obsidian.css가 한 줄로 표시되는 이유는 압축된(minified) 파일이기 때문입니다. 보기 쉽게 만들려면 포맷(Beautify) 해야 합니다.<br><br>
-<br>obsidian.css 파일을 열고 전체 선택 (Cmd + A / Ctrl + A)
-<br>Shift + Alt + F (VS Code에서 코드 자동 정렬)
-<br><br>
-<br>CSS Beautifier 같은 사이트에 접속합니다.
-<br>obsidian.css의 내용을 복사하여 붙여넣기합니다.
-<br>"Beautify" 버튼을 눌러 가독성을 높인 후, 다시 저장합니다.
-<br><br>수정한 후 Git을 사용해 다시 배포합니다.<br>sh<br>복사편집<br>git add public/lib/styles/obsidian.css git commit -m "Fix obsidian.css formatting" git push origin main<br><br><br>현재 아이콘이 이상하게 보이는 이유는 FontAwesome이나 Obsidian 내장 아이콘이 적용되지 않았기 때문일 수 있습니다.<br><br>
-<br>custom-head.html에 FontAwesome을 추가하면 해결될 가능성이 있습니다.
-<br>이미 추가했다면 obsidian.css에서 clickable-icon 클래스를 확인하세요.
-<br><br>
-<br>obsidian.css에서 다음 스타일을 추가하세요.
-  css
-  복사편집
-  .clickable-icon {     font-family: "Font Awesome 6 Free";     font-weight: 900;     display: inline-block;     width: 24px;     height: 24px;     text-align: center;     line-height: 24px; } .clickable-icon.sidebar-collapse-icon:before {     content: "\f104"; /* 왼쪽 화살표 */     font-family: "Font Awesome 6 Free"; } .clickable-icon.collapse-tree-button:before {     content: "\f107"; /* 아래쪽 화살표 */     font-family: "Font Awesome 6 Free"; }<br>
-
-<br>이렇게 하면 사이드바 열고 닫기 아이콘과 트리 구조 접기 아이콘이 변경됩니다.
-<br><br><br>Netlify에서 특정 파일이 사라지는 이유는 자동 빌드 시 특정 파일을 무시하거나 덮어쓰는 문제 때문일 가능성이 큽니다.<br><br>Netlify 배포 시 custom-head.html이 유지되도록 설정합니다.<br>
-<br>
-netlify.toml 파일을 열고 아래 내용을 추가하세요.
-[[redirects]] from = "/" to = "/index.html" status = 200 force = true  [build] publish = "public" command = "cp custom-head.html public/custom-head.html &amp;&amp; cp -r notes public/notes"  [[headers]] for = "/*" [headers.values] Access-Control-Allow-Origin = "*"
-
-<br>
-git add . -&gt; git commit -m "Fix Netlify settings" -&gt; git push origin main 실행 후 Netlify에서 다시 배포하세요.
-
-]]></description><link>frontend/frontend.html</link><guid isPermaLink="false">FRONTEND/FRONTEND.md</guid><pubDate>Fri, 21 Feb 2025 08:12:32 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2763.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2763.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[무제]]></title><description><![CDATA[ 
- <br>나에게 돌아오기가..]]></description><link>무제.html</link><guid isPermaLink="false">무제.md</guid><pubDate>Fri, 21 Feb 2025 03:08:12 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f92a.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f92a.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[체크리스트]]></title><description><![CDATA[ 
- <br><br>
-<br>
-
-
-<br>vue
-
-
-<br>
-
-
-<br>nodejs
-
-
-<br>
-
-
-<br>nextjs
-
-
-<br><br>
-<br>
-
-
-<br>11
-
-
-<br>
-
-
-<br>12
-
-
-<br>
-
-
-<br>13
-
-
-<br>]]></description><link>체크리스트.html</link><guid isPermaLink="false">체크리스트.md</guid><pubDate>Fri, 21 Feb 2025 02:51:42 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/2705.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Home]]></title><description><![CDATA[<a class="tag" href="?query=tag:Feature" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Feature</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Feature" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Feature</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> 
- <br><br>Github: <a data-tooltip-position="top" aria-label="https://github.com/KosmosisDire/obsidian-webpage-export" rel="noopener nofollow" class="external-link" href="https://github.com/KosmosisDire/obsidian-webpage-export" target="_blank">Webpage HTML Export</a><br>Warning
-This documentation is VERY much a work in progress. As such it is incomplete.
-<br><br><br><a href=".?query=tag:Feature" class="tag" target="_blank" rel="noopener nofollow">#Feature</a><br>See some examples of dataview in action.<br><br>This file is simply being used to demo <a class="internal-link" data-href="/features/dataview.html" href="/features/dataview.html" target="_self" rel="noopener nofollow">Dataview</a>.<br>This is a task from a second file<br>
-This one is from a different file too, but it is complete<br><br>This file is simply being used to demo <a class="internal-link" data-href="/features/dataview.html" href="/features/dataview.html" target="_self" rel="noopener nofollow">Dataview</a>.<br>This is an incomplete task<br>
-This is another incomplete task<br>
-Oh this one is complete<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>The file picker is part of the <a class="internal-link" data-href="/getting-started/4.-export-modal.html" href="/getting-started/4.-export-modal.html" target="_self" rel="noopener nofollow">export modal</a> and allows you to select which files to include in the export. You can select a whole folder (in which case that folder's children will always be exported), or individual files.<br>Folders with all files selected are shown in blue, folders with only some files selected are shown in red.<br>Warning
-Once you have selected the files you want, make sure to press the Save button!
-<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Learn all about the various configurations of the plugin<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Export to HTML <a class="internal-link" data-href="/getting-started/5.-export-modes.html" href="/getting-started/5.-export-modes.html" target="_self" rel="noopener nofollow">Export Mode</a><br>This will export a file structure suitable for uploading to your own web server. Some options are only available in certain modes.<br>The export modal is the main place where you can select which files to include in your export, and select the location to export to. It can be opened using the <a class="internal-link" data-href="/getting-started/1.-ribbon-icon.html" href="/getting-started/1.-ribbon-icon.html" target="_self" rel="noopener nofollow">ribbon icon</a>, the <a class="internal-link" data-href="/getting-started/3.-commands.html#Command_`Set_html_export_settings`" href="/getting-started/3.-commands.html#Command_`Set_html_export_settings`" target="_self" rel="noopener nofollow">export settings command</a>, or the <a class="internal-link" data-href="/getting-started/2.-context-menus.html" href="/getting-started/2.-context-menus.html" target="_self" rel="noopener nofollow">context menu</a> of a file or folder.<br>On the left is the <a class="internal-link" data-href="/getting-started/6.-file-picker.html" href="/getting-started/6.-file-picker.html" target="_self" rel="noopener nofollow">file picker</a>, on the right you can select an <a class="internal-link" data-href="/getting-started/5.-export-modes.html" href="/getting-started/5.-export-modes.html" target="_self" rel="noopener nofollow">export mode</a> and an export location. At the bottom right you can open the plugin's main <a class="internal-link" data-href="/getting-started/7.-settings.html" href="/getting-started/7.-settings.html" target="_self" rel="noopener nofollow">settings</a>.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Learn how to use the ribbon icon to initiate an export.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Learn about the 3 commands included with the plugin.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Export modes (which can be set using the <a class="internal-link" data-href="/getting-started/4.-export-modal.html" href="/getting-started/4.-export-modal.html" target="_self" rel="noopener nofollow">export modal</a>) are sort of like presets, in that each one has certain default settings. However, some options are only available in a certain export mode. In the end you should read through the purpose of each mode and select the one that works for your use case.<br>This mode is meant for people creating a digital garden who plan to upload their HTML files onto a web server. This mode enables a bunch of optimizations that make <a class="internal-link" data-href="/getting-started/7.-settings.html#Only_export_modified_files" href="/getting-started/7.-settings.html#Only_export_modified_files" target="_self" rel="noopener nofollow">Incremental Export</a> possible, and enable your page to load fast over the internet. This is the preferred mode of export if at all possible.<br>The downside is that your files get broken up into lots of different files. All the scripts, styles, fonts, etc., are stored separately. This means that these files cannot be opened locally, they must be hosted on a web server.<br>This mode is meant for people wanting to open or share their documents locally. They don't intend to host them on a web server or create a website. Rather they want a way to share their documents in a way that maintains their interactivity and rich content.<br>The downside is that the produced HTML files are much larger, and some aspects of the navigation between files is compromised. Additionally, the <a class="internal-link" data-href="/features/graph-view.html" href="/features/graph-view.html" target="_self" rel="noopener nofollow">Graph View</a> and <a class="internal-link" data-href="/features/search-bar.html" href="/features/search-bar.html" target="_self" rel="noopener nofollow">Search Bar</a> are not supported in this mode.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Get started with some actionable first steps to exporting your HTML files.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>During an export you will see a progress bar like this. It will show you what is currently being worked on during the export.<br>Warning
-This window MUST stay in the foreground. If you minimize it or leave it for another application it may pause the export.
-<br>Sometimes something will need your attention and a log will pop up with warnings or errors. Read the warning or error and determine if you need to do something to solve it. If the warning or error seems to be causing something to break, please file a report on GitHub here: <a data-tooltip-position="top" aria-label="https://github.com/KosmosisDire/obsidian-webpage-export/issues" rel="noopener nofollow" class="external-link" href="https://github.com/KosmosisDire/obsidian-webpage-export/issues" target="_blank">GitHub Issues</a><br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Learn how to use file and folder context menus to initiate an export.<br><br><a href=".?query=tag:Feature" class="tag" target="_blank" rel="noopener nofollow">#Feature</a><br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br>The Table of Contents (shown in the right sidebar) allows you to view an outline of all the headers in the currently opened document. This is not the table of contents of the whole vault (that would be the <a class="internal-link" data-href="/features/file-navigation.html" href="/features/file-navigation.html" target="_self" rel="noopener nofollow">File Navigation</a>). As a demonstration check out the outline to the right on this page.<br>You can click on the outline to skip to specific headers.<br><br>You should always start your document with an H2 if you are using the inline title. And you should only ever have a single H1 in your document.<br><br>And that's it for the outline!<br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br>The file navigation allows you to browse all the files in your exported vault. You can also filter the file view using the <a class="internal-link" data-href="/features/search-bar.html" href="/features/search-bar.html" target="_self" rel="noopener nofollow">Search Bar</a>.<br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br>The graph view is a representation of the links in your vault, same as the graph view in obsidian. It is written from scratch so there are a few differences from obsidian's version, however the behavior is almost identical.<br>Caveats:<br>
-<br>Color groupings are not supported
-<br>Only the global graph view is supported, not local graphs (yet)
-<br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br>The search bar allows you to do a full text search of the whole vault. This search respect aliases, tags, headers, and links.<br>You can also filter your searches more specifically using certain key words:<br>
-<br>tag:tagname will search for all documents with a specific tag
-<br>header:headername will search for all documents containing a specific header
-<br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br><br>The home page :)<br><br>Warning
-THE API IS STILL UNDER DEVELOPMENT!!!!<br>
-DO NOT USE IN ANY PLUGIN OR PUBLIC PROJECT!!!!!
-<br>Render a file to an html string:<br>const currentFile = app.workspace.getActiveFile();
-let html = await WebpageHTMLExport.api.renderFileToString(currentFile, {});
-// options are left empty see below for options definitions
-]]></description><link>home.html</link><guid isPermaLink="false">home.md</guid><pubDate>Fri, 21 Feb 2025 02:49:59 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f9e1.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f9e1.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Vault]]></title><description><![CDATA[ 
- ]]></description><link>vault.html</link><guid isPermaLink="false">Vault.md</guid><pubDate>Fri, 21 Feb 2025 03:07:56 GMT</pubDate></item><item><title><![CDATA[리눅스]]></title><description><![CDATA[ 
- <br><br>리눅스에서는 모든 것은 파일이라는 철학을 따른다. (마우스, 키보드와 같은 모드 디바이스 관련 기술도 파일과 같이 다룸)<br>
-유닉스는 여러 프로그램이 서로 유기적으로 각자 일을 수행하면서 전체 시스템이 동작하도록 하는 철학을 따른다.<br>
-<br>ubuntu 접속 명령어 : ssh -i seono.pem ubuntu@퍼블릭 IPv4 주소
-<br><br>
-<br>
-whoami : 현재 로그인한 사용자 ID를 알려준다. ( root : 슈퍼관리자 ID )
-
-<br>
-sudo 명령어 : 사용자 ID지만 root 권한으로 실행 가능한 프로그램 ( eg. sudo apt-get update )
-
-<br>
-pwd : 현재 디렉토리 위치
-
-<br>
-ls : 파일에 대한 정보 (ls -al : 숨김 파일 포함)
-
-<br>
-chmod : 파일 권한 변경<br>
-(eg. chmod 400 mysecurity.pem : 소유자가 읽기만 가능 /<br>
-chmod -R 777 directory : 하위 디렉토리까지 모든 권한인 777 을 줄 때 -R을 붙여준다)
-
-<br>
-cat : 파일 보기
-
-<br>
-vi : 파일 만들기 (:wq 로 아무것도 쓰지 않고 저장하고 나온다.) 
-
-<br>
-rm : 강제 파일 삭제하기 (rm -rf 폴더명 : 폴더안에 있는 파일 모두 삭제)
-
-<br><br>표준 입력 스트림 : stdin / 표준 출력 스트림 : stdout / 오류 출력 스트림 : stderr<br>
-일반적으로 plain text로 콘솔에 출력된다.<br><br>표준 스트림 흐름을 바꿔줌, 출력 경로를 바꿈. &gt;, &lt; / 기존 파일에 추가는 &gt;&gt;, &lt;&lt;<br>
-<br>ls &gt; files.txt : ls로 출력되는 표준 출력 스트림의 방향을 files.txt 로 덮어씀 (files.txt 에 ls 로 출력되는 결과가 저장)
-<br>head &lt; files.txt : files.txt의 파일 내용이 head 라는 파일의 처음부터 10 라인까지 출력해주는 명령으로 넣어짐 (files.txt의 앞 10라인이 출력)
-<br><br>출력 스트림을 다른 프로세스의 입력 스트림으로 연결한다.<br>
-ls | grep files.txt : 특정 파일이 있는지 찾을 때 사용함.<br><br>foreground process : 쉘에서 해당 프로세스 실행을 명령한 후, 해당 프로세스 수행 종료까지 사용자가 다른 입력을 하지 못함.<br>
-( 프로세스 실행 취소 - ctrl + c / 실행 중지하는 명령어 - ctrl + z )<br>background process : 사용자 입력과 상관없이 실행됨. (쉘에서 해당 프로세스 실행 시 맨 뒤에 &amp; 붙여줌)<br><br><br>옵션<br>
-<br>-A : 모든 프로세스를 출력
-<br>a (BSD) : 터미널과 연관된 프로세스를 출력, x 옵션과 같이 사용하여 모든 프로세스를 출력할 때 사용
-<br>-a : 세션 리더를 제외하고 데몬 프로세스처럼 터미널에 종속되지 않은 모든 프로세스를 출력
-<br>-e : 커널 프로세스를 제외한 모든 프로세스를 출력
-<br>-f : 출력을 풀 포맷으로 표기 (유닉스 스타일), UID, PID, PPID 등이 함께 표시
-<br>-l (System V), l (BSD) : 출력을 긴 포맷으로 표기, 프로세스의 정보를 길게 보여주는 옵션으로 우선순위와 관련된 PRI 값과 NI 값을 확인
-<br>-o : 출력 포맷을 지정
-<br>-M : 64비트 프로세스들을 출력
-<br>-m : 프로세스뿐만 아니라 커널 스레드도 출력
-<br>-p : 특정 PID를 지정하여 출력
-<br>-r : 현재 실행 중인 프로세스 출력
-<br>u (BSD) : 프로세스의 소유자를 기준으로 출력
-<br>-u [사용자] : 특정 사용자의 프로세스 정보를 출력, 사용자를 지정하지 않는다면 현재 사용자 기준으로 출력
-<br>x (BSD) : 데몬 프로세스처럼 터미널에 종속되지 않은 프로세스를 출력
-<br>-x : 로그인 상태에 있는 동안 아직 완료되지 않은 프로세스를 출력. 유닉스 시스템은 사용자가 로그아웃한 뒤에도 임의의 프로세서가 계속 동작 가능 -&gt; 해당 프로세서는 자신이 실행시킨 쉘이 없어도 계속 자신의 일을 수행하는 데 이 프로세스는 해당 옵션 없이는 확인이 불가능
-<br>출력 항목<br>
-<br>USER (BSD), UID (System V) : 프로세스 소유자의 이름
-<br>PID : 프로세스의 식별 번호
-<br>PPID : 부모 프로세스의 PID
-<br>%CPU : CPU 사용 비율의 추정치 (BSD)
-<br>%MEM : Memory 사용 비율의 추정치(BSD)
-<br>VSZ : K 단위 또는 페이지 단위의 가상 메모리 사용량
-<br>RSS : 실제 메모리 사용량
-<br>TTY : 프로세스와 연결된 터미널
-<br>S (System V), STAT (BSD) : 현재 프로세스의 상태 코드
-<br>TIME : 총 CPU 사용 시간
-<br>COMMAND : 프로세스의 실행 명령 이름
-<br>STIME : 프로세스가 시작된 시간 혹은 날짜
-<br>C (System V), CP (BSD) : 짧은 기간 동안의 CPU 사용률
-<br>F : 플래그
-<br>PRI : 실제 실행 우선순위
-<br>NI : nice 우선순위 번호
-<br><br>프로세스 종료 시킴 / -9는 작업 강제 종료 옵션이다.<br>
-<br>kill % 작업 번호(job number), kill 프로세스 ID(pid)
-<br><br>cp 명령 : 파일 복사<br>
-cp -rf * ../folder/ - 하부폴더 포함하여 현재폴더에 있는 모든 것들을 folder에 복사<br>하드링크 : ln A B<br>
-A와 B는 동일한 데이터를 가리킴. A가 바뀌면 B도 바뀜.<br>소프트링크 : ln -s A B<br>
-윈도우 OS의 바로가기와 같음. <br><br>리눅스 패키지 시스템의 다양한 배포판 중 하나<br>
-최신 인덱스 정보 업데이트 : sudo apt-get update<br><br>
-<br>Vim : Vi impreved 에서 앞글자만 딴 이름이다. Vi에 자동화, 시각화 메뉴를 추가한 프로그램
-<br>Vi : 전통적인 유닉스 에디터 (Visual Editor)
-<br>이맥스(Emacs)
-<br><br>
-<br>일반(명령) 모드 : 처음 실행하거나 입력/명령 모드에서 ESC 입력 시 - 찾기, 커서 이동 등
-<br>명령(명령행) 모드 : 일반모드에서 : 입력 시 - 저장, 파일 읽기, vim 설정 등
-<br>입력(편집) 모드 : 일반 모드에서 a, i, o 키 입력 시 - 내용 입력
-<br>visual 모드 : 일반 모드에서 v 입력 시 - 블럭 복사/붙여넣기
-<br><br>입력<br>
-<br>i : 포커스 잡힌 커서 위치에서 편집 모드 시작
-<br>a : 포커스 잡힌 커서 위치 바로 다음에서 편집모드 시작
-<br>삭제(일반모드)<br>
-<br>x : 커서의 한 문자 삭제
-<br>파일 저장<br>
-<br>:w 현재 오픈된 파일 저장
-<br>:q 저장하지 않고 quit
-<br>:wq 저장하고 종료
-<br>:q! 강제 종료
-<br><br>파일의 가장 첫 라인은 #!/bin/bash 로 시작하고 filename.sh와 같은 형태로 파일 이름을 작성함.<br>
-(eg. chmod 764 hello.sh)<br>
-echo 함수를 이용하여 화면에 쉘 명령어를 출력할 수 있음.<br>myinfo=("seon" 30 "it") 
-echo ${myinfo[*]}
-<br>와 같이 리스트 변수로 만들어 출력도 가능하다.<br><br>리눅스에서 여러 파일을 묶는 것을 archive(아카이브) 라고 한다. 확장자는 .tar<br>
-<br>압축 시 : tar -cvzf [압축된 파일 이름] [압축할 파일이나 폴더명] 
-<br>압축 해제 시 : tar -xvzf [압축 해제할 압축 아카이브 이름]
-]]></description><link>cs/리눅스.html</link><guid isPermaLink="false">CS/리눅스.md</guid><pubDate>Fri, 21 Feb 2025 03:05:55 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f49d.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f49d.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[프로토콜]]></title><description><![CDATA[ 
- <br><br>컴퓨터간 통신을 하기 위한 규칙 <br><br>ISO(국제표준화기구)에서 다양한 컴퓨터간 데이터 전송을 지원할 수 있는 추상 모델을 표준화<br>
-<br>송신측 : 캡슐화(Encapsulation)
-<br>수신측 : 역캡슐화(decapsulation)
-<br>헤더(header) : 데이터 송신시, 필요한 정보를 데이터에 추가
-<br>바디(body) : 실제 데이터
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 215 at column 242: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 23 Feb 2025 09:55:45 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 23 Feb 2025 09:55:43 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-비동기-처리.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 비동기 처리.md</guid><pubDate>Sun, 23 Feb 2025 08:43:45 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-ts-기초.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 TS 기초.md</guid><pubDate>Sun, 23 Feb 2025 09:37:04 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-ts-빌드-&amp;-설정.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 TS 빌드 &amp; 설정.md</guid><pubDate>Sun, 23 Feb 2025 09:19:44 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-ts-+-react-활용.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 TS + React 활용.md</guid><pubDate>Sun, 23 Feb 2025 09:19:47 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-모듈-시스템.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 모듈 시스템.md</guid><pubDate>Sun, 23 Feb 2025 08:43:23 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-js-기본-문법.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 JS 기본 문법.md</guid><pubDate>Sun, 23 Feb 2025 09:36:46 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-es6+-문법-정리.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 ES6+ 문법 정리.md</guid><pubDate>Sun, 23 Feb 2025 09:38:01 GMT</pubDate></item><item><title><![CDATA[디자인 시스템 (Design System)]]></title><description><![CDATA[<a class="tag" href="?query=tag:design-system" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#design-system</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:ui-development" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#ui-development</a> 
+ <br><br>블로그 목표<br>
+<br>✔️ 체계적인 정리 - 디자인 시스템의 핵심 개념과 구성요소 정리
+<br>✔️ 실무 중심 - 실제 프로젝트에 적용할 수 있는 구체적인 방법론 제시
+<br>✔️ 최신 트렌드 - 현대적인 디자인 시스템 사례와 도구 소개
 <br><br><br>
-<br>TCP : 연결형 프로토콜, 데이터의 전송 순서 보장, 데이터 신뢰성 보장
-<br>UDP : 비연결형 프로토콜, TCP보다 전송속도 빠름, 주로 스트리밍/브로드캐스팅 서비스 (UDP 데이터는 데이터그램)
-<br><br>: 목적지의 어떤 응용 프로그램에 데이터를 전달해야하는지 식별하는 기능 / 포트 번호는 0~65535<br>
-(일반적으로 웹서버는 80번, 이메일은 110번, FTP는 21번 포트를 씀)<br><br>OSI 7 Layer은 표준 모델이고 TCP/IP은 현실에서 인터넷 통신을 위해 사용하는 모델<br><br><br><br>: 8bit.8bit.8bit.8bit = 32bit로 구성 (2^32개 IP 주소) : 0.0.0.0 ~ 255.255.255.255<br><br>: 16bit.16bit.16bit.16bit.16bit.16bit.16bit.16bit = 128bit로 구성(2^128개의 IP 주소)<br>
-<br>자기 PC의 IP 주소는 127.0.0.1 (DNS로는 localhost)
+<br>제품의 디자인과 개발을 위한 표준화된 규칙과 원칙의 집합
+<br>일관된 사용자 경험을 제공하기 위한 체계적인 가이드라인
+<br>재사용 가능한 컴포넌트와 패턴의 라이브러리
+<br><br>
+<br>디자인 토큰 (색상, 타이포그래피, 간격 등)
+<br>컴포넌트 라이브러리
+<br>상호작용 패턴
+<br>문서화 가이드
+<br><br>// colors.js
+export const colors = {
+  primary: {
+    main: '#007AFF',
+    light: '#47A3FF',
+    dark: '#0055B3'
+  },
+  grey: {
+    100: '#F5F5F5',
+    200: '#EEEEEE',
+    300: '#E0E0E0'
+  }
+};
+
+// spacing.js
+export const spacing = {
+  xs: '4px',
+  sm: '8px',
+  md: '16px',
+  lg: '24px',
+  xl: '32px'
+};
+<br><br>핵심 원칙<br>
+<br>✔️ 재사용성 - 다양한 상황에서 활용 가능한 유연한 설계
+<br>✔️ 일관성 - 디자인 토큰을 기반으로 한 통일된 스타일
+<br>✔️ 접근성 - 모든 사용자를 고려한 포괄적인 설계
+<br><br>// Button.tsx
+interface ButtonProps {
+  variant: 'primary' | 'secondary' | 'ghost';
+  size: 'sm' | 'md' | 'lg';
+  children: React.ReactNode;
+  disabled?: boolean;
+}
+
+const Button = ({ variant, size, children, ...props }: ButtonProps) =&gt; {
+  return (
+    &lt;button 
+      className={`btn btn-${variant} btn-${size}`}
+      {...props}
+    &gt;
+      {children}
+    &lt;/button&gt;
+  );
+};
 <br><br><br>
-<br>Sequence Number : 일정 단위로 데이터를 분할해서 전송, 송신측에서 수식측 데이터가 몇번째인지 알려준다.
-<br>ACK Number : 다음 번호의 데이터를 알려줌, 어디까지 수신했는지 확인 가능하다.
+<br>Atoms (기본 요소)
+
+<br>버튼, 입력필드, 텍스트
+
+
+<br>Molecules (복합 요소)
+
+<br>검색창, 카드
+
+
+<br>Organisms (섹션)
+
+<br>네비게이션, 폼
+
+
+<br>Templates (페이지 구조)
+<br>Pages (최종 화면)
+<br><br><br>기본적인 동작을 위한 버튼 컴포넌트입니다.<br><br>
+  버튼 텍스트
+<br><br><br><br><br>
+<br>Figma
+<br>Adobe XD
+<br>Sketch
 <br><br>
-<br>3 way hand shake : TCP 통신을 위한 연결을 설정하는 과정
+<br>Storybook
+<br>Styled Components
+<br>Emotion
 <br><br>
-<br>4 way hand shake : TCP 연결을 해제 하는 과정
-<br><br>네트워크 트래픽에 따른 효율적이고 신뢰적 송신을 위한 제어 알고리즘 적용<br><br>슬라이딩 윈도우 (Sliding Window, 매번 ACK를 기다리지 않고 여러 패킷을 연속해서 송신 / 각 컴퓨터의 윈도우 사이즈를 확인하여 윈도우 사이즈 만큼 ACK없이 연속해서 송신한다.)<br><br>송신 제어를 위한 2가지 윈도우가 있다. 송신측 최종 윈도우 크기는 min(RWND, CWND)<br>
-<br>RWND(Receiver Window) : 슬라이딩 윈도우에서 활용 
-<br>CWND(Congestion Window) : 네트워크 혼잡제어를 위해 활용
-<br><br>: 처음에는 CWND = 1, ACK가 도착하면(패킷 전송 성공 시) -&gt; CWND = CWND + 1, 패킷 전송 실패 시 -&gt; CWND = CWND / 2<br>AIMD의 느린 초기 송신을 빠르게 하기 위해 느린시작과 혼잡회피가 있다.<br>
-<br>느린시작(Slow Start) : 처음에는 CWND = 1, ACK가 도착하면(패킷 전송 성공 시) -&gt; CWND = CWND의 2배, 패킷 전송 실패 시 -&gt; CWND = 1(초기값)
-<br>혼잡회피(Congestion Avoidance) : 느린시작과 같이 쓰이고 CWND가 일정 크기에 도달할 때, ACK가 도착하면(패킷 전송 성공 시) -&gt; CWND = CWND + 1
-<br><br>사용자 데이터그램 프로토콜(User Datagram Protocol) : 동영상 스트리밍 등 데이터 유실이 일부 있어도 문제 없고 빠른 전송이 필요한 서비스에 활용된다. TCP와 달리 브로드캐스팅(동일 네트워크에 연결된 모든 컴퓨터에 데이터 송신 가능)을 지원한다.<br><br>HTTP(HyperText Transfer Protocol)<br>
-: 인터넷(WWW, W3, Web) 상에서 서버와 클라이언트 모델로 정보를 주고 받는(request / response) 프로토콜<br><br>GET(서버 정보 읽기, 전달이 필요한 파라미터들을 URL을 통해 전달한다), POST(서버 정보 입력하기, 전달이 필요한 파라미터들을 HTTP BODY에 포함되어 잔달 되어 사용자는 직접 확인 불가하다), PUT(서버 정보 수정하기), DELETE(서버 정보 삭제하기)<br><br><br><br>세션은 쿠키를 기반하고 있지만, 사용자 정보 파일을 브라우저에 저장하는 쿠키와 달리 세션은 서버 측에서 관리한다.<br><br>URL(Uniform Resource Locator) : 인터넷 상의 자원 위치 표기를 위한 규약<br>URI(Uniform Resource Identifier) : 통합 자원 식별자<br>
-(eg. <a rel="noopener nofollow" class="external-link" href="https://search.naver.com" target="_blank">https://search.naver.com</a>/search.naver?where=nexearch&amp;sm=top_hty&amp;fbm=0&amp;ie=utf8&amp;query=url<br>
-<a data-tooltip-position="top" aria-label="https://search.naver.com/%EC%9D%80" rel="noopener nofollow" class="external-link" href="https://search.naver.com/%EC%9D%80" target="_blank">https://search.naver.com/은</a> url 이고, search.naver?where=nexearch&amp;sm=top_hty&amp;fbm=0&amp;ie=utf8&amp;query=url 라는 식별자가 uri 이다.)<br>
-<br>SSL 암호화 프로토콜은 넷스케이프사에서 개발되었고 국제 표준화 하는 괒어에서 SSL이 상용 제품 이름과 동일하여 TLS로 변경되었다.
-<br><br>Rest(REpreseontational State Transfer) : HTTP URI를 통해 자원을 명시하고, HTTP 메서드를 통해 자원에 대한 CRUD Operation 적용한다.<br>
-<br>Create : 생성(POST)
-<br>Read : 조회(GET)
-<br>Update : 수정(PUT)
-<br>Delete : 삭제(DELETE)
-<br>REST API : REST 기반으로 서비스 API 구현했다. 마이크로 서비스, Open API 등에서 많이 사용된다.<br>Restful : 개발자들 사이에서 비공식적으로 가이드한 REST 구현 가이드<br>
-<br>기능에 적합한 URL Method 사용
-<br>정의된 상태 코드에 맞게 상태 전송
-<br>URL Rules(마지막에 / 포함하지 않는다, _대신 -를 사용한다, 소문자를 사용한다, 메서드는 URL에 포함하지 않는다 등)
-<br><br>DNS(Domain Name System) : 전세계 흩어진 DNS Server를 통해 도메인 이름:IP 주소 정보를 확인할 수 있다. (UDP 사용)<br><br>
-<br>웹 브라우저에 입력된 URL은 DNS 프로토콜을 사용하여 IP 주소로 변환(반대도 수행)
-<br>HTTP Request -&gt; TCP -&gt; IP -&gt; Ethernet을 전기 신호로 변환 및 전송
-<br><br>MIME(Multi-purpose Internet Mail Extensions)<br>
-: SMTP 프로토콜은 ASCII 코드만 전송할 수 있다. SMTP 본문 내용에 MIME 헤더와 함께 다양한 포멧의 데이터를 ASCII 코드로 변환해서 전송한다. <br><br>서버와 클라이언트 사이의 파일 전달을 위한 프로토콜<br>
-(21번 : 접속/제어를 위한 포트, 20번 : 전송을 위한 포트)]]></description><link>cs/프로토콜.html</link><guid isPermaLink="false">CS/프로토콜.md</guid><pubDate>Fri, 21 Feb 2025 02:56:46 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f4af.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f4af.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[CS]]></title><description><![CDATA[ 
- <br>
-<br>하나
-<br>둘
-<br>셋
-<br>넷
-<br>
-]]></description><link>cs/cs.html</link><guid isPermaLink="false">CS/CS.md</guid><pubDate>Fri, 21 Feb 2025 02:54:21 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f649.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f649.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[서버와 유저가 통신하는 법 / RESTful API]]></title><description><![CDATA[ 
+<br><a data-href="컴포넌트 설계 패턴" href="컴포넌트 설계 패턴" class="internal-link" target="_self" rel="noopener nofollow">컴포넌트 설계 패턴</a>
+<br><a data-href="디자인 시스템 사례 연구" href="디자인 시스템 사례 연구" class="internal-link" target="_self" rel="noopener nofollow">디자인 시스템 사례 연구</a>
+<br><a data-href="Atomic Design 방법론" href="Atomic Design 방법론" class="internal-link" target="_self" rel="noopener nofollow">Atomic Design 방법론</a>
+<br><a href=".?query=tag:design-system" class="tag" target="_blank" rel="noopener nofollow">#design-system</a> <a href=".?query=tag:frontend" class="tag" target="_blank" rel="noopener nofollow">#frontend</a> <a href=".?query=tag:ui-development" class="tag" target="_blank" rel="noopener nofollow">#ui-development</a>]]></description><link>📂-frontend/🎨-ui-&amp;-디자인/📝-디자인-시스템.html</link><guid isPermaLink="false">📂 FRONTEND/🎨 UI &amp; 디자인/📝 디자인 시스템.md</guid><pubDate>Sun, 23 Feb 2025 09:51:03 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/🎨-ui-&amp;-디자인/📝-ux-설계.html</link><guid isPermaLink="false">📂 FRONTEND/🎨 UI &amp; 디자인/📝 UX 설계.md</guid><pubDate>Sun, 23 Feb 2025 09:35:50 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/🎨-ui-&amp;-디자인/📝-웹-접근성.html</link><guid isPermaLink="false">📂 FRONTEND/🎨 UI &amp; 디자인/📝 웹 접근성.md</guid><pubDate>Sun, 23 Feb 2025 08:51:29 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/🎨-ui-&amp;-디자인/📝-애니메이션-&amp;-인터랙션.html</link><guid isPermaLink="false">📂 FRONTEND/🎨 UI &amp; 디자인/📝 애니메이션 &amp; 인터랙션.md</guid><pubDate>Sun, 23 Feb 2025 09:21:57 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/🎨-ui-&amp;-디자인/📝-반응형-웹.html</link><guid isPermaLink="false">📂 FRONTEND/🎨 UI &amp; 디자인/📝 반응형 웹.md</guid><pubDate>Sun, 23 Feb 2025 08:51:29 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-서버리스-&amp;-graphql.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 서버리스 &amp; GraphQL.md</guid><pubDate>Sun, 23 Feb 2025 09:22:44 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-웹-소켓-&amp;-실시간-데이터.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 웹 소켓 &amp; 실시간 데이터.md</guid><pubDate>Sun, 23 Feb 2025 09:22:49 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-테스트-자동화.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 테스트 자동화.md</guid><pubDate>Sun, 23 Feb 2025 09:22:46 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-컴포넌트-설계-패턴.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 컴포넌트 설계 패턴.md</guid><pubDate>Sun, 23 Feb 2025 09:21:57 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-웹-보안.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 웹 보안.md</guid><pubDate>Sun, 23 Feb 2025 09:23:19 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-상태-관리-패턴.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 상태 관리 패턴.md</guid><pubDate>Sun, 23 Feb 2025 09:21:57 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-네트워크-최적화.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 네트워크 최적화.md</guid><pubDate>Sun, 23 Feb 2025 09:21:57 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-next.js.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 Next.js.md</guid><pubDate>Sun, 23 Feb 2025 09:21:13 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-react.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 React.md</guid><pubDate>Sun, 23 Feb 2025 09:40:35 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 상태 관리 (Redux, Zustand).md</guid><pubDate>Sun, 23 Feb 2025 09:06:49 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-vue.js.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 Vue.js.md</guid><pubDate>Sun, 23 Feb 2025 09:06:49 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-seo-&amp;-ssr.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 SEO &amp; SSR.md</guid><pubDate>Sun, 23 Feb 2025 09:21:36 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/🛠️-웹-기초/📝-ts-+-react-활용-1.html</link><guid isPermaLink="false">📂 FRONTEND/🛠️ 웹 기초/📝 TS + React 활용 1.md</guid><pubDate>Sun, 23 Feb 2025 09:36:31 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ <br><br>블로그 목표
+✔️ 체계적인 정리 - 빠르게 찾고 학습할 수 있도록 카테고리화<br>
+✔️ 실무 중심 - 실제 프로젝트에서 마주치는 문제를 해결하는 방법 공유<br>
+✔️ 최신 기술 반영 - 변화하는 웹 기술 트렌드를 따라가며 기록
+<br>블로그 목표
+✔️ 체계적인 정리 - 빠르게 찾고 학습할 수 있도록 카테고리화<br>
+✔️ 실무 중심 - 실제 프로젝트에서 마주치는 문제를 해결하는 방법 공유<br>
+✔️ 최신 기술 반영 - 변화하는 웹 기술 트렌드를 따라가며 기록
+<br><br>
+<br>useState
+<br>useEffect
+<br>useContext
+<br><br>function Example() {
+  const [count, setCount] = useState(0);
+  // ...
+}
+]]></description><link>📂-frontend/무제.html</link><guid isPermaLink="false">📂 FRONTEND/무제.md</guid><pubDate>Sun, 23 Feb 2025 09:43:21 GMT</pubDate></item><item><title><![CDATA[서버와 유저가 통신하는 법 / RESTful API]]></title><description><![CDATA[ 
  <br><br>서버는 단순한 프로그램으로, 요청을 받아 처리하는 역할을 한다.<br>
 예를 들어,  <br>
 <br>사용자가 웹툰을 요청하면 웹툰 데이터를 전송  
@@ -350,8 +205,34 @@ Code on demand (선택적 실행 코드 지원)
 <br>서버에 요청하려면 Method + URL이 정확해야 한다.  
 <br>REST는 API 설계의 권장 원칙이며, 완벽하게 지키지 않아도 된다.  
 <br>URL은 직관적이고 명확하게 설계하는 것이 중요하다.
-<br>🚀 RESTful API를 적용할 때 위 원칙들을 참고하자!  <br>]]></description><link>frontend/restful-api.html</link><guid isPermaLink="false">FRONTEND/RESTful API.md</guid><pubDate>Fri, 21 Feb 2025 06:50:31 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f7e6.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f7e6.svg"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[2025-02-21]]></title><description><![CDATA[<a class="tag" href="?query=tag:안녕안녕안녕" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#안녕안녕안녕</a> 
- <br><a href=".?query=tag:안녕안녕안녕" class="tag" target="_blank" rel="noopener nofollow">#안녕안녕안녕</a><br>
-<br>오마이갓<br>
-하하 
-]]></description><link>2025-02-21.html</link><guid isPermaLink="false">2025-02-21.md</guid><pubDate>Fri, 21 Feb 2025 06:13:51 GMT</pubDate></item></channel></rss>
+<br>🚀 RESTful API를 적용할 때 위 원칙들을 참고하자!  <br>]]></description><link>📂-frontend/restful-api.html</link><guid isPermaLink="false">📂 FRONTEND/RESTful API.md</guid><pubDate>Sun, 23 Feb 2025 07:37:55 GMT</pubDate></item><item><title><![CDATA[2025-02-24]]></title><description><![CDATA[ 
+ ]]></description><link>📂-study-notes/til-(today-i-learned)/2025-02-24.html</link><guid isPermaLink="false">📂 Study Notes/TIL (Today I Learned)/2025-02-24.md</guid><pubDate>Sun, 23 Feb 2025 09:27:48 GMT</pubDate></item><item><title><![CDATA[성능 최적화 트러블슈팅]]></title><description><![CDATA[ 
+ ]]></description><link>📂-study-notes/성능-최적화-트러블슈팅.html</link><guid isPermaLink="false">📂 Study Notes/성능 최적화 트러블슈팅.md</guid><pubDate>Sun, 23 Feb 2025 09:25:51 GMT</pubDate></item><item><title><![CDATA[제목]]></title><description><![CDATA[ 
+ <br>
+<br>할 일 
+<br>완료된 일
+]]></description><link>📂-study-notes/vault.html</link><guid isPermaLink="false">📂 Study Notes/Vault.md</guid><pubDate>Sun, 23 Feb 2025 07:40:00 GMT</pubDate></item><item><title><![CDATA[포트폴리오]]></title><description><![CDATA[ 
+ ]]></description><link>📂-study-notes/포트폴리오.html</link><guid isPermaLink="false">📂 Study Notes/포트폴리오.md</guid><pubDate>Sun, 23 Feb 2025 09:44:00 GMT</pubDate></item><item><title><![CDATA[프론트엔드 면접 준비]]></title><description><![CDATA[ 
+ ]]></description><link>📂-study-notes/프론트엔드-면접-준비.html</link><guid isPermaLink="false">📂 Study Notes/프론트엔드 면접 준비.md</guid><pubDate>Sun, 23 Feb 2025 09:26:06 GMT</pubDate></item><item><title><![CDATA[🏠 home]]></title><description/></item><item><title><![CDATA[Home]]></title><description><![CDATA[<a class="tag" href="?query=tag:Feature" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Feature</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Feature" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Feature</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> 
+ <br><br>Github: <a data-tooltip-position="top" aria-label="https://github.com/KosmosisDire/obsidian-webpage-export" rel="noopener nofollow" class="external-link" href="https://github.com/KosmosisDire/obsidian-webpage-export" target="_blank">Webpage HTML Export</a><br>Warning
+This documentation is VERY much a work in progress. As such it is incomplete.
+<br><br><br><a href=".?query=tag:Feature" class="tag" target="_blank" rel="noopener nofollow">#Feature</a><br>See some examples of dataview in action.<br><br>This file is simply being used to demo <a class="internal-link" data-href="/features/dataview.html" href="/features/dataview.html" target="_self" rel="noopener nofollow">Dataview</a>.<br>This is a task from a second file<br>
+This one is from a different file too, but it is complete<br><br>This file is simply being used to demo <a class="internal-link" data-href="/features/dataview.html" href="/features/dataview.html" target="_self" rel="noopener nofollow">Dataview</a>.<br>This is an incomplete task<br>
+This is another incomplete task<br>
+Oh this one is complete<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>The file picker is part of the <a class="internal-link" data-href="/getting-started/4.-export-modal.html" href="/getting-started/4.-export-modal.html" target="_self" rel="noopener nofollow">export modal</a> and allows you to select which files to include in the export. You can select a whole folder (in which case that folder's children will always be exported), or individual files.<br>Folders with all files selected are shown in blue, folders with only some files selected are shown in red.<br>Warning
+Once you have selected the files you want, make sure to press the Save button!
+<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Learn all about the various configurations of the plugin<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Export to HTML <a class="internal-link" data-href="/getting-started/5.-export-modes.html" href="/getting-started/5.-export-modes.html" target="_self" rel="noopener nofollow">Export Mode</a><br>This will export a file structure suitable for uploading to your own web server. Some options are only available in certain modes.<br>The export modal is the main place where you can select which files to include in your export, and select the location to export to. It can be opened using the <a class="internal-link" data-href="/getting-started/1.-ribbon-icon.html" href="/getting-started/1.-ribbon-icon.html" target="_self" rel="noopener nofollow">ribbon icon</a>, the <a class="internal-link" data-href="/getting-started/3.-commands.html#Command_`Set_html_export_settings`" href="/getting-started/3.-commands.html#Command_`Set_html_export_settings`" target="_self" rel="noopener nofollow">export settings command</a>, or the <a class="internal-link" data-href="/getting-started/2.-context-menus.html" href="/getting-started/2.-context-menus.html" target="_self" rel="noopener nofollow">context menu</a> of a file or folder.<br>On the left is the <a class="internal-link" data-href="/getting-started/6.-file-picker.html" href="/getting-started/6.-file-picker.html" target="_self" rel="noopener nofollow">file picker</a>, on the right you can select an <a class="internal-link" data-href="/getting-started/5.-export-modes.html" href="/getting-started/5.-export-modes.html" target="_self" rel="noopener nofollow">export mode</a> and an export location. At the bottom right you can open the plugin's main <a class="internal-link" data-href="/getting-started/7.-settings.html" href="/getting-started/7.-settings.html" target="_self" rel="noopener nofollow">settings</a>.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Learn how to use the ribbon icon to initiate an export.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Learn about the 3 commands included with the plugin.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Export modes (which can be set using the <a class="internal-link" data-href="/getting-started/4.-export-modal.html" href="/getting-started/4.-export-modal.html" target="_self" rel="noopener nofollow">export modal</a>) are sort of like presets, in that each one has certain default settings. However, some options are only available in a certain export mode. In the end you should read through the purpose of each mode and select the one that works for your use case.<br>This mode is meant for people creating a digital garden who plan to upload their HTML files onto a web server. This mode enables a bunch of optimizations that make <a class="internal-link" data-href="/getting-started/7.-settings.html#Only_export_modified_files" href="/getting-started/7.-settings.html#Only_export_modified_files" target="_self" rel="noopener nofollow">Incremental Export</a> possible, and enable your page to load fast over the internet. This is the preferred mode of export if at all possible.<br>The downside is that your files get broken up into lots of different files. All the scripts, styles, fonts, etc., are stored separately. This means that these files cannot be opened locally, they must be hosted on a web server.<br>This mode is meant for people wanting to open or share their documents locally. They don't intend to host them on a web server or create a website. Rather they want a way to share their documents in a way that maintains their interactivity and rich content.<br>The downside is that the produced HTML files are much larger, and some aspects of the navigation between files is compromised. Additionally, the <a class="internal-link" data-href="/features/graph-view.html" href="/features/graph-view.html" target="_self" rel="noopener nofollow">Graph View</a> and <a class="internal-link" data-href="/features/search-bar.html" href="/features/search-bar.html" target="_self" rel="noopener nofollow">Search Bar</a> are not supported in this mode.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Get started with some actionable first steps to exporting your HTML files.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>During an export you will see a progress bar like this. It will show you what is currently being worked on during the export.<br>Warning
+This window MUST stay in the foreground. If you minimize it or leave it for another application it may pause the export.
+<br>Sometimes something will need your attention and a log will pop up with warnings or errors. Read the warning or error and determine if you need to do something to solve it. If the warning or error seems to be causing something to break, please file a report on GitHub here: <a data-tooltip-position="top" aria-label="https://github.com/KosmosisDire/obsidian-webpage-export/issues" rel="noopener nofollow" class="external-link" href="https://github.com/KosmosisDire/obsidian-webpage-export/issues" target="_blank">GitHub Issues</a><br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Learn how to use file and folder context menus to initiate an export.<br><br><a href=".?query=tag:Feature" class="tag" target="_blank" rel="noopener nofollow">#Feature</a><br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br>The Table of Contents (shown in the right sidebar) allows you to view an outline of all the headers in the currently opened document. This is not the table of contents of the whole vault (that would be the <a class="internal-link" data-href="/features/file-navigation.html" href="/features/file-navigation.html" target="_self" rel="noopener nofollow">File Navigation</a>). As a demonstration check out the outline to the right on this page.<br>You can click on the outline to skip to specific headers.<br><br>You should always start your document with an H2 if you are using the inline title. And you should only ever have a single H1 in your document.<br><br>And that's it for the outline!<br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br>The file navigation allows you to browse all the files in your exported vault. You can also filter the file view using the <a class="internal-link" data-href="/features/search-bar.html" href="/features/search-bar.html" target="_self" rel="noopener nofollow">Search Bar</a>.<br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br>The graph view is a representation of the links in your vault, same as the graph view in obsidian. It is written from scratch so there are a few differences from obsidian's version, however the behavior is almost identical.<br>Caveats:<br>
+<br>Color groupings are not supported
+<br>Only the global graph view is supported, not local graphs (yet)
+<br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br>The search bar allows you to do a full text search of the whole vault. This search respect aliases, tags, headers, and links.<br>You can also filter your searches more specifically using certain key words:<br>
+<br>tag:tagname will search for all documents with a specific tag
+<br>header:headername will search for all documents containing a specific header
+<br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br><br>The home page :)<br><br>Warning
+THE API IS STILL UNDER DEVELOPMENT!!!!<br>
+DO NOT USE IN ANY PLUGIN OR PUBLIC PROJECT!!!!!
+<br>Render a file to an html string:<br>const currentFile = app.workspace.getActiveFile();
+let html = await WebpageHTMLExport.api.renderFileToString(currentFile, {});
+// options are left empty see below for options definitions
+]]></description><link>home.html</link><guid isPermaLink="false">home.md</guid><pubDate>Fri, 21 Feb 2025 02:49:59 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f9e1.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f9e1.svg"&gt;&lt;/figure&gt;</content:encoded></item></channel></rss>

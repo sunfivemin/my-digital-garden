@@ -5444,37 +5444,3 @@ h6:hover .collapse-indicator {
 .webpage-container .is-collapsed .list-collapse-indicator svg.svg-icon {
   color: var(--collapse-icon-color-collapsed);
 }
-
-.clickable-icon.collapse-tree-button {
-  border: none;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  cursor: pointer;
-  font: inherit;
-  color: inherit;
-  outline: none;
-  text-align: inherit;
-  text-transform: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-/* 사이드바 접기 아이콘 수정 */
-.clickable-icon.sidebar-collapse-icon svg {
-  stroke: #5e81ac;
-  stroke-width: 1.2;
-}
-
-/* 전체 트리 접기 버튼 수정 */
-.clickable-icon.collapse-tree-button svg {
-  stroke: #5e81ac;
-  stroke-width: 1.2;
-}
-
-/* 아이콘에 호버 효과 추가 */
-.clickable-icon:hover svg {
-  stroke: #bf616a;
-  transform: scale(1.1);
-  transition: all 0.2s ease;
-}
