@@ -5444,3 +5444,18 @@ h6:hover .collapse-indicator {
 .webpage-container .is-collapsed .list-collapse-indicator svg.svg-icon {
   color: var(--collapse-icon-color-collapsed);
 }
+
+.clickable-icon.collapse-tree-button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  text-align: inherit;
+  text-transform: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
