@@ -1,12 +1,5 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 215 at column 242: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 23 Feb 2025 09:55:45 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 23 Feb 2025 09:55:43 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-비동기-처리.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 비동기 처리.md</guid><pubDate>Sun, 23 Feb 2025 08:43:45 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-ts-기초.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 TS 기초.md</guid><pubDate>Sun, 23 Feb 2025 09:37:04 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-ts-빌드-&amp;-설정.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 TS 빌드 &amp; 설정.md</guid><pubDate>Sun, 23 Feb 2025 09:19:44 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-ts-+-react-활용.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 TS + React 활용.md</guid><pubDate>Sun, 23 Feb 2025 09:19:47 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-모듈-시스템.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 모듈 시스템.md</guid><pubDate>Sun, 23 Feb 2025 08:43:23 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-js-기본-문법.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 JS 기본 문법.md</guid><pubDate>Sun, 23 Feb 2025 09:36:46 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-es6+-문법-정리.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 ES6+ 문법 정리.md</guid><pubDate>Sun, 23 Feb 2025 09:38:01 GMT</pubDate></item><item><title><![CDATA[디자인 시스템 (Design System)]]></title><description><![CDATA[<a class="tag" href="?query=tag:design-system" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#design-system</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:ui-development" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#ui-development</a> 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 401 at column 570: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 24 Mar 2025 07:11:44 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 24 Mar 2025 07:11:43 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[디자인 시스템 (Design System)]]></title><description><![CDATA[<a class="tag" href="?query=tag:design-system" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#design-system</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:ui-development" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#ui-development</a> 
  <br><br>블로그 목표<br>
 <br>✔️ 체계적인 정리 - 디자인 시스템의 핵심 개념과 구성요소 정리
 <br>✔️ 실무 중심 - 실제 프로젝트에 적용할 수 있는 구체적인 방법론 제시
@@ -97,23 +90,12 @@ const Button = ({ variant, size, children, ...props }: ButtonProps) =&gt; {
 <br><a data-href="디자인 시스템 사례 연구" href="디자인 시스템 사례 연구" class="internal-link" target="_self" rel="noopener nofollow">디자인 시스템 사례 연구</a>
 <br><a data-href="Atomic Design 방법론" href="Atomic Design 방법론" class="internal-link" target="_self" rel="noopener nofollow">Atomic Design 방법론</a>
 <br><a href=".?query=tag:design-system" class="tag" target="_blank" rel="noopener nofollow">#design-system</a> <a href=".?query=tag:frontend" class="tag" target="_blank" rel="noopener nofollow">#frontend</a> <a href=".?query=tag:ui-development" class="tag" target="_blank" rel="noopener nofollow">#ui-development</a>]]></description><link>📂-frontend/🎨-ui-&amp;-디자인/📝-디자인-시스템.html</link><guid isPermaLink="false">📂 FRONTEND/🎨 UI &amp; 디자인/📝 디자인 시스템.md</guid><pubDate>Sun, 23 Feb 2025 09:51:03 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/🎨-ui-&amp;-디자인/📝-ux-설계.html</link><guid isPermaLink="false">📂 FRONTEND/🎨 UI &amp; 디자인/📝 UX 설계.md</guid><pubDate>Sun, 23 Feb 2025 09:35:50 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/🎨-ui-&amp;-디자인/📝-웹-접근성.html</link><guid isPermaLink="false">📂 FRONTEND/🎨 UI &amp; 디자인/📝 웹 접근성.md</guid><pubDate>Sun, 23 Feb 2025 08:51:29 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/🎨-ui-&amp;-디자인/📝-애니메이션-&amp;-인터랙션.html</link><guid isPermaLink="false">📂 FRONTEND/🎨 UI &amp; 디자인/📝 애니메이션 &amp; 인터랙션.md</guid><pubDate>Sun, 23 Feb 2025 09:21:57 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/🎨-ui-&amp;-디자인/📝-반응형-웹.html</link><guid isPermaLink="false">📂 FRONTEND/🎨 UI &amp; 디자인/📝 반응형 웹.md</guid><pubDate>Sun, 23 Feb 2025 08:51:29 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-서버리스-&amp;-graphql.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 서버리스 &amp; GraphQL.md</guid><pubDate>Sun, 23 Feb 2025 09:22:44 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-웹-소켓-&amp;-실시간-데이터.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 웹 소켓 &amp; 실시간 데이터.md</guid><pubDate>Sun, 23 Feb 2025 09:22:49 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
  ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-테스트-자동화.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 테스트 자동화.md</guid><pubDate>Sun, 23 Feb 2025 09:22:46 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-컴포넌트-설계-패턴.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 컴포넌트 설계 패턴.md</guid><pubDate>Sun, 23 Feb 2025 09:21:57 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-웹-보안.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 웹 보안.md</guid><pubDate>Sun, 23 Feb 2025 09:23:19 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-상태-관리-패턴.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 상태 관리 패턴.md</guid><pubDate>Sun, 23 Feb 2025 09:21:57 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-네트워크-최적화.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 네트워크 최적화.md</guid><pubDate>Sun, 23 Feb 2025 09:21:57 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
  ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-next.js.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 Next.js.md</guid><pubDate>Sun, 23 Feb 2025 09:21:13 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-react.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 React.md</guid><pubDate>Sun, 23 Feb 2025 09:40:35 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
  ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 상태 관리 (Redux, Zustand).md</guid><pubDate>Sun, 23 Feb 2025 09:06:49 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
  ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-vue.js.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 Vue.js.md</guid><pubDate>Sun, 23 Feb 2025 09:06:49 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
  ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-seo-&amp;-ssr.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 SEO &amp; SSR.md</guid><pubDate>Sun, 23 Feb 2025 09:21:36 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/🛠️-웹-기초/📝-ts-+-react-활용-1.html</link><guid isPermaLink="false">📂 FRONTEND/🛠️ 웹 기초/📝 TS + React 활용 1.md</guid><pubDate>Sun, 23 Feb 2025 09:36:31 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-react.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 React.md</guid><pubDate>Sun, 23 Feb 2025 09:40:35 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
  <br><br>블로그 목표
 ✔️ 체계적인 정리 - 빠르게 찾고 학습할 수 있도록 카테고리화<br>
 ✔️ 실무 중심 - 실제 프로젝트에서 마주치는 문제를 해결하는 방법 공유<br>
@@ -130,7 +112,7 @@ const Button = ({ variant, size, children, ...props }: ButtonProps) =&gt; {
   const [count, setCount] = useState(0);
   // ...
 }
-]]></description><link>📂-frontend/무제.html</link><guid isPermaLink="false">📂 FRONTEND/무제.md</guid><pubDate>Sun, 23 Feb 2025 09:43:21 GMT</pubDate></item><item><title><![CDATA[서버와 유저가 통신하는 법 / RESTful API]]></title><description><![CDATA[ 
+]]></description><link>📂-frontend/🛠️-웹-기초/무제.html</link><guid isPermaLink="false">📂 FRONTEND/🛠️ 웹 기초/무제.md</guid><pubDate>Sun, 23 Feb 2025 09:43:21 GMT</pubDate></item><item><title><![CDATA[서버와 유저가 통신하는 법 / RESTful API]]></title><description><![CDATA[ 
  <br><br>서버는 단순한 프로그램으로, 요청을 받아 처리하는 역할을 한다.<br>
 예를 들어,  <br>
 <br>사용자가 웹툰을 요청하면 웹툰 데이터를 전송  
@@ -205,34 +187,333 @@ Code on demand (선택적 실행 코드 지원)
 <br>서버에 요청하려면 Method + URL이 정확해야 한다.  
 <br>REST는 API 설계의 권장 원칙이며, 완벽하게 지키지 않아도 된다.  
 <br>URL은 직관적이고 명확하게 설계하는 것이 중요하다.
-<br>🚀 RESTful API를 적용할 때 위 원칙들을 참고하자!  <br>]]></description><link>📂-frontend/restful-api.html</link><guid isPermaLink="false">📂 FRONTEND/RESTful API.md</guid><pubDate>Sun, 23 Feb 2025 07:37:55 GMT</pubDate></item><item><title><![CDATA[2025-02-24]]></title><description><![CDATA[ 
- ]]></description><link>📂-study-notes/til-(today-i-learned)/2025-02-24.html</link><guid isPermaLink="false">📂 Study Notes/TIL (Today I Learned)/2025-02-24.md</guid><pubDate>Sun, 23 Feb 2025 09:27:48 GMT</pubDate></item><item><title><![CDATA[성능 최적화 트러블슈팅]]></title><description><![CDATA[ 
- ]]></description><link>📂-study-notes/성능-최적화-트러블슈팅.html</link><guid isPermaLink="false">📂 Study Notes/성능 최적화 트러블슈팅.md</guid><pubDate>Sun, 23 Feb 2025 09:25:51 GMT</pubDate></item><item><title><![CDATA[제목]]></title><description><![CDATA[ 
+<br>🚀 RESTful API를 적용할 때 위 원칙들을 참고하자!  <br>]]></description><link>📂-frontend/🛠️-웹-기초/restful-api.html</link><guid isPermaLink="false">📂 FRONTEND/🛠️ 웹 기초/RESTful API.md</guid><pubDate>Sun, 23 Feb 2025 07:37:55 GMT</pubDate></item><item><title><![CDATA[2025-03-24]]></title><description><![CDATA[ 
  <br>
-<br>할 일 
-<br>완료된 일
-]]></description><link>📂-study-notes/vault.html</link><guid isPermaLink="false">📂 Study Notes/Vault.md</guid><pubDate>Sun, 23 Feb 2025 07:40:00 GMT</pubDate></item><item><title><![CDATA[포트폴리오]]></title><description><![CDATA[ 
- ]]></description><link>📂-study-notes/포트폴리오.html</link><guid isPermaLink="false">📂 Study Notes/포트폴리오.md</guid><pubDate>Sun, 23 Feb 2025 09:44:00 GMT</pubDate></item><item><title><![CDATA[프론트엔드 면접 준비]]></title><description><![CDATA[ 
- ]]></description><link>📂-study-notes/프론트엔드-면접-준비.html</link><guid isPermaLink="false">📂 Study Notes/프론트엔드 면접 준비.md</guid><pubDate>Sun, 23 Feb 2025 09:26:06 GMT</pubDate></item><item><title><![CDATA[🏠 home]]></title><description/></item><item><title><![CDATA[Home]]></title><description><![CDATA[<a class="tag" href="?query=tag:Feature" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Feature</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Tutorial" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Tutorial</a> <a class="tag" href="?query=tag:Feature" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Feature</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> <a class="tag" href="?query=tag:Component" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#Component</a> 
- <br><br>Github: <a data-tooltip-position="top" aria-label="https://github.com/KosmosisDire/obsidian-webpage-export" rel="noopener nofollow" class="external-link" href="https://github.com/KosmosisDire/obsidian-webpage-export" target="_blank">Webpage HTML Export</a><br>Warning
-This documentation is VERY much a work in progress. As such it is incomplete.
-<br><br><br><a href=".?query=tag:Feature" class="tag" target="_blank" rel="noopener nofollow">#Feature</a><br>See some examples of dataview in action.<br><br>This file is simply being used to demo <a class="internal-link" data-href="/features/dataview.html" href="/features/dataview.html" target="_self" rel="noopener nofollow">Dataview</a>.<br>This is a task from a second file<br>
-This one is from a different file too, but it is complete<br><br>This file is simply being used to demo <a class="internal-link" data-href="/features/dataview.html" href="/features/dataview.html" target="_self" rel="noopener nofollow">Dataview</a>.<br>This is an incomplete task<br>
-This is another incomplete task<br>
-Oh this one is complete<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>The file picker is part of the <a class="internal-link" data-href="/getting-started/4.-export-modal.html" href="/getting-started/4.-export-modal.html" target="_self" rel="noopener nofollow">export modal</a> and allows you to select which files to include in the export. You can select a whole folder (in which case that folder's children will always be exported), or individual files.<br>Folders with all files selected are shown in blue, folders with only some files selected are shown in red.<br>Warning
-Once you have selected the files you want, make sure to press the Save button!
-<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Learn all about the various configurations of the plugin<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Export to HTML <a class="internal-link" data-href="/getting-started/5.-export-modes.html" href="/getting-started/5.-export-modes.html" target="_self" rel="noopener nofollow">Export Mode</a><br>This will export a file structure suitable for uploading to your own web server. Some options are only available in certain modes.<br>The export modal is the main place where you can select which files to include in your export, and select the location to export to. It can be opened using the <a class="internal-link" data-href="/getting-started/1.-ribbon-icon.html" href="/getting-started/1.-ribbon-icon.html" target="_self" rel="noopener nofollow">ribbon icon</a>, the <a class="internal-link" data-href="/getting-started/3.-commands.html#Command_`Set_html_export_settings`" href="/getting-started/3.-commands.html#Command_`Set_html_export_settings`" target="_self" rel="noopener nofollow">export settings command</a>, or the <a class="internal-link" data-href="/getting-started/2.-context-menus.html" href="/getting-started/2.-context-menus.html" target="_self" rel="noopener nofollow">context menu</a> of a file or folder.<br>On the left is the <a class="internal-link" data-href="/getting-started/6.-file-picker.html" href="/getting-started/6.-file-picker.html" target="_self" rel="noopener nofollow">file picker</a>, on the right you can select an <a class="internal-link" data-href="/getting-started/5.-export-modes.html" href="/getting-started/5.-export-modes.html" target="_self" rel="noopener nofollow">export mode</a> and an export location. At the bottom right you can open the plugin's main <a class="internal-link" data-href="/getting-started/7.-settings.html" href="/getting-started/7.-settings.html" target="_self" rel="noopener nofollow">settings</a>.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Learn how to use the ribbon icon to initiate an export.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Learn about the 3 commands included with the plugin.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Export modes (which can be set using the <a class="internal-link" data-href="/getting-started/4.-export-modal.html" href="/getting-started/4.-export-modal.html" target="_self" rel="noopener nofollow">export modal</a>) are sort of like presets, in that each one has certain default settings. However, some options are only available in a certain export mode. In the end you should read through the purpose of each mode and select the one that works for your use case.<br>This mode is meant for people creating a digital garden who plan to upload their HTML files onto a web server. This mode enables a bunch of optimizations that make <a class="internal-link" data-href="/getting-started/7.-settings.html#Only_export_modified_files" href="/getting-started/7.-settings.html#Only_export_modified_files" target="_self" rel="noopener nofollow">Incremental Export</a> possible, and enable your page to load fast over the internet. This is the preferred mode of export if at all possible.<br>The downside is that your files get broken up into lots of different files. All the scripts, styles, fonts, etc., are stored separately. This means that these files cannot be opened locally, they must be hosted on a web server.<br>This mode is meant for people wanting to open or share their documents locally. They don't intend to host them on a web server or create a website. Rather they want a way to share their documents in a way that maintains their interactivity and rich content.<br>The downside is that the produced HTML files are much larger, and some aspects of the navigation between files is compromised. Additionally, the <a class="internal-link" data-href="/features/graph-view.html" href="/features/graph-view.html" target="_self" rel="noopener nofollow">Graph View</a> and <a class="internal-link" data-href="/features/search-bar.html" href="/features/search-bar.html" target="_self" rel="noopener nofollow">Search Bar</a> are not supported in this mode.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Get started with some actionable first steps to exporting your HTML files.<br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>During an export you will see a progress bar like this. It will show you what is currently being worked on during the export.<br>Warning
-This window MUST stay in the foreground. If you minimize it or leave it for another application it may pause the export.
-<br>Sometimes something will need your attention and a log will pop up with warnings or errors. Read the warning or error and determine if you need to do something to solve it. If the warning or error seems to be causing something to break, please file a report on GitHub here: <a data-tooltip-position="top" aria-label="https://github.com/KosmosisDire/obsidian-webpage-export/issues" rel="noopener nofollow" class="external-link" href="https://github.com/KosmosisDire/obsidian-webpage-export/issues" target="_blank">GitHub Issues</a><br><br><a href=".?query=tag:Tutorial" class="tag" target="_blank" rel="noopener nofollow">#Tutorial</a><br>Learn how to use file and folder context menus to initiate an export.<br><br><a href=".?query=tag:Feature" class="tag" target="_blank" rel="noopener nofollow">#Feature</a><br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br>The Table of Contents (shown in the right sidebar) allows you to view an outline of all the headers in the currently opened document. This is not the table of contents of the whole vault (that would be the <a class="internal-link" data-href="/features/file-navigation.html" href="/features/file-navigation.html" target="_self" rel="noopener nofollow">File Navigation</a>). As a demonstration check out the outline to the right on this page.<br>You can click on the outline to skip to specific headers.<br><br>You should always start your document with an H2 if you are using the inline title. And you should only ever have a single H1 in your document.<br><br>And that's it for the outline!<br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br>The file navigation allows you to browse all the files in your exported vault. You can also filter the file view using the <a class="internal-link" data-href="/features/search-bar.html" href="/features/search-bar.html" target="_self" rel="noopener nofollow">Search Bar</a>.<br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br>The graph view is a representation of the links in your vault, same as the graph view in obsidian. It is written from scratch so there are a few differences from obsidian's version, however the behavior is almost identical.<br>Caveats:<br>
-<br>Color groupings are not supported
-<br>Only the global graph view is supported, not local graphs (yet)
-<br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br>The search bar allows you to do a full text search of the whole vault. This search respect aliases, tags, headers, and links.<br>You can also filter your searches more specifically using certain key words:<br>
-<br>tag:tagname will search for all documents with a specific tag
-<br>header:headername will search for all documents containing a specific header
-<br><br><a href=".?query=tag:Component" class="tag" target="_blank" rel="noopener nofollow">#Component</a><br><br>The home page :)<br><br>Warning
-THE API IS STILL UNDER DEVELOPMENT!!!!<br>
-DO NOT USE IN ANY PLUGIN OR PUBLIC PROJECT!!!!!
-<br>Render a file to an html string:<br>const currentFile = app.workspace.getActiveFile();
-let html = await WebpageHTMLExport.api.renderFileToString(currentFile, {});
-// options are left empty see below for options definitions
-]]></description><link>home.html</link><guid isPermaLink="false">home.md</guid><pubDate>Fri, 21 Feb 2025 02:49:59 GMT</pubDate><enclosure url="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f9e1.svg" length="0" type="image/svg+xml"/><content:encoded>&lt;figure&gt;&lt;img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f9e1.svg"&gt;&lt;/figure&gt;</content:encoded></item></channel></rss>
+<br>기술 스택 강화:
+
+<br>JavaScript 심화 학습 (ES6+, 비동기 프로그래밍, Promise, async/await)
+<br>최소 하나의 프레임워크/라이브러리 마스터 (React, Vue, Angular 중 하나 - 시장에서는 React가 가장 인기)
+<br>상태 관리 도구 학습 (Redux, Context API, Vuex 등)
+<br>TypeScript 학습 (많은 기업에서 필수로 요구)
+
+
+<br>퍼블리셔 경험 활용:
+
+<br>HTML/CSS 지식을 프론트엔드 개발에 접목
+<br>UI/UX에 대한 이해를 장점으로 활용
+<br>반응형 디자인 경험 강조
+
+
+<br>포트폴리오 구축:
+
+<br>실제 작동하는 프로젝트 2-3개 개발
+<br>GitHub에 코드 공유 및 정리
+<br>퍼블리싱과 프론트엔드 개발 기술이 모두 드러나는 프로젝트 진행
+
+
+<br>추가 학습 영역:
+
+<br>API 연동 (REST, GraphQL)
+<br>테스트 작성 (Jest, React Testing Library)
+<br>성능 최적화
+<br>웹 접근성
+<br>
+
+
+<br>
+
+
+<br><br><br>
+<br>이미지 최적화
+
+<br>적절한 포맷 사용 (WebP, AVIF 등)
+<br>이미지 압축 및 적절한 크기 설정
+<br>지연 로딩(Lazy Loading) 구현
+
+
+<br>JavaScript 최적화
+
+<br>코드 분할(Code Splitting)과 지연 로딩
+<br>번들 크기 줄이기 (Tree Shaking)
+<br>불필요한 렌더링 방지 (React의 경우 useMemo, useCallback 활용)
+
+
+<br>CSS 최적화
+
+<br>사용하지 않는 CSS 제거
+<br>CSS 스플리팅
+<br>Critical CSS 분리
+
+
+<br>HTTP 요청 최적화
+
+<br>HTTP/2 활용
+<br>리소스 병합
+<br>CDN 활용
+
+
+<br><br>
+<br>렌더 트리 최적화
+
+<br>DOM 조작 최소화
+<br>CSS 선택자 최적화
+<br>애니메이션 최적화 (transform, opacity 활용)
+
+
+<br>리페인트/리플로우 최소화
+
+<br>배치 DOM 업데이트
+<br>will-change 속성 사용
+<br>requestAnimationFrame 활용
+
+
+<br>메모리 관리
+
+<br>메모리 누수 방지
+<br>이벤트 리스너 정리
+<br>대형 객체 참조 관리
+
+
+<br><br>
+<br>성능 측정 도구
+
+<br>Lighthouse
+<br>Chrome DevTools Performance 탭
+<br>Web Vitals 모니터링
+
+
+<br>주요 성능 지표
+
+<br>FCP (First Contentful Paint)
+<br>LCP (Largest Contentful Paint)
+<br>CLS (Cumulative Layout Shift)
+<br>TTI (Time to Interactive)
+
+
+<br><br><br>
+<br>인식의 용이성
+
+<br>텍스트가 아닌 콘텐츠에 대안 텍스트 제공
+<br>시간 기반 미디어에 자막과 오디오 설명 제공
+<br>콘텐츠를 다양한 방식으로 표현
+<br>사용자가 콘텐츠를 쉽게 보고 들을 수 있도록 구분
+
+
+<br>운용의 용이성
+
+<br>키보드로 모든 기능 사용 가능
+<br>콘텐츠 읽기와 사용에 충분한 시간 제공
+<br>발작 유발 요소 방지
+<br>네비게이션과 위치 찾기 용이성
+
+
+<br>이해의 용이성
+
+<br>텍스트 읽기 쉽고 이해하기 쉽게
+<br>콘텐츠 표시 및 작동 방식 예측 가능
+<br>사용자 실수 방지 및 정정 도움
+
+
+<br>견고성
+
+<br>현재 및 미래 기술과의 호환성
+
+
+<br><br>
+<br>시맨틱 HTML 사용
+
+<br>적절한 HTML5 요소 활용 (nav, article, section 등)
+<br>헤딩 레벨 (h1-h6) 올바르게 구조화
+<br>ARIA 속성 적절히 사용
+
+
+<br>폼 접근성
+
+<br>label 요소로 입력 필드 설명
+<br>오류 메시지 명확하게 표시
+<br>필수 입력 필드 표시
+<br>포커스 상태 시각적으로 구분
+
+
+<br>키보드 접근성
+
+<br>모든 상호작용 요소 키보드로 접근 가능
+<br>논리적인 탭 순서
+<br>키보드 함정(trap) 방지
+<br>단축키 제공 및 충돌 방지
+
+
+<br>색상 및 대비
+
+<br>색상만으로 정보 전달하지 않기
+<br>충분한 색상 대비 (WCAG AA 기준 4.5:1)
+<br>텍스트 크기 조절 가능
+
+
+<br>스크린 리더 지원
+
+<br>대체 텍스트 제공
+<br>콘텐츠의 논리적 순서
+<br>숨겨진 콘텐츠 적절히 처리
+<br>실시간 변경사항 알림 (ARIA live regions)
+
+
+<br><br>
+<br>자동화 도구
+
+<br>axe, WAVE, Lighthouse 등
+<br>컬러 대비 검사기
+
+
+<br>실제 사용자 테스트
+
+<br>다양한 보조 기술 사용자 테스트
+<br>키보드 전용 테스트
+<br>다양한 기기 및 브라우저 테스트
+
+
+<br>지속적인 모니터링
+
+<br>접근성 회귀 테스트
+<br>사용자 피드백 수집 및 반영
+
+
+<br><br>
+<br>서로 보완하는 관계
+
+<br>시맨틱 HTML은 접근성과 SEO 모두에 도움
+<br>최적화된 이미지는 로딩 속도를 향상시키고 대체 텍스트로 접근성 개선
+<br>간결한 JavaScript는 성능과 스크린 리더 호환성 개선
+
+
+<br>모바일 사용자 경험 향상
+
+<br>빠른 로딩 시간은 모든 사용자에게 중요
+<br>터치 타겟 크기 확대는 모터 장애가 있는 사용자와 일반 사용자 모두에게 유용
+
+
+<br>비즈니스 가치
+
+<br>더 넓은 사용자층 접근 가능
+<br>법적 요구사항 충족
+<br>검색 엔진 최적화 향상
+
+
+<br>이 내용을 바탕으로 블로그를 작성하시면 프론트엔드 개발자로서의 전문성을 보여줄 수 있는 좋은 자료가 될 것입니다. 실제 코드 예제나 프로젝트에서의 경험을 추가하시면 더욱 풍부한 콘텐츠가 될 수 있습니다.]]></description><link>📂-study-notes/til-(today-i-learned)/2025-03-24.html</link><guid isPermaLink="false">📂 Study Notes/TIL (Today I Learned)/2025-03-24.md</guid><pubDate>Sun, 02 Mar 2025 13:29:21 GMT</pubDate></item><item><title><![CDATA[🏠 home]]></title><description/></item><item><title><![CDATA[TypeScript Type Alias, Interface, Class]]></title><description><![CDATA[ 
+ <br><br><br>Type Alias는 기존 타입에 별칭(Alias) 을 부여하는 기능입니다.<br>
+객체뿐만 아니라 유니온 타입, 함수 타입, 튜플 등 다양한 타입을 정의할 때 사용됩니다.<br><br>// 기본 타입에 별칭 부여
+type UserId = number;
+type UserName = string;
+type IsActive = boolean;
+
+let userId: UserId = 12345;
+let userName: UserName = "홍길동";
+let isActive: IsActive = true;
+<br><br>// 주문 상태 타입 정의
+type OrderStatus = "pending" | "processing" | "shipped" | "delivered" | "canceled";
+
+type Order = {
+  id: number;
+  productId: number;
+  customer: string;
+  quantity: number;
+  status: OrderStatus;
+  orderDate: Date;
+};
+
+// 사용 예
+const order1: Order = {
+  id: 1001,
+  productId: 5,
+  customer: "이지은",
+  quantity: 2,
+  status: "pending",
+  orderDate: new Date(),
+};
+<br>✅ 유니온 타입을 활용하면 제한된 값만 사용할 수 있어 안전한 코드 작성이 가능!<br><br>// 함수 타입 별칭
+type Calculator = (a: number, b: number) =&gt; number;
+
+const add: Calculator = (x, y) =&gt; x + y;
+const multiply: Calculator = (x, y) =&gt; x * y;
+
+console.log(add(10, 20));  // 30
+console.log(multiply(10, 20));  // 200
+<br><br><br>읽기 전용 속성을 사용하면 객체의 불변성(immutability) 을 유지할 수 있습니다.<br>type User = {
+  readonly id: number;
+  readonly createdAt: Date;
+  name: string;
+  age: number;
+};
+
+const user: User = {
+  id: 12345,
+  createdAt: new Date(),
+  name: "홍길동",
+  age: 30,
+};
+
+// 가능: 일반 속성 수정
+user.name = "김철수";
+user.age = 31;
+
+// 에러: readonly 속성 수정 불가
+// user.id = 67890;
+// user.createdAt = new Date();
+<br>✅ 읽기 전용 속성을 활용하면 데이터를 보호할 수 있음!<br><br><br>Interface는 객체의 구조를 정의하는 용도로 사용됩니다. type alias와 유사하지만, extends를 통해 다른 인터페이스를 확장할 수 있으며, 클래스에서도 implements 키워드로 사용할 수 있습니다.<br><br>interface Car {
+  model: string;
+  price: number;
+  tax(): number;
+}
+
+const myCar: Car = {
+  model: "Tesla",
+  price: 5000,
+  tax() {
+    return this.price * 0.1;
+  },
+};
+<br><br>interface Animal {
+  name: string;
+}
+
+interface Dog extends Animal {
+  breed: string;
+}
+
+const myDog: Dog = {
+  name: "바둑이",
+  breed: "골든 리트리버",
+};
+<br>✅ **extends**를 사용하여 기존 인터페이스를 확장할 수 있음!<br><br><br><br><br><br>TypeScript에서 클래스(Class) 는 객체를 만들기 위한 설계도(템플릿) 입니다.<br>
+코드를 재사용하고, 구조화하여 효율적인 프로그래밍이 가능합니다.<br><br>class Car {
+  model: string;
+  price: number;
+
+  constructor(model: string, price: number) {
+    this.model = model;
+    this.price = price;
+  }
+
+  tax(): number {
+    return this.price * 0.1;
+  }
+}
+<br><br>class Animal {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  sound() {
+    console.log(`${this.name}이(가) 소리를 냅니다.`);
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log(`${this.name}이(가) 멍멍! 짖습니다.`);
+  }
+}
+<br>✅ 부모 클래스의 기능을 유지하면서 새로운 기능 추가 가능!<br><br><br>✔ 객체 구조를 정의할 때 → interface 사용 (확장 가능)<br>
+✔ 유니온 타입, 튜플, 함수 타입을 정의할 때 → type alias 사용<br>
+✔ 클래스를 사용할 때, 인터페이스를 활용 → interface + implements 사용<br>
+✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-ts-기초.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 TS 기초.md</guid><pubDate>Thu, 13 Mar 2025 02:05:37 GMT</pubDate></item></channel></rss>

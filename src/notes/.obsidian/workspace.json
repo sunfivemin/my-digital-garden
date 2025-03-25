@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "home.md",
-                "mode": "source",
+                "file": "📂 FRONTEND/⚡ JS & TS/📝 TS 기초.md",
+                "mode": "preview",
                 "source": true
+              },
+              "icon": "lucide-file",
+              "title": "📝 TS 기초"
+            }
+          },
+          {
+            "id": "63769d1f5b389836",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "home.md",
+                "mode": "preview",
+                "source": false
               },
               "icon": "lucide-file",
               "title": "home"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -171,34 +186,34 @@
       "obsidian-rich-links:Rich Links": false
     }
   },
-  "active": "002d08b60b0d7430",
+  "active": "63769d1f5b389836",
   "lastOpenFiles": [
-    "📂 Study Notes/프론트엔드 면접 준비.md",
-    "📂 Study Notes/포트폴리오.md",
-    "📂 Study Notes/Vault.md",
-    "📂 Study Notes/성능 최적화 트러블슈팅.md",
-    "📂 Study Notes/TIL (Today I Learned)/2025-02-24.md",
-    "📂 FRONTEND/무제.md",
-    "📂 FRONTEND/🛠️ 웹 기초/📝 TS + React 활용 1.md",
+    "📂 Study Notes/TIL (Today I Learned)/2025-03-24.md",
+    "📂 FRONTEND/🛠️ 웹 기초/무제.md",
+    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 React.md",
     "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 SEO & SSR.md",
     "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 Vue.js.md",
     "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 상태 관리 (Redux, Zustand).md",
-    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 React.md",
     "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 Next.js.md",
-    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 네트워크 최적화.md",
-    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 상태 관리 패턴.md",
-    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 웹 보안.md",
-    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 컴포넌트 설계 패턴.md",
-    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 테스트 자동화.md",
-    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 웹 소켓 & 실시간 데이터.md",
-    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 서버리스 & GraphQL.md",
-    "📂 FRONTEND/🎨 UI & 디자인/📝 반응형 웹.md",
-    "📂 FRONTEND/🎨 UI & 디자인/📝 애니메이션 & 인터랙션.md",
-    "📂 FRONTEND/🎨 UI & 디자인/📝 웹 접근성.md",
     "📂 FRONTEND/🎨 UI & 디자인/📝 디자인 시스템.md",
-    "📂 FRONTEND/⚡ JS & TS/📝 ES6+ 문법 정리.md",
-    "📂 FRONTEND/⚡ JS & TS/📝 JS 기본 문법.md",
-    "📂 FRONTEND/⚡ JS & TS/📝 모듈 시스템.md",
+    "home.md",
+    "📂 Study Notes/Vault.md",
+    "📂 Study Notes/프론트엔드 면접 준비.md",
+    "📂 Study Notes/포트폴리오.md",
+    "📂 Study Notes/성능 최적화 트러블슈팅.md",
+    "📂 FRONTEND/🛠️ 웹 기초/RESTful API.md",
+    "📂 FRONTEND/🛠️ 웹 기초/📝 TS + React 활용 1.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 테스트 자동화.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 컴포넌트 설계 패턴.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 웹 소켓 & 실시간 데이터.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 웹 보안.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 서버리스 & GraphQL.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 상태 관리 패턴.md",
+    "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 네트워크 최적화.md",
+    "📂 FRONTEND/🎨 UI & 디자인/📝 UX 설계.md",
+    "📂 FRONTEND/🎨 UI & 디자인/📝 웹 접근성.md",
+    "📂 FRONTEND/🎨 UI & 디자인/📝 애니메이션 & 인터랙션.md",
+    "📂 FRONTEND/🎨 UI & 디자인/📝 반응형 웹.md",
     "features",
     "📂 FRONTEND/🎨 UI & 디자인",
     "Study Notes/무제",
