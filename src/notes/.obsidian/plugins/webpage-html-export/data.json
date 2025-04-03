@@ -45,6 +45,8 @@
   "defaultMediaIcon": "lucide//file-image",
   "exportPath": "/Users/seonomin/Documents/my-digital-garden/public",
   "filesToExport": [
-    []
+    [
+      "all"
+    ]
   ]
 }

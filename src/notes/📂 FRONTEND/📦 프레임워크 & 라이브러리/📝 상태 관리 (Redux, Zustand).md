@@ -4,3 +4,4 @@ tags:
   - frontend
   - html
 ---
+📝 상태 관리 (Redux, Zustand)

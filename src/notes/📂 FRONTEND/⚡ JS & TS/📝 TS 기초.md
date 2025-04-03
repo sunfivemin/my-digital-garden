@@ -1,13 +1,13 @@
 ---
 title: TypeScript Type Alias, Interface, Class
 tags:
-- frontend
-- typescript
-- javascript
+  - frontend
+  - typescript
+  - javascript
+created: 2025-03-27
 ---
 
 # 🚀 TypeScript Type Alias, Interface, Class 
-
 
 
 ## 📌 Type Alias란?
