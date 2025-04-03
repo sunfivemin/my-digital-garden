@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-02 | Git 입문 #3 - 브랜치 전략과 PR 병합.md",
+                "file": "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-03-html-basic.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "✍️ 2025-04-02 | Git 입문 #3 - 브랜치 전략과 PR 병합"
+              "title": "✍️ 2025-04-03-html-basic"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-02 | Git 입문 #3 - 브랜치 전략과 PR 병합.md",
+                "file": "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-03-html-basic.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "✍️ 2025-04-02 | Git 입문 #3 - 브랜치 전략과 PR 병합 의 개요"
+              "title": "✍️ 2025-04-03-html-basic 의 개요"
             }
           }
         ],
@@ -171,13 +171,48 @@
       "obsidian-rich-links:Rich Links": false
     }
   },
+  "floating": {
+    "id": "e88a5303e2993e85",
+    "type": "floating",
+    "children": [
+      {
+        "id": "8ef919a2d088c154",
+        "type": "window",
+        "children": [
+          {
+            "id": "269619f9ee0284ce",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "cc59022267c99e79",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "새 탭"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 830,
+        "y": 915,
+        "width": 900,
+        "height": 500,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
   "active": "7f139906a5af4607",
   "lastOpenFiles": [
-    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-02 | Git 입문 #3 - 브랜치 전략과 PR 병합.md",
-    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-03 | html.md",
-    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-01 | Git 입문 #2 - GitHub 원격 연결과 브랜치 실습.md",
-    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-31 | Git 입문 #1 - init부터 commit까지.md",
-    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-28 | Git 입문 #0 - Markdown 문법과 VCS 기본 이해.md",
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-02-git-branch-strategy-pr.md",
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-01-github-remote-branch.md",
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-31-git-init-commit.md",
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-03-html-basic.md",
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-28-git-intro-markdown.md",
     "home.md",
     "merge.png",
     "동기화.png",
