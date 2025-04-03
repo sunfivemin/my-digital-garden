@@ -1,405 +1,310 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 401 at column 570: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 24 Mar 2025 07:11:44 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 24 Mar 2025 07:11:43 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[디자인 시스템 (Design System)]]></title><description><![CDATA[<a class="tag" href="?query=tag:design-system" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#design-system</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:ui-development" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#ui-development</a> 
- <br><br>블로그 목표<br>
-<br>✔️ 체계적인 정리 - 디자인 시스템의 핵심 개념과 구성요소 정리
-<br>✔️ 실무 중심 - 실제 프로젝트에 적용할 수 있는 구체적인 방법론 제시
-<br>✔️ 최신 트렌드 - 현대적인 디자인 시스템 사례와 도구 소개
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 306 at column 680: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 03 Apr 2025 06:40:19 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 03 Apr 2025 06:40:18 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[📘 2025-03-28 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>Markdown 문법 활용법과 버전 관리 시스템(VCS)의 개념 및 종류를 정리했다.
 <br><br><br>
-<br>제품의 디자인과 개발을 위한 표준화된 규칙과 원칙의 집합
-<br>일관된 사용자 경험을 제공하기 위한 체계적인 가이드라인
-<br>재사용 가능한 컴포넌트와 패턴의 라이브러리
+<br>Markdown은 간단한 문법으로 텍스트를 서식화할 수 있는 lightweight markup language다.
+<br>.md 확장자를 가진 텍스트 파일이며, GitHub, Notion, Obsidian 등 다양한 도구에서 사용된다.
 <br><br>
-<br>디자인 토큰 (색상, 타이포그래피, 간격 등)
-<br>컴포넌트 라이브러리
-<br>상호작용 패턴
-<br>문서화 가이드
-<br><br>// colors.js
-export const colors = {
-  primary: {
-    main: '#007AFF',
-    light: '#47A3FF',
-    dark: '#0055B3'
-  },
-  grey: {
-    100: '#F5F5F5',
-    200: '#EEEEEE',
-    300: '#E0E0E0'
-  }
-};
+# 제목 1
 
-// spacing.js
-export const spacing = {
-  xs: '4px',
-  sm: '8px',
-  md: '16px',
-  lg: '24px',
-  xl: '32px'
-};
-<br><br>핵심 원칙<br>
-<br>✔️ 재사용성 - 다양한 상황에서 활용 가능한 유연한 설계
-<br>✔️ 일관성 - 디자인 토큰을 기반으로 한 통일된 스타일
-<br>✔️ 접근성 - 모든 사용자를 고려한 포괄적인 설계
-<br><br>// Button.tsx
-interface ButtonProps {
-  variant: 'primary' | 'secondary' | 'ghost';
-  size: 'sm' | 'md' | 'lg';
-  children: React.ReactNode;
-  disabled?: boolean;
-}
+## 제목 2
 
-const Button = ({ variant, size, children, ...props }: ButtonProps) =&gt; {
-  return (
-    &lt;button 
-      className={`btn btn-${variant} btn-${size}`}
-      {...props}
-    &gt;
-      {children}
-    &lt;/button&gt;
-  );
-};
+### 제목 3
+
+<br><br>
+*기울임* 또는 _기울임_
+
+**굵게** 또는 __굵게__
+
+~~취소선~~
+
+<br><br>
+- 순서 없는 목록
+
+  - 하위 항목
+
+1. 순서 있는 목록
+
+2. 두 번째 항목
+
+<br><br>`인라인 코드`
+<br>// 여러 줄 코드 블럭
+console.log('Hello Markdown');
+<br>
+#### ✅ 링크와 이미지
+
+```markdown
+
+[링크 텍스트](https://example.com)
+
+![이미지 대체 텍스트](https://example.com/image.png)
+
+<br><br>
+&gt; 이것은 인용문입니다.
+
+- [x] 완료된 항목
+- [ ] 해야 할 일
+
+<br><br><br>Markdown에서는 | 기호와 - 기호를 이용해 간단하게 표를 만들 수 있다.<br><br>| 제목1 | 제목2 |
+|-------|-------|
+| 내용1 | 내용2 |
+| 내용3 | 내용4 |
+<br>🧾 출력 예시:<br><br><br><br>| 왼쪽 정렬 | 가운데 정렬 | 오른쪽 정렬 |
+|:----------|:------------:|------------:|
+| left      | center       | right       |
+| a         | b            | c           |
+<br>🧾 출력 예시:<br><br><br><br>| 할 일             | 상태     |
+|------------------|----------|
+| Markdown 정리하기 | ✅ 완료 |
+| Git 공부하기      | ⏳ 진행 중 |
+| 블로그 업로드     | ❌ 미완료 |
+<br>🧾 출력 예시:<br><br><br><br>- Python: ```python
+- JavaScript: ```javascript 또는 `js`
+- HTML: ```html
+- CSS: ```css
+- Java: ```java
+- C++: ```cpp
+- R: ```r
+- SQL: ```sql
+- YAML: ```yaml
+- JSON: ```json
+- Markdown: ```markdown
+<br><br>버전 관리 시스템(VCS)은 파일의 변경 이력을 관리하고, 협업 시 변경 사항을 추적할 수 있게 도와주는 시스템이다.  작업 내용의 백업, 변경 이력 확인, 협업 충돌 방지 등에 필수적이다.<br><br><br>
+<br>파일 변경 이력을 개인 컴퓨터에만 저장하는 방식
+<br>각 파일을 수동으로 복사해서 관리하거나, 간단한 툴을 사용
+<br>이력 관리가 로컬에만 국한됨 → 협업에 부적합
+<br>✅ 예시: RCS (Revision Control System)<br>장점: 간단하게 혼자서 버전 관리 가능  
+단점: 협업 불가, 백업/이력 손실 위험
 <br><br><br>
-<br>Atoms (기본 요소)
-
-<br>버튼, 입력필드, 텍스트
-
-
-<br>Molecules (복합 요소)
-
-<br>검색창, 카드
-
-
-<br>Organisms (섹션)
-
-<br>네비게이션, 폼
-
-
-<br>Templates (페이지 구조)
-<br>Pages (최종 화면)
-<br><br><br>기본적인 동작을 위한 버튼 컴포넌트입니다.<br><br>
-  버튼 텍스트
+<br>하나의 중앙 서버에서 버전 관리를 하고, 클라이언트들이 그 서버에서 코드를 받아 사용
+<br>변경 사항도 모두 서버로 전송됨
+<br>✅ 예시: CVS, Subversion(SVN), Perforce<br>장점: 통합된 관리, 실시간 협업 가능  
+단점: 서버 장애 시 전체 작업 불가, 인터넷 연결 필요
+<br> [ Client ] ←→ [ 중앙 서버 ] ←→ [ Client ]
+<br><br><br>
+<br>사용자가 전체 저장소(버전 이력 포함)를 로컬에 복제함
+<br>로컬에서도 커밋, 브랜치 가능하며, 필요 시 원격 저장소와 동기화
+<br>✅ 예시: Git, Mercurial<br>장점: 오프라인에서도 작업 가능, 병합 및 브랜치 기능 강력  
+단점: 초기 학습 곡선 있음, 충돌 해결 필요
+<br>[로컬 저장소] ←→ [원격 저장소] ←→ [다른 로컬 저장소]
+<br><br><br><br><br>오늘 배운 Markdown 문법을 활용해 GitHub에 나만의 자기소개용 README.md 파일을 작성했다. &nbsp;<br>
+이번 실습에서는 다음과 같은 요소를 중심으로 구성하였다:<br>
+<br>🎯 상단 배너: <a data-tooltip-position="top" aria-label="https://github.com/kyechan99/capsule-render" rel="noopener nofollow" class="external-link" href="https://github.com/kyechan99/capsule-render" target="_blank">capsule-render API</a>를 활용한 텍스트 배너 이미지 &nbsp;
+<br>🧑‍💼 자기소개: 개발자로서 나를 표현할 수 있는 간단한 소개 문장 &nbsp;
+<br>📁 포트폴리오 링크: details 태그를 이용해 접을 수 있는 형태로 구현 &nbsp;
+<br>🛠️ Tech Stack: Shields.io 뱃지를 통해 사용 기술을 시각적으로 정리 &nbsp;
+<br>🔗 Contact 정보: 이메일, 블로그 등 외부 링크를 배지 형태로 연결
+<br><br>
+<br>👉 실제 GitHub 프로필 링크: <a data-tooltip-position="top" aria-label="https://github.com/sunfivemin" rel="noopener nofollow" class="external-link" href="https://github.com/sunfivemin" target="_blank">sunfivemin</a> &nbsp;<br>
+<img alt="README 최종 화면" src="https://seonohblog.netlify.app/assets/readme.png" referrerpolicy="no-referrer">
+<br>👉 작성한 README.md는 Markdown과 HTML을 함께 활용하여 구성하였으며, GitHub에서 정상적으로 렌더링됨을 확인했다.
+<br><br>
+<br>Markdown 문법만으로도 충분히 풍부한 표현이 가능하다는 점이 흥미로웠고, 간단한 HTML을 함께 사용하면 표현 범위가 더 넓어진다는 것을 느꼈다.
+<br>Shields.io 뱃지를 활용해 기술 스택을 시각적으로 표현하는 것이 재밌었고, 포트폴리오나 블로그에도 유용하게 활용할 수 있을 것 같다.
+<br>나만의 GitHub 소개 페이지를 직접 구성해보며, 개발자로서의 브랜드를 꾸며가는 느낌이 들어 뿌듯했다.
+<br><br><br>• 새롭게 알게 된 점<br>
+그동안 Markdown을 글을 쓰기 위한 최소한의 문법으로만 인식했었는데, Obsidian과 같은 지식 관리 도구를 통해 구조적인 문서 작성과 정보 정리에 매우 유용하다는 점을 깨달았다.<br>
+특히 표, 체크리스트, 코드블럭 언어 설정 등은 TIL을 정리할 때 내용의 구조를 더 명확하게 해주고, 복습하기도 쉬워져 앞으로 꾸준히 활용할 생각이다.<br>• 어렵게 느껴졌던 부분<br>
+Markdown 문법 자체는 어렵지 않지만, 실제로 자연스럽게 문서 구조를 짜고 적절한 태그나 구문을 활용하려면 조금 익숙해지는 시간이 필요할 것 같다.<br>
+특히 코드블럭 안에서 코드블럭을 넣는 구조(백틱)나 접기 기능 등은 반복해서 써보며 손에 익혀야 할 것 같다.<br>• 다음에 학습할 주제<br>
+Git 명령어에 대한 기본 개념과 사용법을 익힐 예정이다.<br>
+git init, add, commit, push, pull 등의 기초 명령어부터 원격 저장소 연결, 브랜치 활용까지 단계적으로 정리하고 실습해볼 계획이다.<br><br>
+<br><a data-tooltip-position="top" aria-label="https://git-scm.com/doc" rel="noopener nofollow" class="external-link" href="https://git-scm.com/doc" target="_blank">Git 공식 문서</a>
+<br><a data-tooltip-position="top" aria-label="https://www.markdownguide.org/basic-syntax/" rel="noopener nofollow" class="external-link" href="https://www.markdownguide.org/basic-syntax/" target="_blank">Markdown Guide</a>
+]]></description><link>📂-study-notes/til-(today-i-learned)/✍️-2025-03-28-|-git-입문-#0-markdown-문법과-vcs-기본-이해.html</link><guid isPermaLink="false">📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-28 | Git 입문 #0 - Markdown 문법과 VCS 기본 이해.md</guid><pubDate>Thu, 03 Apr 2025 06:37:43 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/readme.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/readme.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-03-31 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>Git과 GitHub의 차이점 &nbsp;
+<br>CLI와 GUI의 개념 및 사용법 &nbsp;
+<br>Git 저장소 생성 및 커밋까지의 흐름 실습
+<br><br><br>
+<br>Git은 로컬(내 컴퓨터)에서 작동하는 버전 관리 시스템이다.<br>
+인터넷이 없어도 커밋, 브랜치, 이력 확인 등 모든 작업 가능하다.
+<br>GitHub는 Git의 저장소를 클라우드 서버에 저장하고, 원격에서 프로젝트를 백업, 버전 관리, 협업하게 해주는 플랫폼이다.
 <br><br><br><br><br>
-<br>Figma
-<br>Adobe XD
-<br>Sketch
-<br><br>
-<br>Storybook
-<br>Styled Components
-<br>Emotion
-<br><br>
-<br><a data-href="컴포넌트 설계 패턴" href="컴포넌트 설계 패턴" class="internal-link" target="_self" rel="noopener nofollow">컴포넌트 설계 패턴</a>
-<br><a data-href="디자인 시스템 사례 연구" href="디자인 시스템 사례 연구" class="internal-link" target="_self" rel="noopener nofollow">디자인 시스템 사례 연구</a>
-<br><a data-href="Atomic Design 방법론" href="Atomic Design 방법론" class="internal-link" target="_self" rel="noopener nofollow">Atomic Design 방법론</a>
-<br><a href=".?query=tag:design-system" class="tag" target="_blank" rel="noopener nofollow">#design-system</a> <a href=".?query=tag:frontend" class="tag" target="_blank" rel="noopener nofollow">#frontend</a> <a href=".?query=tag:ui-development" class="tag" target="_blank" rel="noopener nofollow">#ui-development</a>]]></description><link>📂-frontend/🎨-ui-&amp;-디자인/📝-디자인-시스템.html</link><guid isPermaLink="false">📂 FRONTEND/🎨 UI &amp; 디자인/📝 디자인 시스템.md</guid><pubDate>Sun, 23 Feb 2025 09:51:03 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-테스트-자동화.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 테스트 자동화.md</guid><pubDate>Sun, 23 Feb 2025 09:22:46 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-next.js.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 Next.js.md</guid><pubDate>Sun, 23 Feb 2025 09:21:13 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 상태 관리 (Redux, Zustand).md</guid><pubDate>Sun, 23 Feb 2025 09:06:49 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-vue.js.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 Vue.js.md</guid><pubDate>Sun, 23 Feb 2025 09:06:49 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-seo-&amp;-ssr.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 SEO &amp; SSR.md</guid><pubDate>Sun, 23 Feb 2025 09:21:36 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- ]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-react.html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 React.md</guid><pubDate>Sun, 23 Feb 2025 09:40:35 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- <br><br>블로그 목표
-✔️ 체계적인 정리 - 빠르게 찾고 학습할 수 있도록 카테고리화<br>
-✔️ 실무 중심 - 실제 프로젝트에서 마주치는 문제를 해결하는 방법 공유<br>
-✔️ 최신 기술 반영 - 변화하는 웹 기술 트렌드를 따라가며 기록
-<br>블로그 목표
-✔️ 체계적인 정리 - 빠르게 찾고 학습할 수 있도록 카테고리화<br>
-✔️ 실무 중심 - 실제 프로젝트에서 마주치는 문제를 해결하는 방법 공유<br>
-✔️ 최신 기술 반영 - 변화하는 웹 기술 트렌드를 따라가며 기록
-<br><br>
-<br>useState
-<br>useEffect
-<br>useContext
-<br><br>function Example() {
-  const [count, setCount] = useState(0);
-  // ...
-}
-]]></description><link>📂-frontend/🛠️-웹-기초/무제.html</link><guid isPermaLink="false">📂 FRONTEND/🛠️ 웹 기초/무제.md</guid><pubDate>Sun, 23 Feb 2025 09:43:21 GMT</pubDate></item><item><title><![CDATA[서버와 유저가 통신하는 법 / RESTful API]]></title><description><![CDATA[ 
- <br><br>서버는 단순한 프로그램으로, 요청을 받아 처리하는 역할을 한다.<br>
-예를 들어,  <br>
-<br>사용자가 웹툰을 요청하면 웹툰 데이터를 전송  
-<br>DB 데이터를 요청하면 해당 데이터를 반환  
-<br>반대로 데이터를 저장해달라고 하면 저장  
-<br>즉, 서버는 사용자의 요청을 정확한 방식으로 전달받아야 원하는 데이터를 반환할 수 있다.<br>
-마음대로 요청하면 서버는 데이터를 주지 않는다.<br><br>서버에게 데이터를 요청하려면 두 가지 요소를 정확히 입력해야 한다.  <br>
-<br>Method (어떤 작업을 수행할지)  
-<br>URL (어떤 데이터를 요청할지)  
-<br><br>
-<br>GET → 데이터를 요청할 때  
-<br>POST → 데이터를 서버에 전송할 때  
-<br>PUT / UPDATE → 기존 데이터를 수정할 때  
-<br>DELETE → 데이터를 삭제할 때  
-<br>
-📌 URL도 정확하게 작성해야 한다. 이를 엔드포인트(Endpoint) 라고 부른다.<br>
-정확한 method와 URL을 사용해야 서버가 요청을 정상적으로 처리한다.
-<br><br><br>REST(Representational State Transfer)는 좋은 API를 설계하는 원칙을 정의한 개념이다.<br>
-RESTful API는 이 원칙을 따르는 API를 의미하며, 다음과 같은 특징을 가진다.<br><br>
-<br>
-Uniform Interface (일관성 있는 인터페이스)  
+<br>CLI: 커맨드 라인 인터페이스 — 터미널에서 명령어로 조작
+<br>GUI: 그래픽 유저 인터페이스 — 마우스나 버튼으로 조작 (예: GitHub Desktop, VS Code Git 패널)
+<br><br><br>CLI로 Git 저장소를 생성하고, 파일을 Git이 추적하게 만든 뒤 커밋하는 과정까지 정리해본다.  <br><br># 파일 생성
+touch 파일이름.확장자
 
-<br>하나의 URL은 하나의 데이터만 다뤄야 한다.  
-<br>URL과 Method는 일관성 있고 예측 가능해야 한다.  
+# 폴더 생성
+mkdir 폴더명
 
+# 리스트 보기 (숨김 파일 포함)
+ls -a
 
-<br>
-Client-Server 역할 분리  
+# 특정 폴더로 이동
+cd 폴더명
 
-<br>클라이언트(사용자)와 서버의 역할을 명확히 구분해야 한다.  
-<br>서버의 DB를 직접 조작하지 않도록 설계해야 한다.  
+# 이전(상위) 폴더로 이동
+cd ..
 
+# Git 저장소 초기화 (.git 폴더 생성)
+git init
 
-<br>
-Stateless (무상태성)  
+# 현재 Git 상태 확인
+git status
 
-<br>각 요청은 독립적이어야 하며, 이전 요청의 정보를 유지하지 않아야 한다.  
-<br>즉, 서버는 클라이언트의 상태를 저장하지 않는다.  
+# 파일을 Git 추적 대상으로 추가 (Staging)
+git add 파일명
 
+# 모든 변경된 파일을 한번에 add
+git add .
 
-<br>
-Cacheable (캐싱 가능성)  
+# 변경된 내용을 커밋 (버전으로 저장)
+git commit -m "커밋 메시지"
 
-<br>서버의 응답 데이터는 캐싱이 가능해야 한다.  
-<br>자주 요청되는 데이터는 브라우저나 CDN에서 캐싱할 수 있도록 설정해야 한다.  
+# 커밋 이력 보기
+git log
 
-
-<br>
-Layered System (계층 구조)  
-
-<br>API 서버는 보안, 로드밸런싱 등을 위해 여러 개의 계층을 가질 수 있다.  
-
-
-<br>
-Code on demand (선택적 실행 코드 지원)  
-
-<br>필요할 경우 서버는 클라이언트에게 실행 가능한 코드를 제공할 수도 있다.  
-
-
-<br>
-🎯 REST 원칙을 완벽하게 따르는 서버는 거의 없으며, 권장사항으로 참고하는 개념이다.<br>
-대부분은 Method와 URL을 명확하게 구성하는 것만으로도 RESTful API라고 부른다.
-<br><br><br>RESTful API를 만들 때 URL을 보기 쉽게 설계하는 것이 중요하다.<br>✔ URL은 동사가 아니라 명사로 구성<br>
-✔ 언더바 _ 대신 대시 - 사용<br>
-✔ 파일 확장자 (.html 등) 제거<br>
-✔ 하위 경로는 / 기호로 구분<br><br>
-<br>✅ facebook.com/bbc/photos<br>
-→ BBC 뉴스 계정의 사진첩  
-<br>✅ instagram.com/explore/tags/food<br>
-→ #food 태그가 포함된 게시물  
-<br>위처럼 URL만 봐도 어떤 데이터가 반환될지 이해할 수 있도록 설계하는 것이 RESTful API의 핵심이다.<br><br>📌 정리하면...<br>
-<br>서버에 요청하려면 Method + URL이 정확해야 한다.  
-<br>REST는 API 설계의 권장 원칙이며, 완벽하게 지키지 않아도 된다.  
-<br>URL은 직관적이고 명확하게 설계하는 것이 중요하다.
-<br>🚀 RESTful API를 적용할 때 위 원칙들을 참고하자!  <br>]]></description><link>📂-frontend/🛠️-웹-기초/restful-api.html</link><guid isPermaLink="false">📂 FRONTEND/🛠️ 웹 기초/RESTful API.md</guid><pubDate>Sun, 23 Feb 2025 07:37:55 GMT</pubDate></item><item><title><![CDATA[2025-03-24]]></title><description><![CDATA[ 
- <br>
-<br>기술 스택 강화:
-
-<br>JavaScript 심화 학습 (ES6+, 비동기 프로그래밍, Promise, async/await)
-<br>최소 하나의 프레임워크/라이브러리 마스터 (React, Vue, Angular 중 하나 - 시장에서는 React가 가장 인기)
-<br>상태 관리 도구 학습 (Redux, Context API, Vuex 등)
-<br>TypeScript 학습 (많은 기업에서 필수로 요구)
-
-
-<br>퍼블리셔 경험 활용:
-
-<br>HTML/CSS 지식을 프론트엔드 개발에 접목
-<br>UI/UX에 대한 이해를 장점으로 활용
-<br>반응형 디자인 경험 강조
-
-
-<br>포트폴리오 구축:
-
-<br>실제 작동하는 프로젝트 2-3개 개발
-<br>GitHub에 코드 공유 및 정리
-<br>퍼블리싱과 프론트엔드 개발 기술이 모두 드러나는 프로젝트 진행
-
-
-<br>추가 학습 영역:
-
-<br>API 연동 (REST, GraphQL)
-<br>테스트 작성 (Jest, React Testing Library)
-<br>성능 최적화
-<br>웹 접근성
-<br>
-
-
-<br>
-
-
+<br><br><br>touch test.txt           # 파일 생성
+git init                 # Git 저장소 초기화
+git status               # 상태 확인 → untracked file
+git add test.txt         # Git 추적 시작
+git commit -m "Add file" # 커밋
+<br><br><br>git status
+<br>📌 출력 결과<br>
+fatal: not a git repository (or any of the parent directories): .git<br>🔍 원인<br>
+Git은 .git이라는 숨김 폴더가 있어야 그 디렉토리를 Git 저장소로 인식한다.<br>
+아직 git init을 하지 않았기 때문에 Git은 이 폴더를 추적할 수 없다.<br><br><br>git init
+<br>📌 출력 결과<br>
+Initialized empty Git repository in /Users/사용자명/GITTEST/.git/<br>🧠 설명<br>
+• 현재 폴더에 .git이라는 숨김 폴더가 생성된다.<br>
+• 이 폴더에는 프로젝트의 변경 이력, 설정, 브랜치 정보 등이 저장된다.<br>
+• 이 폴더가 존재함으로써 Git은 해당 폴더를 로컬 Git 저장소로 인식하게 된다.<br>
+• git status, git add, git commit 등의 명령어를 사용할 수 있다.<br><br><br>touch test.txt
+git status
+<br>📌 출력 결과<br>
+Untracked files:<br>
+(use "git add &lt;file&gt;..." to include in what will be committed)<br>
+test.txt<br>🔍설명<br>
+test.txt 파일은 존재하지만 Git이 아직 추적하고 있지 않은 상태(Untracked)이다.<br><br><br>git add test.txt
+git status
+<br>📌 출력 결과<br>
+Changes to be committed:<br>
+(use "git rm --cached &lt;file&gt;..." to unstage)<br>
+new file:   test.txt<br>🔍설명<br>
+test.txt는 이제 Git이 추적 중이며, 커밋을 할 수 있는 상태(Staged)가 된다.<br><br><br>git commit -m "Add test.txt file"
+<br>🧠 설명<br>
+커밋은 현재 변경된 파일 상태를 Git 저장소에 하나의 버전으로 기록하는 작업이다.<br>
+추후 git log 명령어로 이 기록을 조회할 수 있다.<br><br><br>
+<br>👉 &nbsp;Git CLI로 로컬 저장소를 초기화하고 파일을 생성한 뒤, git add, git commit을 통해 변경사항을 커밋까지 완료했다.
+<br><img alt="README 최종 화면" src="https://seonohblog.netlify.app/assets/git1.png" referrerpolicy="no-referrer"><br><br>
+<br>CLI보다 GUI가 익숙했지만, 직접 명령어를 사용해보니 Git의 작동 구조가 더 잘 이해됐다. 
+<br>git status → git add → git commit의 흐름이 명확해졌고, Untracked → Staged → Committed 과정을 직접 체감할 수 있었다.
+<br>Git History 확장 기능은 처음엔 복잡하게 느껴졌지만, 커밋 메시지를 클릭하면 상세 diff 를 확인할 수 있어 유용했다.
+<br><br><br>• 새롭게 알게 된 점<br>
+→ Git 저장소가 되려면 .git 폴더가 반드시 있어야 하며, git init은 그 폴더를 만드는 시작 명령이라는 걸 처음으로 체감했다.<br>
+→ 커밋은 단순 저장이 아니라 “버전 기록”의 핵심이라는 것도 이해하게 됐다.<br>• 어렵게 느껴졌던 부분<br>
+→ Git History 확장 기능은 처음엔 어떤 정보를 중점적으로 봐야 할지 몰랐지만, &nbsp;<br>
+커밋 메시지 클릭 시 변경된 파일 목록과 diff(변경 내용) 를 한눈에 확인할 수 있다는 점이 특히 유용했다. &nbsp;<br>
+또한, 브랜치 간의 흐름을 시각적으로 표현해줘서 복잡한 이력 구조를 파악할 때 CLI보다 훨씬 직관적이었다. &nbsp;<br>
+커밋별로 어떤 파일이 변경되었는지, 누가 언제 작업했는지를 빠르게 확인할 수 있어 팀 프로젝트나 협업 상황에서도 실용성이 높다는 걸 느꼈다.<br>• 다음에 학습할 주제<br>
+→ GitHub 원격 저장소 연결 (git remote add, git push) &nbsp;<br>
+→ GitHub 저장소 클론하기 (git clone) &nbsp;<br>
+→ 원격 저장소 동기화 (git pull, 충돌 해결법) &nbsp;<br>
+→ 브랜치 생성과 병합 (git branch, git merge) &nbsp;<br>
+→ CLI + GUI를 병행한 실전 프로젝트 관리<br><br>
+<br><a data-tooltip-position="top" aria-label="https://git-scm.com/docs" rel="noopener nofollow" class="external-link" href="https://git-scm.com/docs" target="_blank">Git CLI 명령어 정리</a>
+<br><a data-tooltip-position="top" aria-label="https://code.visualstudio.com/docs/sourcecontrol/overview" rel="noopener nofollow" class="external-link" href="https://code.visualstudio.com/docs/sourcecontrol/overview" target="_blank">VS Code Git 확장 기능</a>
+]]></description><link>📂-study-notes/til-(today-i-learned)/✍️-2025-03-31-|-git-입문-#1-init부터-commit까지.html</link><guid isPermaLink="false">📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-31 | Git 입문 #1 - init부터 commit까지.md</guid><pubDate>Wed, 02 Apr 2025 07:23:35 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/git1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/git1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-01 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>GitHub에서 레포지토리를 새로 만들고, 로컬 프로젝트를 원격 저장소와 연결하는 전체 과정 실습
+<br>터미널에서 git push -u origin main으로 처음 푸시할 때 upstream 설정이 되는 원리 파악
+<br>다른 환경에서 git clone으로 프로젝트를 복제한 뒤, pull을 통해 변경 사항을 동기화하는 흐름까지 실습
+<br>branch, switch, checkout의 차이와 용도별 사용법 구분
 <br><br><br>
-<br>이미지 최적화
-
-<br>적절한 포맷 사용 (WebP, AVIF 등)
-<br>이미지 압축 및 적절한 크기 설정
-<br>지연 로딩(Lazy Loading) 구현
-
-
-<br>JavaScript 최적화
-
-<br>코드 분할(Code Splitting)과 지연 로딩
-<br>번들 크기 줄이기 (Tree Shaking)
-<br>불필요한 렌더링 방지 (React의 경우 useMemo, useCallback 활용)
-
-
-<br>CSS 최적화
-
-<br>사용하지 않는 CSS 제거
-<br>CSS 스플리팅
-<br>Critical CSS 분리
-
-
-<br>HTTP 요청 최적화
-
-<br>HTTP/2 활용
-<br>리소스 병합
-<br>CDN 활용
-
-
+<br>GitHub 에 가입 후, 복잡한 GUI 및 CLI를 통해 프로젝트 개발 및 환경을 관리할 수 있다.
+<br>GitHub 홈페이지 &nbsp;→ New Repository
+<br>이름, 설명, Public/Private 설정 후 Create
+<br><br># 로컬 저장소에 연결된 원격 저장소(remote) 목록을 보여줌.
+git remote -v 
+<br>**✅ 연결 전 : 원격 저장소가 아직 연결되지 않았기 때문에 아무것도 뜨지 않음.<br>
+이 상태에서는 git push, git pull 명령어를 사용할 수 없다.<br>origin  https://github.com/sunfivemin/GitTest.git (fetch)
+origin  https://github.com/sunfivemin/GitTest.git (push)
+<br>**✅ 연결 후 : URL을 기준으로 양방향 연결 완료<br>
+• origin : remote(원격저장소) 기본 별칭 (보통 origin, 별칭 변경 가능)<br>
+• (fetch) : GitHub에서 로컬로 받아오기 가능<br>
+• (push) : 로컬에서 GitHub로 보내기 가능<br><br><br><br>🧭 remote 연결 명령어<br># GitHub 저장소 URL을 얻어서 origin으로 연결
+git remote add origin https://github.com/sunfivemin/GitTest.git
+<br>🧠 설명:<br>
+• origin이라는 이름으로 이 GitHub 저장소 주소를 remote로 등록하겠다는 뜻<br>
+• 이후부터는 origin이라는 이름으로 간단히 원격 작업 가능<br><br>🧭 첫 업로드 시 git push -u origin main<br># 첫 통신일 경우 -u 옵션으로 upstream branch 설정
+$ git push -u origin main
+<br>🧠 구성 요소:<br>
+• push: 로컬 → 원격 저장소로 업로드<br>
+• -u: upstream 설정 (다음부터는 git push만 입력해도 main 브랜치로 연결됨)<br>
+• origin: 원격 저장소 이름<br>
+• main: 로컬의 현재 브랜치 이름<br>🎯 즉, 이 명령은 “내 로컬 main 브랜치를 GitHub의 origin 저장소에 업로드하겠다”는 뜻이고<br>
+처음 연결 시엔 -u 옵션으로 기본 푸시 대상(upstream) 도 설정함.<br>✅ 요약 흐름<br>
+<br>git remote -v → remote 연결 상태 확인
+<br>remote 없으면: git remote add origin [URL]으로 연결
+<br>최초 업로드 시: git push -u origin main → GitHub에 업로드 + 브랜치 연결
+<br>그 다음부터는: git push, git pull로 편하게 동기화
 <br><br>
-<br>렌더 트리 최적화
+<br>👉 &nbsp;GitHub에서 레포지토리를 생성한 후, 로컬 저장소와 원격 저장소를 연결하고 git push 명령어로 성공적으로 동기화하였다.<br>
+<img alt="저장소생성" src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png" referrerpolicy="no-referrer">
+<br><img alt="깃허브에로컬업로드" src="https://seonohblog.netlify.app/assets/%EA%B9%83%ED%97%88%EB%B8%8C%EC%97%90%EB%A1%9C%EC%BB%AC%EC%97%85%EB%A1%9C%EB%93%9C.png" referrerpolicy="no-referrer"><br><img alt="저장소생성완료" src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1%EC%99%84%EB%A3%8C.png" referrerpolicy="no-referrer"><br><br><br><br>• git clone은 GitHub에 있는 원격 저장소 전체를 로컬로 복제하는 명령어다.<br>
+• 이 명령을 실행하면 저장소 이름과 동일한 폴더가 자동 생성되며, 내부에 Git이 인식할 수 있는 .git 폴더도 포함된다.<br>
+• 이후 해당 폴더 안에서 git status, git pull, git push 등을 사용할 수 있다.<br>git clone https://github.com/사용자이름/저장소이름.git
+cd 저장소이름
+git status  # 현재 상태 확인
+<br><br>❗️주의! pull이 안 될 때도 있다<br>
+clone은 정상적으로 됐는데, 다음과 같이 Git 명령어가 안 먹힐 수도 있다.<br>
+<img alt="pull오류" src="https://seonohblog.netlify.app/assets/pull%EC%98%A4%EB%A5%98.png" referrerpolicy="no-referrer"><br>⚠️ **fatal: not a git repository 에러<br>fatal: refusing to merge unrelated histories
+<br>• clone한 폴더 바깥에서 Git 명령어를 실행했기 때문이다.<br>
+• .git 폴더가 존재하지 않는 디렉토리에서는 Git이 “여긴 저장소가 아니야”라고 판단한다.<br>📌 • .git 폴더가 있는 폴더만 Git 저장소로 인식된다.<br>📁 현재 디렉토리/
+└── 📁 저장소이름/      ← clone으로 자동 생성된 폴더
+    ├── .git/          ← Git이 이 폴더를 저장소로 인식
+    └── 코드/파일들
+<br>✅ 해결 방법<br>cd 저장소이름   # .git 폴더가 있는 디렉토리로 이동
+git pull        # 정상 작동
+git remote -v   # 원격 저장소 확인 가능
+<br><img alt="gui에서clone" src="https://seonohblog.netlify.app/assets/gui%EC%97%90%EC%84%9Cclone.png" referrerpolicy="no-referrer"><br>➜  중요한 포인트: 복제한 건 어디서 열든 그대로다.<br>
+• git clone을 하면, 저장소 전체가 로컬에 복제되고 .git 폴더와 파일들이 포함된 폴더가 생성된다.<br>
+• 이 폴더 안에 Git 관련 이력, 설정, 브랜치 정보가 모두 담겨 있으므로, 어떤 방식으로 열든 (CLI, VS Code, GitHub Desktop) 결과는 동일하다.<br>
+• clone만 제대로 했다면, 어디서 열든 복제된 프로젝트는 그대로 살아 있다.<br>
+• 실수로 다른 폴더를 열었거나 Git 명령어가 안 됐다고 당황하지 말고,<br>
+.git 폴더가 있는 위치로만 잘 들어가면 언제든 다시 이어서 작업할 수 있다.<br><br><br>
+<br>브랜치는 프로젝트의 독립적인 작업 공간 (예: 로그인 기능, 회원가입 기능 개발용)
+<br>여러 개발자가 동시에 다른 기능을 개발할 수 있도록 도와주고, 협업이 쉬워진다.
+<br>git branch                # 현재 브랜치 목록 확인
+git branch dev            # 현재 브랜치를 기준으로 dev 브랜치 생성 (이동은 안 됨)
 
-<br>DOM 조작 최소화
-<br>CSS 선택자 최적화
-<br>애니메이션 최적화 (transform, opacity 활용)
+git checkout dev          # dev 브랜치로 이동 (기존 방식)
+git checkout -b dev       # dev 브랜치 생성 + 이동 (기존 방식)
 
-
-<br>리페인트/리플로우 최소화
-
-<br>배치 DOM 업데이트
-<br>will-change 속성 사용
-<br>requestAnimationFrame 활용
-
-
-<br>메모리 관리
-
-<br>메모리 누수 방지
-<br>이벤트 리스너 정리
-<br>대형 객체 참조 관리
-
-
+git switch dev            # dev 브랜치로 이동 (권장 방식)
+git switch -c dev         # dev 브랜치 생성 + 이동 (권장 방식)
+<br> 💡 헷갈리지 말기!<br>
+<br>git branch<br>
+→ 현재 저장소에 존재하는 모든 브랜치 목록을 출력<br>
+→ * 표시된 브랜치가 현재 HEAD가 가리키고 있는 브랜치 (즉, 내가 작업 중인 브랜치)
+<br>git branch dev<br>
+→ 현재 브랜치를 기준으로 dev라는 브랜치를 생성만 함<br>
+→ 자동으로 이동하지 않음
+<br>git checkout dev 또는 git switch dev<br>
+→ 이미 존재하는 dev 브랜치로 이동만 함
+<br>git checkout -b dev 또는 git switch -c dev<br>
+→ 브랜치를 새로 만들고 곧바로 이동하는 명령어 
 <br><br>
-<br>성능 측정 도구
-
-<br>Lighthouse
-<br>Chrome DevTools Performance 탭
-<br>Web Vitals 모니터링
-
-
-<br>주요 성능 지표
-
-<br>FCP (First Contentful Paint)
-<br>LCP (Largest Contentful Paint)
-<br>CLS (Cumulative Layout Shift)
-<br>TTI (Time to Interactive)
-
-
-<br><br><br>
-<br>인식의 용이성
-
-<br>텍스트가 아닌 콘텐츠에 대안 텍스트 제공
-<br>시간 기반 미디어에 자막과 오디오 설명 제공
-<br>콘텐츠를 다양한 방식으로 표현
-<br>사용자가 콘텐츠를 쉽게 보고 들을 수 있도록 구분
-
-
-<br>운용의 용이성
-
-<br>키보드로 모든 기능 사용 가능
-<br>콘텐츠 읽기와 사용에 충분한 시간 제공
-<br>발작 유발 요소 방지
-<br>네비게이션과 위치 찾기 용이성
-
-
-<br>이해의 용이성
-
-<br>텍스트 읽기 쉽고 이해하기 쉽게
-<br>콘텐츠 표시 및 작동 방식 예측 가능
-<br>사용자 실수 방지 및 정정 도움
-
-
-<br>견고성
-
-<br>현재 및 미래 기술과의 호환성
-
-
-<br><br>
-<br>시맨틱 HTML 사용
-
-<br>적절한 HTML5 요소 활용 (nav, article, section 등)
-<br>헤딩 레벨 (h1-h6) 올바르게 구조화
-<br>ARIA 속성 적절히 사용
-
-
-<br>폼 접근성
-
-<br>label 요소로 입력 필드 설명
-<br>오류 메시지 명확하게 표시
-<br>필수 입력 필드 표시
-<br>포커스 상태 시각적으로 구분
-
-
-<br>키보드 접근성
-
-<br>모든 상호작용 요소 키보드로 접근 가능
-<br>논리적인 탭 순서
-<br>키보드 함정(trap) 방지
-<br>단축키 제공 및 충돌 방지
-
-
-<br>색상 및 대비
-
-<br>색상만으로 정보 전달하지 않기
-<br>충분한 색상 대비 (WCAG AA 기준 4.5:1)
-<br>텍스트 크기 조절 가능
-
-
-<br>스크린 리더 지원
-
-<br>대체 텍스트 제공
-<br>콘텐츠의 논리적 순서
-<br>숨겨진 콘텐츠 적절히 처리
-<br>실시간 변경사항 알림 (ARIA live regions)
-
-
-<br><br>
-<br>자동화 도구
-
-<br>axe, WAVE, Lighthouse 등
-<br>컬러 대비 검사기
-
-
-<br>실제 사용자 테스트
-
-<br>다양한 보조 기술 사용자 테스트
-<br>키보드 전용 테스트
-<br>다양한 기기 및 브라우저 테스트
-
-
-<br>지속적인 모니터링
-
-<br>접근성 회귀 테스트
-<br>사용자 피드백 수집 및 반영
-
-
-<br><br>
-<br>서로 보완하는 관계
-
-<br>시맨틱 HTML은 접근성과 SEO 모두에 도움
-<br>최적화된 이미지는 로딩 속도를 향상시키고 대체 텍스트로 접근성 개선
-<br>간결한 JavaScript는 성능과 스크린 리더 호환성 개선
-
-
-<br>모바일 사용자 경험 향상
-
-<br>빠른 로딩 시간은 모든 사용자에게 중요
-<br>터치 타겟 크기 확대는 모터 장애가 있는 사용자와 일반 사용자 모두에게 유용
-
-
-<br>비즈니스 가치
-
-<br>더 넓은 사용자층 접근 가능
-<br>법적 요구사항 충족
-<br>검색 엔진 최적화 향상
-
-
-<br>이 내용을 바탕으로 블로그를 작성하시면 프론트엔드 개발자로서의 전문성을 보여줄 수 있는 좋은 자료가 될 것입니다. 실제 코드 예제나 프로젝트에서의 경험을 추가하시면 더욱 풍부한 콘텐츠가 될 수 있습니다.]]></description><link>📂-study-notes/til-(today-i-learned)/2025-03-24.html</link><guid isPermaLink="false">📂 Study Notes/TIL (Today I Learned)/2025-03-24.md</guid><pubDate>Sun, 02 Mar 2025 13:29:21 GMT</pubDate></item><item><title><![CDATA[🏠 home]]></title><description/></item><item><title><![CDATA[TypeScript Type Alias, Interface, Class]]></title><description><![CDATA[ 
+<br>처음에는 브랜치 생성과 이동이 헷갈렸지만, git branch, git switch 명령어를 직접 써보니 명확해졌다.
+<br>명령어를 단순히 외우는 것보다, 실제로 파일을 수정하고 commit 후 브랜치를 이동하며 실습하니 훨씬 기억에 잘 남는다.
+<br>checkout보다 switch가 실수 방지에도 좋고 직관적이라는 점도 체감할 수 있었고, 앞으로는 습관적으로 switch를 사용할 것 같다.
+<br><br><br>• 새롭게 알게 된 점<br>
+→ 브랜치를 그냥 ‘다른 작업 공간’ 정도로만 생각했었는데, 실제로 실습하면서 협업이나 기능 분리에 왜 필요한지를 체감할 수 있었다. &nbsp;<br>
+→ HEAD가 브랜치를 따라 이동하는 가상 포인터라는 개념도 흥미로웠고, log를 보며 흐름을 눈으로 확인하니 이해가 쉬웠다. &nbsp;<br>
+→ 또, git checkout -으로 이전 브랜치로 바로 돌아가는 게 꽤 유용하다는 것도 이번에 처음 알았다.<br>• 어렵게 느껴졌던 부분<br>
+→ 처음엔 checkout, switch, branch 개념이 비슷해서 헷갈렸는데, 직접 여러 번 실습하고 상태를 log/status로 확인하면서 확실히 감을 잡게 되었다. &nbsp;<br>
+→ 앞으로는 브랜치 이동 시 switch를 습관처럼 쓰고, 항상 현재 브랜치와 작업 상태를 status, log로 체크하는 습관을 들일 예정이다.<br>• 다음에 학습할 주제<br>
+→ 브랜치 이름 규칙과 테스트<br>
+→ 브랜치 전략 (예: Git Flow, Feature Branch 등)<br>
+→ Pull Request &amp; Merge<br>
+→ Merge된 GitHub 브랜치를 로컬 Git에 동기화하는 법<br>
+→ 충돌 발생 시 해결하는 방법 (merge conflict resolution)<br><br>
+<br><a data-tooltip-position="top" aria-label="https://git-scm.com/book/ko/v2" rel="noopener nofollow" class="external-link" href="https://git-scm.com/book/ko/v2" target="_blank">Pro Git Book (한국어 번역)</a>
+<br><a data-tooltip-position="top" aria-label="https://docs.github.com/en/get-started/quickstart/github-flow" rel="noopener nofollow" class="external-link" href="https://docs.github.com/en/get-started/quickstart/github-flow" target="_blank">GitHub Docs – Branches</a>
+]]></description><link>📂-study-notes/til-(today-i-learned)/✍️-2025-04-01-|-git-입문-#2-github-원격-연결과-브랜치-실습.html</link><guid isPermaLink="false">📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-01 | Git 입문 #2 - GitHub 원격 연결과 브랜치 실습.md</guid><pubDate>Wed, 02 Apr 2025 08:17:13 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-02 TIL]]></title><description/></item><item><title><![CDATA[TypeScript Type Alias, Interface, Class]]></title><description><![CDATA[ 
  <br><br><br>Type Alias는 기존 타입에 별칭(Alias) 을 부여하는 기능입니다.<br>
 객체뿐만 아니라 유니온 타입, 함수 타입, 튜플 등 다양한 타입을 정의할 때 사용됩니다.<br><br>// 기본 타입에 별칭 부여
 type UserId = number;
@@ -516,4 +421,136 @@ class Dog extends Animal {
 <br>✅ 부모 클래스의 기능을 유지하면서 새로운 기능 추가 가능!<br><br><br>✔ 객체 구조를 정의할 때 → interface 사용 (확장 가능)<br>
 ✔ 유니온 타입, 튜플, 함수 타입을 정의할 때 → type alias 사용<br>
 ✔ 클래스를 사용할 때, 인터페이스를 활용 → interface + implements 사용<br>
-✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-ts-기초.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 TS 기초.md</guid><pubDate>Thu, 13 Mar 2025 02:05:37 GMT</pubDate></item></channel></rss>
+✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>📂-frontend/⚡-js-&amp;-ts/📝-ts-기초.html</link><guid isPermaLink="false">📂 FRONTEND/⚡ JS &amp; TS/📝 TS 기초.md</guid><pubDate>Fri, 28 Mar 2025 07:46:26 GMT</pubDate></item><item><title><![CDATA[디자인 시스템 (Design System)]]></title><description><![CDATA[<a class="tag" href="?query=tag:design-system" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#design-system</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:ui-development" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#ui-development</a> 
+ <br><br><br><br>
+<br>제품의 디자인과 개발을 위한 표준화된 규칙과 원칙의 집합
+<br>일관된 사용자 경험을 제공하기 위한 체계적인 가이드라인
+<br>재사용 가능한 컴포넌트와 패턴의 라이브러리
+<br><br>
+<br>디자인 토큰 (색상, 타이포그래피, 간격 등)
+<br>컴포넌트 라이브러리
+<br>상호작용 패턴
+<br>문서화 가이드
+<br><br>// colors.js
+export const colors = {
+  primary: {
+    main: '#007AFF',
+    light: '#47A3FF',
+    dark: '#0055B3'
+  },
+  grey: {
+    100: '#F5F5F5',
+    200: '#EEEEEE',
+    300: '#E0E0E0'
+  }
+};
+
+// spacing.js
+export const spacing = {
+  xs: '4px',
+  sm: '8px',
+  md: '16px',
+  lg: '24px',
+  xl: '32px'
+};
+<br><br>핵심 원칙<br>
+<br>✔️ 재사용성 - 다양한 상황에서 활용 가능한 유연한 설계
+<br>✔️ 일관성 - 디자인 토큰을 기반으로 한 통일된 스타일
+<br>✔️ 접근성 - 모든 사용자를 고려한 포괄적인 설계
+<br><br>// Button.tsx
+interface ButtonProps {
+  variant: 'primary' | 'secondary' | 'ghost';
+  size: 'sm' | 'md' | 'lg';
+  children: React.ReactNode;
+  disabled?: boolean;
+}
+
+const Button = ({ variant, size, children, ...props }: ButtonProps) =&gt; {
+  return (
+    &lt;button 
+      className={`btn btn-${variant} btn-${size}`}
+      {...props}
+    &gt;
+      {children}
+    &lt;/button&gt;
+  );
+};
+<br><br><br>
+<br>Atoms (기본 요소)
+
+<br>버튼, 입력필드, 텍스트
+
+
+<br>Molecules (복합 요소)
+
+<br>검색창, 카드
+
+
+<br>Organisms (섹션)
+
+<br>네비게이션, 폼
+
+
+<br>Templates (페이지 구조)
+<br>Pages (최종 화면)
+<br><br><br>기본적인 동작을 위한 버튼 컴포넌트입니다.<br><br>
+  버튼 텍스트
+<br><br><br><br><br>
+<br>Figma
+<br>Adobe XD
+<br>Sketch
+<br><br>
+<br>Storybook
+<br>Styled Components
+<br>Emotion
+<br><br>
+<br><a data-href="컴포넌트 설계 패턴" href="컴포넌트 설계 패턴" class="internal-link" target="_self" rel="noopener nofollow">컴포넌트 설계 패턴</a>
+<br><a data-href="디자인 시스템 사례 연구" href="디자인 시스템 사례 연구" class="internal-link" target="_self" rel="noopener nofollow">디자인 시스템 사례 연구</a>
+<br><a data-href="Atomic Design 방법론" href="Atomic Design 방법론" class="internal-link" target="_self" rel="noopener nofollow">Atomic Design 방법론</a>
+<br><a href=".?query=tag:design-system" class="tag" target="_blank" rel="noopener nofollow">#design-system</a> <a href=".?query=tag:frontend" class="tag" target="_blank" rel="noopener nofollow">#frontend</a> <a href=".?query=tag:ui-development" class="tag" target="_blank" rel="noopener nofollow">#ui-development</a>]]></description><link>📂-frontend/🎨-ui-&amp;-디자인/📝-디자인-시스템.html</link><guid isPermaLink="false">📂 FRONTEND/🎨 UI &amp; 디자인/📝 디자인 시스템.md</guid><pubDate>Fri, 28 Mar 2025 13:18:02 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ <br>📝 테스트 자동화]]></description><link>📂-frontend/🏗️-아키텍처-&amp;-최적화/📝-테스트-자동화.html</link><guid isPermaLink="false">📂 FRONTEND/🏗️ 아키텍처 &amp; 최적화/📝 테스트 자동화.md</guid><pubDate>Fri, 28 Mar 2025 13:17:57 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ <br>📝 상태 관리 (Redux, Zustand)]]></description><link>📂-frontend/📦-프레임워크-&amp;-라이브러리/📝-상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">📂 FRONTEND/📦 프레임워크 &amp; 라이브러리/📝 상태 관리 (Redux, Zustand).md</guid><pubDate>Fri, 28 Mar 2025 13:17:54 GMT</pubDate></item><item><title><![CDATA[🏠 home]]></title><description><![CDATA[<a class="tag" href="?query=tag:home" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#home</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:devlog" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#devlog</a> <a class="tag" href="?query=tag:growth" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#growth</a> 
+ <br><br>안녕하세요! 저는 프론트엔드 개발자 민선오입니다.<br>
+이 공간은 제가 공부하고 경험한 내용을 기록하고, 나중의 나와 누군가에게 도움이 되길 바라는 마음으로 운영되고 있어요.<br>
+💡 이 블로그는 단순한 기록을 넘어,<br>
+실제 프로젝트에서 겪은 문제 해결 과정,<br>
+새롭게 배운 기술,<br>
+프론트엔드 개발자로 성장해가는 여정을 담고 있습니다.
+<br><br><br>블로그 목표
+✔️ 내가 이해한 대로 쓰자 – 남의 말이 아니라, 내 언어로 정리하기<br>
+✔️ 지속적인 성장 기록 – 작게라도 매일/매주 무언가를 기록하기<br>
+✔️ 실무에 바로 써먹을 수 있도록 – 복붙이 가능한 코드, 실제 해결한 문제 위주
+<br><br><br><br>
+<br><a data-tooltip-position="top" aria-label="HTML_CSS" data-href="HTML_CSS" href="HTML_CSS" class="internal-link" target="_self" rel="noopener nofollow">HTML &amp; CSS</a>
+<br><a data-href="JavaScript" href="JavaScript" class="internal-link" target="_self" rel="noopener nofollow">JavaScript</a>
+<br><a data-href="TypeScript" href="TypeScript" class="internal-link" target="_self" rel="noopener nofollow">TypeScript</a>
+<br><br>
+<br><a data-href="React" href="React" class="internal-link" target="_self" rel="noopener nofollow">React</a>
+<br><a data-href="Next.js" href="Next.js" class="internal-link" target="_self" rel="noopener nofollow">Next.js</a>
+<br><a data-href="Vue" href="Vue" class="internal-link" target="_self" rel="noopener nofollow">Vue</a>
+<br><br>
+<br><a data-href="디자인 시스템" href="디자인 시스템" class="internal-link" target="_self" rel="noopener nofollow">디자인 시스템</a>
+<br><a data-href="컴포넌트 구조" href="컴포넌트 구조" class="internal-link" target="_self" rel="noopener nofollow">컴포넌트 구조</a>
+<br><a data-href="웹 접근성" href="웹 접근성" class="internal-link" target="_self" rel="noopener nofollow">웹 접근성</a>
+<br><br>
+<br><a data-href="브라우저 동작 원리" href="브라우저 동작 원리" class="internal-link" target="_self" rel="noopener nofollow">브라우저 동작 원리</a>
+<br><a data-href="성능 최적화" href="성능 최적화" class="internal-link" target="_self" rel="noopener nofollow">성능 최적화</a>
+<br><a data-href="보안" href="보안" class="internal-link" target="_self" rel="noopener nofollow">보안</a>
+<br><a data-href="테스팅" href="테스팅" class="internal-link" target="_self" rel="noopener nofollow">테스팅</a>
+<br><br>
+<br><a data-tooltip-position="top" aria-label="TIL" data-href="TIL" href="TIL" class="internal-link" target="_self" rel="noopener nofollow">Today I Learned</a>
+<br><a data-href="회고록" href="회고록" class="internal-link" target="_self" rel="noopener nofollow">회고록</a>
+<br><a data-href="문제 해결 모음" href="문제 해결 모음" class="internal-link" target="_self" rel="noopener nofollow">문제 해결 모음</a>
+<br><br><br>시작하기 좋은 글
+✔️ <a data-href="📝 TS 기초" href="📂-frontend/⚡-js-&amp;-ts/📝-ts-기초.html" class="internal-link" target="_self" rel="noopener nofollow">📝 TS 기초</a>
+<br><br><br>
+<br>2025-03-28: <a data-href="✍️ 2025-03-28" href="📂-study-notes/til-(today-i-learned)/✍️-2025-03-28.html" class="internal-link" target="_self" rel="noopener nofollow">✍️ 2025-03-28</a>
+<br>2025-03-27: <a data-href="📝 TS 기초" href="📂-frontend/⚡-js-&amp;-ts/📝-ts-기초.html" class="internal-link" target="_self" rel="noopener nofollow">📝 TS 기초</a>
+<br><br><br>
+틀려도 괜찮아요.<br>
+기록하고, 돌아보고, 고치고, 또 나아가는 것이 개발자의 길이니까요.
+<br><br><br>
+<br>GitHub: <a data-tooltip-position="top" aria-label="https://github.com/sunfivemin" rel="noopener nofollow" class="external-link" href="https://github.com/sunfivemin" target="_blank">@sunfivemin</a>
+<br>Blog: <a data-tooltip-position="top" aria-label="https://seonohblog.netlify.app/" rel="noopener nofollow" class="external-link" href="https://seonohblog.netlify.app/" target="_blank">sunfivemin 블로그</a>
+<br>Email: <a data-tooltip-position="top" aria-label="mailto:sunfivemin@gmail.com" rel="noopener nofollow" class="external-link" href="mailto:sunfivemin@gmail.com" target="_blank">sunfivemin@gmail.com</a>
+<br><br><a href=".?query=tag:home" class="tag" target="_blank" rel="noopener nofollow">#home</a> <a href=".?query=tag:frontend" class="tag" target="_blank" rel="noopener nofollow">#frontend</a> <a href=".?query=tag:devlog" class="tag" target="_blank" rel="noopener nofollow">#devlog</a> <a href=".?query=tag:growth" class="tag" target="_blank" rel="noopener nofollow">#growth</a>]]></description><link>home.html</link><guid isPermaLink="false">home.md</guid><pubDate>Fri, 28 Mar 2025 13:34:37 GMT</pubDate></item></channel></rss>

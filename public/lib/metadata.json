@@ -1,6 +1,6 @@
 {
   "vaultName": "blog",
-  "lastExport": 1742800303783,
+  "lastExport": 1743662418161,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon codeblock-customizer codeblock-customizer-show-line-numbers codeblock-customizer-gutter-highlight codeblock-customizer-gutter-active-line codeblock-customizer-collapseIconNone theme-default line-style-solid blockquote-normal callout-normal tag-default link-default increased-line-height responsive-tile-height codeblock-customizer-active-line-highlight",
   "useCustomHeadContent": true,
@@ -9,14 +9,11 @@
     "📂 FRONTEND/⚡ JS & TS/📝 TS 기초.md",
     "📂 FRONTEND/🎨 UI & 디자인/📝 디자인 시스템.md",
     "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 테스트 자동화.md",
-    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 Next.js.md",
     "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 상태 관리 (Redux, Zustand).md",
-    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 Vue.js.md",
-    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 SEO & SSR.md",
-    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 React.md",
-    "📂 FRONTEND/🛠️ 웹 기초/무제.md",
-    "📂 FRONTEND/🛠️ 웹 기초/RESTful API.md",
-    "📂 Study Notes/TIL (Today I Learned)/2025-03-24.md",
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-28 | Git 입문 #0 - Markdown 문법과 VCS 기본 이해.md",
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-31 | Git 입문 #1 - init부터 commit까지.md",
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-01 | Git 입문 #2 - GitHub 원격 연결과 브랜치 실습.md",
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-02 | Git 입문 #3 - 브랜치 전략과 PR 병합.md",
     "home.md",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
@@ -77,97 +74,97 @@
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/6155340132a851f6089e.svg": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 315,
       "exportedPath": "lib/media/6155340132a851f6089e.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1742800303783,
-      "sourceSize": 9878,
+      "modifiedTime": 1743662418161,
+      "sourceSize": 8550,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
@@ -203,7 +200,7 @@
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
@@ -221,19 +218,19 @@
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 137466,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 262,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
@@ -245,99 +242,81 @@
       "dependencies": []
     },
     "lib/html/custom-head-content.html": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 785,
       "exportedPath": "lib/html/custom-head-content.html",
       "dependencies": []
     },
     "lib/styles/other-plugins.css": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 65993,
       "exportedPath": "lib/styles/other-plugins.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 76856,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/snippets.css": {
-      "modifiedTime": 1742800303783,
+      "modifiedTime": 1743662418161,
       "sourceSize": 575,
       "exportedPath": "lib/styles/snippets.css",
       "dependencies": []
     },
     "📂 FRONTEND/⚡ JS & TS/📝 TS 기초.md": {
-      "modifiedTime": 1742799267024,
-      "sourceSize": 4822,
+      "modifiedTime": 1743581749795,
+      "sourceSize": 4847,
       "exportedPath": "📂-frontend/⚡-js-&-ts/📝-ts-기초.html",
       "dependencies": []
     },
     "📂 FRONTEND/🎨 UI & 디자인/📝 디자인 시스템.md": {
-      "modifiedTime": 1742800303783,
-      "sourceSize": 3120,
+      "modifiedTime": 1743581749795,
+      "sourceSize": 2815,
       "exportedPath": "📂-frontend/🎨-ui-&-디자인/📝-디자인-시스템.html",
       "dependencies": []
     },
     "📂 FRONTEND/🏗️ 아키텍처 & 최적화/📝 테스트 자동화.md": {
-      "modifiedTime": 1742800303783,
-      "sourceSize": 57,
+      "modifiedTime": 1743581749795,
+      "sourceSize": 81,
       "exportedPath": "📂-frontend/🏗️-아키텍처-&-최적화/📝-테스트-자동화.html",
       "dependencies": []
     },
-    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 Next.js.md": {
-      "modifiedTime": 1742800303783,
-      "sourceSize": 57,
-      "exportedPath": "📂-frontend/📦-프레임워크-&-라이브러리/📝-next.js.html",
-      "dependencies": []
-    },
     "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 상태 관리 (Redux, Zustand).md": {
-      "modifiedTime": 1742800303783,
-      "sourceSize": 57,
+      "modifiedTime": 1743581749795,
+      "sourceSize": 92,
       "exportedPath": "📂-frontend/📦-프레임워크-&-라이브러리/📝-상태-관리-(redux,-zustand).html",
       "dependencies": []
     },
-    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 Vue.js.md": {
-      "modifiedTime": 1742800303783,
-      "sourceSize": 57,
-      "exportedPath": "📂-frontend/📦-프레임워크-&-라이브러리/📝-vue.js.html",
-      "dependencies": []
-    },
-    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 SEO & SSR.md": {
-      "modifiedTime": 1742800303783,
-      "sourceSize": 57,
-      "exportedPath": "📂-frontend/📦-프레임워크-&-라이브러리/📝-seo-&-ssr.html",
-      "dependencies": []
-    },
-    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 React.md": {
-      "modifiedTime": 1742800303783,
-      "sourceSize": 57,
-      "exportedPath": "📂-frontend/📦-프레임워크-&-라이브러리/📝-react.html",
-      "dependencies": []
-    },
-    "📂 FRONTEND/🛠️ 웹 기초/무제.md": {
-      "modifiedTime": 1742800303783,
-      "sourceSize": 889,
-      "exportedPath": "📂-frontend/🛠️-웹-기초/무제.html",
-      "dependencies": []
-    },
-    "📂 FRONTEND/🛠️ 웹 기초/RESTful API.md": {
-      "modifiedTime": 1742800303783,
-      "sourceSize": 3852,
-      "exportedPath": "📂-frontend/🛠️-웹-기초/restful-api.html",
-      "dependencies": []
-    },
-    "📂 Study Notes/TIL (Today I Learned)/2025-03-24.md": {
-      "modifiedTime": 1742800303783,
-      "sourceSize": 5468,
-      "exportedPath": "📂-study-notes/til-(today-i-learned)/2025-03-24.html",
-      "dependencies": []
-    },
     "home.md": {
-      "modifiedTime": 1742800303783,
-      "sourceSize": 2221,
+      "modifiedTime": 1743581749795,
+      "sourceSize": 2002,
       "exportedPath": "home.html",
+      "dependencies": []
+    },
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-28 | Git 입문 #0 - Markdown 문법과 VCS 기본 이해.md": {
+      "modifiedTime": 1743662418161,
+      "sourceSize": 8278,
+      "exportedPath": "📂-study-notes/til-(today-i-learned)/✍️-2025-03-28-|-git-입문-#0-markdown-문법과-vcs-기본-이해.html",
+      "dependencies": []
+    },
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-31 | Git 입문 #1 - init부터 commit까지.md": {
+      "modifiedTime": 1743662418161,
+      "sourceSize": 6829,
+      "exportedPath": "📂-study-notes/til-(today-i-learned)/✍️-2025-03-31-|-git-입문-#1-init부터-commit까지.html",
+      "dependencies": []
+    },
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-01 | Git 입문 #2 - GitHub 원격 연결과 브랜치 실습.md": {
+      "modifiedTime": 1743662418161,
+      "sourceSize": 9485,
+      "exportedPath": "📂-study-notes/til-(today-i-learned)/✍️-2025-04-01-|-git-입문-#2-github-원격-연결과-브랜치-실습.html",
+      "dependencies": []
+    },
+    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-02 | Git 입문 #3 - 브랜치 전략과 PR 병합.md": {
+      "modifiedTime": 1743662418161,
+      "sourceSize": 10485,
+      "exportedPath": "📂-study-notes/til-(today-i-learned)/✍️-2025-04-02-|-git-입문-#3-브랜치-전략과-pr-병합.html",
       "dependencies": []
     }
   }
