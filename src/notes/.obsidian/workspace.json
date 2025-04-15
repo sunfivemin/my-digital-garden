@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TIL/✍️ 2025-04-15_Express.md",
+                "file": "1.개념 정리/Node/Node.js 기본 생태계.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "✍️ 2025-04-15_Express"
+              "title": "Node.js 기본 생태계"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TIL/✍️ 2025-04-15_Express.md",
+                "file": "1.개념 정리/Node/Node.js 기본 생태계.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "✍️ 2025-04-15_Express 의 개요"
+              "title": "Node.js 기본 생태계 의 개요"
             }
           }
         ],
@@ -173,35 +173,35 @@
   },
   "active": "5795712902473ce4",
   "lastOpenFiles": [
-    "개념 정리/📂 Node/📄  Node.js 기본 생태계.md",
-    "개념 정리/📂 JS & TS/📄 TS 기초.md",
-    "TIL/✍️ 2025-04-15_Express.md",
+    "1.개념 정리/프레임워크 & 라이브러리/상태 관리 (Redux, Zustand).md",
     "home.md",
-    "TIL/✍️ 2025-04-11_Module.md",
-    "TIL/✍️ 2025-04-08_DBMS.md",
-    "TIL/✍️ 2025-04-07_Node.md",
-    "TIL/✍️ 2025-04-04_JavaScript.md",
-    "TIL/✍️ 2025-04-03_Web.md",
-    "TIL/✍️ 2025-04-02_Branch.md",
-    "TIL/✍️ 2025-04-01_GitHub.md",
-    "TIL/✍️ 2025-03-31_Git.md",
-    "TIL/✍️ 2025-03-28_Markdown.md",
-    "Error Fixes/📁 Node.js/📄 error.md",
-    "Error Fixes/📁 Git/📄 git error.md",
-    "Dev Log/📁 Express & Node/📄  공연 예매 사이트.md",
-    "개념 정리/📂 프레임워크 & 라이브러리/📄 상태 관리 (Redux, Zustand).md",
+    "4.TIL/2025-04-15_Express.md",
+    "4.TIL/2025-04-11_Module.md",
+    "4.TIL/2025-04-08_DBMS.md",
+    "4.TIL/2025-04-07_Node.md",
+    "4.TIL/2025-04-04_JavaScript.md",
+    "4.TIL/2025-04-03_Web.md",
+    "4.TIL/2025-04-02_Branch.md",
+    "4.TIL/2025-04-01_GitHub.md",
+    "4.TIL/2025-03-31_Git.md",
+    "4.TIL/2025-03-28_Markdown.md",
+    "3.Error Fixes/Node.js/error.md",
+    "3.Error Fixes/Git/git error.md",
+    "2.Dev Log/Express & Node/공연 예매 사이트.md",
+    "1.개념 정리/Node/Node.js 기본 생태계.md",
+    "1.개념 정리/JS & TS/TS 기초.md",
+    "4.TIL/2025-04-10_API.md",
     "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-02-git-branch-strategy-pr.md",
-    "개념 정리/📂 프레임워크 & 라이브러리",
-    "개념 정리/📂 Node",
-    "개념 정리/📂 JS & TS",
-    "개념 정리",
-    "TIL/✍️ 2025-04-10_API.md",
-    "TIL",
-    "Error Fixes/📁 Node.js",
-    "Error Fixes/📁 Git",
-    "Error Fixes",
-    "Dev Log/📁 Express & Node",
-    "Dev Log",
+    "1.개념 정리/프레임워크 & 라이브러리",
+    "1.개념 정리/Node",
+    "1.개념 정리/JS & TS",
+    "1.개념 정리",
+    "4.TIL",
+    "3.Error Fixes/Node.js",
+    "3.Error Fixes/Git",
+    "3.Error Fixes",
+    "2.Dev Log/Express & Node",
+    "2.Dev Log",
     "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-03-html-basic.md",
     "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-31-git-init-commit.md",
     "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-01-github-remote-branch.md",

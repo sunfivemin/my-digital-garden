@@ -1,6 +1,6 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 479 at column 566: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 15 Apr 2025 15:02:59 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 15 Apr 2025 15:02:53 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- <br>Redux, Zustand]]></description><link>1.개념-정리/📂-프레임워크-&amp;-라이브러리/📄-상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/📂 프레임워크 &amp; 라이브러리/📄 상태 관리 (Redux, Zustand).md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[TypeScript Type Alias, Interface, Class]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 479 at column 562: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 15 Apr 2025 14:49:39 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 15 Apr 2025 14:49:33 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ <br>Redux, Zustand]]></description><link>📚개념-정리/📂-프레임워크-&amp;-라이브러리/📄-상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">📚개념 정리/📂 프레임워크 &amp; 라이브러리/📄 상태 관리 (Redux, Zustand).md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[TypeScript Type Alias, Interface, Class]]></title><description><![CDATA[ 
  <br><br><br>Type Alias는 기존 타입에 별칭(Alias) 을 부여하는 기능입니다.<br>
 객체뿐만 아니라 유니온 타입, 함수 타입, 튜플 등 다양한 타입을 정의할 때 사용됩니다.<br><br>// 기본 타입에 별칭 부여
 type UserId = number;
@@ -117,7 +117,7 @@ class Dog extends Animal {
 <br>✅ 부모 클래스의 기능을 유지하면서 새로운 기능 추가 가능!<br><br><br>✔ 객체 구조를 정의할 때 → interface 사용 (확장 가능)<br>
 ✔ 유니온 타입, 튜플, 함수 타입을 정의할 때 → type alias 사용<br>
 ✔ 클래스를 사용할 때, 인터페이스를 활용 → interface + implements 사용<br>
-✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>1.개념-정리/📂-js-&amp;-ts/📄-ts-기초.html</link><guid isPermaLink="false">1.개념 정리/📂 JS &amp; TS/📄 TS 기초.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>📚개념-정리/📂-js-&amp;-ts/📄-ts-기초.html</link><guid isPermaLink="false">📚개념 정리/📂 JS &amp; TS/📄 TS 기초.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
  <br><br>
 Node.js는 백엔드 개발을 자바스크립트로 할 수 있게 해주는 런타임이며,<br>
 실제 개발에서는 패키지 매니저(NPM), 의존성 관리, 스크립트 실행 등 다양한 생태계 도구와 함께 사용된다.
@@ -157,7 +157,7 @@ npx cowsay "Hello Node.js!"      # CLI 유틸 실행
 <br>npm run dev처럼 scripts에 등록한 명령어를 단축 실행 가능
 <br>dependencies는 운영 시 사용, devDependencies는 개발 환경에서만 사용
 <br>실제 배포 시엔 --production 옵션으로 devDependencies 제외 가능
-]]></description><link>1.개념-정리/📂-node/📄-node.js-기본-생태계.html</link><guid isPermaLink="false">1.개념 정리/📂 Node/📄  Node.js 기본 생태계.md</guid><pubDate>Tue, 15 Apr 2025 14:50:49 GMT</pubDate></item><item><title><![CDATA[📄  공연 예매 사이트]]></title><description><![CDATA[ 
+]]></description><link>📚개념-정리/📂-node/📄-node.js-기본-생태계.html</link><guid isPermaLink="false">📚개념 정리/📂 Node/📄  Node.js 기본 생태계.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[📄  공연 예매 사이트]]></title><description><![CDATA[ 
  <br>ERD 설계 및 테이블 생성 과제였던 공연 예매 사이트를 express와 node를 이용해 구현해보았다.<br>Git &amp; GitHub<br>
 Database &amp; SQL(ERD 설계 및 테이블 생성)<br>
 Express &amp; Node (기본 서버, Routing)<br>DB → API → 프론트 연결<br>
@@ -170,9 +170,9 @@ Express &amp; Node (기본 서버, Routing)<br>DB → API → 프론트 연결<b
 ✅ show<br>
 ✅ poster<br>
 ✅ order<br>
-✅ order_detail]]></description><link>2.dev-log/📁-express-&amp;-node/📄-공연-예매-사이트.html</link><guid isPermaLink="false">2.Dev Log/📁 Express &amp; Node/📄  공연 예매 사이트.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- <br>error]]></description><link>3.error-fixes/📁-git/📄-git-error.html</link><guid isPermaLink="false">3.Error Fixes/📁 Git/📄 git error.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- <br>error]]></description><link>3.error-fixes/📁-node.js/📄-error.html</link><guid isPermaLink="false">3.Error Fixes/📁 Node.js/📄 error.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[📘 2025-03-28 TIL]]></title><description><![CDATA[ 
+✅ order_detail]]></description><link>dev-log/📁-express-&amp;-node/📄-공연-예매-사이트.html</link><guid isPermaLink="false">Dev Log/📁 Express &amp; Node/📄  공연 예매 사이트.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ <br>error]]></description><link>error-fixes/📁-git/📄-git-error.html</link><guid isPermaLink="false">Error Fixes/📁 Git/📄 git error.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
+ <br>error]]></description><link>error-fixes/📁-node.js/📄-error.html</link><guid isPermaLink="false">Error Fixes/📁 Node.js/📄 error.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[📘 2025-03-28 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>Markdown 문법 활용법과 버전 관리 시스템(VCS)의 개념 및 종류를 정리했다.
 <br><br><br>
@@ -285,7 +285,7 @@ Git 명령어에 대한 기본 개념과 사용법을 익힐 예정이다.<br>
 git init, add, commit, push, pull 등의 기초 명령어부터 원격 저장소 연결, 브랜치 활용까지 단계적으로 정리하고 실습해볼 계획이다.<br><br>
 <br><a data-tooltip-position="top" aria-label="https://git-scm.com/doc" rel="noopener nofollow" class="external-link" href="https://git-scm.com/doc" target="_blank">Git 공식 문서</a>
 <br><a data-tooltip-position="top" aria-label="https://www.markdownguide.org/basic-syntax/" rel="noopener nofollow" class="external-link" href="https://www.markdownguide.org/basic-syntax/" target="_blank">Markdown Guide</a>
-]]></description><link>4.til/✍️-2025-03-28_markdown.html</link><guid isPermaLink="false">4.TIL/✍️ 2025-03-28_Markdown.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/readme.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/readme.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-03-31 TIL]]></title><description><![CDATA[ 
+]]></description><link>til/✍️-2025-03-28_markdown.html</link><guid isPermaLink="false">TIL/✍️ 2025-03-28_Markdown.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/readme.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/readme.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-03-31 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>Git과 GitHub의 차이점 &nbsp;
 <br>CLI와 GUI의 개념 및 사용법 &nbsp;
@@ -380,7 +380,7 @@ test.txt는 이제 Git이 추적 중이며, 커밋을 할 수 있는 상태(Stag
 → CLI + GUI를 병행한 실전 프로젝트 관리<br><br>
 <br><a data-tooltip-position="top" aria-label="https://git-scm.com/docs" rel="noopener nofollow" class="external-link" href="https://git-scm.com/docs" target="_blank">Git CLI 명령어 정리</a>
 <br><a data-tooltip-position="top" aria-label="https://code.visualstudio.com/docs/sourcecontrol/overview" rel="noopener nofollow" class="external-link" href="https://code.visualstudio.com/docs/sourcecontrol/overview" target="_blank">VS Code Git 확장 기능</a>
-]]></description><link>4.til/✍️-2025-03-31_git.html</link><guid isPermaLink="false">4.TIL/✍️ 2025-03-31_Git.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/git1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/git1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-01 TIL]]></title><description><![CDATA[ 
+]]></description><link>til/✍️-2025-03-31_git.html</link><guid isPermaLink="false">TIL/✍️ 2025-03-31_Git.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/git1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/git1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-01 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>GitHub에서 레포지토리를 새로 만들고, 로컬 프로젝트를 원격 저장소와 연결하는 전체 과정 실습
 <br>터미널에서 git push -u origin main으로 처음 푸시할 때 upstream 설정이 되는 원리 파악
@@ -477,165 +477,7 @@ git switch -c dev         # dev 브랜치 생성 + 이동 (권장 방식)
 → 충돌 발생 시 해결하는 방법 (merge conflict resolution)<br><br>
 <br><a data-tooltip-position="top" aria-label="https://git-scm.com/book/ko/v2" rel="noopener nofollow" class="external-link" href="https://git-scm.com/book/ko/v2" target="_blank">Pro Git Book (한국어 번역)</a>
 <br><a data-tooltip-position="top" aria-label="https://docs.github.com/en/get-started/quickstart/github-flow" rel="noopener nofollow" class="external-link" href="https://docs.github.com/en/get-started/quickstart/github-flow" target="_blank">GitHub Docs – Branches</a>
-]]></description><link>4.til/✍️-2025-04-01_github.html</link><guid isPermaLink="false">4.TIL/✍️ 2025-04-01_GitHub.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-02 TIL]]></title><description/></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- <br>Redux, Zustand]]></description><link>개념-정리/📂-프레임워크-&amp;-라이브러리/📄-상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">개념 정리/📂 프레임워크 &amp; 라이브러리/📄 상태 관리 (Redux, Zustand).md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[TypeScript Type Alias, Interface, Class]]></title><description><![CDATA[ 
- <br><br><br>Type Alias는 기존 타입에 별칭(Alias) 을 부여하는 기능입니다.<br>
-객체뿐만 아니라 유니온 타입, 함수 타입, 튜플 등 다양한 타입을 정의할 때 사용됩니다.<br><br>// 기본 타입에 별칭 부여
-type UserId = number;
-type UserName = string;
-type IsActive = boolean;
-
-let userId: UserId = 12345;
-let userName: UserName = "홍길동";
-let isActive: IsActive = true;
-<br><br>// 주문 상태 타입 정의
-type OrderStatus = "pending" | "processing" | "shipped" | "delivered" | "canceled";
-
-type Order = {
-  id: number;
-  productId: number;
-  customer: string;
-  quantity: number;
-  status: OrderStatus;
-  orderDate: Date;
-};
-
-// 사용 예
-const order1: Order = {
-  id: 1001,
-  productId: 5,
-  customer: "이지은",
-  quantity: 2,
-  status: "pending",
-  orderDate: new Date(),
-};
-<br>✅ 유니온 타입을 활용하면 제한된 값만 사용할 수 있어 안전한 코드 작성이 가능!<br><br>// 함수 타입 별칭
-type Calculator = (a: number, b: number) =&gt; number;
-
-const add: Calculator = (x, y) =&gt; x + y;
-const multiply: Calculator = (x, y) =&gt; x * y;
-
-console.log(add(10, 20));  // 30
-console.log(multiply(10, 20));  // 200
-<br><br><br>읽기 전용 속성을 사용하면 객체의 불변성(immutability) 을 유지할 수 있습니다.<br>type User = {
-  readonly id: number;
-  readonly createdAt: Date;
-  name: string;
-  age: number;
-};
-
-const user: User = {
-  id: 12345,
-  createdAt: new Date(),
-  name: "홍길동",
-  age: 30,
-};
-
-// 가능: 일반 속성 수정
-user.name = "김철수";
-user.age = 31;
-
-// 에러: readonly 속성 수정 불가
-// user.id = 67890;
-// user.createdAt = new Date();
-<br>✅ 읽기 전용 속성을 활용하면 데이터를 보호할 수 있음!<br><br><br>Interface는 객체의 구조를 정의하는 용도로 사용됩니다. type alias와 유사하지만, extends를 통해 다른 인터페이스를 확장할 수 있으며, 클래스에서도 implements 키워드로 사용할 수 있습니다.<br><br>interface Car {
-  model: string;
-  price: number;
-  tax(): number;
-}
-
-const myCar: Car = {
-  model: "Tesla",
-  price: 5000,
-  tax() {
-    return this.price * 0.1;
-  },
-};
-<br><br>interface Animal {
-  name: string;
-}
-
-interface Dog extends Animal {
-  breed: string;
-}
-
-const myDog: Dog = {
-  name: "바둑이",
-  breed: "골든 리트리버",
-};
-<br>✅ **extends**를 사용하여 기존 인터페이스를 확장할 수 있음!<br><br><br><br><br><br>TypeScript에서 클래스(Class) 는 객체를 만들기 위한 설계도(템플릿) 입니다.<br>
-코드를 재사용하고, 구조화하여 효율적인 프로그래밍이 가능합니다.<br><br>class Car {
-  model: string;
-  price: number;
-
-  constructor(model: string, price: number) {
-    this.model = model;
-    this.price = price;
-  }
-
-  tax(): number {
-    return this.price * 0.1;
-  }
-}
-<br><br>class Animal {
-  name: string;
-  constructor(name: string) {
-    this.name = name;
-  }
-  sound() {
-    console.log(`${this.name}이(가) 소리를 냅니다.`);
-  }
-}
-
-class Dog extends Animal {
-  bark() {
-    console.log(`${this.name}이(가) 멍멍! 짖습니다.`);
-  }
-}
-<br>✅ 부모 클래스의 기능을 유지하면서 새로운 기능 추가 가능!<br><br><br>✔ 객체 구조를 정의할 때 → interface 사용 (확장 가능)<br>
-✔ 유니온 타입, 튜플, 함수 타입을 정의할 때 → type alias 사용<br>
-✔ 클래스를 사용할 때, 인터페이스를 활용 → interface + implements 사용<br>
-✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>개념-정리/📂-js-&amp;-ts/📄-ts-기초.html</link><guid isPermaLink="false">개념 정리/📂 JS &amp; TS/📄 TS 기초.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[문서 제목]]></title><description><![CDATA[ 
- <br><br>
-Node.js는 백엔드 개발을 자바스크립트로 할 수 있게 해주는 런타임이며,<br>
-실제 개발에서는 패키지 매니저(NPM), 의존성 관리, 스크립트 실행 등 다양한 생태계 도구와 함께 사용된다.
-<br><br>
-<br>Node.js는 브라우저가 아닌 환경에서 자바스크립트를 실행할 수 있게 해주는 런타임
-<br>V8 JavaScript 엔진을 기반으로 하고 있으며, 비동기 I/O 처리에 강함
-<br>주로 웹 서버, API 서버, CLI 도구 등으로 많이 사용됨
-<br><br><br><br><br><br>
-<br>Node.js 설치 시 함께 설치되는 기본 패키지 매니저
-<br>외부 오픈소스 패키지를 설치/삭제/업데이트 가능
-<br><br>npm init          # package.json 생성
-npm install       # 의존성 설치
-npm install &lt;pkg&gt; # 특정 패키지 설치
-npm uninstall &lt;pkg&gt; # 패키지 제거
-<br><br><br><br><br>npx는 Node.js 5.2 이상 버전부터 함께 제공되는 CLI 도구로,<br>
-패키지를 설치하지 않고도 한 번만 실행할 수 있도록 도와준다.<br><br><br><br>npx create-react-app my-app      # CRA 설치 없이 프로젝트 생성
-npx eslint .                     # 로컬 ESLint 설치 없이 코드 검사
-npx cowsay "Hello Node.js!"      # CLI 유틸 실행
-<br><br><br>package.json은 Node.js 프로젝트의 메타 정보와 의존성, 실행 스크립트 등을 정의하는 설정 파일이다.<br>
-프로젝트를 클론하거나 배포받았을 때, 이 파일만 있으면 npm install을 통해 동일한 환경 구축이 가능하다.<br><br><br><br>{
-  "name": "my-app",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.0"
-  },
-  "main": "index.js",
-  "license": "MIT"
-}
-<br><br>
-<br>npm run dev처럼 scripts에 등록한 명령어를 단축 실행 가능
-<br>dependencies는 운영 시 사용, devDependencies는 개발 환경에서만 사용
-<br>실제 배포 시엔 --production 옵션으로 devDependencies 제외 가능
-]]></description><link>개념-정리/📂-node/📄-node.js-기본-생태계.html</link><guid isPermaLink="false">개념 정리/📂 Node/📄  Node.js 기본 생태계.md</guid><pubDate>Tue, 15 Apr 2025 14:50:49 GMT</pubDate></item><item><title><![CDATA[🏠 home]]></title><description><![CDATA[<a class="tag" href="?query=tag:home" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#home</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:devlog" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#devlog</a> <a class="tag" href="?query=tag:growth" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#growth</a> 
+]]></description><link>til/✍️-2025-04-01_github.html</link><guid isPermaLink="false">TIL/✍️ 2025-04-01_GitHub.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-02 TIL]]></title><description/></item><item><title><![CDATA[🏠 home]]></title><description><![CDATA[<a class="tag" href="?query=tag:home" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#home</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:devlog" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#devlog</a> <a class="tag" href="?query=tag:growth" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#growth</a> 
  <br><br>안녕하세요! 저는 프론트엔드 개발자 민선오입니다.<br>
 이 공간은 제가 공부하고 경험한 내용을 기록하고, 나중의 나와 누군가에게 도움이 되길 바라는 마음으로 운영되고 있어요.<br>
 💡 이 블로그는 단순한 기록을 넘어,<br>
