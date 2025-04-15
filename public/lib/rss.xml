@@ -1,7 +1,8 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 15 Apr 2025 16:09:47 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 15 Apr 2025 16:09:47 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 482 at column 560: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 15 Apr 2025 16:20:27 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 15 Apr 2025 16:20:20 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
  <br>
 <br>Redux,Zustand
-]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Tue, 15 Apr 2025 16:02:43 GMT</pubDate></item><item><title><![CDATA[🚀 Type Alias, Interface, Class]]></title><description><![CDATA[ 
+]]></description><link>1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Tue, 15 Apr 2025 16:02:43 GMT</pubDate></item><item><title><![CDATA[🚀 Type Alias, Interface, Class]]></title><description><![CDATA[ 
  <br><br><br>Type Alias는 기존 타입에 별칭(Alias) 을 부여하는 기능입니다.<br>
 객체뿐만 아니라 유니온 타입, 함수 타입, 튜플 등 다양한 타입을 정의할 때 사용됩니다.<br><br>// 기본 타입에 별칭 부여
 type UserId = number;
@@ -118,7 +119,7 @@ class Dog extends Animal {
 <br>✅ 부모 클래스의 기능을 유지하면서 새로운 기능 추가 가능!<br><br><br>✔ 객체 구조를 정의할 때 → interface 사용 (확장 가능)<br>
 ✔ 유니온 타입, 튜플, 함수 타입을 정의할 때 → type alias 사용<br>
 ✔ 클래스를 사용할 때, 인터페이스를 활용 → interface + implements 사용<br>
-✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>1.개념-정리/js-&amp;-ts/typescript.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/TypeScript.md</guid><pubDate>Tue, 15 Apr 2025 16:02:37 GMT</pubDate></item><item><title><![CDATA[📘 Node.js 기본 생태계]]></title><description><![CDATA[ 
+✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>1.개념 정리/JS &amp; TS/TypeScript.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/TypeScript.md</guid><pubDate>Tue, 15 Apr 2025 16:02:37 GMT</pubDate></item><item><title><![CDATA[📘 Node.js 기본 생태계]]></title><description><![CDATA[ 
  <br><br>Node.js는 백엔드 개발을 자바스크립트로 할 수 있게 해주는 런타임이며, 실제 개발에서는 패키지 매니저(NPM), 의존성 관리, 스크립트 실행 등 다양한 생태계 도구와 함께 사용된다.<br><br>
 <br>Node.js는 브라우저가 아닌 환경에서 자바스크립트를 실행할 수 있게 해주는 런타임
 <br>V8 JavaScript 엔진을 기반으로 하고 있으며, 비동기 I/O 처리에 강함
@@ -155,57 +156,7 @@ npx cowsay "Hello Node.js!"      # CLI 유틸 실행
 <br>npm run dev처럼 scripts에 등록한 명령어를 단축 실행 가능
 <br>dependencies는 운영 시 사용, devDependencies는 개발 환경에서만 사용
 <br>실제 배포 시엔 --production 옵션으로 devDependencies 제외 가능
-]]></description><link>1.개념-정리/node/node.js-기본-생태계.html</link><guid isPermaLink="false">1.개념 정리/Node/Node.js 기본 생태계.md</guid><pubDate>Tue, 15 Apr 2025 16:02:16 GMT</pubDate></item><item><title><![CDATA[git error]]></title><description><![CDATA[ 
- <br>
-<br>error
-]]></description><link>3.error-fixes/git/git-error.html</link><guid isPermaLink="false">3.Error Fixes/Git/git error.md</guid><pubDate>Tue, 15 Apr 2025 16:02:06 GMT</pubDate></item><item><title><![CDATA[error]]></title><description><![CDATA[ 
- <br>
-<br>error
-]]></description><link>3.error-fixes/node.js/error.html</link><guid isPermaLink="false">3.Error Fixes/Node.js/error.md</guid><pubDate>Tue, 15 Apr 2025 16:02:02 GMT</pubDate></item><item><title><![CDATA[🏠 home]]></title><description><![CDATA[<a class="tag" href="?query=tag:home" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#home</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:devlog" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#devlog</a> <a class="tag" href="?query=tag:growth" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#growth</a> 
- <br><br>안녕하세요! 저는 프론트엔드 개발자 민선오입니다.<br>
-이 공간은 제가 공부하고 경험한 내용을 기록하고, 나중의 나와 누군가에게 도움이 되길 바라는 마음으로 운영되고 있어요.<br>
-💡 이 블로그는 단순한 기록을 넘어,<br>
-실제 프로젝트에서 겪은 문제 해결 과정,<br>
-새롭게 배운 기술,<br>
-프론트엔드 개발자로 성장해가는 여정을 담고 있습니다.
-<br><br><br>블로그 목표
-✔️ 내가 이해한 대로 쓰자 – 남의 말이 아니라, 내 언어로 정리하기<br>
-✔️ 지속적인 성장 기록 – 작게라도 매일/매주 무언가를 기록하기<br>
-✔️ 실무에 바로 써먹을 수 있도록 – 복붙이 가능한 코드, 실제 해결한 문제 위주
-<br><br><br><br>
-<br><a data-tooltip-position="top" aria-label="HTML_CSS" data-href="HTML_CSS" href="HTML_CSS" class="internal-link" target="_self" rel="noopener nofollow">HTML &amp; CSS</a>
-<br><a data-href="JavaScript" href="JavaScript" class="internal-link" target="_self" rel="noopener nofollow">JavaScript</a>
-<br><a data-href="TypeScript" href="1.개념-정리/js-&amp;-ts/typescript.html" class="internal-link" target="_self" rel="noopener nofollow">TypeScript</a>
-<br><br>
-<br><a data-href="React" href="React" class="internal-link" target="_self" rel="noopener nofollow">React</a>
-<br><a data-href="Next.js" href="Next.js" class="internal-link" target="_self" rel="noopener nofollow">Next.js</a>
-<br><a data-href="Vue" href="Vue" class="internal-link" target="_self" rel="noopener nofollow">Vue</a>
-<br><br>
-<br><a data-href="디자인 시스템" href="디자인 시스템" class="internal-link" target="_self" rel="noopener nofollow">디자인 시스템</a>
-<br><a data-href="컴포넌트 구조" href="컴포넌트 구조" class="internal-link" target="_self" rel="noopener nofollow">컴포넌트 구조</a>
-<br><a data-href="웹 접근성" href="웹 접근성" class="internal-link" target="_self" rel="noopener nofollow">웹 접근성</a>
-<br><br>
-<br><a data-href="브라우저 동작 원리" href="브라우저 동작 원리" class="internal-link" target="_self" rel="noopener nofollow">브라우저 동작 원리</a>
-<br><a data-href="성능 최적화" href="성능 최적화" class="internal-link" target="_self" rel="noopener nofollow">성능 최적화</a>
-<br><a data-href="보안" href="보안" class="internal-link" target="_self" rel="noopener nofollow">보안</a>
-<br><a data-href="테스팅" href="테스팅" class="internal-link" target="_self" rel="noopener nofollow">테스팅</a>
-<br><br>
-<br><a data-tooltip-position="top" aria-label="TIL" data-href="TIL" href="TIL" class="internal-link" target="_self" rel="noopener nofollow">Today I Learned</a>
-<br><a data-href="회고록" href="회고록" class="internal-link" target="_self" rel="noopener nofollow">회고록</a>
-<br><a data-href="문제 해결 모음" href="문제 해결 모음" class="internal-link" target="_self" rel="noopener nofollow">문제 해결 모음</a>
-<br><br><br>시작하기 좋은 글
-✔️ <a data-href="TypeScript" href="1.개념-정리/js-&amp;-ts/typescript.html" class="internal-link" target="_self" rel="noopener nofollow">TypeScript</a>
-<br><br><br>
-<br>2025-03-28: <a data-href="2025-03-28_Markdown" href="4.til/2025-03-28_markdown.html" class="internal-link" target="_self" rel="noopener nofollow">2025-03-28_Markdown</a>
-<br>2025-03-27: <a data-href="TypeScript" href="1.개념-정리/js-&amp;-ts/typescript.html" class="internal-link" target="_self" rel="noopener nofollow">TypeScript</a>
-<br><br><br>
-틀려도 괜찮아요.<br>
-기록하고, 돌아보고, 고치고, 또 나아가는 것이 개발자의 길이니까요.
-<br><br><br>
-<br>GitHub: <a data-tooltip-position="top" aria-label="https://github.com/sunfivemin" rel="noopener nofollow" class="external-link" href="https://github.com/sunfivemin" target="_blank">@sunfivemin</a>
-<br>Blog: <a data-tooltip-position="top" aria-label="https://seonohblog.netlify.app/" rel="noopener nofollow" class="external-link" href="https://seonohblog.netlify.app/" target="_blank">sunfivemin 블로그</a>
-<br>Email: <a data-tooltip-position="top" aria-label="mailto:sunfivemin@gmail.com" rel="noopener nofollow" class="external-link" href="mailto:sunfivemin@gmail.com" target="_blank">sunfivemin@gmail.com</a>
-<br><br><a href=".?query=tag:home" class="tag" target="_blank" rel="noopener nofollow">#home</a> <a href=".?query=tag:frontend" class="tag" target="_blank" rel="noopener nofollow">#frontend</a> <a href=".?query=tag:devlog" class="tag" target="_blank" rel="noopener nofollow">#devlog</a> <a href=".?query=tag:growth" class="tag" target="_blank" rel="noopener nofollow">#growth</a>]]></description><link>home.html</link><guid isPermaLink="false">home.md</guid><pubDate>Tue, 15 Apr 2025 15:57:26 GMT</pubDate></item><item><title><![CDATA[공연 예매 사이트]]></title><description><![CDATA[ 
+]]></description><link>1.개념 정리/Node/Node.js 기본 생태계.html</link><guid isPermaLink="false">1.개념 정리/Node/Node.js 기본 생태계.md</guid><pubDate>Tue, 15 Apr 2025 16:02:16 GMT</pubDate></item><item><title><![CDATA[공연 예매 사이트]]></title><description><![CDATA[ 
  <br>ERD 설계 및 테이블 생성 과제였던 공연 예매 사이트를 express와 node를 이용해 구현해보았다.<br>Git &amp; GitHub<br>
 Database &amp; SQL(ERD 설계 및 테이블 생성)<br>
 Express &amp; Node (기본 서버, Routing)<br>DB → API → 프론트 연결<br>
@@ -218,7 +169,13 @@ Express &amp; Node (기본 서버, Routing)<br>DB → API → 프론트 연결<b
 ✅ show<br>
 ✅ poster<br>
 ✅ order<br>
-✅ order_detail]]></description><link>2.dev-log/express-&amp;-node/공연-예매-사이트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/공연 예매 사이트.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[📘 2025-03-28 TIL]]></title><description><![CDATA[ 
+✅ order_detail]]></description><link>2.Dev Log/Express &amp; Node/공연 예매 사이트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/공연 예매 사이트.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[git error]]></title><description><![CDATA[ 
+ <br>
+<br>error
+]]></description><link>3.Error Fixes/Git/git error.html</link><guid isPermaLink="false">3.Error Fixes/Git/git error.md</guid><pubDate>Tue, 15 Apr 2025 16:02:06 GMT</pubDate></item><item><title><![CDATA[error]]></title><description><![CDATA[ 
+ <br>
+<br>error
+]]></description><link>3.Error Fixes/Node.js/error.html</link><guid isPermaLink="false">3.Error Fixes/Node.js/error.md</guid><pubDate>Tue, 15 Apr 2025 16:02:02 GMT</pubDate></item><item><title><![CDATA[📘 2025-03-28 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>Markdown 문법 활용법과 버전 관리 시스템(VCS)의 개념 및 종류를 정리했다.
 <br><br><br>
@@ -331,7 +288,7 @@ Git 명령어에 대한 기본 개념과 사용법을 익힐 예정이다.<br>
 git init, add, commit, push, pull 등의 기초 명령어부터 원격 저장소 연결, 브랜치 활용까지 단계적으로 정리하고 실습해볼 계획이다.<br><br>
 <br><a data-tooltip-position="top" aria-label="https://git-scm.com/doc" rel="noopener nofollow" class="external-link" href="https://git-scm.com/doc" target="_blank">Git 공식 문서</a>
 <br><a data-tooltip-position="top" aria-label="https://www.markdownguide.org/basic-syntax/" rel="noopener nofollow" class="external-link" href="https://www.markdownguide.org/basic-syntax/" target="_blank">Markdown Guide</a>
-]]></description><link>4.til/2025-03-28_markdown.html</link><guid isPermaLink="false">4.TIL/2025-03-28_Markdown.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/readme.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/readme.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-03-31 TIL]]></title><description><![CDATA[ 
+]]></description><link>4.TIL/2025-03-28_Markdown.html</link><guid isPermaLink="false">4.TIL/2025-03-28_Markdown.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/readme.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/readme.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-03-31 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>Git과 GitHub의 차이점 &nbsp;
 <br>CLI와 GUI의 개념 및 사용법 &nbsp;
@@ -426,7 +383,7 @@ test.txt는 이제 Git이 추적 중이며, 커밋을 할 수 있는 상태(Stag
 → CLI + GUI를 병행한 실전 프로젝트 관리<br><br>
 <br><a data-tooltip-position="top" aria-label="https://git-scm.com/docs" rel="noopener nofollow" class="external-link" href="https://git-scm.com/docs" target="_blank">Git CLI 명령어 정리</a>
 <br><a data-tooltip-position="top" aria-label="https://code.visualstudio.com/docs/sourcecontrol/overview" rel="noopener nofollow" class="external-link" href="https://code.visualstudio.com/docs/sourcecontrol/overview" target="_blank">VS Code Git 확장 기능</a>
-]]></description><link>4.til/2025-03-31_git.html</link><guid isPermaLink="false">4.TIL/2025-03-31_Git.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/git1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/git1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-01 TIL]]></title><description><![CDATA[ 
+]]></description><link>4.TIL/2025-03-31_Git.html</link><guid isPermaLink="false">4.TIL/2025-03-31_Git.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/git1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/git1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-01 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>GitHub에서 레포지토리를 새로 만들고, 로컬 프로젝트를 원격 저장소와 연결하는 전체 과정 실습
 <br>터미널에서 git push -u origin main으로 처음 푸시할 때 upstream 설정이 되는 원리 파악
@@ -523,4 +480,4 @@ git switch -c dev         # dev 브랜치 생성 + 이동 (권장 방식)
 → 충돌 발생 시 해결하는 방법 (merge conflict resolution)<br><br>
 <br><a data-tooltip-position="top" aria-label="https://git-scm.com/book/ko/v2" rel="noopener nofollow" class="external-link" href="https://git-scm.com/book/ko/v2" target="_blank">Pro Git Book (한국어 번역)</a>
 <br><a data-tooltip-position="top" aria-label="https://docs.github.com/en/get-started/quickstart/github-flow" rel="noopener nofollow" class="external-link" href="https://docs.github.com/en/get-started/quickstart/github-flow" target="_blank">GitHub Docs – Branches</a>
-]]></description><link>4.til/2025-04-01_github.html</link><guid isPermaLink="false">4.TIL/2025-04-01_GitHub.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-02 TIL]]></title><description/></item></channel></rss>
+]]></description><link>4.TIL/2025-04-01_GitHub.html</link><guid isPermaLink="false">4.TIL/2025-04-01_GitHub.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-02 TIL]]></title><description/></item></channel></rss>
