@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1.개념 정리/Node/Node.js 기본 생태계.md",
+                "file": "1.개념 정리/프레임워크 & 라이브러리/상태 관리 (Redux, Zustand).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Node.js 기본 생태계"
+              "title": "상태 관리 (Redux, Zustand)"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1.개념 정리/Node/Node.js 기본 생태계.md",
+                "file": "1.개념 정리/프레임워크 & 라이브러리/상태 관리 (Redux, Zustand).md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Node.js 기본 생태계 의 개요"
+              "title": "상태 관리 (Redux, Zustand) 의 개요"
             }
           }
         ],
@@ -173,7 +173,6 @@
   },
   "active": "5795712902473ce4",
   "lastOpenFiles": [
-    "1.개념 정리/프레임워크 & 라이브러리/상태 관리 (Redux, Zustand).md",
     "home.md",
     "4.TIL/2025-04-15_Express.md",
     "4.TIL/2025-04-11_Module.md",
@@ -190,6 +189,7 @@
     "2.Dev Log/Express & Node/공연 예매 사이트.md",
     "1.개념 정리/Node/Node.js 기본 생태계.md",
     "1.개념 정리/JS & TS/TS 기초.md",
+    "1.개념 정리/프레임워크 & 라이브러리/상태 관리 (Redux, Zustand).md",
     "4.TIL/2025-04-10_API.md",
     "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-02-git-branch-strategy-pr.md",
     "1.개념 정리/프레임워크 & 라이브러리",
