@@ -1,6 +1,6 @@
 ---
-title: 문서 제목
+title: git error
 tags:
   - error
 ---
-error
+- error

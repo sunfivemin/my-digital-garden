@@ -1,7 +1,7 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 15 Apr 2025 15:58:00 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 15 Apr 2025 15:57:59 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 15 Apr 2025 16:02:54 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 15 Apr 2025 16:02:54 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
  <br>
-<br>Redux, Zustand
-]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Tue, 15 Apr 2025 15:57:32 GMT</pubDate></item><item><title><![CDATA[🚀 TypeScript Type Alias, Interface, Class]]></title><description><![CDATA[ 
+<br>Redux,Zustand
+]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Tue, 15 Apr 2025 16:02:43 GMT</pubDate></item><item><title><![CDATA[🚀 Type Alias, Interface, Class]]></title><description><![CDATA[ 
  <br><br><br>Type Alias는 기존 타입에 별칭(Alias) 을 부여하는 기능입니다.<br>
 객체뿐만 아니라 유니온 타입, 함수 타입, 튜플 등 다양한 타입을 정의할 때 사용됩니다.<br><br>// 기본 타입에 별칭 부여
 type UserId = number;
@@ -118,11 +118,8 @@ class Dog extends Animal {
 <br>✅ 부모 클래스의 기능을 유지하면서 새로운 기능 추가 가능!<br><br><br>✔ 객체 구조를 정의할 때 → interface 사용 (확장 가능)<br>
 ✔ 유니온 타입, 튜플, 함수 타입을 정의할 때 → type alias 사용<br>
 ✔ 클래스를 사용할 때, 인터페이스를 활용 → interface + implements 사용<br>
-✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>1.개념-정리/js-&amp;-ts/typescript.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/TypeScript.md</guid><pubDate>Tue, 15 Apr 2025 15:57:19 GMT</pubDate></item><item><title><![CDATA[📘 Node.js 기본 생태계]]></title><description><![CDATA[ 
- <br><br>
-Node.js는 백엔드 개발을 자바스크립트로 할 수 있게 해주는 런타임이며,<br>
-실제 개발에서는 패키지 매니저(NPM), 의존성 관리, 스크립트 실행 등 다양한 생태계 도구와 함께 사용된다.
-<br><br>
+✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>1.개념-정리/js-&amp;-ts/typescript.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/TypeScript.md</guid><pubDate>Tue, 15 Apr 2025 16:02:37 GMT</pubDate></item><item><title><![CDATA[📘 Node.js 기본 생태계]]></title><description><![CDATA[ 
+ <br><br>Node.js는 백엔드 개발을 자바스크립트로 할 수 있게 해주는 런타임이며, 실제 개발에서는 패키지 매니저(NPM), 의존성 관리, 스크립트 실행 등 다양한 생태계 도구와 함께 사용된다.<br><br>
 <br>Node.js는 브라우저가 아닌 환경에서 자바스크립트를 실행할 수 있게 해주는 런타임
 <br>V8 JavaScript 엔진을 기반으로 하고 있으며, 비동기 I/O 처리에 강함
 <br>주로 웹 서버, API 서버, CLI 도구 등으로 많이 사용됨
@@ -158,9 +155,13 @@ npx cowsay "Hello Node.js!"      # CLI 유틸 실행
 <br>npm run dev처럼 scripts에 등록한 명령어를 단축 실행 가능
 <br>dependencies는 운영 시 사용, devDependencies는 개발 환경에서만 사용
 <br>실제 배포 시엔 --production 옵션으로 devDependencies 제외 가능
-]]></description><link>1.개념-정리/node/node.js-기본-생태계.html</link><guid isPermaLink="false">1.개념 정리/Node/Node.js 기본 생태계.md</guid><pubDate>Tue, 15 Apr 2025 15:57:07 GMT</pubDate></item><item><title><![CDATA[git error]]></title><description><![CDATA[ 
- <br>error]]></description><link>3.error-fixes/git/git-error.html</link><guid isPermaLink="false">3.Error Fixes/Git/git error.md</guid><pubDate>Tue, 15 Apr 2025 15:57:40 GMT</pubDate></item><item><title><![CDATA[error]]></title><description><![CDATA[ 
- <br>error]]></description><link>3.error-fixes/node.js/error.html</link><guid isPermaLink="false">3.Error Fixes/Node.js/error.md</guid><pubDate>Tue, 15 Apr 2025 15:57:44 GMT</pubDate></item><item><title><![CDATA[🏠 home]]></title><description><![CDATA[<a class="tag" href="?query=tag:home" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#home</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:devlog" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#devlog</a> <a class="tag" href="?query=tag:growth" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#growth</a> 
+]]></description><link>1.개념-정리/node/node.js-기본-생태계.html</link><guid isPermaLink="false">1.개념 정리/Node/Node.js 기본 생태계.md</guid><pubDate>Tue, 15 Apr 2025 16:02:16 GMT</pubDate></item><item><title><![CDATA[git error]]></title><description><![CDATA[ 
+ <br>
+<br>error
+]]></description><link>3.error-fixes/git/git-error.html</link><guid isPermaLink="false">3.Error Fixes/Git/git error.md</guid><pubDate>Tue, 15 Apr 2025 16:02:06 GMT</pubDate></item><item><title><![CDATA[error]]></title><description><![CDATA[ 
+ <br>
+<br>error
+]]></description><link>3.error-fixes/node.js/error.html</link><guid isPermaLink="false">3.Error Fixes/Node.js/error.md</guid><pubDate>Tue, 15 Apr 2025 16:02:02 GMT</pubDate></item><item><title><![CDATA[🏠 home]]></title><description><![CDATA[<a class="tag" href="?query=tag:home" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#home</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:devlog" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#devlog</a> <a class="tag" href="?query=tag:growth" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#growth</a> 
  <br><br>안녕하세요! 저는 프론트엔드 개발자 민선오입니다.<br>
 이 공간은 제가 공부하고 경험한 내용을 기록하고, 나중의 나와 누군가에게 도움이 되길 바라는 마음으로 운영되고 있어요.<br>
 💡 이 블로그는 단순한 기록을 넘어,<br>
