@@ -31,7 +31,7 @@
   "vaultTitle": "blog",
   "exportPreset": "website",
   "openAfterExport": true,
-  "graphAttractionForce": 1,
+  "graphAttractionForce": 0.8,
   "graphLinkLength": 10,
   "graphRepulsionForce": 150,
   "graphCentralForce": 3,
