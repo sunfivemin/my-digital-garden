@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4.TIL/4월/2025-04-16-Params.md",
+                "file": "4.TIL/4월/2025-04-17-map.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-04-16-Params"
+              "title": "2025-04-17-map"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "4.TIL/4월/2025-04-16-Params.md",
+                "file": "4.TIL/4월/2025-04-17-map.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-04-16-Params 의 개요"
+              "title": "2025-04-17-map 의 개요"
             }
           }
         ],
@@ -173,8 +173,10 @@
   },
   "active": "1399458aea2c525a",
   "lastOpenFiles": [
-    "4.TIL/4월/2025-04-02-Branch.md",
+    "4.TIL/4월/2025-04-17-map.md",
     "4.TIL/4월/2025-04-16-Params.md",
+    "ExpressMap.png",
+    "4.TIL/4월/2025-04-02-Branch.md",
     "4.TIL/4월/2025-04-08-DBMS.md",
     "4.TIL/4월/2025-04-07-Node.md",
     "4.TIL/4월/2025-03-28-Markdown.md",
@@ -207,7 +209,6 @@
     "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-31-git-init-commit.md",
     "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-01-github-remote-branch.md",
     "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 상태 관리 (Redux, Zustand).md",
-    "📂 FRONTEND/⚡ JS & TS/📝 TS 기초.md",
     "merge.png",
     "동기화.png",
     "pr전.png",
@@ -217,7 +218,6 @@
     "pr.png",
     "gui에서clone.png",
     "pull오류.png",
-    "저장소생성완료.png",
     "무제.canvas",
     "캔퍼스.canvas",
     "Untitled.canvas"
