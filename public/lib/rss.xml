@@ -1,12 +1,11 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 17 Apr 2025 15:46:48 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 17 Apr 2025 15:46:47 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[📘 2025-04-18 TIL]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 17 Apr 2025 16:03:56 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 17 Apr 2025 16:03:55 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[📘 2025-04-18 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>postman
 <br><br><br>웹 브라우저 주소창에서는 URL을 통해 데이터를 전달하는 GET 방식만 테스트할 수 있다.<br>
 하지만 POST 방식은 브라우저로 직접 테스트할 수 없다. 그 이유는 다음과 같다:<br>
 <br>POST는 보통 데이터를 생성(=등록)할 때 사용된다.
 <br>예를 들어 회원가입 시에는 다음과 같은 데이터를 서버로 전달해야 한다.<br>
-id, password, name, email, contact 등
-<br>이런 중요한 정보들을 URL에 노출하면 보안상 위험이 크기 때문에, POST는 URL이 아니라 HTTP 요청의 Body 영역에 데이터를 담아 전송한다.
+id, password, name, email, contact 등 이런 중요한 정보들을 URL에 노출하면 보안상 위험이 크기 때문에, POST는 URL이 아니라 HTTP 요청의 Body 영역에 데이터를 담아 전송한다.
 <br><br>Postman은 API 테스트에 특화된 도구로, GET뿐 아니라 POST, PUT, DELETE 등 다양한 HTTP 메서드를 자유롭게 테스트할 수 있다.<br><br>
 <br>메서드(GET/POST 등) 선택 가능
 <br>Body에 JSON 형식으로 데이터 전달 가능
@@ -58,10 +57,8 @@ Body:
 <br>• 어렵게 느껴졌던 부분<br>
 <br>
 <br>• 다음에 학습할 주제<br>
-<br>POST 메서드를 이용한 데이터 등록 기능 구현
-<br><br><br>
-<br><a data-tooltip-position="top" aria-label="https://expressjs.com/ko/guide/routing.html" rel="noopener nofollow" class="external-link" href="https://expressjs.com/ko/guide/routing.html" target="_blank">Express 공식 문서</a>
-]]></description><link>4.til/4월/2025-04-18-postman.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-18-Postman.md</guid><pubDate>Thu, 17 Apr 2025 15:44:03 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/get.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/get.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
+<br>
+<br><br>]]></description><link>4.til/4월/2025-04-18-postman.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-18-Postman.md</guid><pubDate>Thu, 17 Apr 2025 16:03:46 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/get.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/get.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
  <br>
 <br>Redux,Zustand
 ]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Wed, 16 Apr 2025 10:16:45 GMT</pubDate></item><item><title><![CDATA[🚀 Type Alias, Interface, Class]]></title><description><![CDATA[ 
