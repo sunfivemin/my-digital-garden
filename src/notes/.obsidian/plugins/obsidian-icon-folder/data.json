@@ -32,7 +32,7 @@
     "iconIdentifier": ":",
     "lucideIconPackType": "none",
     "debugMode": true,
-    "useInternalPlugins": true
+    "useInternalPlugins": false
   },
   "home.md": "🧡"
 }
