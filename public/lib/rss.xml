@@ -1,191 +1,1528 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 17 Apr 2025 12:20:35 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 17 Apr 2025 12:20:34 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[📘 2025-04-17 TIL]]></title><description><![CDATA[ 
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link></link></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 17 Apr 2025 12:35:30 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 17 Apr 2025 12:35:22 GMT</pubDate><ttl>60</ttl><dc:creator></dc:creator><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
+ <br>
+<br>Redux,Zustand
+]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Wed, 16 Apr 2025 10:16:45 GMT</pubDate></item><item><title><![CDATA[🚀 Type Alias, Interface, Class]]></title><description><![CDATA[ 
+ <br><br><br>Type Alias는 기존 타입에 별칭(Alias) 을 부여하는 기능입니다.<br>
+객체뿐만 아니라 유니온 타입, 함수 타입, 튜플 등 다양한 타입을 정의할 때 사용됩니다.<br><br>// 기본 타입에 별칭 부여
+type UserId = number;
+type UserName = string;
+type IsActive = boolean;
+
+let userId: UserId = 12345;
+let userName: UserName = "홍길동";
+let isActive: IsActive = true;
+<br><br>// 주문 상태 타입 정의
+type OrderStatus = "pending" | "processing" | "shipped" | "delivered" | "canceled";
+
+type Order = {
+  id: number;
+  productId: number;
+  customer: string;
+  quantity: number;
+  status: OrderStatus;
+  orderDate: Date;
+};
+
+// 사용 예
+const order1: Order = {
+  id: 1001,
+  productId: 5,
+  customer: "이지은",
+  quantity: 2,
+  status: "pending",
+  orderDate: new Date(),
+};
+<br>✅ 유니온 타입을 활용하면 제한된 값만 사용할 수 있어 안전한 코드 작성이 가능!<br><br>// 함수 타입 별칭
+type Calculator = (a: number, b: number) =&gt; number;
+
+const add: Calculator = (x, y) =&gt; x + y;
+const multiply: Calculator = (x, y) =&gt; x * y;
+
+console.log(add(10, 20));  // 30
+console.log(multiply(10, 20));  // 200
+<br><br><br>읽기 전용 속성을 사용하면 객체의 불변성(immutability) 을 유지할 수 있습니다.<br>type User = {
+  readonly id: number;
+  readonly createdAt: Date;
+  name: string;
+  age: number;
+};
+
+const user: User = {
+  id: 12345,
+  createdAt: new Date(),
+  name: "홍길동",
+  age: 30,
+};
+
+// 가능: 일반 속성 수정
+user.name = "김철수";
+user.age = 31;
+
+// 에러: readonly 속성 수정 불가
+// user.id = 67890;
+// user.createdAt = new Date();
+<br>✅ 읽기 전용 속성을 활용하면 데이터를 보호할 수 있음!<br><br><br>Interface는 객체의 구조를 정의하는 용도로 사용됩니다. type alias와 유사하지만, extends를 통해 다른 인터페이스를 확장할 수 있으며, 클래스에서도 implements 키워드로 사용할 수 있습니다.<br><br>interface Car {
+  model: string;
+  price: number;
+  tax(): number;
+}
+
+const myCar: Car = {
+  model: "Tesla",
+  price: 5000,
+  tax() {
+    return this.price * 0.1;
+  },
+};
+<br><br>interface Animal {
+  name: string;
+}
+
+interface Dog extends Animal {
+  breed: string;
+}
+
+const myDog: Dog = {
+  name: "바둑이",
+  breed: "골든 리트리버",
+};
+<br>✅ **extends**를 사용하여 기존 인터페이스를 확장할 수 있음!<br><br><br><br><br><br>TypeScript에서 클래스(Class) 는 객체를 만들기 위한 설계도(템플릿) 입니다.<br>
+코드를 재사용하고, 구조화하여 효율적인 프로그래밍이 가능합니다.<br><br>class Car {
+  model: string;
+  price: number;
+
+  constructor(model: string, price: number) {
+    this.model = model;
+    this.price = price;
+  }
+
+  tax(): number {
+    return this.price * 0.1;
+  }
+}
+<br><br>class Animal {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  sound() {
+    console.log(`${this.name}이(가) 소리를 냅니다.`);
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log(`${this.name}이(가) 멍멍! 짖습니다.`);
+  }
+}
+<br>✅ 부모 클래스의 기능을 유지하면서 새로운 기능 추가 가능!<br><br><br>✔ 객체 구조를 정의할 때 → interface 사용 (확장 가능)<br>
+✔ 유니온 타입, 튜플, 함수 타입을 정의할 때 → type alias 사용<br>
+✔ 클래스를 사용할 때, 인터페이스를 활용 → interface + implements 사용<br>
+✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>1.개념-정리/js-&amp;-ts/typescript.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/TypeScript.md</guid><pubDate>Wed, 16 Apr 2025 10:17:01 GMT</pubDate></item><item><title><![CDATA[📘 Node.js 기본 생태계]]></title><description><![CDATA[ 
+ <br><br>Node.js는 백엔드 개발을 자바스크립트로 할 수 있게 해주는 런타임이며, 실제 개발에서는 패키지 매니저(NPM), 의존성 관리, 스크립트 실행 등 다양한 생태계 도구와 함께 사용된다.<br><br>
+<br>Node.js는 브라우저가 아닌 환경에서 자바스크립트를 실행할 수 있게 해주는 런타임
+<br>V8 JavaScript 엔진을 기반으로 하고 있으며, 비동기 I/O 처리에 강함
+<br>주로 웹 서버, API 서버, CLI 도구 등으로 많이 사용됨
+<br><br><br><br><br><br>
+<br>Node.js 설치 시 함께 설치되는 기본 패키지 매니저
+<br>외부 오픈소스 패키지를 설치/삭제/업데이트 가능
+<br><br>npm init          # package.json 생성
+npm install       # 의존성 설치
+npm install &lt;pkg&gt; # 특정 패키지 설치
+npm uninstall &lt;pkg&gt; # 패키지 제거
+<br><br><br><br><br>npx는 Node.js 5.2 이상 버전부터 함께 제공되는 CLI 도구로,  패키지를 설치하지 않고도 한 번만 실행할 수 있도록 도와준다.<br><br><br><br>npx create-react-app my-app      # CRA 설치 없이 프로젝트 생성
+npx eslint .                     # 로컬 ESLint 설치 없이 코드 검사
+npx cowsay "Hello Node.js!"      # CLI 유틸 실행
+<br><br><br>package.json은 Node.js 프로젝트의 메타 정보와 의존성, 실행 스크립트 등을 정의하는 설정 파일이다.<br>
+프로젝트를 클론하거나 배포받았을 때, 이 파일만 있으면 npm install을 통해 동일한 환경 구축이 가능하다.<br><br><br><br>{
+  "name": "my-app",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "main": "index.js",
+  "license": "MIT"
+}
+<br><br>
+<br>npm run dev처럼 scripts에 등록한 명령어를 단축 실행 가능
+<br>dependencies는 운영 시 사용, devDependencies는 개발 환경에서만 사용
+<br>실제 배포 시엔 --production 옵션으로 devDependencies 제외 가능
+]]></description><link>1.개념-정리/node/node.js-기본-생태계.html</link><guid isPermaLink="false">1.개념 정리/Node/Node.js 기본 생태계.md</guid><pubDate>Wed, 16 Apr 2025 10:21:54 GMT</pubDate></item><item><title><![CDATA[공연 예매 사이트]]></title><description><![CDATA[ 
+ <br>ERD 설계 및 테이블 생성 과제였던 공연 예매 사이트를 express와 node를 이용해 구현해보았다.<br>Git &amp; GitHub<br>
+Database &amp; SQL(ERD 설계 및 테이블 생성)<br>
+Express &amp; Node (기본 서버, Routing)<br>DB → API → 프론트 연결<br>
+<br>MySQL/MariaDB: ERD에 맞춰 테이블 생성
+<br>Node.js + Express: RESTful API 서버 만들기
+<br>API 테스트: Postman 등으로 동작 확인
+<br>프론트: React/Next.js 등에서 UI 구현 + API 연결
+<br><br><br>✅ user<br>
+✅ user_info<br>
+✅ show<br>
+✅ poster<br>
+✅ order<br>
+✅ order_detail]]></description><link>2.dev-log/express-&amp;-node/공연-예매-사이트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/공연 예매 사이트.md</guid><pubDate>Wed, 16 Apr 2025 10:17:10 GMT</pubDate></item><item><title><![CDATA[git error]]></title><description><![CDATA[ 
+ <br>
+<br>error
+]]></description><link>3.error-fixes/git/git-error.html</link><guid isPermaLink="false">3.Error Fixes/Git/git error.md</guid><pubDate>Wed, 16 Apr 2025 10:17:16 GMT</pubDate></item><item><title><![CDATA[error]]></title><description><![CDATA[ 
+ <br>
+<br>error
+]]></description><link>3.error-fixes/node.js/error.html</link><guid isPermaLink="false">3.Error Fixes/Node.js/error.md</guid><pubDate>Wed, 16 Apr 2025 10:17:19 GMT</pubDate></item><item><title><![CDATA[📘 2025-03-28 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>Markdown 문법 활용법과 버전 관리 시스템(VCS)의 개념 및 종류를 정리했다.
+<br><br><br>
+<br>Markdown은 간단한 문법으로 텍스트를 서식화할 수 있는 lightweight markup language다.
+<br>.md 확장자를 가진 텍스트 파일이며, GitHub, Notion, Obsidian 등 다양한 도구에서 사용된다.
+<br><br>
+# 제목 1
+
+## 제목 2
+
+### 제목 3
+
+<br><br>
+*기울임* 또는 _기울임_
+
+**굵게** 또는 __굵게__
+
+~~취소선~~
+
+<br><br>
+- 순서 없는 목록
+
+  - 하위 항목
+
+1. 순서 있는 목록
+
+2. 두 번째 항목
+
+<br><br>`인라인 코드`
+<br>// 여러 줄 코드 블럭
+console.log('Hello Markdown');
+<br>
+#### ✅ 링크와 이미지
+
+```markdown
+
+[링크 텍스트](https://example.com)
+
+![이미지 대체 텍스트](https://example.com/image.png)
+
+<br><br>
+&gt; 이것은 인용문입니다.
+
+- [x] 완료된 항목
+- [ ] 해야 할 일
+
+<br><br><br>Markdown에서는 | 기호와 - 기호를 이용해 간단하게 표를 만들 수 있다.<br><br>| 제목1 | 제목2 |
+|-------|-------|
+| 내용1 | 내용2 |
+| 내용3 | 내용4 |
+<br>🧾 출력 예시:<br><br><br><br>| 왼쪽 정렬 | 가운데 정렬 | 오른쪽 정렬 |
+|:----------|:------------:|------------:|
+| left      | center       | right       |
+| a         | b            | c           |
+<br>🧾 출력 예시:<br><br><br><br>| 할 일             | 상태     |
+|------------------|----------|
+| Markdown 정리하기 | ✅ 완료 |
+| Git 공부하기      | ⏳ 진행 중 |
+| 블로그 업로드     | ❌ 미완료 |
+<br>🧾 출력 예시:<br><br><br><br>- Python: ```python
+- JavaScript: ```javascript 또는 `js`
+- HTML: ```html
+- CSS: ```css
+- Java: ```java
+- C++: ```cpp
+- R: ```r
+- SQL: ```sql
+- YAML: ```yaml
+- JSON: ```json
+- Markdown: ```markdown
+<br><br>버전 관리 시스템(VCS)은 파일의 변경 이력을 관리하고, 협업 시 변경 사항을 추적할 수 있게 도와주는 시스템이다.  작업 내용의 백업, 변경 이력 확인, 협업 충돌 방지 등에 필수적이다.<br><br><br>
+<br>파일 변경 이력을 개인 컴퓨터에만 저장하는 방식
+<br>각 파일을 수동으로 복사해서 관리하거나, 간단한 툴을 사용
+<br>이력 관리가 로컬에만 국한됨 → 협업에 부적합
+<br>✅ 예시: RCS (Revision Control System)<br>장점: 간단하게 혼자서 버전 관리 가능  
+단점: 협업 불가, 백업/이력 손실 위험
+<br><br><br>
+<br>하나의 중앙 서버에서 버전 관리를 하고, 클라이언트들이 그 서버에서 코드를 받아 사용
+<br>변경 사항도 모두 서버로 전송됨
+<br>✅ 예시: CVS, Subversion(SVN), Perforce<br>장점: 통합된 관리, 실시간 협업 가능  
+단점: 서버 장애 시 전체 작업 불가, 인터넷 연결 필요
+<br> [ Client ] ←→ [ 중앙 서버 ] ←→ [ Client ]
+<br><br><br>
+<br>사용자가 전체 저장소(버전 이력 포함)를 로컬에 복제함
+<br>로컬에서도 커밋, 브랜치 가능하며, 필요 시 원격 저장소와 동기화
+<br>✅ 예시: Git, Mercurial<br>장점: 오프라인에서도 작업 가능, 병합 및 브랜치 기능 강력  
+단점: 초기 학습 곡선 있음, 충돌 해결 필요
+<br>[로컬 저장소] ←→ [원격 저장소] ←→ [다른 로컬 저장소]
+<br><br><br><br><br>오늘 배운 Markdown 문법을 활용해 GitHub에 나만의 자기소개용 README.md 파일을 작성했다. &nbsp;<br>
+이번 실습에서는 다음과 같은 요소를 중심으로 구성하였다:<br>
+<br>🎯 상단 배너: <a data-tooltip-position="top" aria-label="https://github.com/kyechan99/capsule-render" rel="noopener nofollow" class="external-link" href="https://github.com/kyechan99/capsule-render" target="_blank">capsule-render API</a>를 활용한 텍스트 배너 이미지 &nbsp;
+<br>🧑‍💼 자기소개: 개발자로서 나를 표현할 수 있는 간단한 소개 문장 &nbsp;
+<br>📁 포트폴리오 링크: details 태그를 이용해 접을 수 있는 형태로 구현 &nbsp;
+<br>🛠️ Tech Stack: Shields.io 뱃지를 통해 사용 기술을 시각적으로 정리 &nbsp;
+<br>🔗 Contact 정보: 이메일, 블로그 등 외부 링크를 배지 형태로 연결
+<br><br>
+<br>👉 실제 GitHub 프로필 링크: <a data-tooltip-position="top" aria-label="https://github.com/sunfivemin" rel="noopener nofollow" class="external-link" href="https://github.com/sunfivemin" target="_blank">sunfivemin</a> &nbsp;<br>
+<img alt="README 최종 화면" src="https://seonohblog.netlify.app/assets/readme.png" referrerpolicy="no-referrer">
+<br>👉 작성한 README.md는 Markdown과 HTML을 함께 활용하여 구성하였으며, GitHub에서 정상적으로 렌더링됨을 확인했다.
+<br><br>
+<br>Markdown 문법만으로도 충분히 풍부한 표현이 가능하다는 점이 흥미로웠고, 간단한 HTML을 함께 사용하면 표현 범위가 더 넓어진다는 것을 느꼈다.
+<br>Shields.io 뱃지를 활용해 기술 스택을 시각적으로 표현하는 것이 재밌었고, 포트폴리오나 블로그에도 유용하게 활용할 수 있을 것 같다.
+<br>나만의 GitHub 소개 페이지를 직접 구성해보며, 개발자로서의 브랜드를 꾸며가는 느낌이 들어 뿌듯했다.
+<br><br><br>• 새롭게 알게 된 점<br>
+그동안 Markdown을 글을 쓰기 위한 최소한의 문법으로만 인식했었는데, Obsidian과 같은 지식 관리 도구를 통해 구조적인 문서 작성과 정보 정리에 매우 유용하다는 점을 깨달았다.<br>
+특히 표, 체크리스트, 코드블럭 언어 설정 등은 TIL을 정리할 때 내용의 구조를 더 명확하게 해주고, 복습하기도 쉬워져 앞으로 꾸준히 활용할 생각이다.<br>• 어렵게 느껴졌던 부분<br>
+Markdown 문법 자체는 어렵지 않지만, 실제로 자연스럽게 문서 구조를 짜고 적절한 태그나 구문을 활용하려면 조금 익숙해지는 시간이 필요할 것 같다.<br>
+특히 코드블럭 안에서 코드블럭을 넣는 구조(백틱)나 접기 기능 등은 반복해서 써보며 손에 익혀야 할 것 같다.<br>• 다음에 학습할 주제<br>
+Git 명령어에 대한 기본 개념과 사용법을 익힐 예정이다.<br>
+git init, add, commit, push, pull 등의 기초 명령어부터 원격 저장소 연결, 브랜치 활용까지 단계적으로 정리하고 실습해볼 계획이다.<br><br>
+<br><a data-tooltip-position="top" aria-label="https://git-scm.com/doc" rel="noopener nofollow" class="external-link" href="https://git-scm.com/doc" target="_blank">Git 공식 문서</a>
+<br><a data-tooltip-position="top" aria-label="https://www.markdownguide.org/basic-syntax/" rel="noopener nofollow" class="external-link" href="https://www.markdownguide.org/basic-syntax/" target="_blank">Markdown Guide</a>
+]]></description><link>4.til/4월/2025-03-28-markdown.html</link><guid isPermaLink="false">4.TIL/4월/2025-03-28-Markdown.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/readme.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://seonohblog.netlify.app/assets/readme.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-03-31 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>Git과 GitHub의 차이점 &nbsp;
+<br>CLI와 GUI의 개념 및 사용법 &nbsp;
+<br>Git 저장소 생성 및 커밋까지의 흐름 실습
+<br><br><br>
+<br>Git은 로컬(내 컴퓨터)에서 작동하는 버전 관리 시스템이다.<br>
+인터넷이 없어도 커밋, 브랜치, 이력 확인 등 모든 작업 가능하다.
+<br>GitHub는 Git의 저장소를 클라우드 서버에 저장하고, 원격에서 프로젝트를 백업, 버전 관리, 협업하게 해주는 플랫폼이다.
+<br><br><br><br><br>
+<br>CLI: 커맨드 라인 인터페이스 — 터미널에서 명령어로 조작
+<br>GUI: 그래픽 유저 인터페이스 — 마우스나 버튼으로 조작 (예: GitHub Desktop, VS Code Git 패널)
+<br><br><br>CLI로 Git 저장소를 생성하고, 파일을 Git이 추적하게 만든 뒤 커밋하는 과정까지 정리해본다.  <br><br># 파일 생성
+touch 파일이름.확장자
+
+# 폴더 생성
+mkdir 폴더명
+
+# 리스트 보기 (숨김 파일 포함)
+ls -a
+
+# 특정 폴더로 이동
+cd 폴더명
+
+# 이전(상위) 폴더로 이동
+cd ..
+
+# Git 저장소 초기화 (.git 폴더 생성)
+git init
+
+# 현재 Git 상태 확인
+git status
+
+# 파일을 Git 추적 대상으로 추가 (Staging)
+git add 파일명
+
+# 모든 변경된 파일을 한번에 add
+git add .
+
+# 변경된 내용을 커밋 (버전으로 저장)
+git commit -m "커밋 메시지"
+
+# 커밋 이력 보기
+git log
+
+<br><br><br>touch test.txt           # 파일 생성
+git init                 # Git 저장소 초기화
+git status               # 상태 확인 → untracked file
+git add test.txt         # Git 추적 시작
+git commit -m "Add file" # 커밋
+<br><br><br>git status
+<br>📌 출력 결과<br>
+fatal: not a git repository (or any of the parent directories): .git<br>🔍 원인<br>
+Git은 .git이라는 숨김 폴더가 있어야 그 디렉토리를 Git 저장소로 인식한다.<br>
+아직 git init을 하지 않았기 때문에 Git은 이 폴더를 추적할 수 없다.<br><br><br>git init
+<br>📌 출력 결과<br>
+Initialized empty Git repository in /Users/사용자명/GITTEST/.git/<br>🧠 설명<br>
+• 현재 폴더에 .git이라는 숨김 폴더가 생성된다.<br>
+• 이 폴더에는 프로젝트의 변경 이력, 설정, 브랜치 정보 등이 저장된다.<br>
+• 이 폴더가 존재함으로써 Git은 해당 폴더를 로컬 Git 저장소로 인식하게 된다.<br>
+• git status, git add, git commit 등의 명령어를 사용할 수 있다.<br><br><br>touch test.txt
+git status
+<br>📌 출력 결과<br>
+Untracked files:<br>
+(use "git add &lt;file&gt;..." to include in what will be committed)<br>
+test.txt<br>🔍설명<br>
+test.txt 파일은 존재하지만 Git이 아직 추적하고 있지 않은 상태(Untracked)이다.<br><br><br>git add test.txt
+git status
+<br>📌 출력 결과<br>
+Changes to be committed:<br>
+(use "git rm --cached &lt;file&gt;..." to unstage)<br>
+new file:   test.txt<br>🔍설명<br>
+test.txt는 이제 Git이 추적 중이며, 커밋을 할 수 있는 상태(Staged)가 된다.<br><br><br>git commit -m "Add test.txt file"
+<br>🧠 설명<br>
+커밋은 현재 변경된 파일 상태를 Git 저장소에 하나의 버전으로 기록하는 작업이다.<br>
+추후 git log 명령어로 이 기록을 조회할 수 있다.<br><br><br>
+<br>👉 &nbsp;Git CLI로 로컬 저장소를 초기화하고 파일을 생성한 뒤, git add, git commit을 통해 변경사항을 커밋까지 완료했다.
+<br><img alt="README 최종 화면" src="https://seonohblog.netlify.app/assets/git1.png" referrerpolicy="no-referrer"><br><br>
+<br>CLI보다 GUI가 익숙했지만, 직접 명령어를 사용해보니 Git의 작동 구조가 더 잘 이해됐다. 
+<br>git status → git add → git commit의 흐름이 명확해졌고, Untracked → Staged → Committed 과정을 직접 체감할 수 있었다.
+<br>Git History 확장 기능은 처음엔 복잡하게 느껴졌지만, 커밋 메시지를 클릭하면 상세 diff 를 확인할 수 있어 유용했다.
+<br><br><br>• 새롭게 알게 된 점<br>
+→ Git 저장소가 되려면 .git 폴더가 반드시 있어야 하며, git init은 그 폴더를 만드는 시작 명령이라는 걸 처음으로 체감했다.<br>
+→ 커밋은 단순 저장이 아니라 “버전 기록”의 핵심이라는 것도 이해하게 됐다.<br>• 어렵게 느껴졌던 부분<br>
+→ Git History 확장 기능은 처음엔 어떤 정보를 중점적으로 봐야 할지 몰랐지만, &nbsp;<br>
+커밋 메시지 클릭 시 변경된 파일 목록과 diff(변경 내용) 를 한눈에 확인할 수 있다는 점이 특히 유용했다. &nbsp;<br>
+또한, 브랜치 간의 흐름을 시각적으로 표현해줘서 복잡한 이력 구조를 파악할 때 CLI보다 훨씬 직관적이었다. &nbsp;<br>
+커밋별로 어떤 파일이 변경되었는지, 누가 언제 작업했는지를 빠르게 확인할 수 있어 팀 프로젝트나 협업 상황에서도 실용성이 높다는 걸 느꼈다.<br>• 다음에 학습할 주제<br>
+→ GitHub 원격 저장소 연결 (git remote add, git push) &nbsp;<br>
+→ GitHub 저장소 클론하기 (git clone) &nbsp;<br>
+→ 원격 저장소 동기화 (git pull, 충돌 해결법) &nbsp;<br>
+→ 브랜치 생성과 병합 (git branch, git merge) &nbsp;<br>
+→ CLI + GUI를 병행한 실전 프로젝트 관리<br><br>
+<br><a data-tooltip-position="top" aria-label="https://git-scm.com/docs" rel="noopener nofollow" class="external-link" href="https://git-scm.com/docs" target="_blank">Git CLI 명령어 정리</a>
+<br><a data-tooltip-position="top" aria-label="https://code.visualstudio.com/docs/sourcecontrol/overview" rel="noopener nofollow" class="external-link" href="https://code.visualstudio.com/docs/sourcecontrol/overview" target="_blank">VS Code Git 확장 기능</a>
+]]></description><link>4.til/4월/2025-03-31-git.html</link><guid isPermaLink="false">4.TIL/4월/2025-03-31-Git.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/git1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://seonohblog.netlify.app/assets/git1.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-01 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>GitHub에서 레포지토리를 새로 만들고, 로컬 프로젝트를 원격 저장소와 연결하는 전체 과정 실습
+<br>터미널에서 git push -u origin main으로 처음 푸시할 때 upstream 설정이 되는 원리 파악
+<br>다른 환경에서 git clone으로 프로젝트를 복제한 뒤, pull을 통해 변경 사항을 동기화하는 흐름까지 실습
+<br>branch, switch, checkout의 차이와 용도별 사용법 구분
+<br><br><br>
+<br>GitHub 에 가입 후, 복잡한 GUI 및 CLI를 통해 프로젝트 개발 및 환경을 관리할 수 있다.
+<br>GitHub 홈페이지 &nbsp;→ New Repository
+<br>이름, 설명, Public/Private 설정 후 Create
+<br><br># 로컬 저장소에 연결된 원격 저장소(remote) 목록을 보여줌.
+git remote -v 
+<br>**✅ 연결 전 : 원격 저장소가 아직 연결되지 않았기 때문에 아무것도 뜨지 않음.<br>
+이 상태에서는 git push, git pull 명령어를 사용할 수 없다.<br>origin  https://github.com/sunfivemin/GitTest.git (fetch)
+origin  https://github.com/sunfivemin/GitTest.git (push)
+<br>**✅ 연결 후 : URL을 기준으로 양방향 연결 완료<br>
+• origin : remote(원격저장소) 기본 별칭 (보통 origin, 별칭 변경 가능)<br>
+• (fetch) : GitHub에서 로컬로 받아오기 가능<br>
+• (push) : 로컬에서 GitHub로 보내기 가능<br><br><br><br>🧭 remote 연결 명령어<br># GitHub 저장소 URL을 얻어서 origin으로 연결
+git remote add origin https://github.com/sunfivemin/GitTest.git
+<br>🧠 설명:<br>
+• origin이라는 이름으로 이 GitHub 저장소 주소를 remote로 등록하겠다는 뜻<br>
+• 이후부터는 origin이라는 이름으로 간단히 원격 작업 가능<br><br>🧭 첫 업로드 시 git push -u origin main<br># 첫 통신일 경우 -u 옵션으로 upstream branch 설정
+$ git push -u origin main
+<br>🧠 구성 요소:<br>
+• push: 로컬 → 원격 저장소로 업로드<br>
+• -u: upstream 설정 (다음부터는 git push만 입력해도 main 브랜치로 연결됨)<br>
+• origin: 원격 저장소 이름<br>
+• main: 로컬의 현재 브랜치 이름<br>🎯 즉, 이 명령은 “내 로컬 main 브랜치를 GitHub의 origin 저장소에 업로드하겠다”는 뜻이고<br>
+처음 연결 시엔 -u 옵션으로 기본 푸시 대상(upstream) 도 설정함.<br>✅ 요약 흐름<br>
+<br>git remote -v → remote 연결 상태 확인
+<br>remote 없으면: git remote add origin [URL]으로 연결
+<br>최초 업로드 시: git push -u origin main → GitHub에 업로드 + 브랜치 연결
+<br>그 다음부터는: git push, git pull로 편하게 동기화
+<br><br>
+<br>👉 &nbsp;GitHub에서 레포지토리를 생성한 후, 로컬 저장소와 원격 저장소를 연결하고 git push 명령어로 성공적으로 동기화하였다.<br>
+<img alt="저장소생성" src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png" referrerpolicy="no-referrer">
+<br><img alt="깃허브에로컬업로드" src="https://seonohblog.netlify.app/assets/%EA%B9%83%ED%97%88%EB%B8%8C%EC%97%90%EB%A1%9C%EC%BB%AC%EC%97%85%EB%A1%9C%EB%93%9C.png" referrerpolicy="no-referrer"><br><img alt="저장소생성완료" src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1%EC%99%84%EB%A3%8C.png" referrerpolicy="no-referrer"><br><br><br><br>• git clone은 GitHub에 있는 원격 저장소 전체를 로컬로 복제하는 명령어다.<br>
+• 이 명령을 실행하면 저장소 이름과 동일한 폴더가 자동 생성되며, 내부에 Git이 인식할 수 있는 .git 폴더도 포함된다.<br>
+• 이후 해당 폴더 안에서 git status, git pull, git push 등을 사용할 수 있다.<br>git clone https://github.com/사용자이름/저장소이름.git
+cd 저장소이름
+git status  # 현재 상태 확인
+<br><br>❗️주의! pull이 안 될 때도 있다<br>
+clone은 정상적으로 됐는데, 다음과 같이 Git 명령어가 안 먹힐 수도 있다.<br>
+<img alt="pull오류" src="https://seonohblog.netlify.app/assets/pull%EC%98%A4%EB%A5%98.png" referrerpolicy="no-referrer"><br>⚠️ **fatal: not a git repository 에러<br>fatal: refusing to merge unrelated histories
+<br>• clone한 폴더 바깥에서 Git 명령어를 실행했기 때문이다.<br>
+• .git 폴더가 존재하지 않는 디렉토리에서는 Git이 “여긴 저장소가 아니야”라고 판단한다.<br>📌 • .git 폴더가 있는 폴더만 Git 저장소로 인식된다.<br>📁 현재 디렉토리/
+└── 📁 저장소이름/      ← clone으로 자동 생성된 폴더
+    ├── .git/          ← Git이 이 폴더를 저장소로 인식
+    └── 코드/파일들
+<br>✅ 해결 방법<br>cd 저장소이름   # .git 폴더가 있는 디렉토리로 이동
+git pull        # 정상 작동
+git remote -v   # 원격 저장소 확인 가능
+<br><img alt="gui에서clone" src="https://seonohblog.netlify.app/assets/gui%EC%97%90%EC%84%9Cclone.png" referrerpolicy="no-referrer"><br>➜  중요한 포인트: 복제한 건 어디서 열든 그대로다.<br>
+• git clone을 하면, 저장소 전체가 로컬에 복제되고 .git 폴더와 파일들이 포함된 폴더가 생성된다.<br>
+• 이 폴더 안에 Git 관련 이력, 설정, 브랜치 정보가 모두 담겨 있으므로, 어떤 방식으로 열든 (CLI, VS Code, GitHub Desktop) 결과는 동일하다.<br>
+• clone만 제대로 했다면, 어디서 열든 복제된 프로젝트는 그대로 살아 있다.<br>
+• 실수로 다른 폴더를 열었거나 Git 명령어가 안 됐다고 당황하지 말고,<br>
+.git 폴더가 있는 위치로만 잘 들어가면 언제든 다시 이어서 작업할 수 있다.<br><br><br>
+<br>브랜치는 프로젝트의 독립적인 작업 공간 (예: 로그인 기능, 회원가입 기능 개발용)
+<br>여러 개발자가 동시에 다른 기능을 개발할 수 있도록 도와주고, 협업이 쉬워진다.
+<br>git branch                # 현재 브랜치 목록 확인
+git branch dev            # 현재 브랜치를 기준으로 dev 브랜치 생성 (이동은 안 됨)
+
+git checkout dev          # dev 브랜치로 이동 (기존 방식)
+git checkout -b dev       # dev 브랜치 생성 + 이동 (기존 방식)
+
+git switch dev            # dev 브랜치로 이동 (권장 방식)
+git switch -c dev         # dev 브랜치 생성 + 이동 (권장 방식)
+<br> 💡 헷갈리지 말기!<br>
+<br>git branch<br>
+→ 현재 저장소에 존재하는 모든 브랜치 목록을 출력<br>
+→ * 표시된 브랜치가 현재 HEAD가 가리키고 있는 브랜치 (즉, 내가 작업 중인 브랜치)
+<br>git branch dev<br>
+→ 현재 브랜치를 기준으로 dev라는 브랜치를 생성만 함<br>
+→ 자동으로 이동하지 않음
+<br>git checkout dev 또는 git switch dev<br>
+→ 이미 존재하는 dev 브랜치로 이동만 함
+<br>git checkout -b dev 또는 git switch -c dev<br>
+→ 브랜치를 새로 만들고 곧바로 이동하는 명령어 
+<br><br>
+<br>처음에는 브랜치 생성과 이동이 헷갈렸지만, git branch, git switch 명령어를 직접 써보니 명확해졌다.
+<br>명령어를 단순히 외우는 것보다, 실제로 파일을 수정하고 commit 후 브랜치를 이동하며 실습하니 훨씬 기억에 잘 남는다.
+<br>checkout보다 switch가 실수 방지에도 좋고 직관적이라는 점도 체감할 수 있었고, 앞으로는 습관적으로 switch를 사용할 것 같다.
+<br><br><br>• 새롭게 알게 된 점<br>
+→ 브랜치를 그냥 ‘다른 작업 공간’ 정도로만 생각했었는데, 실제로 실습하면서 협업이나 기능 분리에 왜 필요한지를 체감할 수 있었다. &nbsp;<br>
+→ HEAD가 브랜치를 따라 이동하는 가상 포인터라는 개념도 흥미로웠고, log를 보며 흐름을 눈으로 확인하니 이해가 쉬웠다. &nbsp;<br>
+→ 또, git checkout -으로 이전 브랜치로 바로 돌아가는 게 꽤 유용하다는 것도 이번에 처음 알았다.<br>• 어렵게 느껴졌던 부분<br>
+→ 처음엔 checkout, switch, branch 개념이 비슷해서 헷갈렸는데, 직접 여러 번 실습하고 상태를 log/status로 확인하면서 확실히 감을 잡게 되었다. &nbsp;<br>
+→ 앞으로는 브랜치 이동 시 switch를 습관처럼 쓰고, 항상 현재 브랜치와 작업 상태를 status, log로 체크하는 습관을 들일 예정이다.<br>• 다음에 학습할 주제<br>
+→ 브랜치 이름 규칙과 테스트<br>
+→ 브랜치 전략 (예: Git Flow, Feature Branch 등)<br>
+→ Pull Request &amp; Merge<br>
+→ Merge된 GitHub 브랜치를 로컬 Git에 동기화하는 법<br>
+→ 충돌 발생 시 해결하는 방법 (merge conflict resolution)<br><br>
+<br><a data-tooltip-position="top" aria-label="https://git-scm.com/book/ko/v2" rel="noopener nofollow" class="external-link" href="https://git-scm.com/book/ko/v2" target="_blank">Pro Git Book (한국어 번역)</a>
+<br><a data-tooltip-position="top" aria-label="https://docs.github.com/en/get-started/quickstart/github-flow" rel="noopener nofollow" class="external-link" href="https://docs.github.com/en/get-started/quickstart/github-flow" target="_blank">GitHub Docs – Branches</a>
+]]></description><link>4.til/4월/2025-04-01-github.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-01-GitHub.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-02 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>브랜치 이름을 명확하고 일관되게 관리하는 규칙
+<br>Git Flow, Feature Branch 전략 등 대표적인 브랜치 전략을 이해
+<br>GitHub에서 Pull Request를 만들고, 브랜치를 병합(Merge)하는 전체 흐름
+<br>GitHub에서 머지된 내용을 로컬 Git 저장소에 동기화하는 방법(git pull, fetch, merge) 실습
+<br>충돌(conflict)이 발생했을 때 해결하는 방법
+<br><br><br><br>💡 새로운 기능을 개발할 때 사용하는 브랜치<br>
+feature/login, feature/select-product<br>
+<br>보통 main이나 develop 브랜치에서 기능 단위로 분기해서 생성
+<br>작업 완료 후 main 또는 develop에 merge
+<br><br><br>
+<br>💡 출시 전 QA, 테스트 등을 위한 브랜치<br>
+release-1.3, release-1.4
+<br>develop 브랜치에서 따와서 버전 단위로 관리
+<br>안정화되면 main에 merge 후 태그 생성 (v1.3.0 등)
+<br><br><br>
+<br>💡 운영 중 발견된 긴급 버그를 수정하는 브랜치<br>
+hotfix-1.2.1
+<br>보통 main 브랜치에서 바로 분기하여 빠르게 수정하고 merge함
+<br>이후 develop에도 병합(sync) 해줘야 함 (양쪽에 적용)
+<br><br><br>
+<br>이름에 /를 넣어 브랜치를 의미별로 그룹핑하는 전략<br>
+- feature/로그인<br>
+- bugfix/장바구니<br>
+- release/v1.2.0
+<br>📌 이렇게 하면 폴더 구조처럼 정리되어 가독성 향상 &nbsp;<br>
+→ 특히 VS Code, GitLens, Sourcetree 같은 툴에서 매우 유용함<br><br><br><br>git switch -c feature/login  # 기능 개발을 위한 브랜치 생성
+
+# 파일 수정 후 커밋
+git add .
+git commit -m "login branch commit"
+<br>➡ 이 시점까지는 로컬에서만 존재하는 브랜치다.<br>
+GitHub에는 아직 올라가지 않았기 때문에 다른 사람은 이 브랜치를 볼 수 없다.<br><br><br>git push origin feature/login
+<br>
+<br>해당 명령어로 로컬 브랜치를 GitHub에 push하면, origin 저장소에도 feature/login 브랜치가 생성된다.<br>
+📌 이렇게 하면 협업자가 git fetch 또는 git pull로 해당 브랜치를 내려받아 작업할 수 있다.
+<br><br><br><br>
+<br>-r 옵션은 remote(원격) 브랜치 목록만 출력
+<br>원격에 브랜치가 잘 반영됐는지 바로 확인할 수 있어 유용하다.
+<br><img alt="브랜치병렬개발" src="https://seonohblog.netlify.app/assets/%EB%B8%8C%EB%9E%9C%EC%B9%98%EB%B3%91%EB%A0%AC%EA%B0%9C%EB%B0%9C.png" referrerpolicy="no-referrer"><br><br>
+<br>👉 로컬에서 브랜치를 생성하고 커밋한 뒤, 다른 브랜치로 전환하고 원격 저장소에 push하는 전체 흐름을 실습했다.
+<br>👉 기능 단위로 브랜치를 나눈 후, Git 히스토리를 통해 커밋이 포함된 브랜치만 실제로 분기된 상태라는 것을 시각적으로 확인할 수 있다.
+<br><br><br><br>Git Flow는 기능, 배포, 수정 등 작업의 목적에 따라 브랜치를 체계적으로 나누는 전략이다.<br>
+협업이 많거나 버전 관리를 체계적으로 하고 싶을 때 특히 유용하다.<br><br># 기능 개발용 브랜치 생성
+git switch -c feature/login
+
+# 작업 후 커밋
+git add .
+git commit -m "feat: 로그인 기능 개발"
+
+# 원격 저장소에 push
+git push origin feature/login
+<br><br><br><br> Git이 병합 커밋을 만들지 않고 그냥 브랜치 포인터만 앞으로 이동시키는 병합 방식<br>
+<br>병합 커밋이 생기지 않음
+<br>히스토리가 깔끔하게 유지됨
+<br>git merge 또는 git merge --ff (기본 옵션)
+<br>📌 • .git 폴더가 있는 폴더만 Git 저장소로 인식된다.<br># main 브랜치
+A → B
+
+# feature 브랜치 (main에서 분기, 커밋만 추가됨)
+A → B → C → D
+
+# 병합할 때
+git merge feature
+<br><br> 브랜치가 서로 다른 변경을 했을 때,<br>
+Git이 공통 조상(commit)을 기준으로 A 브랜치와 B 브랜치의 차이를 비교해<br>
+새로운 병합 커밋(Merge Commit)을 만드는 전략<br>
+<br>git merge --no-ff로 명시적으로 사용 가능
+<br>협업 상황이나 이력이 명확해야 할 때 많이 사용됨
+<br>충돌(conflict)이 발생할 수도 있음
+<br># main 브랜치
+A → B → E
+
+# feature 브랜치 (A에서 분기, 커밋 발생)
+A → C → D
+
+# 병합 시
+E + D → M (3-way 병합 커밋 생성)
+<br><br><br><br>Pull Request(PR)는 내가 작업한 코드를 다른 브랜치에 합치기 전에 코드 리뷰를 요청하는 과정이다.<br><br>
+<br>브랜치 작업 완료
+<br>
+<br>기능 개발이나 버그 수정 후 원격 저장소에 Push
+<br>git push origin feature/login
+<br>
+<br>PR 생성
+<br>
+<br>원격 저장소에서 PR 생성 버튼 클릭
+<br>base 브랜치(병합 대상, main)와 compare 브랜치(내 작업, feature/login) 선택
+<br>제목과 설명 작성 (작업 내용, 변경사항 등)
+<br><img alt="pr전" src="https://seonohblog.netlify.app/assets/pr%EC%A0%84.png" referrerpolicy="no-referrer"><br><img alt="pr" src="https://seonohblog.netlify.app/assets/pr.png" referrerpolicy="no-referrer"><br>
+<br>코드 리뷰
+<br>
+<br>팀원들이 코드를 검토하고 피드백 제공
+<br>필요시 추가 수정 작업 후 다시 push
+<br>
+<br>병합 승인
+<br>
+<br>모든 리뷰가 완료되면 Merge 버튼을 통해 병합
+<br><img alt="merge" src="https://seonohblog.netlify.app/assets/merge.png" referrerpolicy="no-referrer"><br><br>PR 병합 과정에서 충돌이 발생하면:<br>
+<br>충돌 파일 선택 후 에디터에서 직접 수정
+<br>변경사항 저장 후 병합 완료
+<br><img alt="충돌해결" src="https://seonohblog.netlify.app/assets/%EC%B6%A9%EB%8F%8C%ED%95%B4%EA%B2%B0.png" referrerpolicy="no-referrer"><br><br>브랜치가 병합된 후에는 로컬 환경을 최신 상태로 동기화<br>
+<img alt="동기화" src="https://seonohblog.netlify.app/assets/%EB%8F%99%EA%B8%B0%ED%99%94.png" referrerpolicy="no-referrer"><br>
+<br>-p 옵션으로 원격에서 삭제된 브랜치 정보까지 업데이트
+<br>로컬의 main 브랜치가 최신 상태로 업데이트됨
+<br>PR이 병합되어 이미 main에 반영된 feature/login 브랜치를 안전하게 삭제
+<br><br># 원격 저장소의 최신 상태 동기화 
+git fetch -p
+
+# 로컬 브랜치 feature/1 생성  
+# 원격 브랜치 origin/feature/1을 **추적(tracking)** 으로 설정
+# 그 브랜치로 이동
+git checkout -t origin/feature/1
+==
+# 원격 브랜치 추적하며 전환 (최신스타일) 
+git switch --track -c feature/1 origin/feature/1 
+
+# 병합
+git merge feature/login
+
+# GitHub PR 병합 후 동기화
+git pull origin main
+
+# 병합 후 브랜치 삭제
+git branch -d feature/login
+<br><br>
+<br>여러 브랜치 생성 및 작업
+<br>
+<br>feature1과 feature2 브랜치에서 각각 작업
+<br>두 브랜치에서 동일한 파일(seonoh.txt)을 수정
+<br>
+<br>충돌 발생 및 해결
+<br>
+<br>feature1을 먼저 main에 병합
+<br>feature2를 병합하려 할 때 충돌 발생
+<br>충돌 파일을 열어 수정 후 병합 완료
+<br>
+<br>브랜치 정리
+<br>
+<br>불필요한 브랜치 삭제
+<br>git branch -d feature/1 명령어로 병합된 브랜치 삭제
+<br>VSCode의 소스 컨트롤 패널에서 병합 기록 확인 가능
+<br><br><br>
+<br>브랜치를 만들고 병합하는 과정이 생각보다 단순하지만, 충돌이 발생할 때 올바르게 해결하는 것이 중요하단걸 알게 됐다.
+<br>팀원들과 같은 파일을 수정할 때는 사전에 소통하거나 작업 영역을 나누는 것이 좋겠다는 생각이 들었다.
+<br>브랜치 관리를 잘하는 것이 효율적인 협업의 핵심이라는 점을 실감했다.
+<br><br><br>• 새롭게 알게 된 점<br>
+→ git branch -d와 -D의 차이점을 배웠다.<br>
+-d는 병합이 완료된 브랜치만 삭제하고, -D는 강제로 삭제한다.<br>
+→ PR(Pull Request)이 단순히 코드를 합치는 것이 아니라 코드 리뷰와 협업의 중요한 과정이라는 점을 알게 되었다.<br>
+→ Fast-forward와 3-way merge의 차이점과 각각의 장단점을 이해하게 되었다.<br>• 어렵게 느껴졌던 부분<br>
+→ 처음에는 충돌이 발생했을 때 어떤 코드를 남기고 어떤 코드를 지워야 할지 판단하는 것이 어려웠다.<br>
+→ 브랜치 전략(Git Flow)의 개념은 이해했지만 실제 프로젝트에 적용할 때 어떤 상황에서 어떤 브랜치를 사용해야 할지 아직 명확하지 않다.<br>
+→ merge와 rebase의 차이점에 대해 더 공부가 필요할 것 같다.<br>• 다음에 학습할 주제<br>
+→ 웹의 생태계와 웹 브라우저, html/css/javascript 문법<br><br>
+<br><a data-tooltip-position="top" aria-label="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow" rel="noopener nofollow" class="external-link" href="https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow" target="_blank">Atlassian Git Branching 모델 설명 (공식)</a>
+<br><a data-tooltip-position="top" aria-label="https://www.atlassian.com/ko/git/tutorials/merging-vs-rebasing" rel="noopener nofollow" class="external-link" href="https://www.atlassian.com/ko/git/tutorials/merging-vs-rebasing" target="_blank">Git Merge vs Rebase 차이</a>
+]]></description><link>4.til/4월/2025-04-02-branch.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-02-Branch.md</guid><pubDate>Wed, 16 Apr 2025 16:21:48 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/%EB%B8%8C%EB%9E%9C%EC%B9%98%EB%B3%91%EB%A0%AC%EA%B0%9C%EB%B0%9C.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://seonohblog.netlify.app/assets/%EB%B8%8C%EB%9E%9C%EC%B9%98%EB%B3%91%EB%A0%AC%EA%B0%9C%EB%B0%9C.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-03 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>웹의 이해
+<br>HTML/CSS 문법 요약
+<br>로그인 페이지 실습
+<br><br><br>✅ 웹의 이해<br>
+<br>인터넷: international Network의 약자로, 전 세계의 모든 컴퓨터를 하나의 통신망 안에서 연결한다는 의미이다.
+<br>웹: www(world wide web), 인터넷에 연결된 컴퓨터를 통해 사람들이 정보를 공유할 수 있는 공간
+<br>웹 페이지 링크를 타고 다른 웹 페이지로 이동하는 것을 웹 서핑, 웹 브라우징이라고 한다.
+<br>웹브라우저: 웹 페이지 혹은 웹 상의 데이터를 찾거나 읽을 때 사용하는 도구 (예: 사파리, 크롬 등)
+<br>✅ 웹의 구조<br>
+💡 클라이언트와 서버<br>
+<br>Client: 서비스를 요청하는 컴퓨터
+<br>Server: 서비스를 제공하는 컴퓨터
+<br>웹 프로토콜인 HTTP(HyperText Transfer Protocol) 를 사용하여 데이터를 주고받는다.
+<br>프로토콜: 클라이언트와 서버 간에 정보를 주고받을 때의 약속
+<br>✅ 웹 개발 직무<br>
+<br>프론트엔드: 사용자 화면을 구현하는 역할
+<br>백엔드: 서버 로직과 데이터베이스 처리를 담당
+<br>풀스택: 프론트엔드와 백엔드를 모두 다루는 역할
+<br><br><br><br><br>
+<br>하이퍼텍스트(웹 페이지를 연결하는 텍스트) 기반의 언어로, 웹 페이지의 구조를 명시하는 마크업 언어
+<br>&lt;태그&gt; 형태로 작성되며, 콘텐츠를 감싸고 기능을 부여
+<br>예: &lt;h1&gt;, &lt;p&gt;, &lt;a&gt;, &lt;img&gt;, &lt;form&gt; 등
+<br><br><br><br>
+<br>HTML로 만든 구조에 디자인과 스타일을 입히는 언어
+<br>색상, 여백, 배치, 애니메이션 등을 지정할 수 있음
+<br>선택자, 속성, 값으로 구성됨
+<br>예: color: red;, margin: 10px;, display: flex;
+<br><br><br><br>
+<br>HTML과 CSS로 만든 웹 페이지에 동적인 기능을 부여하는 프로그래밍 언어
+<br>버튼 클릭 시 알림, 입력 값 유효성 검사, 데이터 처리 등 다양한 인터랙션 구현 가능
+<br>예: alert(), addEventListener(), document.querySelector()
+<br><br><br><br><br>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8" /&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+		&lt;title&gt;Login Page&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+	&lt;h1&gt;Login&lt;/h1&gt;
+	&lt;form action="/login" method="POST"&gt;
+		&lt;input type="email" name="email" placeholder="Email" required /&gt;
+		&lt;input type="password" name="password" placeholder="Password" required /&gt;
+		&lt;button type="submit"&gt;로그인 하기&lt;/button&gt;
+	&lt;/form&gt;
+	&lt;a href="/go.html"&gt;비밀번호 찾기&lt;/a&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+<br><img alt="login" src="https://seonohblog.netlify.app/assets/login.png" referrerpolicy="no-referrer"><br><br>
+<br>직접 작성해보며 HTML/CSS의 기초 문법을 다시 복습할 수 있어서 좋았다.
+<br>퍼블리셔로서 익숙한 내용이지만, 개발자로 전환하며 문법을 정리하는 시간이 오히려 개념을 더 탄탄하게 만들어줬다.
+<br>기초를 다시 다듬는 과정도 결국 실력을 높이는 밑거름이라는 걸 느꼈다.
+<br><br><br>• 새롭게 알게 된 점<br>
+→ action, method, required 속성의 의미를 이해하게 됐다.<br>• 어렵게 느껴졌던 부분<br>
+→ form 태그로 로그인 구현은 간단해 보이지만, 실제로 서버와 연동하는 과정에서는 더 복잡해질 수 있을 것 같다는 생각이 들었다.<br>• 다음에 학습할 주제<br>
+→ CSS 스타일링과 JavaScript 이벤트 핸들링<br><br><a data-tooltip-position="top" aria-label="https://www.advancedwebranking.com/seo/html-study" rel="noopener nofollow" class="external-link" href="https://www.advancedwebranking.com/seo/html-study" target="_blank"># HTML 태그</a>]]></description><link>4.til/4월/2025-04-03-web.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-03-Web.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/login.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://seonohblog.netlify.app/assets/login.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-04 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>CSS, JavaScript 작성 방식
+<br>조건문과 변수 사용법
+<br>함수 실습
+<br><br><br>HTML은 웹 페이지의 구조를 정의하는 반면, CSS(Cascading Style Sheets)는 그 구조에 스타일과 생동감을 부여하는 역할을 한다. 단순히 태그 단위로 꾸미는 것이 아니라, 페이지 전반에 걸쳐 일관된 디자인을 적용할 수 있도록 도와준다.<br><br>HTML 태그 내부에 직접 style 속성을 사용하여 스타일을 적용하는 방식<br>
+🛠  A/B 테스트, JS 동적 스타일 변경, 예외 케이스에서 사용<br>&lt;p style="color: red; font-weight: bold;"&gt;이 문장은 빨간색입니다.&lt;/p&gt;
+<br>
+<br>장점: 빠르게 테스트할 때 유용하며, 특정 요소 하나에만 스타일을 적용할 수 있음.
+<br>단점: 유지보수가 어렵고, HTML과 스타일이 뒤섞여 가독성이 떨어짐. 대규모 프로젝트에 적합하지 않음.
+<br><br>HTML 문서의 &lt;head&gt; 태그 안에 &lt;style&gt; 요소로 작성하는 방식<br>
+🛠 단일 페이지, 테스트용 프로토타입, 독립적인 문서 스타일링<br>&lt;head&gt;
+  &lt;style&gt;
+    p {
+      color: blue;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+<br>
+<br>장점: 동일 문서 내 여러 요소에 스타일 적용 가능. HTML과 CSS가 같은 파일에 있어 테스트/배포가 간편함.
+<br>단점: 여러 페이지에 동일한 스타일을 공유할 수 없음. HTML 문서마다 스타일이 중복될 수 있음.
+<br><br>별도의 .css 파일로 작성하고, HTML 문서에서는 &lt;link&gt; 태그를 통해 연결하는 방식<br>
+🛠 대부분의 프로젝트에서 필수적으로 사용하는 방식<br>&lt;head&gt;
+  &lt;style&gt;
+    p {
+      color: blue;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+<br>
+<br>장점: 하나의 스타일 파일로 여러 HTML 문서에 일관된 스타일 적용 가능. 유지보수에 유리하고, 캐싱을 통해 성능 개선 효과도 큼.
+<br>단점: CSS 파일이 외부에 존재하므로, 연결이 끊기면 스타일이 적용되지 않을 수 있음.
+<br><br><br>웹 브라우저에서 동작하는 대표적인 스크립트 언어로, HTML과 CSS로 만든 정적인 웹페이지에 동적인 기능을 추가해주는 언어이다.<br>
+과거에는 자바스크립트가 오직 브라우저 안에서만 작동했지만, 최근에는 런타임 환경(Node.js)의 발달로 서버 개발, 데스크탑 앱, 모바일 앱, IoT 기기까지 다양한 곳에서 사용되고 있다.<br><br>
+<br>태그에 직접 JavaScript 코드를 작성하는 방식
+<br>간단한 테스트나 아주 짧은 동작을 처리할 때 유용하지만, 유지보수가 어렵고 가독성이 떨어지기 때문에 실무에서는 자주 사용되지 않는다.
+<br>&lt;button onclick="alert('안녕하세요!')"&gt;button&lt;/button&gt;
+<br><br>
+<br>&lt;head&gt;나 &lt;body&gt; 하단에 HTML 문서 안의 &lt;script&gt; 태그 안에 JavaScript 코드를 작성하는 방식
+<br>단일 파일로 관리할 수 있어서 소규모 프로젝트에 좋지만, 규모가 커지면 외부 스크립트로 분리하는 것이 좋다.
+<br>&lt;script&gt;
+  console.log("페이지가 로드되었습니다!");
+&lt;/script&gt;
+<br><br>
+<br>JavaScript 코드를 별도의 .js 파일로 작성하고, HTML에서 src로 불러오는 방식
+<br>유지보수에 용이하기 때문에 실무 개발에서는 이 방식을 사용한다.
+<br>  &lt;script src="main.js"&gt;&lt;/script&gt;
+<br><br><br>// 1. ID로 찾기
+document.getElementById('아이디');
+
+// 2. class 이름으로 찾기
+document.getElementsByClassName('클래스이름');
+
+// 3. 태그 이름으로 찾기
+document.getElementsByTagName('태그이름');
+<br><br><br><br>if (조건) {
+  // 조건이 참(true)일 때 실행되는 코드
+} else {
+  // 조건이 거짓(false)일 때 실행되는 코드
+}
+
+function checkLogin() {
+  const id = document.getElementById("txt_id").value;
+
+  if (id === "") {
+    alert("아이디를 입력해주세요.");
+  } else {
+    alert("입력한 아이디는 " + id + "입니다.");
+  }
+}
+<br><br> 데이터를 저장하고 재사용할 수 있도록 이름을 붙여주는 것<br>
+<br>자바스크립트에서는 변수를 선언할 때 let, const, var 세 가지 키워드를 사용할 수 있다.
+<br>let name = '제임스'; // 대부분의 경우 사용
+name = '존';         // 가능 
+
+const birthYear = 2000;
+// birthYear = 1995; // const는 재할당 불가
+
+var temp = '안녕';
+temp = '잘가';      // 가능은 하지만 추천하지 않음 
+<br><br><br><br>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+    &lt;title&gt;Login Page&lt;/title&gt;
+    &lt;link rel="stylesheet" href="./style.css" /&gt;
+    &lt;script src="./script.js" defer&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Login&lt;/h1&gt;
+    &lt;form action="/login" method="POST"&gt;
+      &lt;input
+        id="txt_id"
+        class="login_inputs"
+        type="text"
+        name="id"
+        placeholder="ID"
+        autocomplete="username"
+        required
+      /&gt;
+      &lt;input
+        id="txt_pw"
+        class="login_inputs"
+        type="password"
+        name="password"
+        placeholder="Password"
+        autocomplete="current-password"
+        onclick="myFunction('비밀번호 입력칸 클릭!')"
+        required
+      /&gt;
+      &lt;button id="btn" type="button" onclick="checkLogin()"&gt;로그인 하기&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;a href="/go.html"&gt;비밀번호 찾기&lt;/a&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+<br>function checkLogin() {
+  const id = document.getElementById("txt_id").value;
+  if (id === "") {
+    alert("아이디를 입력해주세요.");
+  } else {
+    alert("입력한 아이디는 " + id + "입니다.");
+  }
+}
+
+function myFunction(msg) {
+  alert("1");
+  alert("2");
+  alert("3");
+  console.log(msg);
+}
+<br><img alt="myFunction" src="https://seonohblog.netlify.app/assets/myFunction.png" referrerpolicy="no-referrer"><br><img alt="loginFunc.png" src="https://seonohblog.netlify.app/assets/loginFunc.png" referrerpolicy="no-referrer"><br><br>onclick에 값을 넘길 때 함수가 바로 실행되는 경우와 실행만 대기하는 경우가 있어서, 그 차이를 이해하는 게 좀 헷갈렸다.<br>
+자바스크립트가 코드를 어떤 순서로 처리하는지, 변수의 범위가 어디까지인지, 화면이 언제 그려지는지도 조금씩 감이 잡히기 시작했다.<br>
+console.log만으로는 확인이 어려운 상황이 있어서 크롬 개발자 도구에서 breakpoint를 써봤는데, 생각보다 훨씬 편하게 디버깅할 수 있었다.<br><br><br>• 새롭게 알게 된 점<br>
+→ 이벤트 핸들러에 함수를 넘길 때, 함수 자체를 넘기는 것과 실행하는 것의 차이를 알게 됐다.<br>
+→ let과 const가 블록 단위로 동작한다는 건 알고 있었지만, 변수가 어떻게 끌어올려지는지 직접 확인해보니까 이해가 더 잘 됐다.<br>
+→ DOM을 조작할 때는 브라우저가 화면을 다 그린 뒤여야 내가 의도한 대로 잘 작동한다는 걸 느꼈다.<br>• 어렵게 느껴졌던 부분<br>
+→ undefined가 출력되는 문제가 단순히 값이 없는 게 아니라, 실행 타이밍의 문제일 수 있다는 걸 알게 됐다.<br>
+→ 함수 호출 방식에 따라 버그가 생기는데 그 이유를 파악하려면 콜 스택, 실행 컨텍스트 개념을 어느 정도 알아야 해서 어렵게 느껴졌다.<br>
+→ 버튼을 클릭했을 때 alert()이 여러 번 겹쳐 뜨는 문제는 단순히 코드 문제만은 아니었고, 브라우저의 렌더링 블로킹 이슈도 얽혀 있어서 신기했다.<br>• 다음에 학습할 주제<br>
+→ 데이터를 기반으로 개발자 포트폴리오 제작<br>
+→ 백엔드 기초: Node.js 기본<br><br><a data-tooltip-position="top" aria-label="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events" rel="noopener nofollow" class="external-link" href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events" target="_blank">JavaScript 이벤트 전달 방식</a><br>
+<a data-tooltip-position="top" aria-label="https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources?hl=ko" rel="noopener nofollow" class="external-link" href="https://developer.chrome.com/docs/lighthouse/performance/render-blocking-resources?hl=ko" target="_blank">렌더링 블로킹</a>]]></description><link>4.til/4월/2025-04-04-javascript.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-04-JavaScript.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/myFunction.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://seonohblog.netlify.app/assets/myFunction.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-07 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>Node.js 개념 및 서버 구현
+<br>HTTP 템플릿 구조 이해
+<br>서버 모듈화와 라우터 연결
+<br>테니스마켓 실습 기반 Node.js 웹 서버 구현
+<br><br><br>백엔드 구조를 이해하는 것은 클라이언트 요청이 서버와 데이터베이스를 어떻게 오고 가는지를 파악하는 데 매우 중요하다. 오늘은 그 흐름을 크게 웹 서버(Web Server) 와 웹 애플리케이션 서버(Web Application Server, WAS) 두 단계로 나누어 정리했다.<br><br>
+<br>클라이언트(브라우저)로부터 들어오는 요청 중 정적(static) 페이지를 처리
+<br>HTML, CSS, 이미지 파일 등 변경되지 않는 리소스 제공
+<br>동적 요청은 WAS에 전달해서 처리하게 한다
+<br>📌 정적 페이지란?<br>
+데이터의 변동 없이 항상 동일한 콘텐츠를 보여주는 페이지 (예: 소개 페이지, 정적 HTML 문서 등)<br><br><br>
+<br>동적(dynamic) 페이지를 처리하는 주체
+<br>Node.js, Java, Python 등 서버 코드 실행
+<br>DB와 통신하여 로그인, 상품 목록, 장바구니 등 사용자 맞춤형 콘텐츠 처리
+<br>최종적으로 클라이언트에게 데이터를 HTML/JSON 형태로 응답
+<br>📌 동적 페이지란?<br>
+사용자나 상황에 따라 콘텐츠가 달라지는 페이지 (예: 장바구니, 마이페이지, 게시판 등)<br><br><br>Node.js는 JavaScript 런타임 환경으로, 브라우저가 아닌 서버에서 자바스크립트를 실행할 수 있도록 만들어주는 플랫폼이다.<br><br>Node.js에서 모듈을 불러올 때 사용하는 함수이다.<br>let http = require('http');
+<br>
+<br>http 모듈은 Node.js의 기본 내장 모듈 중 하나로, HTTP 요청/응답을 처리하고 웹 서버를 만들 수 있다.
+<br>Node.js는 CommonJS 모듈 시스템을 사용하며 require()와 exports로 파일 간 모듈을 주고받는다.
+<br>http, url, fs 같은 내장 모듈도 불러올 수 있다.
+<br><br><br>HTTP 요청을 받을 수 있는 웹 서버 객체를 생성하는 함수이다.<br>
+이때 요청(req)과 응답(res)을 콜백 함수로 처리한다.<br><br>
+<br>req: 요청 객체 (request), 사용자가 보낸 정보 (주소, 메서드, 헤더 등)
+<br>res: 응답 객체 (response),  서버가 사용자에게 돌려주는 정보
+<br><br>
+<br>응답의 상태 코드와 헤더를 설정
+<br>200: 성공
+<br>Content-Type: 응답 콘텐츠의 종류 (text/html, text/plain, application/json 등)
+<br><br>
+<br>응답을 마무리하고 실제 내용을 클라이언트에게 전송
+<br>// 1. http 모듈 불러오기
+let http = require('http');
+
+// 2. 요청(request)과 응답(response)을 처리하는 함수 정의
+function onRequest(request, response) {
+  response.writeHead(200, { 'Content-Type': 'text/html' }); // 응답 헤더 설정
+  response.write('&lt;h1&gt;Hello Node.js&lt;/h1&gt;'); // 응답 본문 작성
+  response.end(); // 응답 종료
+}
+
+// 3. 서버 생성 후 8080 포트로 실행
+http.createServer(onRequest).listen(8080);
+<br><br><br> 클라이언트와 서버가 “대화”하려면 같은 포트 번호(주파수) 를 맞춰야 한다.<br>
+즉, 클라이언트가 서버와 통신하려면 정확한 포트를 알아야 한다.<br>
+<br>위 예시에서는 listen(8080)으로 설정했기 때문에  <a rel="noopener nofollow" class="external-link" href="http://localhost:8080" target="_blank">http://localhost:8080</a>에 접속 가능하다.
+<br>자주 쓰이는 개발용 포트 번호:  3000, 5000, 8000, 8080 등
+<br><br><br>HTTP 응답은 Header(헤더) + Body(본문) 구조로 이루어져 있다.<br><br>
+<br>상태 코드 (200, 404, 500)
+<br>응답 형식 (Content-Type: text/html, text/plain, application/json 등)
+<br><br>
+<br>실제로 사용자에게 보여질 데이터
+<br><br><br>서버 역할을 담당하는 server.js를 하나의 모듈로 만들고, 이를 외부에서 불러와 사용하는 방식<br><br> 하나의 파일 또는 기능을 별도의 단위로 분리해 외부에서 require()로 불러올 수 있도록 만드는 것<br>index.js       →     server.js       →     router.js
+(앱 시작)           (요청 수신 + 응답)          (경로 분석)
+<br><br>let server = require("./server");
+let router = require("./router");
+
+server.start(router.route); // 서버 실행하면서 라우터 함수 넘김
+<br>
+<br>server.js의 start() 함수 불러옴    
+<br>router.route를 인자로 넘겨서 서버가 요청 받을 때 이 함수(router)를 사용하도록 설정
+<br><br>function start(route) {
+  function onRequest(request, response) {
+    let pathname = url.parse(request.url).pathname;
+    route(pathname); // 라우터 함수 실행
+<br>
+<br>서버가 켜짐 (listen(8080))
+<br>사용자가 /order에 접속 → 서버가 onRequest() 실행
+<br>pathname 변수에는 /order가 담김
+<br>이 경로를 route()에 넘김
+<br><br>function route(pathname) {
+  console.log("pathname :", pathname);
+}
+<br><br>response.writeHead(200, { "Content-Type": "text/html; charset=utf-8;" });
+response.write("&lt;h1&gt;Hello Node.js!&lt;/h1&gt;&lt;h3&gt;민선오&lt;/h3&gt;");
+response.end();
+<br>
+<br>요청은 라우터에게 넘기고, 클라이언트(브라우저)에게는 응답을 줌
+<br><br><br>라우터(router.js)가 URL 경로에 따라 요청을 분기해주는 네비게이션 역할이라면,<br>
+handler.js는 각 경로에서 해야 할 실제 일(HTML 응답, DB 처리 등)을 실행하는 파트다.<br><br>
+<br>HTML 응답: main.html, orderlist.html 등
+<br>이미지 응답: /img/redRacket.png 등
+<br>DB 처리: 주문 추가, 주문 목록 조회
+<br><br><br>
+<br>URL은 웹 리소스의 위치를 나타내는 주소이다.
+<br>구성 예시: http://localhost:8080/order
+<br><br><br><br><br><br><img alt="메인페이지" src="https://seonohblog.netlify.app/assets/mainpage1.png" referrerpolicy="no-referrer"><br><br><img alt="주문내역페이지" src="https://seonohblog.netlify.app/assets/mainpage2.png" referrerpolicy="no-referrer"><br><br><img alt="Node.js" src="https://seonohblog.netlify.app/assets/nodejs.png" referrerpolicy="no-referrer"><br><br>
+<br>모듈화 구조는 처음에는 어렵게 느껴졌지만, 흐름을 따라가 보니 점점 명확해졌다.
+<br>서버의 역할과 라우터의 역할이 구분되니 코드가 깔끔하고 유지보수하기 쉬웠다.
+<br>console.log를 통해 요청 경로를 확인하면서 서버 흐름을 직접 추적할 수 있었다.
+<br><br><br>• 새롭게 알게 된 점<br>
+→ 서버는 클라이언트 요청을 받아 직접 응답도 할 수 있고, 라우터처럼 외부에 처리를 위임할 수도 있다.<br>
+→ 라우터가 요청을 경로에 따라 나눠주는 역할이라면, handler.js는 그 경로에 맞는 실제 기능을 실행하는 공간이다.<br>• 어렵게 느껴졌던 부분<br>
+→ server.start(router.route)처럼 함수 안에 또 함수를 넣어 넘기는 방식이 처음엔 익숙하지 않았다.<br>• 다음에 학습할 주제<br>
+→  데이터베이스,SQL<br>
+→  Docker 개요, 도커 설치, mariaDB 설치<br><br>
+<br><a data-tooltip-position="top" aria-label="https://nodejs.org/ko/docs" rel="noopener nofollow" class="external-link" href="https://nodejs.org/ko/docs" target="_blank">Node.js 공식 문서</a>
+<br><a data-tooltip-position="top" aria-label="https://developer.mozilla.org/ko/docs/Web/HTTP" rel="noopener nofollow" class="external-link" href="https://developer.mozilla.org/ko/docs/Web/HTTP" target="_blank">MDN Web Docs - HTTP</a>
+]]></description><link>4.til/4월/2025-04-07-node.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-07-Node.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/mainpage1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://seonohblog.netlify.app/assets/mainpage1.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-08 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>Node.js v18+
+<br>Docker + MariaDB
+<br>MySQL CLI
+<br><br><br>데이터베이스(Database; DB)는 데이터를 통합하여 효율적으로 관리하기 위한 데이터 집합체<br>
+<br>데이터를 구조화하여 관리함으로써 데이터의 중복을 줄이고, 빠르고 효율적인 검색, 삽입, 수정, 삭제 작업을 가능하게 해준다.
+<br>즉, 정보를 체계적으로 저장해서 필요할 때 쉽게 꺼내 쓸 수 있는 디지털 서랍장이라고 보면 된다.
+<br><br><br>DBMS는 Database Management System(데이터베이스 관리 시스템)의 약자로,<br>
+데이터베이스를 실제로 운영하고 관리하기 위한 소프트웨어이다.<br>
+<br>사용자는 DBMS를 통해 SQL 등의 명령어로 데이터베이스를 조작한다.
+<br>데이터의 생성, 저장, 변경, 삭제, 검색 등 모든 처리는 DBMS가 중간에서 수행한다.
+<br><br><br><br>💡 명령어는 대부분 동일하게 사용 가능하기 때문에, 한 DBMS를 배우면 다른 것도 쉽게 응용 가능하다!<br><br><br>SQL은 데이터베이스를 조작하기 위해 사용하는 언어로, 데이터를 생성, 조회, 수정, 삭제하는 명령들을 포함한다.<br><br>-- 데이터 삽입
+INSERT INTO member VALUES ('SEONCoding', 'min seonoh', 'content');
+-- 전체 데이터 조회
+SELECT * FROM member;
+-- 특정 데이터 조회
+SELECT * FROM member WHERE id = 'SEONCoding2'; 
+-- 데이터 수정
+UPDATE member SET pwd = 'zzz' WHERE id = 'SEONCoding';
+-- 데이터 삭제
+DELETE FROM member WHERE name = 'min seonoh';
+<br><br><br>이번에는 Docker를 이용해 MariaDB를 설치하고, CLI에서 직접 DB에 접속해보는 과정을 실습했다.<br><br>docker pull mariadb
+docker run --name mariadb -d -p 3306:3306 --restart=always -e MYSQL_ROOT_PASSWORD=root mariadb
+<br>
+<br>--name mariadb: 컨테이너 이름 지정
+<br>-p 3306:3306: 호스트와 컨테이너 포트 연결
+<br>-e MYSQL_ROOT_PASSWORD=root: MariaDB의 root 비밀번호 설정
+<br><br>docker exec -it mariadb /bin/bash
+<br>
+<br>컨테이너 안으로 들어가서 CLI로 직접 명령어를 실행할 수 있다.
+<br><br><br>
+<br>MySQL 클라이언트용 명령어지만,MariaDB에서도 기본 제공됨.
+<br>호환성을 유지하기 위해 대부분의 MariaDB 환경에서 사용 가능함.
+<br>가장 널리 쓰이고, 안전하게 작동되는 명령어.
+<br>mysql -u root -p      # 가장 보편적이고 호환성 보장
+<br>
+<br>-u root: root 사용자로 로그인
+<br>-p: 비밀번호 입력 요청<br>
+정상적으로 접속되면 아래와 같은 메시지를 확인할 수 있다.
+<br>Welcome to the MariaDB monitor...
+Server version: 11.7.2-MariaDB...
+<br><img alt="mysql" src="https://seonohblog.netlify.app/assets/mysql.png" referrerpolicy="no-referrer"><br><br>
+<br>MariaDB 전용 클라이언트 명령어
+<br>mysql과 기능은 거의 동일
+<br>하지만 MariaDB 10.5 이후 일부 배포판에서만 기본 포함됨
+<br>즉, mariadb 명령어가 모든 환경에 있는 건 아님 → 따로 설치돼 있어야 함
+<br>mariadb -u root -p    # mariadb-client가 설치된 경우에만 사용 가능
+<br>❗ bash: mariadb: command not found 에러가 나면, mariadb-client가 설치되지 않았다는 의미이다.<br><img alt="mariadb" src="https://seonohblog.netlify.app/assets/mariadb.png" referrerpolicy="no-referrer"><br><br>
+<br>처음에는 mysql: command not found 오류가 발생했는데, 이는 mariadb-client가 설치되지 않아서였다.
+<br>아래 명령어로 해결!
+<br>apt update
+apt install mariadb-client -y
+<br>이후 다시 mysql -u root -p 명령어로 접속 시도했더니 정상적으로 들어갈 수 있었다.<br><br><br><br>SQL에서는 실제 데이터를 저장할 공간을 “데이터베이스”라고 부른다.<br>
+각각의 데이터베이스는 하나의 “프로젝트 방”처럼 쓰일 수 있다.<br><br>-- 생성된 데이터베이스 목록 보기(방확인)
+SHOW DATABASES;
+
+-- 새로운 데이터베이스 만들기(방 만들기)
+CREATE DATABASE Tennis;
+
+-- 특정 데이터베이스 사용하기(방 들어가기)
+USE Tennis;
+<br><br><img alt="createDB" src="https://seonohblog.netlify.app/assets/createdb.png" referrerpolicy="no-referrer"><br><br>앞서 우리는 CREATE DATABASE Tennis;로 데이터를 저장할 방을 만들었다.<br>
+이제 이 방 안에 실제 데이터를 담을 저장소, 즉 테이블(Table)을 만들어야 한다.<br><br>
+<br>테이블은 하나의 정보 단위를 저장하는 구조
+<br>데이터베이스는 여러 개의 테이블을 포함할 수 있다.
+<br>각각의 테이블은 엑셀의 표처럼 행(Row)과 열(Column) 로 구성됨
+<br><br>📦 Tennis (데이터베이스)
+├── 👤 Members (회원 테이블)
+├── 🛍 Products (상품 테이블)
+└── 📦 Orders (주문 테이블)
+<br><img alt="createTable" src="https://seonohblog.netlify.app/assets/createTable.png" referrerpolicy="no-referrer"><br><br><br>• 새롭게 알게 된 점<br>
+<br>SQL의 기본적인 명령 구조(SELECT, INSERT 등) 와 MariaDB 설치 및 접속 방식에 대해 배울 수 있었다.
+<br>단순히 데이터를 넣고 빼는 게 아니라, 실제 쇼핑몰이나 웹 서비스에서 DB를 어떻게 설계하고 활용하는지가 핵심이라는 걸 깨달았다.
+<br>데이터가 화면에 보여지는 과정에서 프론트와 백엔드, DB의 흐름을 처음으로 체감할 수 있었다.
+<br>• 어렵게 느껴졌던 부분<br>
+<br>Docker 명령어 입력 시 하이픈(-) 을 잘못 입력해서 계속 오류가 발생했는데, 단순한 문법 실수도 실행에 영향을 줄 수 있다는 걸 느꼈다.
+<br>특히 터미널에서는 작은 오타 하나도 디버깅 시간을 길게 만든다는 걸 경험했다.
+<br>SQL 문법은 간단하지만, 데이터 타입이나 날짜 포맷처럼 작은 차이가 큰 문제로 이어질 수 있다는 점이 처음엔 헷갈렸다.
+<br>• 다음에 학습할 주제<br>
+<br>RESTful API 개념 학습 및 실습
+<br>서버와 프론트엔드 간 데이터 흐름 익히기 (GET, POST)
+<br>fetch/axios로 서버에 요청 보내고 응답 처리해보기
+<br><br>
+<br><a data-tooltip-position="top" aria-label="https://www.w3schools.com/sql/" rel="noopener nofollow" class="external-link" href="https://www.w3schools.com/sql/" target="_blank">W3Schools - SQL Tutorial</a>
+<br><a data-tooltip-position="top" aria-label="https://opentutorials.org/course/195" rel="noopener nofollow" class="external-link" href="https://opentutorials.org/course/195" target="_blank">생활코딩 - MySQL 데이터베이스</a>
+]]></description><link>4.til/4월/2025-04-08-dbms.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-08-DBMS.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/mysql.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://seonohblog.netlify.app/assets/mysql.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-08 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>API 란?
+<br>HTTP 통신의 구조
+<br>REST API 설계와 활용 흐름
+<br>API URL + Method 연습
+<br><br><br>API(Application Programming Interface) 는<br>
+프로그램끼리 데이터를 주고받기 위한 약속된 통신 규칙이다.<br>
+<br>우리가 앱에서 보는 지하철 도착 정보, 카카오맵 경로 안내도 모두 어딘가의 데이터를 API를 통해 받아오는 것. 
+<br>예를 들어 서울교통공사 API는 실시간 지하철 정보를 제공해주고, 우리는 그것을 가져다가 앱이나 웹에 표시한다.
+<br>즉, 공공기관(백엔드) → API → 앱(프론트엔드) 이런 흐름으로 데이터를 주고받는다. 
+<br><br> 인터페이스(Interface) 는 두 시스템 사이를 이어주는 매개체<br>
+<br>사용자 ↔ 컴퓨터 (ex. 마우스 클릭 → 실행)
+<br>프론트엔드 ↔ 백엔드 (ex. 버튼 클릭 → 주문 전송)
+<br>우리 앱 ↔ 공공기관의 데이터 서버
+<br>📍 API는 바로 이런 프론트와 백 사이의 다리<br><br>GUI와 CLI처럼, 인터페이스(interface) 는 말 그대로 중간에서 양쪽을 이어주는 매개체<br><br>
+<br>그래픽 기반의 인터페이스
+<br>버튼, 창, 마우스로 조작하는 방식
+<br>예: 윈도우, 앱, 웹 브라우저 등
+<br><br>
+<br>텍스트 기반의 명령어를 입력하여 컴퓨터와 소통
+<br>예: 터미널, 명령 프롬프트, 콘솔 등
+<br><br><br>REST API는 “HTTP 규약을 잘 지킨 API”<br>
+<br>REST: Representational State Transfer
+<br>HTTP 규칙을 따라 자원을 명확하게 표현하고, 의미 있는 주소 설계와 메서드 사용을 권장
+<br><br><br><br>웹(인터넷망 속 가상 공간)의 개발자는 “인터넷을 돌아다니기 위한 규약”, 즉 HTTP를 따라야 한다!<br>
+<br>REST API = 이 HTTP 규약을 잘 따르는 API
+<br>RESTful API = HTTP를 정말 철저히 지킨 고퀄리티 API
+<br><br><br><br>
+<br>통신 상태 알려주는 곳 (status code)
+<br>예: 200 OK, 404 Not Found, 500 Server Error
+<br>HTTP/1.1 200 OK
+Content-Type: text/html
+<br><br>
+<br>실제 데이터를 담는 공간
+<br>{
+  "name": "Racket",
+  "price": 30000
+}
+<br>
+<br>“이 데이터 좀 줄래?” (요청)
+<br>“이거 받아!” (응답)
+<br><br><br>📌 URL(Uniform Resource Locator)<br>
+: 웹 상의 위치 + 데이터를 요청하는 방법<br>http://localhost:8888/products
+<br>
+<br>http:// → 통신 규칙 (HTTP)
+<br>localhost → 내 컴퓨터 주소
+<br>:8888 → 포트 번호
+<br>/products → 요청할 자원
+<br><br>📌 이처럼 URL은 “주소 + 목적”을 함께 담고 있는 프론트엔드가 백엔드에 무언가를 요청하는 방법이다.<br>https://www.lotteon.com/p/display/main/
+<br>→ 롯데마트 페이지 열기 요청 = lotteon 서버에, main 페이지 열어줘 <br><br><br><br><br>GET /products
+<br>→ API로 받아온 데이터를 화면에 뿌려줌<br><br>GET /products/{id}
+<br>→ 특정 ID를 가진 상품 하나만 요청<br><br>GET /products/1
+<br>→ 조회<br>PUT /products/1
+<br>→ 수정<br><br>전체 상품 목록 API 요청 후, “수정” 버튼 누르면 개별 API로 이동<br>📌 URL을 복수형(/products) 으로 쓰는 이유<br>
+<br>id를 가지는 개별 데이터가 포함되기 때문에
+<br>REST API에서는 일관성을 위해 복수형을 사용함
+<br><br>• 새롭게 알게 된 점<br>
+<br>HTTP와 REST의 차이를 명확히 이해할 수 있었다.
+<br>GET / PUT / DELETE 등의 메서드도 언제 어떤 상황에 사용하는지 체감할 수 있었다.
+<br>• 어렵게 느껴졌던 부분<br>
+<br>RESTful한 URL 설계 규칙이 아직은 어색하다.
+<br>단수 vs 복수, 명사 vs 동사 구분을 계속 의식하면서 연습해야 할 것 같다.
+<br>• 다음에 학습할 주제<br>
+<br>HTTP method
+<br>node.js
+<br>모듈화 방식과 구조 설계
+<br><br>
+<br><a data-tooltip-position="top" aria-label="https://developer.mozilla.org/ko/docs/Web/HTTP" rel="noopener nofollow" class="external-link" href="https://developer.mozilla.org/ko/docs/Web/HTTP" target="_blank">MDN Web Docs - HTTP</a>
+<br><a data-tooltip-position="top" aria-label="https://meetup.toast.com/posts/92" rel="noopener nofollow" class="external-link" href="https://meetup.toast.com/posts/92" target="_blank">REST API 설계 가이드</a>
+]]></description><link>4.til/4월/2025-04-10-api.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-10-API.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[📘 2025-04-11 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>HTTP method
+<br>Node.js에서 모듈 사용하기
+<br>NPM 사용법과 외부 모듈 설치 방법
+<br><br><br>웹에서 요청을 보낼 때는 단순히 “주소(URL)”만 필요한 것이 아니라,<br>
+“무슨 요청”인지 알려주는 규칙(method) 도 함께 담아야 한다.<br><br>💡 PATCH는 일부 수정 (예: 연락처만 변경 등), PUT은 전체 덮어쓰기<br><br><br>Node.js는 브라우저 밖에서 자바스크립트를 실행할 수 있게 해주는 런타임 환경이자,<br>
+서버 역할을 수행하는 자바스크립트 기반 도구이다.<br>
+사용자의 HTTP 요청(method 포함)을 받아서, 그 목적에 맞게 응답을 처리한다.<br><br>Node.js는 싱글 스레드 기반이지만, 효율적으로 비동기 작업을 처리할 수 있다. <br><br><br>const http = require('http');
+
+function onRequest(request, response) {
+  response.writeHead(200, { 'Content-Type': 'text/html' });
+  response.write('Hello Node.js');
+  response.end();
+}
+
+http.createServer(onRequest).listen(8888);
+<br>
+<br>브라우저나 다른 클라이언트에서 HTTP 요청 (GET, POST 등)을 보낸다.
+<br>Node.js 서버는 http.createServer() 내부 콜백(onRequest)을 실행한다.
+<br>요청 정보에 따라 응답을 구성 (response.write(), response.end() 등).
+<br>응답을 브라우저로 돌려준다.
+<br>💡 Node.js의 동작은 콜백 함수 + 모듈 + 비동기 처리의 조합으로 매우 유연하고 가볍게 동작함!<br>
+→ 직접 서버를 만들고 동작을 설계할 수 있다는 점이 매우 강력하다.<br><br><br><br> 이미 만들어진 코드 조각(기능 모음)을 가져다가 쓰는 것.<br>
+<br>기본 내장 모듈: setTimeout(), fs, http, url, path 등
+<br>외부 모듈: express, axios, lodash, nodemon 등 (npm install로 설치)
+<br>사용자 정의 모듈: 직접 작성한 기능을 다른 파일에서 가져다 사용
+<br>const fs = require('fs');
+
+fs.readFile('hello.txt', 'utf8', (err, data) =&gt; {
+  if (err) return console.error(err);
+  console.log(data);
+});
+<br><br>라이브러리 (모듈) : 필요한 기능을 내가 골라서 사용하는 도구<br>
+프레임워크 : 서비스 구현에 필요한 기능들이 틀 안에 미리 설계되어 있는 구조<br>📌 프레임워크는 “내가 짜는 것”보다 틀에 맞춰 따라가는 구조이며, 라이브러리는 내가 선택적으로 가져다 쓰는 도구다.<br><br><br>외부 모듈을 내 프로젝트에 설치해주는 “패키지 매니저”<br>
+<br>
+npm install 모듈명<br>
+→ 프로젝트에 외부 라이브러리를 설치
+
+<br>
+npm uninstall 모듈명<br>
+→ 설치한 모듈 제거
+
+<br>
+npm install 모듈명 -g<br>
+→ 전역(global)으로 설치 (권장되지 않음, 프로젝트마다 버전이 다를 수 있음)
+
+<br>📦 npm은 마치 프로그램 설치파일을 자동으로 내려받아 node_modules 폴더에 설치해주는 역할을 함!<br><br>• 새롭게 알게 된 점<br>
+<br>Node.js가 싱글 스레드 기반임에도 불구하고, 논블로킹 방식과 이벤트 루프 덕분에 비동기 처리가 가능하다는 구조가 인상 깊었다.
+<br>모듈 시스템, 콜백 함수, 그리고 HTTP 서버 동작 흐름이 서로 연결되어 있다는 게 실제 예제를 통해 와닿았다.
+<br>npm install이 단순히 라이브러리를 설치하는 명령이 아니라, 자동으로 의존성까지 관리해주는 똑똑한 도구라는 것도 새롭게 느꼈다.
+<br>• 어렵게 느껴졌던 부분<br>
+<br>콜백 함수로 흐름을 제어하는 방식이 아직은 낯설고, 비동기 순서가 머릿속에서 정리가 안 되는 느낌이었다.
+<br>require와 import의 차이, 그리고 CommonJS vs ESModule 방식은 아직 헷갈려서 다음에 따로 정리할 필요가 있을 것 같다.
+<br>• 다음에 학습할 주제<br>
+<br>Node.js로 REST API 만들기 (Express 사용)
+<br>JSON 기반 응답 처리
+<br><br>
+<br><a data-tooltip-position="top" aria-label="https://nodejs.org/ko/docs" rel="noopener nofollow" class="external-link" href="https://nodejs.org/ko/docs" target="_blank">Node.js 공식 문서</a>
+<br><a data-tooltip-position="top" aria-label="https://developer.mozilla.org/ko/docs/Web/JavaScript/EventLoop" rel="noopener nofollow" class="external-link" href="https://developer.mozilla.org/ko/docs/Web/JavaScript/EventLoop" target="_blank">MDN Web Docs - Event Loop</a>
+]]></description><link>4.til/4월/2025-04-11-module.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-11-Module.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate></item><item><title><![CDATA[📘 2025-04-15 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>Express 설치부터 기본 구조 분석 및 코드 흐름 이해
+<br>Node.js 기본 http 모듈과 Express 프레임워크의 차이점 비교
+<br>GET 요청 중심의 REST API 라우팅 실습 (/:id 파라미터 활용 포함)
+<br>객체 데이터를 JSON 형태로 응답하는 res.json()의 실제 사용법
+<br><br><br>Express는 Node.js의 기본 http 모듈을 더 간결하고 직관적으로 사용할 수 있게 도와주는 웹 프레임워크다.<br>
+기본적인 HTTP 서버를 만들 때 http 모듈로도 가능하지만, 코드량이 많아지고 유지보수가 어려워질 수 있다.<br><br>const http = require("http");
+
+const server = http.createServer((req, res) =&gt; {
+  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.write("Hello from Node!");
+  res.end();
+});
+
+server.listen(3000, () =&gt; {
+  console.log("Server is running at http://localhost:3000");
+});
+<br>
+<br>장점: Node.js 기본 제공, 설치 필요 없음
+<br>단점: 라우팅, 미들웨어, 파라미터 처리 등은 직접 구현해야 함
+<br><br>import express from "express";
+const app = express();
+
+app.get("/", (req, res) =&gt; {
+  res.send("Hello from Express!");
+});
+
+app.listen(3000, () =&gt; {
+  console.log("Express server running at http://localhost:3000");
+});
+<br>
+<br>장점: 코드가 간결하고, 라우팅/미들웨어/요청 데이터 처리 등이 내장되어 있음
+<br>단점: 별도로 설치해야 함 (npm install express)
+<br><br><br>
+<br>기본적으로 3000, 4000, 8080 같은 개발자용 포트 번호를 많이 사용한다.
+<br>운영 환경에서는 보통 80(HTTP) 또는 443(HTTPS) 포트를 사용한다.
+<br>각 회사마다 팀 또는 서비스별로 내부적으로 정한 포트 체계가 있는 경우도 많다.
+<br>이미 사용 중인 포트를 피해야 한다. 사용 중일 경우 서버 실행 시 EADDRINUSE 오류가 발생한다.
+<br><br>lsof -i :3000     # 해당 포트를 사용 중인 프로세스 확인
+kill -9 &lt;PID&gt;     # 프로세스 강제 종료
+<br>또는 환경변수를 활용해서 포트를 동적으로 지정할 수도 있다.<br>const PORT = process.env.PORT || 3000;
+app.listen(PORT, () =&gt; {
+  console.log(`Server running on port ${PORT}`);
+});
+<br>이렇게 하면 .env 파일이나 배포 환경에 따라 유연하게 설정할 수 있어, 팀 개발이나 CI/CD 배포 환경에서도 충돌 없이 안정적으로 운영 가능하다.<br><br><br>Express에서는 각 HTTP 메서드와 URL 경로를 조합해 RESTful한 방식으로 API를 설계한다.<br>
+아래는 다양한 GET 요청 예시를 가진 Express 서버이다.<br>const express = require("express");
+const app = express();
+
+// GET 요청 - 루트 경로
+app.get("/", (req, res) =&gt; {
+  res.send("Hello World");
+});
+
+// 경로 파라미터를 포함한 예시
+app.get("/test/:id", (req, res) =&gt; {
+  res.send("테스트 성공: " + req.params.id);
+});
+
+// 일반 문자열 응답
+app.get("/hello", (req, res) =&gt; {
+  res.send("안녕하세요.");
+});
+
+// 특정 상품 정보를 반환하는 예시 (문자열 응답)
+app.get("/products/:id", (req, res) =&gt; {
+  res.send("Node.js를 공부해보자. 라는 책");
+});
+
+app.listen(1234);
+<br><br>
+<br>REST (Representational State Transfer) 는 자원을 URL로 표현하고, HTTP 메서드(GET, POST, PUT, DELETE 등)를 활용해 해당 자원을 다루는 방식이다.
+<br>위 예시에서는 /products/:id에서 :id는 동적 경로 파라미터로, 클라이언트가 URL을 통해 값을 전달할 수 있다,
+<br>URL 경로만 보고도 어떤 데이터를 요청하는지 직관적으로 알 수 있게 구성하는 것이 RESTful 설계 방식의 핵심이다.
+<br>app.get("/users/:userId/orders/:orderId", (req, res) =&gt; {
+  console.log(req.params); 
+  // { userId: '15', orderId: '872' }
+  res.json({
+    message: `User ${req.params.userId}의 주문 ${req.params.orderId}입니다.`,
+  });
+});
+<br><br><br>API에서 데이터를 주고받을 때는 단순한 문자열보다 더 구조화된 데이터 형식이 필요하다. &nbsp;<br>
+그 대표적인 형식이 바로 JSON (JavaScript Object Notation) 이다.<br><br>데이터를 하나씩 보내는 대신, 데이터를 묶어서 보내는 덩어리 구조<br>// 책 한 권의 정보를 하나의 객체로 표현
+const nodejsBook = {
+	title: "Node.js 책",
+	price: 20000,
+	description: "이 책 좋음 왜? 김승아 지음",
+};
+
+function print(book) {
+	console.log(book.title);
+	console.log(book.price);
+	console.log(book.description);
+}
+
+print(nodejsBook);
+<br>
+<br>객체는 중괄호 {}로 감싸고, key: value 쌍으로 구성된다.
+<br>우리가 말할 수 있는 대부분의 정보(사람, 주소, 상품)는 객체로 표현할 수 있다.
+<br><br><br>Express에서 클라이언트에게 응답을 보낼 때 자주 사용하는 두 가지 메서드가 있다.<br>
+<br>res.send()
+<br>res.json()
+<br><br>res.send()는 문자열, 숫자, HTML, 객체 등 다양한 타입의 데이터를 자동으로 응답해주는 범용 메서드다.<br>
+app.get("/", (req, res) =&gt; {
+  res.send("Hello World"); // 문자열 전송
+});
+
+app.get("/number", (req, res) =&gt; {
+  res.send(123); // 숫자도 가능
+});
+
+app.get("/object", (req, res) =&gt; {
+  res.send({ msg: "hi" }); // 객체도 가능 (자동 JSON 변환)
+});
+
+<br>
+<br>내부적으로는 Content-Type을 자동 추론해서 지정함
+<br>객체를 보낼 때도 JSON으로 변환해주긴 하지만, 의도가 불명확해질 수 있다
+<br><br>res.json()은 JSON 형식의 응답을 명확히 보내고 싶을 때 사용하는 메서드다.<br>const express = require("express");
+const app = express();
+
+// 실제 객체를 만들어서 보내기
+const nodejsBook = {
+  title: "Node.js 책",
+  price: 20000,
+  description: "이 책 좋음 왜? 김승아 지음",
+};
+
+app.get("/products/:id", (req, res) =&gt; {
+  res.json(nodejsBook);
+});
+<br>
+<br>명시적으로 JSON 데이터를 응답한다는 의도를 전달할 수 있음
+<br>자동으로 Content-Type: application/json 헤더를 설정해줌
+<br>API 서버에서는 보통 res.json()을 권장함
+<br><br><br>app.get("/products/:id", (req, res) =&gt; {
+  console.log(req.params);      // { id: '1' }
+  console.log(req.params.id);   // 1
+
+  res.json({
+    num: req.params.id,
+  });
+});
+<br>
+<br>:id는 경로 파라미터를 의미하고, 클라이언트가 보낸 값은 req.params.id로 접근할 수 있다.
+<br>REST API의 핵심적인 방식 중 하나!
+<br><img alt="express" src="https://seonohblog.netlify.app/assets/express.png" referrerpolicy="no-referrer"><br><br><br>• 새롭게 알게 된 점<br>
+<br>기본 http 모듈부터 시작해서 Express의 장점이 무엇인지 직접 체감할 수 있었다.
+<br>객체를 응답으로 보내는 것(res.json)을 실습하며 서버와 클라이언트 간 데이터 전달 구조를 구체적으로 이해했다.
+<br>실무에서도 이런 식으로 데이터를 객체로 묶어서 전달하고, URL 파라미터로 필요한 데이터를 추출(req.params) 하는 방식이 실제로 쓰인다는 걸 알게 되었다.
+<br>• 어렵게 느껴졌던 부분<br>
+<br>req.params로 URL에서 값을 받아오는 흐름은 이해는 됐지만, 내부적으로 어떻게 연결되는지가 아직 완전히 익숙하진 않았다.
+<br>특히 아래 코드에서 print(nodejsBook);처럼 인수로 객체를 넘기고 &nbsp;<br>
+함수에서 print(book)처럼 매개변수 이름이 달라지는데도 작동하는 이유가 처음엔 헷갈렸다.
+<br>지금은 "호출할 때 넘긴 인수(nodejsBook)가 정의된 매개변수(book)에 그대로 들어간다"는 걸 배워서 조금 더 명확해졌다.
+<br>• 다음에 학습할 주제<br>
+<br>req.params의 내부 동작 방식 정리하기 &nbsp;
+<br>자바스크립트의 Map 자료구조와 객체의 차이점 비교
+<br><br>
+<br><a data-tooltip-position="top" aria-label="https://expressjs.com/ko/guide/routing.html" rel="noopener nofollow" class="external-link" href="https://expressjs.com/ko/guide/routing.html" target="_blank">Express 공식 문서</a> 
+<br><a data-tooltip-position="top" aria-label="https://nodejs.org/api/http.html" rel="noopener nofollow" class="external-link" href="https://nodejs.org/api/http.html" target="_blank">Node.js 공식 문서 - HTTP 모듈</a> 
+]]></description><link>4.til/4월/2025-04-15-express.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-15-Express.md</guid><pubDate>Tue, 15 Apr 2025 14:48:40 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/express.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://seonohblog.netlify.app/assets/express.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-16 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>Express에서 req.params, req.query의 차이점과 활용
+<br>parseInt로 문자열을 숫자로 변환하는 방법
+<br>자바스크립트 객체, 배열 비구조화 할당의 구조와 주의점
+<br><br><br><br>
+<br>Express 라우트 경로에서 :을 사용하면 해당 구간은 변수처럼 동작한다.
+<br>그 변수 값은 요청(req)의  req.params로 객체 형태로 전달된다.
+<br>app.get("/products/:id", (req, res) =&gt; {
+  console.log(req.params);       // 👉 { id: '123' }
+  console.log(req.params.id);    // 👉 '123'
+});
+<br>
+예를 들어 /products/123이라는 URL로 요청이 들어오면 id는 '123'이라는 값으로 전달된다.
+<br><br>
+<br>URL로 전달받은 값은 기본적으로 문자열(string)이다.
+<br>숫자 연산을 하기 위해서는 정수로 변환이 필요하다.
+<br>이때 사용하는 것이 parseInt() 또는 Number()이다.
+<br>let number = parseInt(req.params.id) - 10;
+// 요청: GET /products/25
+// → req.params.id === '25'
+// → parseInt(req.params.id) === 25
+// → number === 15
+<br><br><br>API에서 데이터를 주고받을 때는 단순한 문자열보다 더 구조화된 데이터 형식이 필요하다. &nbsp;<br>
+그 대표적인 형식이 바로 JSON (JavaScript Object Notation) 이다.<br><br>
+<br>req.query는 URL의 ? 이후에 오는 쿼리스트링 파라미터를 객체 형태로 받아준다.
+<br>key=value 형식으로 전달된 값은 req.query.key로 접근 가능하다.
+<br><br>app.get("/:nickname", function (req, res) {
+  const param = req.params;
+
+  res.json({
+    channel: param.nickname,
+  });
+});
+<br>📌 예시 요청<br>
+http://localhost:1234/@programmers<br><img alt="nickname" src="https://seonohblog.netlify.app/assets/nickname.png" referrerpolicy="no-referrer"><br><br>app.get("/watch", (req, res) =&gt; {
+  const q = req.query;
+  console.log(q.v); // 유튜브 영상 ID
+  console.log(q.t); // 시작 시간
+
+  res.json({
+    video: q.v,
+    timeline: q.t,
+  });
+});
+<br>📌 예시 요청<br>
+http://localhost:1234/watch?v=2wV9fupQWrs&amp;t=60<br><img alt="watch" src="https://seonohblog.netlify.app/assets/watch.png" referrerpolicy="no-referrer"><br><br><br><br>
+<br>req.query처럼 객체에서 필요한 속성만 꺼내 쓸 수 있다.
+<br>const { v, t } = req.query;
+res.json({
+  video: v,
+  timeline: t,
+});
+<br>
+❗ v와 t는 실제 req.query 객체에 존재하는 키와 동일해야 한다. 이름이 다르면 undefined 발생.
+<br>const { q1, q2 } = req.query;
+console.log(q1); // undefined, &gt; q1, q2라는 키가 실제 쿼리스트링에 없기 때문
+<br><br>
+<br>배열의 순서를 기준으로 값을 꺼낼 수 있다.
+<br>const array = [1, 2, 3, 4, 5];
+const [ , num2, num3, , num5 ] = array;
+
+console.log(num2); // 2
+console.log(num3); // 3
+console.log(num5); // 5
+<br>
+빈 칸(, ,)은 무시된 자리로 순서가 매우 중요하다.
+<br><br><br>프로그래밍에서는 변수, 함수, 클래스, 파일 이름 등을 정할 때 일관성 있는 네이밍 규칙을 사용하는 것이 중요하다.<br>
+가장 많이 쓰이는 세 가지 케이스를 정리해보자.<br><br><br>
+<br>
+사용 위치: 폴더명, 파일명  
+
+<br>
+예시:
+
+<br>폴더: demo-api
+<br>파일: object-api-demo.js
+
+
+<br>
+특징:
+
+<br>모두 소문자
+<br>여러 단어를 쓸 때, 단어 사이를 -(하이픈) 으로 연결  
+<br>예: user-list, my-awesome-project
+
+
+<br>
+cf. snake_case도 비슷한 역할 (_로 구분), 둘 중 하나만 통일성 있게 사용하면 OK
+
+<br><br><br>
+<br>
+사용 위치: 변수, 함수 이름  
+
+<br>
+예시:
+
+<br>변수: channelTitle, videoNum
+<br>함수: getUserInfo, fetchData
+
+
+<br>
+특징:
+
+<br>첫 단어는 소문자
+<br>두 번째 단어부터 첫 글자를 대문자로 씀
+<br>예: myVariableName, handleClick
+
+
+<br><br><br>
+<br>
+사용 위치: 클래스 이름  
+
+<br>
+예시:
+
+<br>클래스: UserProfile, ProductCard
+
+
+<br>
+특징:
+
+<br>모든 단어의 첫 글자를 대문자
+<br>예: MainComponent, AppRouter
+
+
+<br><br><br><br><br><br><br>
+<br>
+Map 객체는 key: value 형태로 데이터를 저장하며, 다양한 키 타입(숫자, 문자열, 객체 등)을 지원하는 유연한 자료구조다. 특히 map.get(key)으로 키에 해당하는 값을 빠르게 조회할 수 있는 장점이 있다.
+
+<br>
+키 기반 데이터 저장과 빠른 조회에 최적화돼있고,  “누구를 기준으로 무엇을 찾을까?” 라는 질문이 들 때 사용한다.
+
+<br>let db = new Map();
+db.set(1, "NoteBook");
+db.set("1", "Book");
+db.set(2, "Cup");
+db.set(3, "Chair");
+
+console.log(db); // Map(4) { 1 =&gt; 'NoteBook', '1' =&gt; 'Book', 2 =&gt; 'Cup', 3 =&gt; 'Chair' }
+console.log(db.get(1));   // 👉 NoteBook
+console.log(db.get("1")); // 👉 Book (문자열 키와 숫자 키는 다르다!)
+console.log(db.get(2));   // 👉 Cup
+console.log(db.get(3));   // 👉 Chair
+<br>
+📌 Map은 문자열 "1"과 숫자 1을 서로 다른 key로 인식한다.
+<br><br>
+<br>인덱스(index)를 기반으로 순서대로 데이터를 저장하는 자료구조
+<br>값의 순서가 중요하거나, 목록을 다룰 때 유용
+<br>순차적 데이터, 순서가 중요할 때 사용. “몇 번째에 있는 데이터야?” 라고 묻는 상황에 적합.
+<br>let list = ["NoteBook", "Cup", "Chair"];
+console.log(list[1]); // Cup
+<br><br><br><br>const express = require("express");
+const app = express();
+
+// 1. 서버 실행
+app.listen(1234);
+
+// Map을 먼저 생성한 뒤, 개별적으로 값을 추가
+const db = new Map();
+db.set(1, "NoteBook");
+db.set("1", "Book");
+db.set(2, "Cup");
+db.set(3, "Chair");
+
+// 3. 상품 ID 조회 라우트 설정 
+app.get("/:id", function (req, res) {
+let { id } = req.params; // 비구조화
+const numericId = parseInt(id); // 문자열을 숫자로 변환
+
+console.log("요청된 ID:", id, "→ 숫자 변환:", numericId);
+
+if (db.get(numericId) == undefined) {
+	res.json({
+		message: "없는 상품입니다",
+	});
+	} else {
+		res.send({
+		id: numericId,
+		productName: db.get(numericId),
+		});
+	}
+});
+
+console.log(db); // map 값
+console.log(db.get(1)); // NoteBook
+console.log(db.get("1"));
+console.log(db.get(2)); // Cup
+console.log(db.get(3)); // Chair
+<br><img alt="map" src="https://seonohblog.netlify.app/assets/map.png" referrerpolicy="no-referrer"><br><br><br>• 새롭게 알게 된 점<br>
+<br>req.params와 req.query의 차이를 실제 라우트와 쿼리스트링 예제를 통해 명확히 이해할 수 있었다.
+<br>Express 라우팅에서 URL 경로 변수(:id)를 통해 동적인 값 전달이 가능하다는 점이 인상 깊었다.
+<br>JavaScript의 객체/배열 비구조화 문법을 활용하면 코드가 훨씬 간결하고 가독성이 좋아진다는 것을 체감했다.
+<br>Map은 객체보다 더 다양한 키 타입을 지원하고, 순서 보장과 빠른 검색이 가능하다는 점에서 유용함을 느꼈다.
+<br>• 어렵게 느껴졌던 부분<br>
+<br>문자열 "1"과 숫자 1이 Map에서 서로 다른 key로 인식된다는 점이 헷갈렸다.
+<br>parseInt(req.params.id)로 변환하지 않으면 숫자 key로 된 데이터가 조회되지 않는다는 것을 실습 중에 알게 됐다.
+<br>네이밍 규칙을 언제 어떤 케이스에 써야 하는지 아직 약간 헷렸지만, 표로 정리하면서 어느 정도 명확해졌다.
+<br>• 다음에 학습할 주제<br>
+<br>Map과 Object의 차이점과 실무에서 어떤 상황에 주로 사용하는지 비교 정리
+<br>Express + 객체
+<br>자바스크립트 함수
+<br><br><br>
+<br><a data-tooltip-position="top" aria-label="https://expressjs.com/ko/guide/routing.html" rel="noopener nofollow" class="external-link" href="https://expressjs.com/ko/guide/routing.html" target="_blank">Express 공식 문서</a>
+<br><a data-tooltip-position="top" aria-label="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map" rel="noopener nofollow" class="external-link" href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank">MDN Web Docs - JavaScript Map</a>
+<br><a data-tooltip-position="top" aria-label="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" rel="noopener nofollow" class="external-link" href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank">MDN Web Docs - Destructuring assignment</a>
+<br><a data-tooltip-position="top" aria-label="https://www.robinwieruch.de/javascript-naming-conventions/" rel="noopener nofollow" class="external-link" href="https://www.robinwieruch.de/javascript-naming-conventions/" target="_blank">JavaScript Naming Convention Guide</a>
+]]></description><link>4.til/4월/2025-04-16-params.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-16-Params.md</guid><pubDate>Wed, 16 Apr 2025 16:43:08 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/nickname.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://seonohblog.netlify.app/assets/nickname.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-17 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>map object
 <br>Express와 Map을 활용한 간단한 API 만들기
 <br>express 구조 이해해보기
-<br><br><br><br>const db = new Map();
-db.set(1, "NoteBook");
-db.set(2, "Cup");
-db.set(3, "Chair");
-<br>
-<br>이처럼 문자열 데이터를 저장하는 방식도 가능하지만, 아래처럼 객체를 값(value) 으로 넣는 게 실제 API를 만들때 확장 가능한 구조로 만들 수 있다.
-<br>객체를 value로 저장하면 응답 구조도 깔끔하고 유지보수도 쉬워진다.
-<br><br>const notebook = { productName: "Notebook", price: 2000000 };
-const cup = { productName: "Cup", price: 3000 };
-const chair = { productName: "Chair", price: 100000 };
-const poster = { productName: "Poster", price: 20000 };
-
-const db = new Map();
-db.set(1, notebook);
-db.set(2, cup);
-db.set(3, chair);
-db.set(4, poster);
-<br>console.log(db.get(1)); 
-// 👉 { productName: 'Notebook', price: 2000000 }
-
-console.log(db.get(3)); 
-// 👉 { productName: 'Chair', price: 100000 }
-<br>→ Map을 통해 숫자 key로 접근해도, 객체 전체를 값으로 받아볼 수 있다.<br><br><br><br>app.get("/:id", function (req, res) {
-  let { id } = req.params; //  URL 파라미터로부터 id 추출
-  const numericId = parseInt(id); // URL에서 전달된 id를 꺼내고 숫자로 변환
-  const product = db.get(numericId); //Map에서 해당 상품을 조회하고 로그 출력
-
-  if (db.get(numericId) == undefined) {
-    res.json({
-      message: "없는 상품입니다",
-    });
-  } else {
-    product.id = numericId;
-    res.json(product);
-  }
-});
-<br><br>const express = require("express");
-const app = express();
-
-app.listen(1234);
-
-let youtuber1 = {
-  channelTitle: "105ya",
-  sub: "593만명",
-  videoNum: "999개",
-};
-
-let youtuber2 = {
-  channelTitle: "침펄맨",
-  sub: "1593만명",
-  videoNum: "5699개",
-};
-
-let youtuber3 = {
-  channelTitle: "테오",
-  sub: "93만명",
-  videoNum: "99개",
-};
-
-let db = new Map();
-db.set(1, youtuber1);
-db.set(2, youtuber2);
-db.set(3, youtuber3);
-
-app.get("/youtuber/:id", function (req, res) {
-  let { id } = req.params;
-  const numericId = parseInt(id);
-  const youtuber = db.get(numericId);
-
-  if (!youtuber) {
-    res.json({
-      message: "없는 youtuber입니다.",
-    });
-  } else {
-    youtuber.id = numericId;
-    res.json(youtuber);
-  }
-});
-<br><img alt="expressmap" src="https://seonohblog.netlify.app/assets/expressmap.png" referrerpolicy="no-referrer"><br>
-<br>Map 객체를 이용해 유튜버 데이터를 ID별로 저장하고,
-<br>Express를 통해 RESTful한 조회 API를 간단히 만들 수 있다.
-<br>응답 구조를 명확히 하고, 없는 데이터에 대한 처리도 추가해줘야 실전에서 안정적인 API 설계가 가능하다.
-<br><br>Node.js + Express 프로젝트를 만들다 보면, 다음과 같은 구조로 파일을 분리하는 걸 자주 보게 된다:<br>my-express-app/
-├── app.js              # Express 앱 생성 및 미들웨어 설정
-├── bin/
-│   └── www             # 서버 실행 스크립트
-├── routes/
-│   └── index.js        # 라우터 모음
-├── public/             # 정적 파일 (이미지, CSS, JS)
-├── views/              # 템플릿 엔진을 사용하는 경우 뷰 파일 저장
-├── package.json        # 프로젝트 메타 정보 및 의존성
-<br>이 구조는 Express에서 기본적으로 제공하는 방식이기도 하며, 프로젝트가 커질수록 이 구조가 굉장히 유용해진다.<br><br><br>const express = require("express");
-const app = express();
-const indexRouter = require("./routes/index");
-
-// 미들웨어 등록
-app.use(express.json()); // JSON 바디 파싱
-app.use(express.urlencoded({ extended: true })); // 폼데이터 파싱
-
-// 정적 파일 서비스
-app.use(express.static("public"));
-
-// 라우터 연결
-app.use("/", indexRouter);
-
-// 앱 모듈 내보내기
-module.exports = app;
-<br>
-<br>express()로 앱 인스턴스를 만들고,
-<br>필요한 라우터와 미들웨어를 연결한다.
-<br>module.exports = app; 으로 외부에서도 이 앱을 사용할 수 있도록 내보낸다.
-<br>이 파일이 앱의 중심 허브 역할을 한다.
-<br><br><br>#!/usr/bin/env node
-
-const app = require("../app");
-const http = require("http");
-
-const port = 1234;
-app.set("port", port);
-
-const server = http.createServer(app);
-server.listen(port, () =&gt; {
-  console.log(`✅ 서버 실행됨: http://localhost:${port}`);
-});
-<br>
-<br>www 파일은 서버를 실행만 하는 용도로, HTTP 서버 객체를 생성하고 app.js를 실행시킨다.
-<br>이렇게 분리하면, 서버 실행과 앱 설정을 깔끔하게 구분할 수 있다.
-<br>실무에서 npm start는 보통 이 www 파일을 실행시켜 서버를 띄운다.
-<br><br><br>const express = require("express");
-const router = express.Router();
-
-router.get("/", (req, res) =&gt; {
-  res.send("Hello Express!");
-});
-
-router.get("/health", (req, res) =&gt; {
-  res.json({ status: "OK" });
-});
-
-module.exports = router;
-<br>
-<br>router.get() 등을 통해 라우팅 로직을 모듈화할 수 있다.
-<br>이 파일은 app.js에서 require("./routes/index") 형태로 불러와 연결된다.
-<br>실무에서는 routes/products.js, routes/users.js처럼 기능별로 더 잘게 나눠 사용한다.
-<br><img alt="express9999" src="https://seonohblog.netlify.app/assets/express9999.png" referrerpolicy="no-referrer"><br><br><br>• 새롭게 알게 된 점<br>
-<br>JavaScript의 Map 객체를 사용하면 단순 문자열뿐 아니라 객체도 값으로 저장할 수 있어 확장성이 뛰어나다는 것을 알게 됐다.
-<br>Express에서는 데이터를 저장하거나 응답할 때 Map을 잘 활용하면 코드가 간결하고 유지보수가 쉬워진다.
-<br>Express 앱은 app.js, www, routes/ 등으로 파일을 분리해서 구성할 수 있으며, 이 구조는 실무에서도 자주 사용하는 표준 구조라는 점이 인상 깊었다.
-<br>• 어렵게 느껴졌던 부분<br>
-<br>처음에는 브라우저에서 Cannot GET /1 에러가 왜 발생하는지 이해하는 데 시간이 걸렸다. 알고 보니 라우팅 경로를 /youtuber/:id로 지정했기 때문에 정확한 경로로 요청해야 했다.
-<br>favicon.ico 요청처럼 브라우저가 자동으로 보내는 요청을 처음엔 예상하지 못해 로그가 이상하게 출력되는 원인을 찾는 게 살짝 헷갈렸다.
-<br>www와 app.js의 역할 구분이 처음엔 애매하게 느껴졌지만, 직접 실행 구조를 따라가보며 조금씩 감이 잡혔다.
-<br>• 다음에 학습할 주제<br>
-<br>POST 메서드를 이용한 데이터 등록 기능 구현
-<br><br><br>
-<br><a data-tooltip-position="top" aria-label="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map" rel="noopener nofollow" class="external-link" href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank">MDN Web Docs - Map 객체</a>
-<br><a data-tooltip-position="top" aria-label="https://expressjs.com/ko/" rel="noopener nofollow" class="external-link" href="https://expressjs.com/ko/" target="_blank">Express 공식 문서 (Express.js Guide)</a>
-<br><a data-tooltip-position="top" aria-label="https://nodejs.org/ko/docs" rel="noopener nofollow" class="external-link" href="https://nodejs.org/ko/docs" target="_blank">Node.js 공식 문서</a>
-]]></description><link>4.til/4월/2025-04-17-map.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-17-Map.md</guid><pubDate>Thu, 17 Apr 2025 12:20:20 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/expressmap.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/expressmap.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-18 TIL]]></title><description><![CDATA[ 
- <br><br><br>
-<br>map object
-<br><br><br><br>const db = new Map();
-db.set(1, "NoteBook");
-db.set(2, "Cup");
-db.set(3, "Chair");
-<br>
-<br>이처럼 문자열 데이터를 저장하는 방식도 가능하지만, 아래처럼 객체를 값(value) 으로 넣는 게 실제 API를 만들때 확장 가능한 구조로 만들 수 있다.
-<br>객체를 value로 저장하면 응답 구조도 깔끔하고 유지보수도 쉬워진다.
-<br><img alt="express9999" src="https://seonohblog.netlify.app/assets/express9999.png" referrerpolicy="no-referrer"><br><br><br>• 새롭게 알게 된 점<br>
-<br>JavaScript의 Map 객체를 사용하면 단순 문자열뿐 아니라 객체도 값으로 저장할 수 있어 확장성이 뛰어나다는 것을 알게 됐다.
-<br>Express에서는 데이터를 저장하거나 응답할 때 Map을 잘 활용하면 코드가 간결하고 유지보수가 쉬워진다.
-<br>Express 앱은 app.js, www, routes/ 등으로 파일을 분리해서 구성할 수 있으며, 이 구조는 실무에서도 자주 사용하는 표준 구조라는 점이 인상 깊었다.
-<br>• 어렵게 느껴졌던 부분<br>
-<br>처음에는 브라우저에서 Cannot GET /1 에러가 왜 발생하는지 이해하는 데 시간이 걸렸다. 알고 보니 라우팅 경로를 /youtuber/:id로 지정했기 때문에 정확한 경로로 요청해야 했다.
-<br>favicon.ico 요청처럼 브라우저가 자동으로 보내는 요청을 처음엔 예상하지 못해 로그가 이상하게 출력되는 원인을 찾는 게 살짝 헷갈렸다.
-<br>www와 app.js의 역할 구분이 처음엔 애매하게 느껴졌지만, 직접 실행 구조를 따라가보며 조금씩 감이 잡혔다.
-<br>• 다음에 학습할 주제<br>
-<br>POST 메서드를 이용한 데이터 등록 기능 구현
-<br><br><br>
-<br><a data-tooltip-position="top" aria-label="https://expressjs.com/ko/guide/routing.html" rel="noopener nofollow" class="external-link" href="https://expressjs.com/ko/guide/routing.html" target="_blank">Express 공식 문서</a>
-]]></description><link>4.til/4월/2025-04-18-postman.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-18-Postman.md</guid><pubDate>Thu, 17 Apr 2025 12:11:16 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/express9999.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/express9999.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-17 TIL]]></title><description><![CDATA[ 
- <br><br><br>
-<br>map object
 <br><br><br><br>const db = new Map();
 db.set(1, "NoteBook");
 db.set(2, "Cup");
@@ -341,5 +1678,73 @@ module.exports = router;
 <br>• 다음에 학습할 주제<br>
 <br>POST 메서드를 이용한 데이터 등록 기능 구현
 <br><br><br>
+<br><a data-tooltip-position="top" aria-label="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map" rel="noopener nofollow" class="external-link" href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank">MDN Web Docs - Map 객체</a>
+<br><a data-tooltip-position="top" aria-label="https://expressjs.com/ko/" rel="noopener nofollow" class="external-link" href="https://expressjs.com/ko/" target="_blank">Express 공식 문서 (Express.js Guide)</a>
+<br><a data-tooltip-position="top" aria-label="https://nodejs.org/ko/docs" rel="noopener nofollow" class="external-link" href="https://nodejs.org/ko/docs" target="_blank">Node.js 공식 문서</a>
+]]></description><link>4.til/4월/2025-04-17-map.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-17-Map.md</guid><pubDate>Thu, 17 Apr 2025 12:25:57 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/ExpressMap.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://seonohblog.netlify.app/assets/ExpressMap.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-18 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>map object
+<br><br><br><br>const db = new Map();
+db.set(1, "NoteBook");
+db.set(2, "Cup");
+db.set(3, "Chair");
+<br>
+<br>이처럼 문자열 데이터를 저장하는 방식도 가능하지만, 아래처럼 객체를 값(value) 으로 넣는 게 실제 API를 만들때 확장 가능한 구조로 만들 수 있다.
+<br>객체를 value로 저장하면 응답 구조도 깔끔하고 유지보수도 쉬워진다.
+<br><img alt="express9999" src="https://seonohblog.netlify.app/assets/express9999.png" referrerpolicy="no-referrer"><br><br><br>• 새롭게 알게 된 점<br>
+<br>JavaScript의 Map 객체를 사용하면 단순 문자열뿐 아니라 객체도 값으로 저장할 수 있어 확장성이 뛰어나다는 것을 알게 됐다.
+<br>Express에서는 데이터를 저장하거나 응답할 때 Map을 잘 활용하면 코드가 간결하고 유지보수가 쉬워진다.
+<br>Express 앱은 app.js, www, routes/ 등으로 파일을 분리해서 구성할 수 있으며, 이 구조는 실무에서도 자주 사용하는 표준 구조라는 점이 인상 깊었다.
+<br>• 어렵게 느껴졌던 부분<br>
+<br>처음에는 브라우저에서 Cannot GET /1 에러가 왜 발생하는지 이해하는 데 시간이 걸렸다. 알고 보니 라우팅 경로를 /youtuber/:id로 지정했기 때문에 정확한 경로로 요청해야 했다.
+<br>favicon.ico 요청처럼 브라우저가 자동으로 보내는 요청을 처음엔 예상하지 못해 로그가 이상하게 출력되는 원인을 찾는 게 살짝 헷갈렸다.
+<br>www와 app.js의 역할 구분이 처음엔 애매하게 느껴졌지만, 직접 실행 구조를 따라가보며 조금씩 감이 잡혔다.
+<br>• 다음에 학습할 주제<br>
+<br>POST 메서드를 이용한 데이터 등록 기능 구현
+<br><br><br>
 <br><a data-tooltip-position="top" aria-label="https://expressjs.com/ko/guide/routing.html" rel="noopener nofollow" class="external-link" href="https://expressjs.com/ko/guide/routing.html" target="_blank">Express 공식 문서</a>
-]]></description><link>4.til/4월/2025-04-17-postman.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-17-Postman.md</guid><pubDate>Thu, 17 Apr 2025 12:08:10 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/ExpressMap.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/ExpressMap.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-02 TIL]]></title><description/></item></channel></rss>
+]]></description><link>4.til/4월/2025-04-18-postman.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-18-Postman.md</guid><pubDate>Thu, 17 Apr 2025 12:11:16 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/express9999.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src=&quot;https://seonohblog.netlify.app/assets/express9999.png&quot;&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[🏠 home]]></title><description><![CDATA[<a class="tag" href="?query=tag:home" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#home</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:devlog" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#devlog</a> <a class="tag" href="?query=tag:growth" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#growth</a> 
+ <br><br>안녕하세요! 저는 프론트엔드 개발자 민선오입니다.<br>
+이 공간은 제가 공부하고 경험한 내용을 기록하고, 나중의 나와 누군가에게 도움이 되길 바라는 마음으로 운영되고 있어요.<br>
+💡 이 블로그는 단순한 기록을 넘어,<br>
+실제 프로젝트에서 겪은 문제 해결 과정,<br>
+새롭게 배운 기술,<br>
+프론트엔드 개발자로 성장해가는 여정을 담고 있습니다.
+<br><br><br>블로그 목표
+✔️ 내가 이해한 대로 쓰자 – 남의 말이 아니라, 내 언어로 정리하기<br>
+✔️ 지속적인 성장 기록 – 작게라도 매일/매주 무언가를 기록하기<br>
+✔️ 실무에 바로 써먹을 수 있도록 – 복붙이 가능한 코드, 실제 해결한 문제 위주
+<br><br><br><br>
+<br><a data-tooltip-position="top" aria-label="HTML_CSS" data-href="HTML_CSS" href="HTML_CSS" class="internal-link" target="_self" rel="noopener nofollow">HTML &amp; CSS</a>
+<br><a data-href="JavaScript" href="JavaScript" class="internal-link" target="_self" rel="noopener nofollow">JavaScript</a>
+<br><a data-href="TypeScript" href="1.개념-정리/js-&amp;-ts/typescript.html" class="internal-link" target="_self" rel="noopener nofollow">TypeScript</a>
+<br><br>
+<br><a data-href="React" href="React" class="internal-link" target="_self" rel="noopener nofollow">React</a>
+<br><a data-href="Next.js" href="Next.js" class="internal-link" target="_self" rel="noopener nofollow">Next.js</a>
+<br><a data-href="Vue" href="Vue" class="internal-link" target="_self" rel="noopener nofollow">Vue</a>
+<br><br>
+<br><a data-href="디자인 시스템" href="디자인 시스템" class="internal-link" target="_self" rel="noopener nofollow">디자인 시스템</a>
+<br><a data-href="컴포넌트 구조" href="컴포넌트 구조" class="internal-link" target="_self" rel="noopener nofollow">컴포넌트 구조</a>
+<br><a data-href="웹 접근성" href="웹 접근성" class="internal-link" target="_self" rel="noopener nofollow">웹 접근성</a>
+<br><br>
+<br><a data-href="브라우저 동작 원리" href="브라우저 동작 원리" class="internal-link" target="_self" rel="noopener nofollow">브라우저 동작 원리</a>
+<br><a data-href="성능 최적화" href="성능 최적화" class="internal-link" target="_self" rel="noopener nofollow">성능 최적화</a>
+<br><a data-href="보안" href="보안" class="internal-link" target="_self" rel="noopener nofollow">보안</a>
+<br><a data-href="테스팅" href="테스팅" class="internal-link" target="_self" rel="noopener nofollow">테스팅</a>
+<br><br>
+<br><a data-tooltip-position="top" aria-label="TIL" data-href="TIL" href="TIL" class="internal-link" target="_self" rel="noopener nofollow">Today I Learned</a>
+<br><a data-href="회고록" href="회고록" class="internal-link" target="_self" rel="noopener nofollow">회고록</a>
+<br><a data-href="문제 해결 모음" href="문제 해결 모음" class="internal-link" target="_self" rel="noopener nofollow">문제 해결 모음</a>
+<br><br><br>시작하기 좋은 글
+✔️ <a data-href="TypeScript" href="1.개념-정리/js-&amp;-ts/typescript.html" class="internal-link" target="_self" rel="noopener nofollow">TypeScript</a>
+<br><br><br>
+<br>2025-03-28: <a data-href="2025-03-28-Markdown" href="4.til/4월/2025-03-28-markdown.html" class="internal-link" target="_self" rel="noopener nofollow">2025-03-28-Markdown</a>
+<br>2025-03-27: <a data-href="TypeScript" href="1.개념-정리/js-&amp;-ts/typescript.html" class="internal-link" target="_self" rel="noopener nofollow">TypeScript</a>
+<br><br><br>
+틀려도 괜찮아요.<br>
+기록하고, 돌아보고, 고치고, 또 나아가는 것이 개발자의 길이니까요.
+<br><br><br>
+<br>GitHub: <a data-tooltip-position="top" aria-label="https://github.com/sunfivemin" rel="noopener nofollow" class="external-link" href="https://github.com/sunfivemin" target="_blank">@sunfivemin</a>
+<br>Blog: <a data-tooltip-position="top" aria-label="https://seonohblog.netlify.app/" rel="noopener nofollow" class="external-link" href="https://seonohblog.netlify.app/" target="_blank">sunfivemin 블로그</a>
+<br>Email: <a data-tooltip-position="top" aria-label="mailto:sunfivemin@gmail.com" rel="noopener nofollow" class="external-link" href="mailto:sunfivemin@gmail.com" target="_blank">sunfivemin@gmail.com</a>
+<br><br><a href=".?query=tag:home" class="tag" target="_blank" rel="noopener nofollow">#home</a> <a href=".?query=tag:frontend" class="tag" target="_blank" rel="noopener nofollow">#frontend</a> <a href=".?query=tag:devlog" class="tag" target="_blank" rel="noopener nofollow">#devlog</a> <a href=".?query=tag:growth" class="tag" target="_blank" rel="noopener nofollow">#growth</a>]]></description><link>home.html</link><guid isPermaLink="false">home.md</guid><pubDate>Wed, 16 Apr 2025 10:14:05 GMT</pubDate></item></channel></rss>
