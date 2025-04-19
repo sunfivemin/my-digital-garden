@@ -1,8 +1,176 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Thu, 17 Apr 2025 16:03:56 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Thu, 17 Apr 2025 16:03:55 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[📘 2025-04-18 TIL]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sat, 19 Apr 2025 03:07:23 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sat, 19 Apr 2025 03:07:22 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[📘 2025-04-17 TIL]]></title><description><![CDATA[ 
  <br><br><br>
-<br>postman
+<br>map object
+<br>Express와 Map을 활용한 간단한 API 만들기
+<br>express 구조 이해해보기
+<br><br><br><br>const db = new Map();
+db.set(1, "NoteBook");
+db.set(2, "Cup");
+db.set(3, "Chair");
+<br>
+<br>이처럼 문자열 데이터를 저장하는 방식도 가능하지만, 아래처럼 객체를 값(value) 으로 넣는 게 실제 API를 만들때 확장 가능한 구조로 만들 수 있다.
+<br>객체를 value로 저장하면 응답 구조도 깔끔하고 유지보수도 쉬워진다.
+<br><br>const notebook = { productName: "Notebook", price: 2000000 };
+const cup = { productName: "Cup", price: 3000 };
+const chair = { productName: "Chair", price: 100000 };
+const poster = { productName: "Poster", price: 20000 };
+
+const db = new Map();
+db.set(1, notebook);
+db.set(2, cup);
+db.set(3, chair);
+db.set(4, poster);
+<br>console.log(db.get(1)); 
+// 👉 { productName: 'Notebook', price: 2000000 }
+
+console.log(db.get(3)); 
+// 👉 { productName: 'Chair', price: 100000 }
+<br>→ Map을 통해 숫자 key로 접근해도, 객체 전체를 값으로 받아볼 수 있다.<br><br><br><br>app.get("/:id", function (req, res) {
+  let { id } = req.params; //  URL 파라미터로부터 id 추출, 라우트에서 넘어오는 파라미터는 항상 문자열
+  const numericId = parseInt(id); // URL에서 전달된 id를 꺼내고 숫자로 변환, 명확하게 숫자임을 표현하고 원본 id도 유지
+  const product = db.get(numericId); //Map에서 해당 상품을 조회하고 로그 출력
+
+  if (db.get(numericId) == undefined) {
+    res.json({
+      message: "없는 상품입니다",
+    });
+  } else {
+    product.id = numericId;
+    res.json(product);
+  }
+});
+<br><br>const express = require("express");
+const app = express();
+
+app.listen(1234);
+
+let youtuber1 = {
+  channelTitle: "105ya",
+  sub: "593만명",
+  videoNum: "999개",
+};
+
+let youtuber2 = {
+  channelTitle: "침펄맨",
+  sub: "1593만명",
+  videoNum: "5699개",
+};
+
+let youtuber3 = {
+  channelTitle: "테오",
+  sub: "93만명",
+  videoNum: "99개",
+};
+
+let db = new Map();
+db.set(1, youtuber1);
+db.set(2, youtuber2);
+db.set(3, youtuber3);
+
+app.get("/youtuber/:id", function (req, res) {
+  let { id } = req.params;
+  const numericId = parseInt(id);
+  const youtuber = db.get(numericId);
+
+  if (!youtuber) {
+    res.json({
+      message: "없는 youtuber입니다.",
+    });
+  } else {
+    youtuber.id = numericId;
+    res.json(youtuber);
+  }
+});
+<br><img alt="ExpressMap" src="https://seonohblog.netlify.app/assets/ExpressMap.png" referrerpolicy="no-referrer"><br>
+<br>Map 객체를 이용해 유튜버 데이터를 ID별로 저장하고,
+<br>Express를 통해 RESTful한 조회 API를 간단히 만들 수 있다.
+<br>응답 구조를 명확히 하고, 없는 데이터에 대한 처리도 추가해줘야 실전에서 안정적인 API 설계가 가능하다.
+<br><br>Node.js + Express 프로젝트를 만들다 보면, 다음과 같은 구조로 파일을 분리하는 걸 자주 보게 된다:<br>my-express-app/
+├── app.js              # Express 앱 생성 및 미들웨어 설정
+├── bin/
+│   └── www             # 서버 실행 스크립트
+├── routes/
+│   └── index.js        # 라우터 모음
+├── public/             # 정적 파일 (이미지, CSS, JS)
+├── views/              # 템플릿 엔진을 사용하는 경우 뷰 파일 저장
+├── package.json        # 프로젝트 메타 정보 및 의존성
+<br>이 구조는 Express에서 기본적으로 제공하는 방식이기도 하며, 프로젝트가 커질수록 이 구조가 굉장히 유용해진다.<br><br><br>const express = require("express");
+const app = express();
+const indexRouter = require("./routes/index");
+
+// 미들웨어 등록
+app.use(express.json()); // JSON 바디 파싱
+app.use(express.urlencoded({ extended: true })); // 폼데이터 파싱
+
+// 정적 파일 서비스
+app.use(express.static("public"));
+
+// 라우터 연결
+app.use("/", indexRouter);
+
+// 앱 모듈 내보내기
+module.exports = app;
+<br>
+<br>express()로 앱 인스턴스를 만들고,
+<br>필요한 라우터와 미들웨어를 연결한다.
+<br>module.exports = app; 으로 외부에서도 이 앱을 사용할 수 있도록 내보낸다.
+<br>이 파일이 앱의 중심 허브 역할을 한다.
+<br><br><br>#!/usr/bin/env node
+
+const app = require("../app");
+const http = require("http");
+
+const port = 1234;
+app.set("port", port);
+
+const server = http.createServer(app);
+server.listen(port, () =&gt; {
+  console.log(`✅ 서버 실행됨: http://localhost:${port}`);
+});
+<br>
+<br>www 파일은 서버를 실행만 하는 용도로, HTTP 서버 객체를 생성하고 app.js를 실행시킨다.
+<br>이렇게 분리하면, 서버 실행과 앱 설정을 깔끔하게 구분할 수 있다.
+<br>실무에서 npm start는 보통 이 www 파일을 실행시켜 서버를 띄운다.
+<br><br><br>const express = require("express");
+const router = express.Router();
+
+router.get("/", (req, res) =&gt; {
+  res.send("Hello Express!");
+});
+
+router.get("/health", (req, res) =&gt; {
+  res.json({ status: "OK" });
+});
+
+module.exports = router;
+<br>
+<br>router.get() 등을 통해 라우팅 로직을 모듈화할 수 있다.
+<br>이 파일은 app.js에서 require("./routes/index") 형태로 불러와 연결된다.
+<br>실무에서는 routes/products.js, routes/users.js처럼 기능별로 더 잘게 나눠 사용한다.
+<br><img alt="express9999" src="https://seonohblog.netlify.app/assets/express9999.png" referrerpolicy="no-referrer"><br><br><br>• 새롭게 알게 된 점<br>
+<br>JavaScript의 Map 객체를 사용하면 단순 문자열뿐 아니라 객체도 값으로 저장할 수 있어 확장성이 뛰어나다는 것을 알게 됐다.
+<br>Express에서는 데이터를 저장하거나 응답할 때 Map을 잘 활용하면 코드가 간결하고 유지보수가 쉬워진다.
+<br>Express 앱은 app.js, www, routes/ 등으로 파일을 분리해서 구성할 수 있으며, 이 구조는 실무에서도 자주 사용하는 표준 구조라는 점이 인상 깊었다.
+<br>• 어렵게 느껴졌던 부분<br>
+<br>처음에는 브라우저에서 Cannot GET /1 에러가 왜 발생하는지 이해하는 데 시간이 걸렸다. 알고 보니 라우팅 경로를 /youtuber/:id로 지정했기 때문에 정확한 경로로 요청해야 했다.
+<br>favicon.ico 요청처럼 브라우저가 자동으로 보내는 요청을 처음엔 예상하지 못해 로그가 이상하게 출력되는 원인을 찾는 게 살짝 헷갈렸다.
+<br>www와 app.js의 역할 구분이 처음엔 애매하게 느껴졌지만, 직접 실행 구조를 따라가보며 조금씩 감이 잡혔다.
+<br>• 다음에 학습할 주제<br>
+<br>POST 메서드를 이용한 데이터 등록 기능 구현
+<br><br><br>
+<br><a data-tooltip-position="top" aria-label="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map" rel="noopener nofollow" class="external-link" href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank">MDN Web Docs - Map 객체</a>
+<br><a data-tooltip-position="top" aria-label="https://expressjs.com/ko/" rel="noopener nofollow" class="external-link" href="https://expressjs.com/ko/" target="_blank">Express 공식 문서 (Express.js Guide)</a>
+<br><a data-tooltip-position="top" aria-label="https://nodejs.org/ko/docs" rel="noopener nofollow" class="external-link" href="https://nodejs.org/ko/docs" target="_blank">Node.js 공식 문서</a>
+]]></description><link>4.til/4월/2025-04-17-map.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-17-Map.md</guid><pubDate>Fri, 18 Apr 2025 05:00:42 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/ExpressMap.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/ExpressMap.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-18 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>Postman을 사용하면 웹브라우저로는 테스트할 수 없는 POST 요청도 편하게 테스트 가능하다.
+<br>express.json() 미들웨어는 POST 요청의 body 데이터를 읽기 위해 필수다.
+<br>Express로 간단한 RESTful API를 만들 수 있으며, GET / POST 외에도 다양한 메서드로 확장할 수 있다.
+<br>Map 객체 + 자동 증가 ID를 활용하면 임시 DB처럼 사용할 수 있다.
+<br>개별 조회 뿐 아니라 전체 조회 API도 함께 설계하면 더 유용하다.
 <br><br><br>웹 브라우저 주소창에서는 URL을 통해 데이터를 전달하는 GET 방식만 테스트할 수 있다.<br>
-하지만 POST 방식은 브라우저로 직접 테스트할 수 없다. 그 이유는 다음과 같다:<br>
+하지만 POST 방식은 브라우저로 직접 테스트할 수 없다.<br>
+그 이유는 다음과 같다 :<br>
 <br>POST는 보통 데이터를 생성(=등록)할 때 사용된다.
 <br>예를 들어 회원가입 시에는 다음과 같은 데이터를 서버로 전달해야 한다.<br>
 id, password, name, email, contact 등 이런 중요한 정보들을 URL에 노출하면 보안상 위험이 크기 때문에, POST는 URL이 아니라 HTTP 요청의 Body 영역에 데이터를 담아 전송한다.
@@ -14,15 +182,14 @@ id, password, name, email, contact 등 이런 중요한 정보들을 URL에 노�
 <br><br>
 <br>GET 요청은 URL에 값을 포함해서 보내는 방식이다.<br>
 예: http://localhost:1234/user/1
-<br>Postman에서는 메서드 선택창에서 GET을 선택하고,<br>
-URL 입력 후 Send 버튼만 클릭하면 된다.
+<br>Postman에서는 메서드 선택창에서 GET을 선택하고, URL 입력 후 Send 버튼만 클릭하면 된다.
 <br>URL에 파라미터가 포함되어 있으므로 별도의 Body 입력 없이도 테스트 가능하다.
-<br>주로 데이터 조회(read) 용도로 사용된다.
+<br>주로 데이터 조회(read) 용도로 사용된다. 회원 정보 조회, 상품 목록 불러오기 등 읽기 작업에 자주 쓰인다.
 <br><img alt="get" src="https://seonohblog.netlify.app/assets/get.png" referrerpolicy="no-referrer"><br><br>
 <br>POST 요청은 Body(본문)에 데이터를 담아서 서버로 전송하는 방식이다.
 <br>URL은 http://localhost:1234/register 처럼 고정하고, Body 탭 &gt; raw &gt; JSON 형식으로 데이터를 입력한다.
 <br>민감한 데이터를 안전하게 보내야 하므로 GET이 아닌 POST 방식이 적절하다.
-<br>주로 데이터 생성(create) 용도로 사용된다.
+<br>주로 데이터 생성(create), 회원가입, 글쓰기 등 서버에 새로운 데이터를 등록할 때 사용된다.
 <br><img alt="post" src="https://seonohblog.netlify.app/assets/post.png" referrerpolicy="no-referrer"><br><br>POST 방식은 데이터를 URL이 아닌 Body 영역에 담아 전송하기 때문에, 서버에서는 이 데이터를 req.body를 통해 받아서 처리한다.<br>
 이를 위해 Express에서는 body-parser 미들웨어를 사용하거나, 내장된 express.json() 미들웨어를 이용해 JSON 요청을 파싱한다.<br>const express = require("express");
 const app = express();
@@ -52,13 +219,103 @@ Body:
 <br><br>
 <br>res.send()는 텍스트나 단순 문자열 응답에 적합하다.
 <br>res.json()을 쓰면 JSON 형식으로 응답하므로 더 구조적이고 명확한 응답 가능하다.
-<br><img alt="postBody" src="https://seonohblog.netlify.app/assets/postBody.png" referrerpolicy="no-referrer"><br><br><br><br>• 새롭게 알게 된 점<br>
+<br><img alt="postBody" src="https://seonohblog.netlify.app/assets/postBody.png" referrerpolicy="no-referrer"><br><br>기존에는 Map 객체에 미리 저장된 유튜버 3명의 정보만 조회할 수 있었고, 새로운 유튜버를 추가로 등록하는 기능은 없었다.<br>
+그래서 이번에 POST 요청을 활용해 새로운 유튜버를 등록하는 API를 추가했다.<br><br><br>
+<br>GET /youtuber/:id - params.id로 Map에서 유튜버 객체를 찾아, 그 객체의 정보를 뿌려줌
+<br>req : params.id &lt;= map에 저장된 Key 값을 전달
+<br>res : map에서 id로 객체를 조회해서 전달
+<br>app.get("/youtuber/:id", (req, res) =&gt; {
+  const id = parseInt(req.params.id);
+  const youtuber = db.get(id);
+
+  if (!youtuber) {
+    return res.json({ message: "없는 youtuber입니다." });
+  }
+
+  youtuber.id = id;
+  res.json(youtuber);
+});
+<br><br>
+<br>POST /youtuber
+<br>req : body &lt;= channelTitle, sub = 0, videoNum=0 신규 유튜버 정보를 전달
+<br>res : "channelTitle 님, 유튜버 생활을 응원합니다!"
+<br>app.post("/youtuber", (req, res) =&gt; {
+  const { channelTitle, sub, videoNum } = req.body;
+
+  const newYoutuber = {
+    channelTitle,
+    sub: sub + "명",
+    videoNum: videoNum + "개",
+  };
+
+  db.set(4, newYoutuber); 
+
+  res.json({
+    message: `${newYoutuber.channelTitle} 유튜버님 생활을 응원합니다!`,
+  });
+});
+<br><br><br>기존에는 유튜버 등록 시 ID를 db.set(4, ...)처럼 고정된 번호로 등록했기 때문에,<br>
+매번 덮어쓰기 되거나, 서버 재시작 시 - 기존 등록 정보가 사라지거나 ID 충돌이 발생했다.<br>이번에는 ID를 자동으로 증가시키는 방식으로 구조를 개선했다.<br>let id = 1; // 처음 등록될 ID
+
+db.set(id++, youtuber1); // 1
+db.set(id++, youtuber2); // 2
+db.set(id++, youtuber3); // 3
 <br>
+<br>유튜버가 새로 등록될 때마다 id++을 통해 자동으로 고유 ID가 부여된다.
+<br>Map에 key는 숫자, value는 유튜버 정보 객체로 저장된다.
+<br><br><br>app.post("/youtuber", (req, res) =&gt; {
+  db.set(id++, req.body); // 자동 증가 ID로 저장
+
+  res.json({
+    message: `${db.get(id - 1).channelTitle} 유튜버님 생활을 응원합니다!`,
+  });
+});
+<br>
+<br>Postman을 통해 channelTitle, sub, videoNum 등을 포함한 JSON을 전송하면
+<br>서버는 현재 id를 key로 설정하고 Map에 저장합니다.
+<br>응답에는 유튜버명과 함께 응원 메시지를 전달합니다.
+<br><br><br>app.get("/youtuber/:id", (req, res) =&gt; {
+  const numericId = parseInt(req.params.id);
+  const youtuber = db.get(numericId);
+
+  if (!youtuber) {
+    return res.json({ message: "없는 youtuber입니다." });
+  }
+
+  youtuber.id = numericId;
+  res.json(youtuber);
+});
+<br>
+<br>유튜버 ID로 직접 조회할 수 있으며,
+<br>없는 ID를 조회하면 "없는 youtuber입니다." 메시지를 반환함
+<br><br><br>지금까지는 id를 기반으로 개별 유튜버를 조회했는데,<br>
+클라이언트 입장에서 전체 목록을 한 번에 보고 싶을 수도 있다.<br>
+그래서 GET /youtubers API를 만들어, 전체 유튜버를 배열 형태로 반환하도록 설계했다.<br><br>app.get("/youtubers", (req, res) =&gt; {
+  const allYoutubers = [];
+
+  for (let [key, value] of db.entries()) {
+    allYoutubers.push({ id: key, ...value });
+  }
+
+  res.json(allYoutubers);
+});
+<br><img alt="allget" src="https://seonohblog.netlify.app/assets/allget.png" referrerpolicy="no-referrer"><br><br><br>• 새롭게 알게 된 점<br>
+<br>브라우저는 GET 방식만 처리할 수 있다는 점을 확실히 체감했다.
+<br>Postman을 통해 Body에 데이터를 담아 서버로 전송하는 방식을 처음 직접 해봤다.
+<br>express.json() 미들웨어를 넣지 않으면 req.body가 undefined로 찍힌다는 사실도 경험했다.
+<br>Map 객체를 통해 서버 내에서 간단한 DB처럼 데이터를 저장하고 관리할 수 있다는 게 인상 깊었다.
 <br>• 어렵게 느껴졌던 부분<br>
-<br>
+<br>POST 요청 후 서버를 재시작하면 등록한 데이터가 사라지는 걸 처음엔 몰라서 디버깅이 헷갈렸다.
+<br>body 값을 잘 받았는데도 데이터가 undefined로 찍힐 땐, 순서 문제(미들웨어 위치)도 체크해야 함을 알게 됐다.
+<br>처음엔 GET 요청 시 URL에 파라미터를 어떻게 쓰는지 혼란스러웠지만 익숙해지니 자연스럽게 쓸 수 있었다.
 <br>• 다음에 학습할 주제<br>
-<br>
-<br><br>]]></description><link>4.til/4월/2025-04-18-postman.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-18-Postman.md</guid><pubDate>Thu, 17 Apr 2025 16:03:46 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/get.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/get.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
+<br>전체 조회
+<br>자바스크립트 foreach, map, delete
+<br>put
+<br>http code
+<br><br><br>
+<br><a data-tooltip-position="top" aria-label="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map" rel="noopener nofollow" class="external-link" href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map" target="_blank">MDN Docs – Map 객체</a>
+]]></description><link>4.til/4월/2025-04-18-postman.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-18-Postman.md</guid><pubDate>Sat, 19 Apr 2025 03:06:14 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/get.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/get.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
  <br>
 <br>Redux,Zustand
 ]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Wed, 16 Apr 2025 10:16:45 GMT</pubDate></item><item><title><![CDATA[🚀 Type Alias, Interface, Class]]></title><description><![CDATA[ 
