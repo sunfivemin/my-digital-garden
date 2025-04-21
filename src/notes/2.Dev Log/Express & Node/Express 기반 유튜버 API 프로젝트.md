@@ -244,9 +244,11 @@ export default function YoutuberList() {
 }
 ```
 
-![node_frontend_1](https://seonohblog.netlify.app/assets/node_frontend_1)
-![node_frontend_2](https://seonohblog.netlify.app/assets/node_frontend_2)
-![node_frontend_3](https://seonohblog.netlify.app/assets/node_frontend_3)
+![node_frontend_1](https://seonohblog.netlify.app/assets/node_frontend_1.png)
+
+![node_frontend_2](https://seonohblog.netlify.app/assets/node_frontend_2.png)
+
+![node_frontend_3](https://seonohblog.netlify.app/assets/node_frontend_3.png)
 
 ----
 
@@ -287,7 +289,7 @@ Storybook을 활용해 UI 컴포넌트를 **독립적으로 개발하고 시각
 - **Docs 탭** : 컴포넌트 설명과 사용 예제 + 코드 시각화 확인 가능
 - **Controls 탭** : props 값을 직접 조절해 UI 상태 실시간 테스트
 
-![node_storybook](https://seonohblog.netlify.app/assets/node_storybook)
+![node_storybook](https://seonohblog.netlify.app/assets/node_storybook.png)
 
 ----
 
