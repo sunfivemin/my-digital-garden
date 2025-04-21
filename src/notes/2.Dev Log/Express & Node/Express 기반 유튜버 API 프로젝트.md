@@ -4,18 +4,6 @@
 유튜버 정보를 등록하고, 수정하며, 삭제할 수 있는 **풀스택 CRUD 프로젝트**입니다.
 **Express.js + React + Tailwind CSS + Storybook** 기반으로 직접 API 설계부터 UI 구현과 컴포넌트 문서화하였습니다.
 
-## **📌 목차**
-
-
-1. 프로젝트 소개 및 목적
-2. 기술 스택 소개
-3. 백엔드: Node.js + Express
-4. 프론트엔드: React + Tailwind CSS
-5. 공통 컴포넌트 & 디자인 시스템
-6. Storybook으로 UI 문서화
-7. 최종 회고
-
----
 ## **1️⃣ 프로젝트 목적**
 
 - CRUD 구조 이해 및 직접 구현

@@ -1,4 +1,211 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 21 Apr 2025 10:04:42 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 21 Apr 2025 10:04:40 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 21 Apr 2025 10:11:04 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 21 Apr 2025 10:11:03 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[📘 Node.js + Express + React + Storybook: 유튜버 관리 프로젝트]]></title><description><![CDATA[ 
+ <br><br>유튜버 정보를 등록하고, 수정하며, 삭제할 수 있는 풀스택 CRUD 프로젝트입니다.<br>
+Express.js + React + Tailwind CSS + Storybook 기반으로 직접 API 설계부터 UI 구현과 컴포넌트 문서화하였습니다.<br><br>
+<br>CRUD 구조 이해 및 직접 구현
+<br>RESTful API 설계 경험
+<br>프론트/백 협업 구조 익히기
+<br>디자인 시스템과 Storybook 적용
+<br><br><br><br><br><br>
+<br>
+/youtubers 경로로 RESTful API 제공
+
+<br>
+db.json 파일 기반으로 CRUD 작동
+
+<br>
+readData, writeData, getNextId 유틸 함수로 깔끔하게 관리
+
+<br>
+GET /youtubers → 유튜버 전체 목록 조회
+
+<br>
+GET /youtubers/:id → 유튜버 조회 개별 조회
+
+<br>
+POST /youtubers → 유튜버 등록
+
+<br>
+PUT /youtubers/:id →  유튜버 수정
+
+<br>
+DELETE /youtubers/:id → 유튜버 삭제
+
+<br><br><br>backend/
+├── app.js
+├── routes/
+│   └── youtubers.js
+├── data/
+│   └── db.js
+└── package.json
+<br><br>const express = require("express");
+const fs = require("fs");
+const path = require("path");
+const router = express.Router();
+
+// 경로 및 유틸 함수 정의
+const DB_PATH = path.join(__dirname, "../data/db.json");
+
+// 유틸 함수
+const readData = () =&gt; {
+  const raw = fs.readFileSync(DB_PATH, "utf-8");
+  return JSON.parse(raw).youtubers;
+};
+
+// db.json 파일에 저장하는 쓰기 함수
+const writeData = (list) =&gt; {
+  fs.writeFileSync(DB_PATH, JSON.stringify({ youtubers: list }, null, 2));
+};
+  
+// 다음 등록할 유튜버의 id를 자동으로 계산해주는 함수
+const getNextId = (list) =&gt; {
+  const ids = list.map((yt) =&gt; yt.id);
+  return ids.length === 0 ? 1 : Math.max(...ids) + 1; // 가장 큰 id 찾아서 +1
+};
+
+// 전체 조회
+router.get("/", (req, res) =&gt; {
+  const list = readData();
+  res.json(list);
+});
+
+// 개별 조회
+router.get("/:id", (req, res) =&gt; {
+  const list = readData();
+  const numericId = parseInt(req.params.id);
+  const youtuber = list.find((yt) =&gt; yt.id === numericId);
+  if (!youtuber) {
+    return res.status(404).json({ message: "없는 youtuber입니다." });
+  }
+  res.json(youtuber);
+});
+
+// 등록
+router.post("/", (req, res) =&gt; {
+  const list = readData(); // db.json에서 유튜버 데이터 불러오기
+  const newId = getNextId(list); // list 데이터를 매개변수로 받아서 id 계산
+  const newYoutuber = { id: newId, ...req.body }; // 새 유튜버 객체 생성
+  
+  list.push(newYoutuber); // 배열에 추가
+  writeData(list); // 변경된 list를 db.json에 다시 저장
+  
+  res.json({
+    message: `${req.body.channelTitle} 유튜버님 생활을 응원합니다!`,
+  id: newId,
+  });
+});
+
+// 수정
+router.put("/:id", (req, res) =&gt; {
+  const list = readData();
+  const numericId = parseInt(req.params.id);
+  const index = list.findIndex((yt) =&gt; yt.id === numericId);
+
+  if (index === -1) {
+    return res.status(404).json({ message: "없는 youtuber입니다." });
+  }
+
+  list[index] = { id: numericId, ...req.body };
+  writeData(list);
+  res.json({ message: "수정 완료", id: numericId });
+});
+
+// 삭제
+router.delete("/:id", (req, res) =&gt; {
+  const list = readData();
+  const numericId = parseInt(req.params.id);
+  const newList = list.filter((yt) =&gt; yt.id !== numericId);
+
+  if (list.length === newList.length) {
+    return res.status(404).json({ message: "없는 youtuber입니다." });
+  }
+
+  writeData(newList);
+  res.json({ message: `id ${numericId} 유튜버 삭제 완료` });
+});
+
+module.exports = router;
+<br><br>const express = require("express");
+const app = express();
+const youtuberRouter = require("./routes/youtubers");
+
+app.use(express.json());
+app.use("/youtubers", youtuberRouter);
+
+app.listen(1234, () =&gt; {
+  console.log("🚀 서버 실행: http://localhost:1234");
+});
+<br><br><br><br><br><br>
+<br>Axios로 API 연동
+<br>Tailwind로 반응형 UI 구성
+<br>Component&nbsp;→&nbsp;API&nbsp;→&nbsp;Page&nbsp;구조로&nbsp;유지복수와 확장성 고려
+<br><br><br>frontend/
+├── src/
+│   ├── pages/            # 페이지 단위 컴포넌트
+│   │   ├── YoutuberList.jsx      # 유튜버 전체 목록 페이지
+│   │   ├── YoutuberDetail.jsx    # 유튜버 상세 및 수정 페이지
+│   │   ├── YoutuberForm.jsx      # 유튜버 등록 페이지
+│   ├── api/              # API 호출 함수 모음
+│   │   └── youtuber.js
+│   ├── components/       # 공통 UI 컴포넌트 (Button, Header, Input 등)
+│   └── App.jsx           # 라우팅 및 전역 설정
+<br><br>import axios from "axios";
+const BASE_URL = "http://localhost:1234/youtubers";
+
+export const getAllYoutubers = () =&gt; axios.get(BASE_URL);
+export const getYoutuber = (id) =&gt; axios.get(`${BASE_URL}/${id}`);
+export const createYoutuber = (data) =&gt; axios.post(BASE_URL, data);
+export const updateYoutuber = (id, data) =&gt; axios.put(`${BASE_URL}/${id}`, data);
+export const deleteYoutuber = (id) =&gt; axios.delete(`${BASE_URL}/${id}`);
+<br><br>유튜버 목록을 가져오는 API를 호출하고, 상태로 관리하는 기본적인 useEffect 흐름입니다.<br>import { useEffect, useState } from "react";
+import { getAllYoutubers } from "../api/youtuber";
+
+export default function YoutuberList() {
+  const [list, setList] = useState([]);
+
+  useEffect(() =&gt; {
+    getAllYoutubers().then((res) =&gt; setList(res.data));
+  }, []);
+
+  return (
+    &lt;div&gt;
+      {list.map((yt) =&gt; (
+        &lt;div key={yt.id}&gt;
+          &lt;h2&gt;{yt.channelTitle}&lt;/h2&gt;
+          &lt;p&gt;{yt.sub}&lt;/p&gt;
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+<br><img alt="node_frontend_1" src="https://seonohblog.netlify.app/assets/node_frontend_1.png" referrerpolicy="no-referrer"><br><img alt="node_frontend_2" src="https://seonohblog.netlify.app/assets/node_frontend_2.png" referrerpolicy="no-referrer"><br><img alt="node_frontend_3" src="https://seonohblog.netlify.app/assets/node_frontend_3.png" referrerpolicy="no-referrer"><br><br><br>
+<br>Button,&nbsp;Input,&nbsp;Header,&nbsp;YoutuberCard,&nbsp;Loader 등 재사용 가능한 UI 컴포넌트로 구성
+<br>variant / icon / label 등 props과 함께 재사용 가능
+<br>TailwindCSS class 조합으로 UI 구현
+<br>components/
+├── Button.jsx       # variant, icon, label props과 함께 가능
+├── Input.jsx        # placeholder, name, value, onChange
+├── Header.jsx       # title, showBack, rightElement
+├── YoutuberCard.jsx # 정보 + 수정/삭제 Button 포함
+└── Loader.jsx       # 로딩 UI
+<br><br><br>Storybook을 활용해 UI 컴포넌트를&nbsp;독립적으로 개발하고 시각적으로 테스트 및 문서화<br>
+<br>Button, Input, Header, Card 등은 components/에 따로 모아두고 variant, icon 등 props로 확장 가능하게 개발
+<br>스타일은 Tailwind 기반이지만 디자인 토큰으로 추상화된 부분은 따로 분리
+<br>Storybook을 통해 디자이너와 바로 UI 상태를 공유하거나 컴포넌트 테스트 가능
+<br>로딩, 오류 처리 등 UX를 위한 기본 요소도 Loader 컴포넌트로 통일
+<br><br>
+<br>파일명은 컴포넌트명 +&nbsp;.stories.jsx&nbsp;(예:&nbsp;Button.stories.jsx)
+<br>각 컴포넌트 상태(variant)별로 export const Primary, Secondary, WithIcon, Disabled 등 args를 통해 props를 쉽게 테스트하고 문서화 가능
+<br>Storybook 내에서 다양한 상태의 UI를 직접 시각적으로 확인 가능
+<br><br>
+<br>Docs 탭 : 컴포넌트 설명과 사용 예제 + 코드 시각화 확인 가능
+<br>Controls 탭 : props 값을 직접 조절해 UI 상태 실시간 테스트
+<br><img alt="node_storybook" src="https://seonohblog.netlify.app/assets/node_storybook.png" referrerpolicy="no-referrer"><br><br><br>
+<br>이번 프로젝트를 통해 RESTful API 구조를 직접 설계해보며, 서버와 클라이언트가 어떻게 통신하고 흐름이 이어지는지 더 체감할 수 있었다. 단순히 axios로 요청 보내는 걸 넘어서, 라우팅과 응답 구조까지 전부 내가 짜니까 더 이해가 깊어졌다.
+<br>그리고 무엇보다도, 컴포넌트를 어떻게 잘 나누고 독립적으로 개발할 수 있을지 고민하게 됐다. 그 과정에서 Storybook을 처음 써봤는데, UI 컴포넌트를 따로 문서화해서 테스트하고 관리할 수 있다는 게 너무 좋았다. 앞으로 실무에서도 꼭 쓰고 싶을 만큼 강력한 도구라는 걸 알게 됐다.
+<br>디자인 시스템의 기반을 잡으려고 노력했다. 아직 완성은 아니지만, 버튼, 인풋, 카드 컴포넌트를 재사용 가능하게 만들고, props로 확장할 수 있게 구성하면서 확장 가능한 구조에 한 발짝 다가간 느낌이었다.
+<br>특히 파일 구조나 역할별 컴포넌트, API 호출 분리를 깔끔하게 나누니까 유지보수나 가독성이 확실히 좋아졌고, “아, 이렇게 짜야 나중에 팀 프로젝트 할 때도 좋겠다”는 감이 생겼다.
+<br>마지막으로는 기능 구현뿐 아니라 문서화도 직접 챙겨보며, 진짜 하나의 작은 서비스가 돌아가는 느낌을 받았다. 이번 프로젝트를 통해 단순한 학습을 넘어서, 실제 현업 흐름에 가까운 개발 경험을 할 수 있었던 것 같아 굉장히 뿌듯했다.
+]]></description><link>2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/Express 기반 유튜버 API 프로젝트.md</guid><pubDate>Mon, 21 Apr 2025 10:10:56 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/node_frontend_1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/node_frontend_1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
  <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
 “공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
 이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터,<br>
@@ -262,222 +469,7 @@ DB → API → 프론트 연결<br>
 ✅ show<br>
 ✅ poster<br>
 ✅ order<br>
-✅ order_detail]]></description><link>2.dev-log/express-&amp;-node/공연-예매-사이트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/공연 예매 사이트.md</guid><pubDate>Mon, 21 Apr 2025 10:04:20 GMT</pubDate></item><item><title><![CDATA[📘 Node.js + Express + React + Storybook: 유튜버 관리 프로젝트]]></title><description><![CDATA[ 
- <br><br>유튜버 정보를 등록하고, 수정하며, 삭제할 수 있는 풀스택 CRUD 프로젝트입니다.<br>
-Express.js + React + Tailwind CSS + Storybook 기반으로 직접 API 설계부터 UI 구현과 컴포넌트 문서화하였습니다.<br><br>
-<br>프로젝트 소개 및 목적
-<br>기술 스택 소개
-<br>백엔드: Node.js + Express
-<br>프론트엔드: React + Tailwind CSS
-<br>공통 컴포넌트 &amp; 디자인 시스템
-<br>Storybook으로 UI 문서화
-<br>최종 회고
-<br><br><br>
-<br>CRUD 구조 이해 및 직접 구현
-<br>RESTful API 설계 경험
-<br>프론트/백 협업 구조 익히기
-<br>디자인 시스템과 Storybook 적용
-<br><br><br><br><br><br>
-<br>
-/youtubers 경로로 RESTful API 제공
-
-<br>
-db.json 파일 기반으로 CRUD 작동
-
-<br>
-readData, writeData, getNextId 유틸 함수로 깔끔하게 관리
-
-<br>
-GET /youtubers → 유튜버 전체 목록 조회
-
-<br>
-GET /youtubers/:id → 유튜버 조회 개별 조회
-
-<br>
-POST /youtubers → 유튜버 등록
-
-<br>
-PUT /youtubers/:id →  유튜버 수정
-
-<br>
-DELETE /youtubers/:id → 유튜버 삭제
-
-<br><br><br>backend/
-├── app.js
-├── routes/
-│   └── youtubers.js
-├── data/
-│   └── db.js
-└── package.json
-<br><br>const express = require("express");
-const fs = require("fs");
-const path = require("path");
-const router = express.Router();
-
-// 경로 및 유틸 함수 정의
-const DB_PATH = path.join(__dirname, "../data/db.json");
-
-// 유틸 함수
-const readData = () =&gt; {
-  const raw = fs.readFileSync(DB_PATH, "utf-8");
-  return JSON.parse(raw).youtubers;
-};
-
-// db.json 파일에 저장하는 쓰기 함수
-const writeData = (list) =&gt; {
-  fs.writeFileSync(DB_PATH, JSON.stringify({ youtubers: list }, null, 2));
-};
-  
-// 다음 등록할 유튜버의 id를 자동으로 계산해주는 함수
-const getNextId = (list) =&gt; {
-  const ids = list.map((yt) =&gt; yt.id);
-  return ids.length === 0 ? 1 : Math.max(...ids) + 1; // 가장 큰 id 찾아서 +1
-};
-
-// 전체 조회
-router.get("/", (req, res) =&gt; {
-  const list = readData();
-  res.json(list);
-});
-
-// 개별 조회
-router.get("/:id", (req, res) =&gt; {
-  const list = readData();
-  const numericId = parseInt(req.params.id);
-  const youtuber = list.find((yt) =&gt; yt.id === numericId);
-  if (!youtuber) {
-    return res.status(404).json({ message: "없는 youtuber입니다." });
-  }
-  res.json(youtuber);
-});
-
-// 등록
-router.post("/", (req, res) =&gt; {
-  const list = readData(); // db.json에서 유튜버 데이터 불러오기
-  const newId = getNextId(list); // list 데이터를 매개변수로 받아서 id 계산
-  const newYoutuber = { id: newId, ...req.body }; // 새 유튜버 객체 생성
-  
-  list.push(newYoutuber); // 배열에 추가
-  writeData(list); // 변경된 list를 db.json에 다시 저장
-  
-  res.json({
-    message: `${req.body.channelTitle} 유튜버님 생활을 응원합니다!`,
-  id: newId,
-  });
-});
-
-// 수정
-router.put("/:id", (req, res) =&gt; {
-  const list = readData();
-  const numericId = parseInt(req.params.id);
-  const index = list.findIndex((yt) =&gt; yt.id === numericId);
-
-  if (index === -1) {
-    return res.status(404).json({ message: "없는 youtuber입니다." });
-  }
-
-  list[index] = { id: numericId, ...req.body };
-  writeData(list);
-  res.json({ message: "수정 완료", id: numericId });
-});
-
-// 삭제
-router.delete("/:id", (req, res) =&gt; {
-  const list = readData();
-  const numericId = parseInt(req.params.id);
-  const newList = list.filter((yt) =&gt; yt.id !== numericId);
-
-  if (list.length === newList.length) {
-    return res.status(404).json({ message: "없는 youtuber입니다." });
-  }
-
-  writeData(newList);
-  res.json({ message: `id ${numericId} 유튜버 삭제 완료` });
-});
-
-module.exports = router;
-<br><br>const express = require("express");
-const app = express();
-const youtuberRouter = require("./routes/youtubers");
-
-app.use(express.json());
-app.use("/youtubers", youtuberRouter);
-
-app.listen(1234, () =&gt; {
-  console.log("🚀 서버 실행: http://localhost:1234");
-});
-<br><br><br><br><br><br>
-<br>Axios로 API 연동
-<br>Tailwind로 반응형 UI 구성
-<br>Component&nbsp;→&nbsp;API&nbsp;→&nbsp;Page&nbsp;구조로&nbsp;유지복수와 확장성 고려
-<br><br><br>frontend/
-├── src/
-│   ├── pages/            # 페이지 단위 컴포넌트
-│   │   ├── YoutuberList.jsx      # 유튜버 전체 목록 페이지
-│   │   ├── YoutuberDetail.jsx    # 유튜버 상세 및 수정 페이지
-│   │   ├── YoutuberForm.jsx      # 유튜버 등록 페이지
-│   ├── api/              # API 호출 함수 모음
-│   │   └── youtuber.js
-│   ├── components/       # 공통 UI 컴포넌트 (Button, Header, Input 등)
-│   └── App.jsx           # 라우팅 및 전역 설정
-<br><br>import axios from "axios";
-const BASE_URL = "http://localhost:1234/youtubers";
-
-export const getAllYoutubers = () =&gt; axios.get(BASE_URL);
-export const getYoutuber = (id) =&gt; axios.get(`${BASE_URL}/${id}`);
-export const createYoutuber = (data) =&gt; axios.post(BASE_URL, data);
-export const updateYoutuber = (id, data) =&gt; axios.put(`${BASE_URL}/${id}`, data);
-export const deleteYoutuber = (id) =&gt; axios.delete(`${BASE_URL}/${id}`);
-<br><br>유튜버 목록을 가져오는 API를 호출하고, 상태로 관리하는 기본적인 useEffect 흐름입니다.<br>import { useEffect, useState } from "react";
-import { getAllYoutubers } from "../api/youtuber";
-
-export default function YoutuberList() {
-  const [list, setList] = useState([]);
-
-  useEffect(() =&gt; {
-    getAllYoutubers().then((res) =&gt; setList(res.data));
-  }, []);
-
-  return (
-    &lt;div&gt;
-      {list.map((yt) =&gt; (
-        &lt;div key={yt.id}&gt;
-          &lt;h2&gt;{yt.channelTitle}&lt;/h2&gt;
-          &lt;p&gt;{yt.sub}&lt;/p&gt;
-        &lt;/div&gt;
-      ))}
-    &lt;/div&gt;
-  );
-}
-<br><img alt="node_frontend_1" src="https://seonohblog.netlify.app/assets/node_frontend_1.png" referrerpolicy="no-referrer"><br><img alt="node_frontend_2" src="https://seonohblog.netlify.app/assets/node_frontend_2.png" referrerpolicy="no-referrer"><br><img alt="node_frontend_3" src="https://seonohblog.netlify.app/assets/node_frontend_3.png" referrerpolicy="no-referrer"><br><br><br>
-<br>Button,&nbsp;Input,&nbsp;Header,&nbsp;YoutuberCard,&nbsp;Loader 등 재사용 가능한 UI 컴포넌트로 구성
-<br>variant / icon / label 등 props과 함께 재사용 가능
-<br>TailwindCSS class 조합으로 UI 구현
-<br>components/
-├── Button.jsx       # variant, icon, label props과 함께 가능
-├── Input.jsx        # placeholder, name, value, onChange
-├── Header.jsx       # title, showBack, rightElement
-├── YoutuberCard.jsx # 정보 + 수정/삭제 Button 포함
-└── Loader.jsx       # 로딩 UI
-<br><br><br>Storybook을 활용해 UI 컴포넌트를&nbsp;독립적으로 개발하고 시각적으로 테스트 및 문서화<br>
-<br>Button, Input, Header, Card 등은 components/에 따로 모아두고 variant, icon 등 props로 확장 가능하게 개발
-<br>스타일은 Tailwind 기반이지만 디자인 토큰으로 추상화된 부분은 따로 분리
-<br>Storybook을 통해 디자이너와 바로 UI 상태를 공유하거나 컴포넌트 테스트 가능
-<br>로딩, 오류 처리 등 UX를 위한 기본 요소도 Loader 컴포넌트로 통일
-<br><br>
-<br>파일명은 컴포넌트명 +&nbsp;.stories.jsx&nbsp;(예:&nbsp;Button.stories.jsx)
-<br>각 컴포넌트 상태(variant)별로 export const Primary, Secondary, WithIcon, Disabled 등 args를 통해 props를 쉽게 테스트하고 문서화 가능
-<br>Storybook 내에서 다양한 상태의 UI를 직접 시각적으로 확인 가능
-<br><br>
-<br>Docs 탭 : 컴포넌트 설명과 사용 예제 + 코드 시각화 확인 가능
-<br>Controls 탭 : props 값을 직접 조절해 UI 상태 실시간 테스트
-<br><img alt="node_storybook" src="https://seonohblog.netlify.app/assets/node_storybook.png" referrerpolicy="no-referrer"><br><br><br>
-<br>이번 프로젝트를 통해 RESTful API 구조를 직접 설계해보며, 서버와 클라이언트가 어떻게 통신하고 흐름이 이어지는지 더 체감할 수 있었다. 단순히 axios로 요청 보내는 걸 넘어서, 라우팅과 응답 구조까지 전부 내가 짜니까 더 이해가 깊어졌다.
-<br>그리고 무엇보다도, 컴포넌트를 어떻게 잘 나누고 독립적으로 개발할 수 있을지 고민하게 됐다. 그 과정에서 Storybook을 처음 써봤는데, UI 컴포넌트를 따로 문서화해서 테스트하고 관리할 수 있다는 게 너무 좋았다. 앞으로 실무에서도 꼭 쓰고 싶을 만큼 강력한 도구라는 걸 알게 됐다.
-<br>디자인 시스템의 기반을 잡으려고 노력했다. 아직 완성은 아니지만, 버튼, 인풋, 카드 컴포넌트를 재사용 가능하게 만들고, props로 확장할 수 있게 구성하면서 확장 가능한 구조에 한 발짝 다가간 느낌이었다.
-<br>특히 파일 구조나 역할별 컴포넌트, API 호출 분리를 깔끔하게 나누니까 유지보수나 가독성이 확실히 좋아졌고, “아, 이렇게 짜야 나중에 팀 프로젝트 할 때도 좋겠다”는 감이 생겼다.
-<br>마지막으로는 기능 구현뿐 아니라 문서화도 직접 챙겨보며, 진짜 하나의 작은 서비스가 돌아가는 느낌을 받았다. 이번 프로젝트를 통해 단순한 학습을 넘어서, 실제 현업 흐름에 가까운 개발 경험을 할 수 있었던 것 같아 굉장히 뿌듯했다.
-]]></description><link>2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/Express 기반 유튜버 API 프로젝트.md</guid><pubDate>Mon, 21 Apr 2025 10:04:16 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/node_frontend_1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/node_frontend_1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-22 TIL]]></title><description><![CDATA[ 
+✅ order_detail]]></description><link>2.dev-log/express-&amp;-node/공연-예매-사이트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/공연 예매 사이트.md</guid><pubDate>Mon, 21 Apr 2025 10:04:20 GMT</pubDate></item><item><title><![CDATA[📘 2025-04-22 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>
 <br>
