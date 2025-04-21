@@ -111,7 +111,6 @@ package.json은 Node.js 프로젝트의 **메타 정보와 의존성, 실행 스
 }
 ```
 
-
 ### **💡 사용 팁**
 
 - npm run dev처럼 scripts에 등록한 명령어를 단축 실행 가능

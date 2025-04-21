@@ -63,6 +63,7 @@ aliases:
 > [!info] 시작하기 좋은 글
 ✔️ [[Type Alias, Interface, Class]]
 
+
 ---
 
 ## 📅 최근 업데이트
