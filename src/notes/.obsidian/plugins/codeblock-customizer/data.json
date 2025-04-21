@@ -322,7 +322,7 @@
         "uncollapseDuringPrint": true
       },
       "common": {
-        "enableInSourceMode": false
+        "enableInSourceMode": true
       },
       "enableEditorActiveLineHighlight": true
     },

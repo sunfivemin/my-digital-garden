@@ -1,4 +1,4 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 21 Apr 2025 09:31:27 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 21 Apr 2025 09:31:25 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 21 Apr 2025 09:39:00 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 21 Apr 2025 09:38:58 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
  <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
 “공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
 이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터,<br>
@@ -214,7 +214,7 @@ class Dog extends Animal {
 ✔ 클래스를 사용할 때, 인터페이스를 활용 → interface + implements 사용<br>
 ✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>1.개념-정리/js-&amp;-ts/type-alias,-interface,-class.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/Type Alias, Interface, Class.md</guid><pubDate>Mon, 21 Apr 2025 03:40:25 GMT</pubDate></item><item><title><![CDATA[📘 Node.js + Express + React + Storybook: 유튜버 관리 프로젝트]]></title><description><![CDATA[ 
  <br><br>유튜버 정보를 등록하고, 수정하며, 삭제할 수 있는 풀스택 CRUD 프로젝트입니다.<br>
-Express.js + React + Tailwind CSS + Storybook 기반으로 직접 API 설계부터 UI 구현과 컴포넌트 문서화 하였습니다.<br><br>
+Express.js + React + Tailwind CSS + Storybook 기반으로 직접 API 설계부터 UI 구현과 컴포넌트 문서화하였습니다.<br><br>
 <br>프로젝트 소개 및 목적
 <br>기술 스택 소개
 <br>백엔드: Node.js + Express
@@ -429,7 +429,7 @@ export default function YoutuberList() {
 <br>디자인 시스템의 기반을 잡으려고 노력했다. 아직 완성은 아니지만, 버튼, 인풋, 카드 컴포넌트를 재사용 가능하게 만들고, props로 확장할 수 있게 구성하면서 확장 가능한 구조에 한 발짝 다가간 느낌이었다.
 <br>특히 파일 구조나 역할별 컴포넌트, API 호출 분리를 깔끔하게 나누니까 유지보수나 가독성이 확실히 좋아졌고, “아, 이렇게 짜야 나중에 팀 프로젝트 할 때도 좋겠다”는 감이 생겼다.
 <br>마지막으로는 기능 구현뿐 아니라 문서화도 직접 챙겨보며, 진짜 하나의 작은 서비스가 돌아가는 느낌을 받았다. 이번 프로젝트를 통해 단순한 학습을 넘어서, 실제 현업 흐름에 가까운 개발 경험을 할 수 있었던 것 같아 굉장히 뿌듯했다.
-]]></description><link>2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/Express 기반 유튜버 API 프로젝트.md</guid><pubDate>Mon, 21 Apr 2025 09:26:32 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/node_frontend_1" length="0" type="false"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/node_frontend_1"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-03-31 TIL]]></title><description><![CDATA[ 
+]]></description><link>2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/Express 기반 유튜버 API 프로젝트.md</guid><pubDate>Mon, 21 Apr 2025 09:37:32 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/node_frontend_1" length="0" type="false"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/node_frontend_1"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-03-31 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>Git과 GitHub의 차이점 &nbsp;
 <br>CLI와 GUI의 개념 및 사용법 &nbsp;

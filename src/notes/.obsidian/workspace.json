@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1.개념 정리/Node/Node.js 기본 생태계.md",
+                "file": "1.개념 정리/JS & TS/Type Alias, Interface, Class.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Node.js 기본 생태계"
+              "title": "Type Alias, Interface, Class"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:Nodejs",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 391.5
+    "width": 335.5
   },
   "right": {
     "id": "90ae25d5bc054b74",
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "1.개념 정리/Node/Node.js 기본 생태계.md",
+                "file": "1.개념 정리/JS & TS/Type Alias, Interface, Class.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Node.js 기본 생태계 의 개요"
+              "title": "Type Alias, Interface, Class 의 개요"
             }
           }
         ],
@@ -168,32 +168,36 @@
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
       "webpage-html-export:Export Vault to HTML": false,
-      "obsidian-rich-links:Rich Links": false,
-      "digitalgarden:Digital Garden Publication Center": false
+      "obsidian-rich-links:Rich Links": false
     }
   },
   "active": "1399458aea2c525a",
   "lastOpenFiles": [
+    "home.md",
+    "4.TIL/4월/2025-04-22-Get.md",
     "4.TIL/4월/2025-04-18-Postman.md",
+    "4.TIL/4월/2025-04-01-GitHub.md",
+    "4.TIL/4월/2025-03-31-Git.md",
+    "2.Dev Log/Express & Node/Express 기반 유튜버 API 프로젝트.md",
+    "1.개념 정리/JS & TS/Type Alias, Interface, Class.md",
+    "1.개념 정리/JS & TS/변수와 함수의 타입 정의.md",
+    "1.개념 정리/프레임워크 & 라이브러리/디자인 시스템(Feat. Storybook).md",
+    "1.개념 정리/프레임워크 & 라이브러리/상태 관리 (Redux, Zustand).md",
+    "무제.canvas",
     "1.개념 정리/Node/Node.js 기본 생태계.md",
+    "4.TIL/4월/2025-04-04-JavaScript.md",
+    "2.Dev Log/Express & Node/공연 예매 사이트.md",
+    "4.TIL/4월/2025-03-28-Markdown.md",
+    "4.TIL/4월/2025-04-17-Map.md",
     "4.TIL/4월/2025-04-03-Web.md",
     "4.TIL/4월/2025-04-07-Node.md",
-    "4.TIL/4월/2025-04-17-Map.md",
-    "home.md",
     "4.TIL/4월/2025-04-16-Params.md",
     "4.TIL/4월/2025-04-15-Express.md",
     "4.TIL/4월/2025-04-11-Module.md",
     "4.TIL/4월/2025-04-08-DBMS.md",
-    "4.TIL/4월/2025-04-04-JavaScript.md",
     "4.TIL/4월/2025-04-02-Branch.md",
-    "4.TIL/4월/2025-04-01-GitHub.md",
-    "4.TIL/4월/2025-03-31-Git.md",
-    "4.TIL/4월/2025-03-28-Markdown.md",
     "3.Error Fixes/Node.js/error.md",
     "3.Error Fixes/Git/git error.md",
-    "2.Dev Log/Express & Node/공연 예매 사이트.md",
-    "1.개념 정리/JS & TS/TypeScript.md",
-    "1.개념 정리/프레임워크 & 라이브러리/상태 관리 (Redux, Zustand).md",
     "ExpressMap.png",
     "4.TIL/4월/2025-04-10-API.md",
     "4.TIL/4월",
@@ -207,10 +211,6 @@
     "3.Error Fixes/Git",
     "3.Error Fixes",
     "2.Dev Log/Express & Node",
-    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-03-html-basic.md",
-    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-03-31-git-init-commit.md",
-    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-01-github-remote-branch.md",
-    "📂 FRONTEND/📦 프레임워크 & 라이브러리/📝 상태 관리 (Redux, Zustand).md",
     "merge.png",
     "동기화.png",
     "pr전.png",
@@ -220,7 +220,6 @@
     "pr.png",
     "gui에서clone.png",
     "pull오류.png",
-    "무제.canvas",
     "캔퍼스.canvas",
     "Untitled.canvas"
   ]

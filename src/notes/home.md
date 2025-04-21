@@ -34,7 +34,7 @@ aliases:
 ### 🌱 기초
 - [[HTML_CSS|HTML & CSS]]
 - [[JavaScript]]
-- [[TypeScript]]
+- [[Type Alias, Interface, Class]]
 
 ### ⚙️ 프레임워크
 - [[React]]
@@ -61,14 +61,14 @@ aliases:
 ## 📌 시작하기 좋은 글
 
 > [!info] 시작하기 좋은 글
-✔️ [[TypeScript]]
+✔️ [[Type Alias, Interface, Class]]
 
 ---
 
 ## 📅 최근 업데이트
 
 - 2025-03-28: [[2025-03-28-Markdown]]
-- 2025-03-27: [[TypeScript]]
+- 2025-03-27: [[Type Alias, Interface, Class]]
 
 ---
 

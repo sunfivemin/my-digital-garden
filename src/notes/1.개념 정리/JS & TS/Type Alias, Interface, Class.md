@@ -3,7 +3,9 @@ title: TypeScript
 tags:
   - frontend
   - typescript
-  - javascript
+  - Interface
+  - TypeAlias
+  - Class
 created: 2025-03-27
 ---
 
