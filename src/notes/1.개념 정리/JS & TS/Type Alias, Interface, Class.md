@@ -11,6 +11,7 @@ created: 2025-03-27
 
 # 🚀 Type Alias, Interface, Class 
 
+
 ## 📌 Type Alias란?
 
 `Type Alias`는 **기존 타입에 별칭(Alias)** 을 부여하는 기능입니다. 

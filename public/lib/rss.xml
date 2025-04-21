@@ -1,4 +1,218 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 21 Apr 2025 09:59:59 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 21 Apr 2025 09:59:59 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[📘 Node.js 기본 생태계]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 21 Apr 2025 10:04:42 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 21 Apr 2025 10:04:40 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+ <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
+“공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
+이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터,<br>
+어떻게 구성하면 실무에 유리한지, 그리고 Storybook을 통해 어떻게 문서화하고 협업까지 연결할 수 있는지를 정리해봤어요.<br><br><br>디자인 시스템은 일관된 UI/UX를 제공하기 위한 설계 기준이에요.<br>
+예를 들어 팀원들이 만든 버튼이 다 제각각이면 유지보수도 어렵고 사용자 경험도 들쑥날쑥하죠.<br>
+이런 문제를 막기 위해 공통 컴포넌트, 스타일 가이드, 디자인 토큰 등을 하나로 정리한 시스템이 필요합니다.<br>
+<br>버튼, 인풋, 카드 같은 공통 컴포넌트
+<br>컬러, 폰트, 여백 같은 스타일 기준값 (디자인 토큰)
+<br>사용법과 예제, 문서화
+<br>이런 것들을 미리 정리해두면 개발도 빨라지고, 유지보수도 쉬워지고, 협업도 편해집니다.<br><br>
+<br>디자이너와 협업 시 Figma 토큰을 기준으로 개발자가 변환해서 코드에 반영
+<br>컴포넌트가 중복되지 않도록 공유된 디자인 토큰 기반으로 개발
+<br>새로운 페이지가 생겨도 공통 컴포넌트 조합만으로 빠르게 개발 가능
+<br>팀 규모가 커질수록 Storybook을 내부 개발자용 UI 가이드로 배포
+<br><br><br>토큰과 컴포넌트를 분리해두면 규모가 커져도 정리가 잘 돼요.<br>src/
+├── components/         # Button, Input, Card 등 공통 UI 컴포넌트
+├── designSystem/
+│   ├── tokens/         # 색상, 타이포, 여백 등 디자인 토큰
+│   │   ├── colors.js
+│   │   ├── spacing.js
+│   │   └── typography.js
+│   └── index.js        # 모든 토큰 모듈화
+├── pages/              # 실제 페이지 단위 컴포넌트
+└── App.jsx
+<br><br><br>디자인 토큰은 스타일 기준값을 변수처럼 관리하는 것이에요.<br>
+한 번만 정의해두면, 나중에 전체 테마 바꾸기도 편하고, 디자이너 피드백 반영도 훨씬 수월해요.<br>// designSystem/tokens/colors.js
+export const colors = {
+  primary: "#3B82F6", // Tailwind blue-500
+  secondary: "#F3F4F6",
+  danger: "#EF4444",
+  text: "#1F2937",
+};
+
+// designSystem/tokens/typography.js
+export const fontSize = {
+  sm: "0.875rem",
+  base: "1rem",
+  xl: "1.25rem",
+};
+
+<br><br><br>variant, icon, disabled 같은 props도 추가해두면 더 유연한 컴포넌트가 됩니다.<br>// components/Button.jsx
+import { colors } from "../designSystem/tokens/colors";
+
+export default function Button({ label, onClick, variant = "primary" }) {
+  const style = {
+    backgroundColor: colors[variant],
+    color: "#fff",
+    padding: "8px 16px",
+    borderRadius: "8px",
+    fontSize: "0.875rem",
+  };
+
+  return &lt;button onClick={onClick} style={style}&gt;{label}&lt;/button&gt;;
+}
+<br><br><br>Storybook은 컴포넌트를 독립적으로 개발하고 테스트할 수 있도록 해주는 도구예요.<br>
+디자이너, 기획자, QA가 개발 서버를 보지 않고도 UI 상태를 확인할 수 있게 해주죠.<br>
+Docs 탭, Controls, Canvas를 통해 컴포넌트의 상태와 props를 바로 확인하고 테스트할 수 있어요.<br>Storybook에서는<br>
+<br>컴포넌트 상태별 stories 작성 (Primary, Disabled, WithIcon 등)
+<br>Docs 탭: 컴포넌트 사용 방법과 &nbsp;UI 상태 등을 문서처럼 자동 정리
+<br>Controls 탭: props 값을 직접 조절해보면서 테스트 가능
+<br>npx storybook init
+npm run storybook
+<br>// Button.stories.jsx
+import Button from "./Button";
+
+export default {
+  title: "Components/Button",
+  component: Button,
+};
+
+export const Primary = {
+  args: {
+    label: "확인",
+    variant: "primary",
+  },
+};
+
+<br><br><br>
+<br>디자인 시스템이 있는 회사에서는 Figma 디자인 → 토큰으로 변환 → 컴포넌트에 적용
+<br>Storybook을 통해 팀원들에게 공통 UI를 보여주고 가이드라인처럼 활용
+<br>규모가 클수록, 팀원이 많을수록 디자인 시스템과 Storybook은 필수예요
+<br>배포된 Storybook은 퍼블릭 문서처럼 외부에 공개할 수도 있고, 디자인 QA에도 유용해요.
+<br><br><br><br>
+<br>GitHub Pages / Vercel / Netlify에 정적 사이트로 배포 가능
+<br>storybook-static 폴더를 GitHub Actions로 자동 배포
+<br>디자이너나 팀원에게 배포된 링크로 컴포넌트 가이드를 제공
+<br>.storybook 폴더 내 설정을 정리해 build-storybook 명령어로 HTML 생성
+<br>npm run build-storybook
+<br><br>
+<br>Figma에서 디자인 토큰을 export → style-dictionary로 변환 → 코드 자동 생성 가능
+<br>CSS 변수 → JS 모듈로 변환
+<br>혹은 Tailwind의 theme.extend에 직접 바인딩
+<br>테마를 여러 개로 나눠도 유지보수가 쉬워짐
+<br>이렇게 하면 디자이너가 디자인을 바꾸면, 바로 코드에 반영되도록 자동화할 수 있어요.<br><br><br>처음엔 ‘왜 굳이 이렇게까지 해야 해?’ 싶을 수 있지만,<br>
+컴포넌트가 많아지고, 팀원이 늘어나고, 유지보수를 하게 될수록 디자인 시스템의 필요성을 절실히 느낍니다.<br>작은 프로젝트부터라도 토큰 하나, 버튼 하나부터 시작해보세요.<br>
+다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Mon, 21 Apr 2025 10:04:32 GMT</pubDate></item><item><title><![CDATA[변수와 함수의 타입 정의]]></title><description><![CDATA[ 
+ <br><br><br><br><br><br><br><br><br><br>]]></description><link>1.개념-정리/js-&amp;-ts/변수와-함수의-타입-정의.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/변수와 함수의 타입 정의.md</guid><pubDate>Mon, 21 Apr 2025 10:04:27 GMT</pubDate></item><item><title><![CDATA[TypeScript]]></title><description><![CDATA[ 
+ <br><br><br>Type Alias는 기존 타입에 별칭(Alias) 을 부여하는 기능입니다.<br>
+객체뿐만 아니라 유니온 타입, 함수 타입, 튜플 등 다양한 타입을 정의할 때 사용됩니다.<br><br>// 기본 타입에 별칭 부여
+type UserId = number;
+type UserName = string;
+type IsActive = boolean;
+
+let userId: UserId = 12345;
+let userName: UserName = "홍길동";
+let isActive: IsActive = true;
+<br><br>// 주문 상태 타입 정의
+type OrderStatus = "pending" | "processing" | "shipped" | "delivered" | "canceled";
+
+type Order = {
+  id: number;
+  productId: number;
+  customer: string;
+  quantity: number;
+  status: OrderStatus;
+  orderDate: Date;
+};
+
+// 사용 예
+const order1: Order = {
+  id: 1001,
+  productId: 5,
+  customer: "이지은",
+  quantity: 2,
+  status: "pending",
+  orderDate: new Date(),
+};
+<br>✅ 유니온 타입을 활용하면 제한된 값만 사용할 수 있어 안전한 코드 작성이 가능!<br><br>// 함수 타입 별칭
+type Calculator = (a: number, b: number) =&gt; number;
+
+const add: Calculator = (x, y) =&gt; x + y;
+const multiply: Calculator = (x, y) =&gt; x * y;
+
+console.log(add(10, 20));  // 30
+console.log(multiply(10, 20));  // 200
+<br><br><br>읽기 전용 속성을 사용하면 객체의 불변성(immutability) 을 유지할 수 있습니다.<br>type User = {
+  readonly id: number;
+  readonly createdAt: Date;
+  name: string;
+  age: number;
+};
+
+const user: User = {
+  id: 12345,
+  createdAt: new Date(),
+  name: "홍길동",
+  age: 30,
+};
+
+// 가능: 일반 속성 수정
+user.name = "김철수";
+user.age = 31;
+
+// 에러: readonly 속성 수정 불가
+// user.id = 67890;
+// user.createdAt = new Date();
+<br>✅ 읽기 전용 속성을 활용하면 데이터를 보호할 수 있음!<br><br><br>Interface는 객체의 구조를 정의하는 용도로 사용됩니다. type alias와 유사하지만, extends를 통해 다른 인터페이스를 확장할 수 있으며, 클래스에서도 implements 키워드로 사용할 수 있습니다.<br><br>interface Car {
+  model: string;
+  price: number;
+  tax(): number;
+}
+
+const myCar: Car = {
+  model: "Tesla",
+  price: 5000,
+  tax() {
+    return this.price * 0.1;
+  },
+};
+<br><br>interface Animal {
+  name: string;
+}
+
+interface Dog extends Animal {
+  breed: string;
+}
+
+const myDog: Dog = {
+  name: "바둑이",
+  breed: "골든 리트리버",
+};
+<br>✅ **extends**를 사용하여 기존 인터페이스를 확장할 수 있음!<br><br><br><br><br><br>TypeScript에서 클래스(Class) 는 객체를 만들기 위한 설계도(템플릿) 입니다.<br>
+코드를 재사용하고, 구조화하여 효율적인 프로그래밍이 가능합니다.<br><br>class Car {
+  model: string;
+  price: number;
+
+  constructor(model: string, price: number) {
+    this.model = model;
+    this.price = price;
+  }
+
+  tax(): number {
+    return this.price * 0.1;
+  }
+}
+<br><br>class Animal {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+  sound() {
+    console.log(`${this.name}이(가) 소리를 냅니다.`);
+  }
+}
+
+class Dog extends Animal {
+  bark() {
+    console.log(`${this.name}이(가) 멍멍! 짖습니다.`);
+  }
+}
+<br>✅ 부모 클래스의 기능을 유지하면서 새로운 기능 추가 가능!<br><br><br>✔ 객체 구조를 정의할 때 → interface 사용 (확장 가능)<br>
+✔ 유니온 타입, 튜플, 함수 타입을 정의할 때 → type alias 사용<br>
+✔ 클래스를 사용할 때, 인터페이스를 활용 → interface + implements 사용<br>
+✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>1.개념-정리/js-&amp;-ts/type-alias,-interface,-class.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/Type Alias, Interface, Class.md</guid><pubDate>Mon, 21 Apr 2025 10:04:24 GMT</pubDate></item><item><title><![CDATA[📘 Node.js 기본 생태계]]></title><description><![CDATA[ 
  <br><br>Node.js는 백엔드 개발을 자바스크립트로 할 수 있게 해주는 런타임이며, 실제 개발에서는 패키지 매니저(NPM), 의존성 관리, 스크립트 실행 등 다양한 생태계 도구와 함께 사용된다.<br><br>
 <br>Node.js는 브라우저가 아닌 환경에서 자바스크립트를 실행할 수 있게 해주는 런타임
 <br>V8 JavaScript 엔진을 기반으로 하고 있으며, 비동기 I/O 처리에 강함
@@ -34,7 +248,246 @@ npx cowsay "Hello Node.js!"      # CLI 유틸 실행
 <br>npm run dev처럼 scripts에 등록한 명령어를 단축 실행 가능
 <br>dependencies는 운영 시 사용, devDependencies는 개발 환경에서만 사용
 <br>실제 배포 시엔 --production 옵션으로 devDependencies 제외 가능
-]]></description><link>1.개념-정리/node/node.js-기본-생태계.html</link><guid isPermaLink="false">1.개념 정리/Node/Node.js 기본 생태계.md</guid><pubDate>Mon, 21 Apr 2025 09:56:42 GMT</pubDate></item><item><title><![CDATA[🏠 home]]></title><description><![CDATA[<a class="tag" href="?query=tag:home" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#home</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:devlog" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#devlog</a> <a class="tag" href="?query=tag:growth" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#growth</a> 
+]]></description><link>1.개념-정리/node/node.js-기본-생태계.html</link><guid isPermaLink="false">1.개념 정리/Node/Node.js 기본 생태계.md</guid><pubDate>Mon, 21 Apr 2025 10:04:14 GMT</pubDate></item><item><title><![CDATA[공연 예매 사이트]]></title><description><![CDATA[ 
+ <br>ERD 설계 및 테이블 생성 과제였던 공연 예매 사이트를 express와 node를 이용해 구현해보았다.<br>Git &amp; GitHub<br>
+Database &amp; SQL(ERD 설계 및 테이블 생성)<br>
+Express &amp; Node (기본 서버, Routing)<br>
+DB → API → 프론트 연결<br>
+<br>MySQL/MariaDB: ERD에 맞춰 테이블 생성
+<br>Node.js + Express: RESTful API 서버 만들기
+<br>API 테스트: Postman 등으로 동작 확인
+<br>프론트: React/Next.js 등에서 UI 구현 + API 연결
+<br><br><br>✅ user<br>
+✅ user_info<br>
+✅ show<br>
+✅ poster<br>
+✅ order<br>
+✅ order_detail]]></description><link>2.dev-log/express-&amp;-node/공연-예매-사이트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/공연 예매 사이트.md</guid><pubDate>Mon, 21 Apr 2025 10:04:20 GMT</pubDate></item><item><title><![CDATA[📘 Node.js + Express + React + Storybook: 유튜버 관리 프로젝트]]></title><description><![CDATA[ 
+ <br><br>유튜버 정보를 등록하고, 수정하며, 삭제할 수 있는 풀스택 CRUD 프로젝트입니다.<br>
+Express.js + React + Tailwind CSS + Storybook 기반으로 직접 API 설계부터 UI 구현과 컴포넌트 문서화하였습니다.<br><br>
+<br>프로젝트 소개 및 목적
+<br>기술 스택 소개
+<br>백엔드: Node.js + Express
+<br>프론트엔드: React + Tailwind CSS
+<br>공통 컴포넌트 &amp; 디자인 시스템
+<br>Storybook으로 UI 문서화
+<br>최종 회고
+<br><br><br>
+<br>CRUD 구조 이해 및 직접 구현
+<br>RESTful API 설계 경험
+<br>프론트/백 협업 구조 익히기
+<br>디자인 시스템과 Storybook 적용
+<br><br><br><br><br><br>
+<br>
+/youtubers 경로로 RESTful API 제공
+
+<br>
+db.json 파일 기반으로 CRUD 작동
+
+<br>
+readData, writeData, getNextId 유틸 함수로 깔끔하게 관리
+
+<br>
+GET /youtubers → 유튜버 전체 목록 조회
+
+<br>
+GET /youtubers/:id → 유튜버 조회 개별 조회
+
+<br>
+POST /youtubers → 유튜버 등록
+
+<br>
+PUT /youtubers/:id →  유튜버 수정
+
+<br>
+DELETE /youtubers/:id → 유튜버 삭제
+
+<br><br><br>backend/
+├── app.js
+├── routes/
+│   └── youtubers.js
+├── data/
+│   └── db.js
+└── package.json
+<br><br>const express = require("express");
+const fs = require("fs");
+const path = require("path");
+const router = express.Router();
+
+// 경로 및 유틸 함수 정의
+const DB_PATH = path.join(__dirname, "../data/db.json");
+
+// 유틸 함수
+const readData = () =&gt; {
+  const raw = fs.readFileSync(DB_PATH, "utf-8");
+  return JSON.parse(raw).youtubers;
+};
+
+// db.json 파일에 저장하는 쓰기 함수
+const writeData = (list) =&gt; {
+  fs.writeFileSync(DB_PATH, JSON.stringify({ youtubers: list }, null, 2));
+};
+  
+// 다음 등록할 유튜버의 id를 자동으로 계산해주는 함수
+const getNextId = (list) =&gt; {
+  const ids = list.map((yt) =&gt; yt.id);
+  return ids.length === 0 ? 1 : Math.max(...ids) + 1; // 가장 큰 id 찾아서 +1
+};
+
+// 전체 조회
+router.get("/", (req, res) =&gt; {
+  const list = readData();
+  res.json(list);
+});
+
+// 개별 조회
+router.get("/:id", (req, res) =&gt; {
+  const list = readData();
+  const numericId = parseInt(req.params.id);
+  const youtuber = list.find((yt) =&gt; yt.id === numericId);
+  if (!youtuber) {
+    return res.status(404).json({ message: "없는 youtuber입니다." });
+  }
+  res.json(youtuber);
+});
+
+// 등록
+router.post("/", (req, res) =&gt; {
+  const list = readData(); // db.json에서 유튜버 데이터 불러오기
+  const newId = getNextId(list); // list 데이터를 매개변수로 받아서 id 계산
+  const newYoutuber = { id: newId, ...req.body }; // 새 유튜버 객체 생성
+  
+  list.push(newYoutuber); // 배열에 추가
+  writeData(list); // 변경된 list를 db.json에 다시 저장
+  
+  res.json({
+    message: `${req.body.channelTitle} 유튜버님 생활을 응원합니다!`,
+  id: newId,
+  });
+});
+
+// 수정
+router.put("/:id", (req, res) =&gt; {
+  const list = readData();
+  const numericId = parseInt(req.params.id);
+  const index = list.findIndex((yt) =&gt; yt.id === numericId);
+
+  if (index === -1) {
+    return res.status(404).json({ message: "없는 youtuber입니다." });
+  }
+
+  list[index] = { id: numericId, ...req.body };
+  writeData(list);
+  res.json({ message: "수정 완료", id: numericId });
+});
+
+// 삭제
+router.delete("/:id", (req, res) =&gt; {
+  const list = readData();
+  const numericId = parseInt(req.params.id);
+  const newList = list.filter((yt) =&gt; yt.id !== numericId);
+
+  if (list.length === newList.length) {
+    return res.status(404).json({ message: "없는 youtuber입니다." });
+  }
+
+  writeData(newList);
+  res.json({ message: `id ${numericId} 유튜버 삭제 완료` });
+});
+
+module.exports = router;
+<br><br>const express = require("express");
+const app = express();
+const youtuberRouter = require("./routes/youtubers");
+
+app.use(express.json());
+app.use("/youtubers", youtuberRouter);
+
+app.listen(1234, () =&gt; {
+  console.log("🚀 서버 실행: http://localhost:1234");
+});
+<br><br><br><br><br><br>
+<br>Axios로 API 연동
+<br>Tailwind로 반응형 UI 구성
+<br>Component&nbsp;→&nbsp;API&nbsp;→&nbsp;Page&nbsp;구조로&nbsp;유지복수와 확장성 고려
+<br><br><br>frontend/
+├── src/
+│   ├── pages/            # 페이지 단위 컴포넌트
+│   │   ├── YoutuberList.jsx      # 유튜버 전체 목록 페이지
+│   │   ├── YoutuberDetail.jsx    # 유튜버 상세 및 수정 페이지
+│   │   ├── YoutuberForm.jsx      # 유튜버 등록 페이지
+│   ├── api/              # API 호출 함수 모음
+│   │   └── youtuber.js
+│   ├── components/       # 공통 UI 컴포넌트 (Button, Header, Input 등)
+│   └── App.jsx           # 라우팅 및 전역 설정
+<br><br>import axios from "axios";
+const BASE_URL = "http://localhost:1234/youtubers";
+
+export const getAllYoutubers = () =&gt; axios.get(BASE_URL);
+export const getYoutuber = (id) =&gt; axios.get(`${BASE_URL}/${id}`);
+export const createYoutuber = (data) =&gt; axios.post(BASE_URL, data);
+export const updateYoutuber = (id, data) =&gt; axios.put(`${BASE_URL}/${id}`, data);
+export const deleteYoutuber = (id) =&gt; axios.delete(`${BASE_URL}/${id}`);
+<br><br>유튜버 목록을 가져오는 API를 호출하고, 상태로 관리하는 기본적인 useEffect 흐름입니다.<br>import { useEffect, useState } from "react";
+import { getAllYoutubers } from "../api/youtuber";
+
+export default function YoutuberList() {
+  const [list, setList] = useState([]);
+
+  useEffect(() =&gt; {
+    getAllYoutubers().then((res) =&gt; setList(res.data));
+  }, []);
+
+  return (
+    &lt;div&gt;
+      {list.map((yt) =&gt; (
+        &lt;div key={yt.id}&gt;
+          &lt;h2&gt;{yt.channelTitle}&lt;/h2&gt;
+          &lt;p&gt;{yt.sub}&lt;/p&gt;
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+<br><img alt="node_frontend_1" src="https://seonohblog.netlify.app/assets/node_frontend_1.png" referrerpolicy="no-referrer"><br><img alt="node_frontend_2" src="https://seonohblog.netlify.app/assets/node_frontend_2.png" referrerpolicy="no-referrer"><br><img alt="node_frontend_3" src="https://seonohblog.netlify.app/assets/node_frontend_3.png" referrerpolicy="no-referrer"><br><br><br>
+<br>Button,&nbsp;Input,&nbsp;Header,&nbsp;YoutuberCard,&nbsp;Loader 등 재사용 가능한 UI 컴포넌트로 구성
+<br>variant / icon / label 등 props과 함께 재사용 가능
+<br>TailwindCSS class 조합으로 UI 구현
+<br>components/
+├── Button.jsx       # variant, icon, label props과 함께 가능
+├── Input.jsx        # placeholder, name, value, onChange
+├── Header.jsx       # title, showBack, rightElement
+├── YoutuberCard.jsx # 정보 + 수정/삭제 Button 포함
+└── Loader.jsx       # 로딩 UI
+<br><br><br>Storybook을 활용해 UI 컴포넌트를&nbsp;독립적으로 개발하고 시각적으로 테스트 및 문서화<br>
+<br>Button, Input, Header, Card 등은 components/에 따로 모아두고 variant, icon 등 props로 확장 가능하게 개발
+<br>스타일은 Tailwind 기반이지만 디자인 토큰으로 추상화된 부분은 따로 분리
+<br>Storybook을 통해 디자이너와 바로 UI 상태를 공유하거나 컴포넌트 테스트 가능
+<br>로딩, 오류 처리 등 UX를 위한 기본 요소도 Loader 컴포넌트로 통일
+<br><br>
+<br>파일명은 컴포넌트명 +&nbsp;.stories.jsx&nbsp;(예:&nbsp;Button.stories.jsx)
+<br>각 컴포넌트 상태(variant)별로 export const Primary, Secondary, WithIcon, Disabled 등 args를 통해 props를 쉽게 테스트하고 문서화 가능
+<br>Storybook 내에서 다양한 상태의 UI를 직접 시각적으로 확인 가능
+<br><br>
+<br>Docs 탭 : 컴포넌트 설명과 사용 예제 + 코드 시각화 확인 가능
+<br>Controls 탭 : props 값을 직접 조절해 UI 상태 실시간 테스트
+<br><img alt="node_storybook" src="https://seonohblog.netlify.app/assets/node_storybook.png" referrerpolicy="no-referrer"><br><br><br>
+<br>이번 프로젝트를 통해 RESTful API 구조를 직접 설계해보며, 서버와 클라이언트가 어떻게 통신하고 흐름이 이어지는지 더 체감할 수 있었다. 단순히 axios로 요청 보내는 걸 넘어서, 라우팅과 응답 구조까지 전부 내가 짜니까 더 이해가 깊어졌다.
+<br>그리고 무엇보다도, 컴포넌트를 어떻게 잘 나누고 독립적으로 개발할 수 있을지 고민하게 됐다. 그 과정에서 Storybook을 처음 써봤는데, UI 컴포넌트를 따로 문서화해서 테스트하고 관리할 수 있다는 게 너무 좋았다. 앞으로 실무에서도 꼭 쓰고 싶을 만큼 강력한 도구라는 걸 알게 됐다.
+<br>디자인 시스템의 기반을 잡으려고 노력했다. 아직 완성은 아니지만, 버튼, 인풋, 카드 컴포넌트를 재사용 가능하게 만들고, props로 확장할 수 있게 구성하면서 확장 가능한 구조에 한 발짝 다가간 느낌이었다.
+<br>특히 파일 구조나 역할별 컴포넌트, API 호출 분리를 깔끔하게 나누니까 유지보수나 가독성이 확실히 좋아졌고, “아, 이렇게 짜야 나중에 팀 프로젝트 할 때도 좋겠다”는 감이 생겼다.
+<br>마지막으로는 기능 구현뿐 아니라 문서화도 직접 챙겨보며, 진짜 하나의 작은 서비스가 돌아가는 느낌을 받았다. 이번 프로젝트를 통해 단순한 학습을 넘어서, 실제 현업 흐름에 가까운 개발 경험을 할 수 있었던 것 같아 굉장히 뿌듯했다.
+]]></description><link>2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/Express 기반 유튜버 API 프로젝트.md</guid><pubDate>Mon, 21 Apr 2025 10:04:16 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/node_frontend_1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/node_frontend_1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-22 TIL]]></title><description><![CDATA[ 
+ <br><br><br>
+<br>
+<br>
+<br><br><br><br><img alt="get" src="https://seonohblog.netlify.app/assets/get.png" referrerpolicy="no-referrer"><br><br><br><br><br>• 새롭게 알게 된 점<br>
+<br>
+<br>• 어렵게 느껴졌던 부분<br>
+<br>
+<br>• 다음에 학습할 주제<br>
+<br>
+<br><br>]]></description><link>4.til/4월/2025-04-22-get.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-22-Get.md</guid><pubDate>Mon, 21 Apr 2025 10:04:35 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/get.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/get.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[🏠 home]]></title><description><![CDATA[<a class="tag" href="?query=tag:home" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#home</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:devlog" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#devlog</a> <a class="tag" href="?query=tag:growth" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#growth</a> 
  <br><br>안녕하세요! 저는 프론트엔드 개발자 민선오입니다.<br>
 이 공간은 제가 공부하고 경험한 내용을 기록하고, 나중의 나와 누군가에게 도움이 되길 바라는 마음으로 운영되고 있어요.<br>
 💡 이 블로그는 단순한 기록을 넘어,<br>
