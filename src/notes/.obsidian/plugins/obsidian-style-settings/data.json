@@ -16,5 +16,5 @@
   "chime-theme@@border-radius-average": 6,
   "chime-theme@@border-width": 1,
   "chime-theme@@file-line-width": "800px",
-  "chime-theme@@folder-color-options": "folder-rainbow-titles"
+  "chime-theme@@folder-color-options": "folder-rainbow-backgrounds"
 }
