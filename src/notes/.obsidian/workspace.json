@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4.TIL/4월/2025-04-22-회원 API 설계.md",
+                "file": "4.TIL/4월/2025-04-23-채널 API 설계.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-04-22-회원 API 설계"
+              "title": "2025-04-23-채널 API 설계"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "4.TIL/4월/2025-04-22-회원 API 설계.md",
+                "file": "4.TIL/4월/2025-04-23-채널 API 설계.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-04-22-회원 API 설계 의 개요"
+              "title": "2025-04-23-채널 API 설계 의 개요"
             }
           }
         ],
@@ -210,13 +210,13 @@
     "1.개념 정리/JS & TS/Type Alias, Interface, Class.md",
     "1.개념 정리/JS & TS/변수와 함수의 타입 정의.md",
     "1.개념 정리/프레임워크 & 라이브러리/상태 관리 (Redux, Zustand).md",
+    "4.TIL/4월/2025-04-23-채널 API 설계.md",
     "4.TIL/4월/2025-04-10-API.md",
     "3.Error Fixes/Git/git error.md",
     "1.개념 정리/프레임워크 & 라이브러리/디자인 시스템(Feat. Storybook).md",
     "무제.canvas",
     "ExpressMap.png",
     "4.TIL/4월",
-    "📂 Study Notes/TIL (Today I Learned)/✍️ 2025-04-02-git-branch-strategy-pr.md",
     "1.개념 정리/프레임워크 & 라이브러리",
     "1.개념 정리/Node",
     "1.개념 정리/JS & TS",
