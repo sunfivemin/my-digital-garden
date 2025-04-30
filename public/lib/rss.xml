@@ -1,5 +1,5 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 875 at column 566: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 30 Apr 2025 15:56:28 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 30 Apr 2025 15:56:13 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 30 Apr 2025 16:03:32 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 30 Apr 2025 16:03:21 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
  <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
 “공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
 이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터, 어떻게 구성하면 실무에 유리한지, 그리고 Storybook을 통해 어떻게 문서화하고 협업까지 연결할 수 있는지를 정리해봤어요.<br><br><br>디자인 시스템은 일관된 UI/UX를 제공하기 위한 설계 기준이에요.<br>
@@ -95,11 +95,11 @@ export const Primary = {
 <br>이렇게 하면 디자이너가 디자인을 바꾸면, 바로 코드에 반영되도록 자동화할 수 있어요.<br><br><br>처음엔 ‘왜 굳이 이렇게까지 해야 해?’ 싶을 수 있지만,<br>
 컴포넌트가 많아지고, 팀원이 늘어나고, 유지보수를 하게 될수록 디자인 시스템의 필요성을 절실히 느낍니다.<br>
 작은 프로젝트부터라도 토큰 하나, 버튼 하나부터 시작해보세요.<br>
-다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Mon, 21 Apr 2025 13:46:14 GMT</pubDate></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
+다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Wed, 30 Apr 2025 16:03:14 GMT</pubDate></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
  <br>
 <br>Redux,Zustand
-]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Wed, 16 Apr 2025 10:16:45 GMT</pubDate></item><item><title><![CDATA[변수와 함수의 타입 정의]]></title><description><![CDATA[ 
- <br><br><br><br><br><br><br><br><br><br>]]></description><link>1.개념-정리/js-&amp;-ts/변수와-함수의-타입-정의.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/변수와 함수의 타입 정의.md</guid><pubDate>Mon, 21 Apr 2025 13:46:28 GMT</pubDate></item><item><title><![CDATA[TypeScript]]></title><description><![CDATA[ 
+]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Wed, 30 Apr 2025 16:03:12 GMT</pubDate></item><item><title><![CDATA[변수와 함수의 타입 정의]]></title><description><![CDATA[ 
+ <br><br><br><br><br><br><br><br><br><br>]]></description><link>1.개념-정리/js-&amp;-ts/변수와-함수의-타입-정의.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/변수와 함수의 타입 정의.md</guid><pubDate>Wed, 30 Apr 2025 16:03:11 GMT</pubDate></item><item><title><![CDATA[TypeScript]]></title><description><![CDATA[ 
  <br><br><br>Type Alias는 기존 타입에 별칭(Alias) 을 부여하는 기능입니다.<br>
 객체뿐만 아니라 유니온 타입, 함수 타입, 튜플 등 다양한 타입을 정의할 때 사용됩니다.<br><br>// 기본 타입에 별칭 부여
 type UserId = number;
@@ -216,7 +216,7 @@ class Dog extends Animal {
 <br>✅ 부모 클래스의 기능을 유지하면서 새로운 기능 추가 가능!<br><br><br>✔ 객체 구조를 정의할 때 → interface 사용 (확장 가능)<br>
 ✔ 유니온 타입, 튜플, 함수 타입을 정의할 때 → type alias 사용<br>
 ✔ 클래스를 사용할 때, 인터페이스를 활용 → interface + implements 사용<br>
-✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>1.개념-정리/js-&amp;-ts/type-alias,-interface,-class.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/Type Alias, Interface, Class.md</guid><pubDate>Mon, 21 Apr 2025 13:46:30 GMT</pubDate></item><item><title><![CDATA[📘 Node.js 기본 생태계]]></title><description><![CDATA[ 
+✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>1.개념-정리/js-&amp;-ts/type-alias,-interface,-class.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/Type Alias, Interface, Class.md</guid><pubDate>Wed, 30 Apr 2025 16:03:11 GMT</pubDate></item><item><title><![CDATA[📘 Node.js 기본 생태계]]></title><description><![CDATA[ 
  <br><br>Node.js는 백엔드 개발을 자바스크립트로 할 수 있게 해주는 런타임이며, 실제 개발에서는 패키지 매니저(NPM), 의존성 관리, 스크립트 실행 등 다양한 생태계 도구와 함께 사용된다.<br><br>
 <br>Node.js는 브라우저가 아닌 환경에서 자바스크립트를 실행할 수 있게 해주는 런타임
 <br>V8 JavaScript 엔진을 기반으로 하고 있으며, 비동기 I/O 처리에 강함
@@ -252,8 +252,8 @@ npx cowsay "Hello Node.js!"      # CLI 유틸 실행
 <br>npm run dev처럼 scripts에 등록한 명령어를 단축 실행 가능
 <br>dependencies는 운영 시 사용, devDependencies는 개발 환경에서만 사용
 <br>실제 배포 시엔 --production 옵션으로 devDependencies 제외 가능
-]]></description><link>1.개념-정리/node/node.js-기본-생태계.html</link><guid isPermaLink="false">1.개념 정리/Node/Node.js 기본 생태계.md</guid><pubDate>Mon, 21 Apr 2025 13:46:32 GMT</pubDate></item><item><title><![CDATA[공연 예매 사이트]]></title><description><![CDATA[ 
- <br>ERD 설계 및 테이블 생성 과제였던 공연 예매 사이트를 express와 node를 이용해 구현해보았다.<br>Git &amp; GitHub<br>
+]]></description><link>1.개념-정리/node/node.js-기본-생태계.html</link><guid isPermaLink="false">1.개념 정리/Node/Node.js 기본 생태계.md</guid><pubDate>Wed, 30 Apr 2025 16:03:10 GMT</pubDate></item><item><title><![CDATA[공연 예매 사이트]]></title><description><![CDATA[ 
+ <br> ERD 설계 및 테이블 생성 과제였던 공연 예매 사이트를 express와 node를 이용해 구현해보았다.<br>Git &amp; GitHub<br>
 Database &amp; SQL(ERD 설계 및 테이블 생성)<br>
 Express &amp; Node (기본 서버, Routing)<br>DB → API → 프론트 연결<br>
 <br>MySQL/MariaDB: ERD에 맞춰 테이블 생성
@@ -265,7 +265,7 @@ Express &amp; Node (기본 서버, Routing)<br>DB → API → 프론트 연결<b
 ✅ show<br>
 ✅ poster<br>
 ✅ order<br>
-✅ order_detail]]></description><link>2.dev-log/express-&amp;-node/공연-예매-사이트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/공연 예매 사이트.md</guid><pubDate>Mon, 21 Apr 2025 13:46:36 GMT</pubDate></item><item><title><![CDATA[📘 Express 프로젝트 구조란?]]></title><description><![CDATA[ 
+✅ order_detail]]></description><link>2.dev-log/express-&amp;-node/공연-예매-사이트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/공연 예매 사이트.md</guid><pubDate>Wed, 30 Apr 2025 16:03:09 GMT</pubDate></item><item><title><![CDATA[📘 Express 프로젝트 구조란?]]></title><description><![CDATA[ 
  <br><br>Express는 Node.js에서 백엔드 API 서버를 만들 때 가장 많이 쓰는 웹 프레임워크입니다.<br>
 프로젝트가 커질수록 “기능별로 코드를 나누어 관리”하는 게 핵심입니다.<br><br>/project-root
   ├── app.js             # 서버 진입점, 모든 라우터/미들웨어 연결
@@ -355,7 +355,7 @@ module.exports = { createUser, getUser, ... }
 <br>처음에는 routes/controller/model 구분이 익숙하지 않지만,<br>
 직접 실습하고 Postman으로 API 요청 흐름을 따라가보면 구조의 장점이 바로 체감된다!
 <br>“Express 구조 분리”는 결국 코드를 읽고 고치고 확장하기 쉽게 만드는 투자라는 걸 이번에 알게 됐다.
-]]></description><link>2.dev-log/express-&amp;-node/express-구조.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/Express 구조.md</guid><pubDate>Sat, 26 Apr 2025 04:29:51 GMT</pubDate></item><item><title><![CDATA[📘 Node.js + Express + React + Storybook: 유튜버 관리 프로젝트]]></title><description><![CDATA[ 
+]]></description><link>2.dev-log/express-&amp;-node/express-구조.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/Express 구조.md</guid><pubDate>Wed, 30 Apr 2025 16:03:08 GMT</pubDate></item><item><title><![CDATA[📘 Node.js + Express + React + Storybook: 유튜버 관리 프로젝트]]></title><description><![CDATA[ 
  <br><br>유튜버 정보를 등록하고, 수정하며, 삭제할 수 있는 풀스택 CRUD 프로젝트입니다.<br>
 Express.js + React + Tailwind CSS + Storybook 기반으로 직접 API 설계부터 UI 구현과 컴포넌트 문서화하였습니다.<br><br>
 <br>CRUD 구조 이해 및 직접 구현
@@ -562,13 +562,13 @@ export default function YoutuberList() {
 <br>디자인 시스템의 기반을 잡으려고 노력했다. 아직 완성은 아니지만, 버튼, 인풋, 카드 컴포넌트를 재사용 가능하게 만들고, props로 확장할 수 있게 구성하면서 확장 가능한 구조에 한 발짝 다가간 느낌이었다.
 <br>특히 파일 구조나 역할별 컴포넌트, API 호출 분리를 깔끔하게 나누니까 유지보수나 가독성이 확실히 좋아졌고, “아, 이렇게 짜야 나중에 팀 프로젝트 할 때도 좋겠다”는 감이 생겼다.
 <br>마지막으로는 기능 구현뿐 아니라 문서화도 직접 챙겨보며, 진짜 하나의 작은 서비스가 돌아가는 느낌을 받았다. 이번 프로젝트를 통해 단순한 학습을 넘어서, 실제 현업 흐름에 가까운 개발 경험을 할 수 있었던 것 같아 굉장히 뿌듯했다.
-]]></description><link>2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/Express 기반 유튜버 API 프로젝트.md</guid><pubDate>Mon, 21 Apr 2025 13:46:46 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/node_frontend_1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/node_frontend_1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[git error]]></title><description><![CDATA[ 
+]]></description><link>2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/Express 기반 유튜버 API 프로젝트.md</guid><pubDate>Wed, 30 Apr 2025 16:03:07 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/node_frontend_1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/node_frontend_1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[git error]]></title><description><![CDATA[ 
  <br>
 <br>error
-]]></description><link>3.트러블-슈팅/git/git-error.html</link><guid isPermaLink="false">3.트러블 슈팅/Git/git error.md</guid><pubDate>Mon, 21 Apr 2025 13:46:50 GMT</pubDate></item><item><title><![CDATA[error]]></title><description><![CDATA[ 
+]]></description><link>3.트러블-슈팅/git/git-error.html</link><guid isPermaLink="false">3.트러블 슈팅/Git/git error.md</guid><pubDate>Wed, 30 Apr 2025 16:03:06 GMT</pubDate></item><item><title><![CDATA[error]]></title><description><![CDATA[ 
  <br>
 <br>error
-]]></description><link>3.트러블-슈팅/node.js/error.html</link><guid isPermaLink="false">3.트러블 슈팅/Node.js/error.md</guid><pubDate>Mon, 21 Apr 2025 13:46:51 GMT</pubDate></item><item><title><![CDATA[📘 2025-03-28 TIL]]></title><description><![CDATA[ 
+]]></description><link>3.트러블-슈팅/node.js/error.html</link><guid isPermaLink="false">3.트러블 슈팅/Node.js/error.md</guid><pubDate>Wed, 30 Apr 2025 16:03:05 GMT</pubDate></item><item><title><![CDATA[📘 2025-03-28 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>Markdown 문법 활용법과 버전 관리 시스템(VCS)의 개념 및 종류를 정리했다.
 <br><br><br>
@@ -681,7 +681,7 @@ Git 명령어에 대한 기본 개념과 사용법을 익힐 예정이다.<br>
 git init, add, commit, push, pull 등의 기초 명령어부터 원격 저장소 연결, 브랜치 활용까지 단계적으로 정리하고 실습해볼 계획이다.<br><br>
 <br><a data-tooltip-position="top" aria-label="https://git-scm.com/doc" rel="noopener nofollow" class="external-link" href="https://git-scm.com/doc" target="_blank">Git 공식 문서</a>
 <br><a data-tooltip-position="top" aria-label="https://www.markdownguide.org/basic-syntax/" rel="noopener nofollow" class="external-link" href="https://www.markdownguide.org/basic-syntax/" target="_blank">Markdown Guide</a>
-]]></description><link>4.til/4월/2025-03-28-markdown.html</link><guid isPermaLink="false">4.TIL/4월/2025-03-28-Markdown.md</guid><pubDate>Mon, 21 Apr 2025 13:46:55 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/readme.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/readme.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-03-31 TIL]]></title><description><![CDATA[ 
+]]></description><link>4.til/4월/2025-03-28-markdown.html</link><guid isPermaLink="false">4.TIL/4월/2025-03-28-Markdown.md</guid><pubDate>Wed, 30 Apr 2025 16:03:03 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/readme.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/readme.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-03-31 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>Git과 GitHub의 차이점 &nbsp;
 <br>CLI와 GUI의 개념 및 사용법 &nbsp;
@@ -776,7 +776,7 @@ test.txt는 이제 Git이 추적 중이며, 커밋을 할 수 있는 상태(Stag
 → CLI + GUI를 병행한 실전 프로젝트 관리<br><br>
 <br><a data-tooltip-position="top" aria-label="https://git-scm.com/docs" rel="noopener nofollow" class="external-link" href="https://git-scm.com/docs" target="_blank">Git CLI 명령어 정리</a>
 <br><a data-tooltip-position="top" aria-label="https://code.visualstudio.com/docs/sourcecontrol/overview" rel="noopener nofollow" class="external-link" href="https://code.visualstudio.com/docs/sourcecontrol/overview" target="_blank">VS Code Git 확장 기능</a>
-]]></description><link>4.til/4월/2025-03-31-git.html</link><guid isPermaLink="false">4.TIL/4월/2025-03-31-Git.md</guid><pubDate>Mon, 21 Apr 2025 13:46:57 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/git1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/git1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-01 TIL]]></title><description><![CDATA[ 
+]]></description><link>4.til/4월/2025-03-31-git.html</link><guid isPermaLink="false">4.TIL/4월/2025-03-31-Git.md</guid><pubDate>Wed, 30 Apr 2025 16:03:02 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/git1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/git1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-01 TIL]]></title><description><![CDATA[ 
  <br><br><br>
 <br>GitHub에서 레포지토리를 새로 만들고, 로컬 프로젝트를 원격 저장소와 연결하는 전체 과정 실습
 <br>터미널에서 git push -u origin main으로 처음 푸시할 때 upstream 설정이 되는 원리 파악
@@ -873,7 +873,7 @@ git switch -c dev         # dev 브랜치 생성 + 이동 (권장 방식)
 → 충돌 발생 시 해결하는 방법 (merge conflict resolution)<br><br>
 <br><a data-tooltip-position="top" aria-label="https://git-scm.com/book/ko/v2" rel="noopener nofollow" class="external-link" href="https://git-scm.com/book/ko/v2" target="_blank">Pro Git Book (한국어 번역)</a>
 <br><a data-tooltip-position="top" aria-label="https://docs.github.com/en/get-started/quickstart/github-flow" rel="noopener nofollow" class="external-link" href="https://docs.github.com/en/get-started/quickstart/github-flow" target="_blank">GitHub Docs – Branches</a>
-]]></description><link>4.til/4월/2025-04-01-github.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-01-GitHub.md</guid><pubDate>Mon, 21 Apr 2025 13:46:59 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-02 TIL]]></title><description/></item><item><title><![CDATA[🏠 home]]></title><description><![CDATA[<a class="tag" href="?query=tag:home" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#home</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:devlog" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#devlog</a> <a class="tag" href="?query=tag:growth" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#growth</a> 
+]]></description><link>4.til/4월/2025-04-01-github.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-01-GitHub.md</guid><pubDate>Wed, 30 Apr 2025 16:03:01 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-02 TIL]]></title><description/></item><item><title><![CDATA[🏠 home]]></title><description><![CDATA[<a class="tag" href="?query=tag:home" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#home</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:devlog" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#devlog</a> <a class="tag" href="?query=tag:growth" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#growth</a> 
  <br><br>안녕하세요! 저는 프론트엔드 개발자 민선오입니다.<br>
 이 공간은 제가 공부하고 경험한 내용을 기록하고, 나중의 나와 누군가에게 도움이 되길 바라는 마음으로 운영되고 있어요.<br>
 💡 이 블로그는 단순한 기록을 넘어,<br>
