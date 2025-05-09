@@ -24,32 +24,10 @@
   │     ├── user.js
   │     └── channel.js
   └── package.json       <span class="token comment"># 프로젝트 메타/모듈 정보</span>
-</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-hr"><hr></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="2.&nbsp;각 역할 요약" dir="auto" class="heading" id="2.&nbsp;각_역할_요약"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>2.&nbsp;각 역할 요약</h2><div class="heading-children"><div class="el-ul"><ul>
-<li data-line="0" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
-<p><strong>app.js</strong>:</p>
-<ul>
-<li data-line="1" dir="auto">서버 생성, 라우터 연결, 미들웨어 등록, 포트 열기 등 “프로젝트의 뇌/진입점” 역할</li>
-</ul>
-</li>
-<li data-line="3" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
-<p><strong>routes/</strong>:</p>
-<ul>
-<li data-line="4" dir="auto">URL과 HTTP 메서드별로 어떤 controller를 실행할지 지정 (주소/기능 분배)</li>
-</ul>
-</li>
-<li data-line="6" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
-<p><strong>controllers/</strong>:</p>
-<ul>
-<li data-line="7" dir="auto">실제로 클라이언트 요청을 처리하는 로직(데이터 체크, 응답 형식, 에러처리 등)</li>
-</ul>
-</li>
-<li data-line="9" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>
-<p><strong>models/</strong>:</p>
-<ul>
-<li data-line="10" dir="auto">데이터 저장/조회/수정/삭제 담당 (실습에선 Map, 실무에선 DB와 연결)</li>
-</ul>
-</li>
-</ul></div><div class="el-hr"><hr></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="3.&nbsp;코드 연결 흐름 예시" dir="auto" class="heading" id="3.&nbsp;코드_연결_흐름_예시"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>3.&nbsp;코드 연결 흐름 예시</h2><div class="heading-children"><div class="el-h3 heading-wrapper"><h3 data-heading="[1] app.js" dir="auto" class="heading" id="[1]_app.js"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>[1] app.js</h3><div class="heading-children"><div class="el-pre"><pre class="language-js" tabindex="0"><code data-line="0" class="language-js is-loaded"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-hr"><hr></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="2.&nbsp;각 역할 요약" dir="auto" class="heading" id="2.&nbsp;각_역할_요약"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>2.&nbsp;각 역할 요약</h2><div class="heading-children"><div class="el-p"><p dir="auto"><strong>app.js</strong>: 서버 생성, 라우터 연결, 미들웨어 등록, 포트 열기 등 “프로젝트의 뇌/진입점” 역할<br>
+<strong>routes/</strong>: - URL과 HTTP 메서드별로 어떤 controller를 실행할지 지정 (주소/기능 분배)<br>
+<strong>controllers/</strong>:  실제로 클라이언트 요청을 처리하는 로직(데이터 체크, 응답 형식, 에러처리 등)<br>
+<strong>models/</strong>: 데이터 저장/조회/수정/삭제 담당 (실습에선 Map, 실무에선 DB와 연결)</p></div><div class="el-hr"><hr></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="3.&nbsp;코드 연결 흐름 예시" dir="auto" class="heading" id="3.&nbsp;코드_연결_흐름_예시"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>3.&nbsp;코드 연결 흐름 예시</h2><div class="heading-children"><div class="el-h3 heading-wrapper"><h3 data-heading="[1] app.js" dir="auto" class="heading" id="[1]_app.js"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>[1] app.js</h3><div class="heading-children"><div class="el-pre"><pre class="language-js" tabindex="0"><code data-line="0" class="language-js is-loaded"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 app<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token method function property-access">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -96,7 +74,7 @@ module<span class="token punctuation">.</span><span class="token property-access
 <li data-line="0" dir="auto">“작은 프로젝트라도 처음부터 구조를 나눠 관리하는 습관”이 중요하다는 걸 느꼈다.</li>
 <li data-line="1" dir="auto">실무에서 협업할 때 각자 맡은 도메인(회원/게시판 등)만 집중 관리할 수 있으니, 혼자서 개발하든 팀으로 개발하든 이 구조는 거의 필수라고 생각했다.</li>
 <li data-line="2" dir="auto">앞으로 더 복잡한 기능(인증, DB연동, 미들웨어 등)도 이 구조 위에서 얼마든지 유연하게 확장할 수 있을 것 같다.</li>
-</ul></div><div class="el-p"><p dir="auto">**TIP.</p></div><div class="el-ul"><ul>
+</ul></div><div class="el-p"><p dir="auto"><strong>TIP</strong></p></div><div class="el-ul"><ul>
 <li data-line="0" dir="auto">처음에는 routes/controller/model 구분이 익숙하지 않지만,<br>
 직접 실습하고 Postman으로 API 요청 흐름을 따라가보면 구조의 장점이 바로 체감된다!</li>
 <li data-line="2" dir="auto">“Express 구조 분리”는 결국 코드를 읽고 고치고 확장하기 쉽게 만드는 투자라는 걸 이번에 알게 됐다.</li>

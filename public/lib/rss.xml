@@ -1,5 +1,5 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 100 at column 316: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 07 May 2025 14:04:59 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 07 May 2025 14:04:52 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 286 at column 453: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 09 May 2025 13:38:49 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 09 May 2025 13:38:35 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
  <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
 “공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
 이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터, 어떻게 구성하면 실무에 유리한지, 그리고 Storybook을 통해 어떻게 문서화하고 협업까지 연결할 수 있는지를 정리해봤어요.<br><br><br>디자인 시스템은 일관된 UI/UX를 제공하기 위한 설계 기준이에요.<br>
@@ -98,825 +98,193 @@ export const Primary = {
 다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Wed, 30 Apr 2025 16:03:14 GMT</pubDate></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
  <br>
 <br>Redux,Zustand
-]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Wed, 30 Apr 2025 16:03:12 GMT</pubDate></item><item><title><![CDATA[🚀 변수와 함수의 타입 정의]]></title><description/></item><item><title><![CDATA[TypeScript]]></title><description><![CDATA[ 
- <br><br><br>Type Alias는 기존 타입에 별칭(Alias) 을 부여하는 기능입니다.<br>
-객체뿐만 아니라 유니온 타입, 함수 타입, 튜플 등 다양한 타입을 정의할 때 사용됩니다.<br><br>// 기본 타입에 별칭 부여
-type UserId = number;
-type UserName = string;
-type IsActive = boolean;
-
-let userId: UserId = 12345;
-let userName: UserName = "홍길동";
-let isActive: IsActive = true;
-<br><br>// 주문 상태 타입 정의
-type OrderStatus = "pending" | "processing" | "shipped" | "delivered" | "canceled";
-
-type Order = {
-  id: number;
-  productId: number;
-  customer: string;
-  quantity: number;
-  status: OrderStatus;
-  orderDate: Date;
-};
-
-// 사용 예
-const order1: Order = {
-  id: 1001,
-  productId: 5,
-  customer: "이지은",
-  quantity: 2,
-  status: "pending",
-  orderDate: new Date(),
-};
-<br>✅ 유니온 타입을 활용하면 제한된 값만 사용할 수 있어 안전한 코드 작성이 가능!<br><br>// 함수 타입 별칭
-type Calculator = (a: number, b: number) =&gt; number;
-
-const add: Calculator = (x, y) =&gt; x + y;
-const multiply: Calculator = (x, y) =&gt; x * y;
-
-console.log(add(10, 20));  // 30
-console.log(multiply(10, 20));  // 200
-<br><br><br>읽기 전용 속성을 사용하면 객체의 불변성(immutability) 을 유지할 수 있습니다.<br>type User = {
-  readonly id: number;
-  readonly createdAt: Date;
-  name: string;
-  age: number;
-};
-
-const user: User = {
-  id: 12345,
-  createdAt: new Date(),
-  name: "홍길동",
-  age: 30,
-};
-
-// 가능: 일반 속성 수정
-user.name = "김철수";
-user.age = 31;
-
-// 에러: readonly 속성 수정 불가
-// user.id = 67890;
-// user.createdAt = new Date();
-<br>✅ 읽기 전용 속성을 활용하면 데이터를 보호할 수 있음!<br><br><br>Interface는 객체의 구조를 정의하는 용도로 사용됩니다. type alias와 유사하지만, extends를 통해 다른 인터페이스를 확장할 수 있으며, 클래스에서도 implements 키워드로 사용할 수 있습니다.<br><br>interface Car {
-  model: string;
-  price: number;
-  tax(): number;
+]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Wed, 30 Apr 2025 16:03:12 GMT</pubDate></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
+ <br><br><br>타입스크립트에서 인터페이스는 객체 타입을 정의할 때 사용하는 문법이다.<br><br>interface User {
+	name: string;
+	age: number;
 }
 
-const myCar: Car = {
-  model: "Tesla",
-  price: 5000,
-  tax() {
-    return this.price * 0.1;
-  },
-};
-<br><br>interface Animal {
-  name: string;
+var seho: User = { name: '세호', age: 36 };
+<br>인터페이스라는 예약어를 이용하여 User라는 인터페이스를 선언한 코드이다.<br>
+인터페이스 속성으로 name과 age를 각각 문자열과 숫자 타입으로 정의했다.<br>
+객체의 속성과 들어갈 데이터 타입을 정의하게 정의할 수 있다.<br><br>객체가 활용되는 모든 곳에 인터페이스를 쓸 수 있다.<br>
+객체는 함수의 파라미터로도 사용되고 반환값으로도 사용될 수 있다.<br><br>interface Person {
+	name: string;
+	age: number;
 }
 
-interface Dog extends Animal {
-  breed: string;
+function logAge(someone: Person) {
+	console.log(somenone.age);
 }
 
-const myDog: Dog = {
-  name: "바둑이",
-  breed: "골든 리트리버",
-};
-<br>✅ **extends**를 사용하여 기존 인터페이스를 확장할 수 있음!<br><br><br><br><br><br>TypeScript에서 클래스(Class) 는 객체를 만들기 위한 설계도(템플릿) 입니다.<br>
-코드를 재사용하고, 구조화하여 효율적인 프로그래밍이 가능합니다.<br><br>class Car {
-  model: string;
-  price: number;
-
-  constructor(model: string, price: number) {
-    this.model = model;
-    this.price = price;
-  }
-
-  tax(): number {
-    return this.price * 0.1;
-  }
-}
-<br><br>class Animal {
-  name: string;
-  constructor(name: string) {
-    this.name = name;
-  }
-  sound() {
-    console.log(`${this.name}이(가) 소리를 냅니다.`);
-  }
+var captain = {name: 'Capt', age: 100};
+logAge(captain); //100
+<br>logAge()는 somenone이라는 인자를 받아 인자 안의 age 속성을 출력하는 간단한 함수이다.<br>
+이 코드는 Person이라는 인터페이스를 선언한 후 logAge() 함수의 파라미터인 someone에 Person 타입을 정의한다.<br>
+이름이 Capt이고 나이는 100인 객체를 captain이라는 변수에 할당하고 logAge() 함수에 넘긴 인자가 파라미터 타입을 만족하기 때문에 에러 없이 실행된다. <br><br>getPerson() 함수는 person 인터페이스 타입의 데이터를 받아 그대로 반환해 주고 있다.<br>
+이 함수의 반환 타입을 명시적으로 표시하기 위해 다음과 같이 인터페이스로 함수의 반환 타입을 정의할 수 있다.<br>interface Person {
+	name: string;
+	age: number;
 }
 
-class Dog extends Animal {
-  bark() {
-    console.log(`${this.name}이(가) 멍멍! 짖습니다.`);
-  }
+function getPerson(someone: Person) {
+	return someone;
 }
-<br>✅ 부모 클래스의 기능을 유지하면서 새로운 기능 추가 가능!<br><br><br>✔ 객체 구조를 정의할 때 → interface 사용 (확장 가능)<br>
-✔ 유니온 타입, 튜플, 함수 타입을 정의할 때 → type alias 사용<br>
-✔ 클래스를 사용할 때, 인터페이스를 활용 → interface + implements 사용<br>
-✔ 클래스에서 공통 속성을 물려받을 때 → extends 사용<br><br><br>이번 글에서는 TypeScript에서 자주 사용되는 type alias, interface, class의 개념과 차이점을 살펴보았습니다. 각각의 개념을 잘 활용하면 더 안전한 타입 기반 코드를 작성할 수 있습니다. 🎯]]></description><link>1.개념-정리/js-&amp;-ts/type-alias,-interface,-class.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/Type Alias, Interface, Class.md</guid><pubDate>Wed, 30 Apr 2025 16:03:11 GMT</pubDate></item><item><title><![CDATA[📘 Node.js 기본 생태계]]></title><description><![CDATA[ 
- <br><br>Node.js는 백엔드 개발을 자바스크립트로 할 수 있게 해주는 런타임이며, 실제 개발에서는 패키지 매니저(NPM), 의존성 관리, 스크립트 실행 등 다양한 생태계 도구와 함께 사용된다.<br><br>
-<br>Node.js는 브라우저가 아닌 환경에서 자바스크립트를 실행할 수 있게 해주는 런타임
-<br>V8 JavaScript 엔진을 기반으로 하고 있으며, 비동기 I/O 처리에 강함
-<br>주로 웹 서버, API 서버, CLI 도구 등으로 많이 사용됨
-<br><br><br><br><br><br>
-<br>Node.js 설치 시 함께 설치되는 기본 패키지 매니저
-<br>외부 오픈소스 패키지를 설치/삭제/업데이트 가능
-<br><br>npm init          # package.json 생성
-npm install       # 의존성 설치
-npm install &lt;pkg&gt; # 특정 패키지 설치
-npm uninstall &lt;pkg&gt; # 패키지 제거
-<br><br><br><br><br>npx는 Node.js 5.2 이상 버전부터 함께 제공되는 CLI 도구로,  패키지를 설치하지 않고도 한 번만 실행할 수 있도록 도와준다.<br><br><br><br>npx create-react-app my-app      # CRA 설치 없이 프로젝트 생성
-npx eslint .                     # 로컬 ESLint 설치 없이 코드 검사
-npx cowsay "Hello Node.js!"      # CLI 유틸 실행
-<br><br><br>package.json은 Node.js 프로젝트의 메타 정보와 의존성, 실행 스크립트 등을 정의하는 설정 파일이다.<br>
-프로젝트를 클론하거나 배포받았을 때, 이 파일만 있으면 npm install을 통해 동일한 환경 구축이 가능하다.<br><br><br><br>{
-  "name": "my-app",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.0"
-  },
-  "main": "index.js",
-  "license": "MIT"
+
+var hulk = getPerson({ name: 'hulk', age: 99 });
+<br>getPerson() 함수의 호출 결과를 변수에 할당하면 다음과 같이 해당 변수가 Person 인터페이스 타입으로 추론된다.<br><br>interface Person {
+	name?: string;
+	age: number;
 }
-<br><br>
-<br>npm run dev처럼 scripts에 등록한 명령어를 단축 실행 가능
-<br>dependencies는 운영 시 사용, devDependencies는 개발 환경에서만 사용
-<br>실제 배포 시엔 --production 옵션으로 devDependencies 제외 가능
-]]></description><link>1.개념-정리/node/node.js-기본-생태계.html</link><guid isPermaLink="false">1.개념 정리/Node/Node.js 기본 생태계.md</guid><pubDate>Wed, 30 Apr 2025 16:03:10 GMT</pubDate></item><item><title><![CDATA[공연 예매 사이트]]></title><description><![CDATA[ 
- <br> ERD 설계 및 테이블 생성 과제였던 공연 예매 사이트를 express와 node를 이용해 구현해보았다.<br>Git &amp; GitHub<br>
-Database &amp; SQL(ERD 설계 및 테이블 생성)<br>
-Express &amp; Node (기본 서버, Routing)<br>DB → API → 프론트 연결<br>
-<br>MySQL/MariaDB: ERD에 맞춰 테이블 생성
-<br>Node.js + Express: RESTful API 서버 만들기
-<br>API 테스트: Postman 등으로 동작 확인
-<br>프론트: React/Next.js 등에서 UI 구현 + API 연결
-<br><br><br>✅ user<br>
-✅ user_info<br>
-✅ show<br>
-✅ poster<br>
-✅ order<br>
-✅ order_detail]]></description><link>2.dev-log/express-&amp;-node/공연-예매-사이트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/공연 예매 사이트.md</guid><pubDate>Wed, 30 Apr 2025 16:03:09 GMT</pubDate></item><item><title><![CDATA[📘 Express 프로젝트 구조란?]]></title><description><![CDATA[ 
- <br><br>Express는 Node.js에서 백엔드 API 서버를 만들 때 가장 많이 쓰는 웹 프레임워크입니다.<br>
-프로젝트가 커질수록 “기능별로 코드를 나누어 관리”하는 게 핵심입니다.<br><br>/project-root
-  ├── app.js             # 서버 진입점, 모든 라우터/미들웨어 연결
-  ├── routes/            # URL별 기능(회원, 채널 등) 라우터 파일 모음
-  │     ├── users.js
-  │     └── channels.js
-  ├── controllers/       # 실질적 비즈니스 로직 (데이터 검증, 응답 등)
-  │     ├── userController.js
-  │     └── channelController.js
-  ├── models/            # 데이터 관리(임시 DB/Map, 나중엔 DB연동)
-  │     ├── user.js
-  │     └── channel.js
-  └── package.json       # 프로젝트 메타/모듈 정보
-<br><br><br>
-<br>
-app.js:
+<br>속성을 2개 가진 객체에서 속성 1개만 필요할 때가 있다.<br>
+이때 사용할 수 있는 것이 옵션 속성(optional property) 이다.<br><br>상속은 객체 간 관계 형성하는 방법이며, 상위 클래스의 내용을 하위 클래스가 물려받아 사용하거나 확장하는 기법을 의미한다.<br>
+클래스를 상속받을 때 extends란 예약어를 사용했다. 인터페이스를 상속받을 때도 동일하게 extends 예약어를 사용한다. <br>interface Person {
+	name: string;
+	age: number;
+}
 
-<br>서버 생성, 라우터 연결, 미들웨어 등록, 포트 열기 등 “프로젝트의 뇌/진입점” 역할
+interface Developer extends Person {
+	skill: string;
+}
 
+var ironman: Developer = {
+	name: '아이언맨',
+	age: 21,
+	skill: '만들기'
+}
+<br>Person 인터페이스를 선언하고 Developer 인터페이스에 extends로 상속한 것이다.<br>
+이렇게 extends 키워드를 사용해서 인터페이스의 타입을 상속받아 확장하여 사용할 수 있고 여러번 상속을 받아서 정의할 수 있다. <br><br>var user = {
+	name: '캡션',
+	admin: true 
+}
+console.log(user['name']); //캡션
 
-<br>
-routes/:
+var companies = ['삼성', '네이버', '구글'];
+console.log(companies[0]); //삼성
+<br>user['name'] 형태로 객체의 특정 속성에 접근하거나 companies[0] 형태로 배열의 특정 요소에 접근하는 것을 인덱싱이라고한다. <br><br>interface StringArray {
+	[index: number]: string;
+}
 
-<br>URL과 HTTP 메서드별로 어떤 controller를 실행할지 지정 (주소/기능 분배)
+var companies = ['삼성', '네이버', '구글'];
+<br>StringArray 인터페이스의 속성의 [index: number] 가 어떤 숫자든 모두 속성의 이름이 될 수 있다는 의미이다.<br>
+[index: number]: string; 에서 속성 이름은 숫자고 그 속성 값으로 문자열 타입이 와야한다는 의미이다.<br>
+배열의 인덱스가 0이 될 수도 있고 99, 2000 등 어떤 숫자든 될 수 있기때문에 [index: number] 로 정의 한다.<br>companies[0]; //삼성
+companies[2]; //구글
+<br><br>interface SalaryMap {
+	[level: string]: number;
+}
 
-
-<br>
-controllers/:
-
-<br>실제로 클라이언트 요청을 처리하는 로직(데이터 체크, 응답 형식, 에러처리 등)
-
-
-<br>
-models/:
-
-<br>데이터 저장/조회/수정/삭제 담당 (실습에선 Map, 실무에선 DB와 연결)
-
-
-<br><br><br><br>const express = require('express');
-const app = express();
-app.use(express.json());
-
-const userRouter = require('./routes/users');
-const channelRouter = require('./routes/channels');
-
-app.use('/', userRouter);           // 회원 관련 주소(/join, /login, /users)
-app.use('/channels', channelRouter); // 채널 관련 주소(/channels, /channels/:id)
-
-app.listen(7777, () =&gt; {
-  console.log('서버가 7777번 포트에서 실행 중입니다.');
-});
-<br><br>const express = require('express');
-const router = express.Router();
-const userController = require('../controllers/userController');
-
-router.post('/join', userController.join);
-router.post('/login', userController.login);
-router.get('/users', userController.getAll);
-// ... (개별 조회/수정/삭제는 .route('/users/:id').get(...).put(...).delete(...))
-
-module.exports = router;
-<br><br>// 실질적 처리 (ex: 회원가입)
-exports.join = (req, res) =&gt; {
-  const { userId, password, name } = req.body;
-  // (유효성 체크 → models 호출 → 응답)
-};
-<br><br>const db = new Map();
-function createUser({ userId, password, name }) { ... }
-function getUser(id) { ... }
-module.exports = { createUser, getUser, ... }
-<br><br><br>
-<br>✅ 가독성↑: 기능별로 코드가 분리되어, 협업/유지보수에 최적
-<br>✅ 확장성↑: 회원/채널 외에 “관리자/게시판/결제” 등 새로운 기능 추가도 쉽다
-<br>✅ 테스트/디버깅: 특정 라우터·컨트롤러만 독립적으로 테스트 가능
-<br>✅ 실무와 동일한 설계 패턴: 실질적인 스타트업/대기업 실무에서도 이 구조를 많이 사용
-<br><br><br>예시로, 회원가입 요청의 경우<br>
-클라이언트 → /join(POST) → userRouter → userController.join → userModel.createUser → 응답 반환<br>
-이런 단계로 흘러간다.<br><br><br>이번에 Express 구조를 설계하면서,<br>
-<br>처음에는 모든 API를 한 파일에 몰아쓰는 게 편할 줄 알았지만, 실제로 기능이 조금만 늘어나도 코드가 금방 복잡해졌다는 걸 체감했다.
-<br>routes / controllers / models로 분리하는 구조를 적용하니, 어디서 어떤 역할을 담당하는지 바로바로 찾기 쉬워서, 디버깅이나 기능 추가가 정말 빨라졌다.
-<br>특히 app.use()로 라우터를 경로별로 연결하는 패턴이 익숙해지니, “회원/채널/게시판/관리자”처럼 기능이 늘어나도 일관된 방식으로 확장할 수 있다는 점이 실무적으로 가장 큰 장점이었다.
-<br>개발자 입장에서 배운 점<br>
-<br>“작은 프로젝트라도 처음부터 구조를 나눠 관리하는 습관”이 중요하다는 걸 느꼈다.
-<br>실무에서 협업할 때 각자 맡은 도메인(회원/게시판 등)만 집중 관리할 수 있으니, 혼자서 개발하든 팀으로 개발하든 이 구조는 거의 필수라고 생각했다.
-<br>앞으로 더 복잡한 기능(인증, DB연동, 미들웨어 등)도 이 구조 위에서 얼마든지 유연하게 확장할 수 있을 것 같다.
-<br>**TIP.<br>
-<br>처음에는 routes/controller/model 구분이 익숙하지 않지만,<br>
-직접 실습하고 Postman으로 API 요청 흐름을 따라가보면 구조의 장점이 바로 체감된다!
-<br>“Express 구조 분리”는 결국 코드를 읽고 고치고 확장하기 쉽게 만드는 투자라는 걸 이번에 알게 됐다.
-]]></description><link>2.dev-log/express-&amp;-node/express-구조.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/Express 구조.md</guid><pubDate>Wed, 30 Apr 2025 16:03:08 GMT</pubDate></item><item><title><![CDATA[📘 Node.js + Express + React + Storybook: 유튜버 관리 프로젝트]]></title><description><![CDATA[ 
- <br><br>유튜버 정보를 등록하고, 수정하며, 삭제할 수 있는 풀스택 CRUD 프로젝트입니다.<br>
-Express.js + React + Tailwind CSS + Storybook 기반으로 직접 API 설계부터 UI 구현과 컴포넌트 문서화하였습니다.<br><br>
-<br>CRUD 구조 이해 및 직접 구현
-<br>RESTful API 설계 경험
-<br>프론트/백 협업 구조 익히기
-<br>디자인 시스템과 Storybook 적용
-<br><br><br><br><br><br>
-<br>
-/youtubers 경로로 RESTful API 제공
-
-<br>
-db.json 파일 기반으로 CRUD 작동
-
-<br>
-readData, writeData, getNextId 유틸 함수로 깔끔하게 관리
-
-<br>
-GET /youtubers → 유튜버 전체 목록 조회
-
-<br>
-GET /youtubers/:id → 유튜버 조회 개별 조회
-
-<br>
-POST /youtubers → 유튜버 등록
-
-<br>
-PUT /youtubers/:id →  유튜버 수정
-
-<br>
-DELETE /youtubers/:id → 유튜버 삭제
-
-<br><br><br>backend/
-├── app.js
-├── routes/
-│   └── youtubers.js
-├── data/
-│   └── db.js
-└── package.json
-<br><br>const express = require("express");
-const fs = require("fs");
-const path = require("path");
-const router = express.Router();
-
-// 경로 및 유틸 함수 정의
-const DB_PATH = path.join(__dirname, "../data/db.json");
-
-// 유틸 함수
-const readData = () =&gt; {
-  const raw = fs.readFileSync(DB_PATH, "utf-8");
-  return JSON.parse(raw).youtubers;
+var salary: SalaryMap = {
+	junior: 100
 };
 
-// db.json 파일에 저장하는 쓰기 함수
-const writeData = (list) =&gt; {
-  fs.writeFileSync(DB_PATH, JSON.stringify({ youtubers: list }, null, 2));
-};
-  
-// 다음 등록할 유튜버의 id를 자동으로 계산해주는 함수
-const getNextId = (list) =&gt; {
-  const ids = list.map((yt) =&gt; yt.id);
-  return ids.length === 0 ? 1 : Math.max(...ids) + 1; // 가장 큰 id 찾아서 +1
-};
-
-// 전체 조회
-router.get("/", (req, res) =&gt; {
-  const list = readData();
-  res.json(list);
-});
-
-// 개별 조회
-router.get("/:id", (req, res) =&gt; {
-  const list = readData();
-  const numericId = parseInt(req.params.id);
-  const youtuber = list.find((yt) =&gt; yt.id === numericId);
-  if (!youtuber) {
-    return res.status(404).json({ message: "없는 youtuber입니다." });
-  }
-  res.json(youtuber);
-});
-
-// 등록
-router.post("/", (req, res) =&gt; {
-  const list = readData(); // db.json에서 유튜버 데이터 불러오기
-  const newId = getNextId(list); // list 데이터를 매개변수로 받아서 id 계산
-  const newYoutuber = { id: newId, ...req.body }; // 새 유튜버 객체 생성
-  
-  list.push(newYoutuber); // 배열에 추가
-  writeData(list); // 변경된 list를 db.json에 다시 저장
-  
-  res.json({
-    message: `${req.body.channelTitle} 유튜버님 생활을 응원합니다!`,
-  id: newId,
-  });
-});
-
-// 수정
-router.put("/:id", (req, res) =&gt; {
-  const list = readData();
-  const numericId = parseInt(req.params.id);
-  const index = list.findIndex((yt) =&gt; yt.id === numericId);
-
-  if (index === -1) {
-    return res.status(404).json({ message: "없는 youtuber입니다." });
-  }
-
-  list[index] = { id: numericId, ...req.body };
-  writeData(list);
-  res.json({ message: "수정 완료", id: numericId });
-});
-
-// 삭제
-router.delete("/:id", (req, res) =&gt; {
-  const list = readData();
-  const numericId = parseInt(req.params.id);
-  const newList = list.filter((yt) =&gt; yt.id !== numericId);
-
-  if (list.length === newList.length) {
-    return res.status(404).json({ message: "없는 youtuber입니다." });
-  }
-
-  writeData(newList);
-  res.json({ message: `id ${numericId} 유튜버 삭제 완료` });
-});
-
-module.exports = router;
-<br><br>const express = require("express");
-const app = express();
-const youtuberRouter = require("./routes/youtubers");
-
-app.use(express.json());
-app.use("/youtubers", youtuberRouter);
-
-app.listen(1234, () =&gt; {
-  console.log("🚀 서버 실행: http://localhost:1234");
-});
-<br><br><br><br><br><br>
-<br>Axios로 API 연동
-<br>Tailwind로 반응형 UI 구성
-<br>Component&nbsp;→&nbsp;API&nbsp;→&nbsp;Page&nbsp;구조로&nbsp;유지복수와 확장성 고려
-<br><br><br>frontend/
-├── src/
-│   ├── pages/            # 페이지 단위 컴포넌트
-│   │   ├── YoutuberList.jsx      # 유튜버 전체 목록 페이지
-│   │   ├── YoutuberDetail.jsx    # 유튜버 상세 및 수정 페이지
-│   │   ├── YoutuberForm.jsx      # 유튜버 등록 페이지
-│   ├── api/              # API 호출 함수 모음
-│   │   └── youtuber.js
-│   ├── components/       # 공통 UI 컴포넌트 (Button, Header, Input 등)
-│   └── App.jsx           # 라우팅 및 전역 설정
-<br><br>import axios from "axios";
-const BASE_URL = "http://localhost:1234/youtubers";
-
-export const getAllYoutubers = () =&gt; axios.get(BASE_URL);
-export const getYoutuber = (id) =&gt; axios.get(`${BASE_URL}/${id}`);
-export const createYoutuber = (data) =&gt; axios.post(BASE_URL, data);
-export const updateYoutuber = (id, data) =&gt; axios.put(`${BASE_URL}/${id}`, data);
-export const deleteYoutuber = (id) =&gt; axios.delete(`${BASE_URL}/${id}`);
-<br><br>유튜버 목록을 가져오는 API를 호출하고, 상태로 관리하는 기본적인 useEffect 흐름입니다.<br>import { useEffect, useState } from "react";
-import { getAllYoutubers } from "../api/youtuber";
-
-export default function YoutuberList() {
-  const [list, setList] = useState([]);
-
-  useEffect(() =&gt; {
-    getAllYoutubers().then((res) =&gt; setList(res.data));
-  }, []);
-
-  return (
-    &lt;div&gt;
-      {list.map((yt) =&gt; (
-        &lt;div key={yt.id}&gt;
-          &lt;h2&gt;{yt.channelTitle}&lt;/h2&gt;
-          &lt;p&gt;{yt.sub}&lt;/p&gt;
-        &lt;/div&gt;
-      ))}
-    &lt;/div&gt;
-  );
+var money = salary['junior'];
+<br>이 SalaryMap 인터페이스는 속성 이름이 문자열 타입이고 속성 값이 숫자인 타입인 모든 속성 이름/속성 값 쌍을 허용하겠다는 의미이다. 객체의 속성에 접근하는 방법은 salary['junior'] 또는 salary.junior 모두 가능하다.<br>
+다만 속성 이름에 숫자나 - 등 특수 기호가 들어가면 .junior 방식으로 접근할 수 없기 때문에 salary['junior'] 방식으로 접근해야한다.<br><br>이처럼 정확히 속성 이름을 명시하지 않고 속성 이름의 타입과 속성 값의 타입을 정의하는 문법을 인덱스 시그니처(index signature) 라고 한다. <br>interface SalaryMap {
+	[level: string]: string;
 }
-<br><img alt="node_frontend_1" src="https://seonohblog.netlify.app/assets/node_frontend_1.png" referrerpolicy="no-referrer"><br><img alt="node_frontend_2" src="https://seonohblog.netlify.app/assets/node_frontend_2.png" referrerpolicy="no-referrer"><br><img alt="node_frontend_3" src="https://seonohblog.netlify.app/assets/node_frontend_3.png" referrerpolicy="no-referrer"><br><br><br>
-<br>Button,&nbsp;Input,&nbsp;Header,&nbsp;YoutuberCard,&nbsp;Loader 등 재사용 가능한 UI 컴포넌트로 구성
-<br>variant / icon / label 등 props과 함께 재사용 가능
-<br>TailwindCSS class 조합으로 UI 구현
-<br>components/
-├── Button.jsx       # variant, icon, label props과 함께 가능
-├── Input.jsx        # placeholder, name, value, onChange
-├── Header.jsx       # title, showBack, rightElement
-├── YoutuberCard.jsx # 정보 + 수정/삭제 Button 포함
-└── Loader.jsx       # 로딩 UI
-<br><br><br>Storybook을 활용해 UI 컴포넌트를&nbsp;독립적으로 개발하고 시각적으로 테스트 및 문서화<br>
-<br>Button, Input, Header, Card 등은 components/에 따로 모아두고 variant, icon 등 props로 확장 가능하게 개발
-<br>스타일은 Tailwind 기반이지만 디자인 토큰으로 추상화된 부분은 따로 분리
-<br>Storybook을 통해 디자이너와 바로 UI 상태를 공유하거나 컴포넌트 테스트 가능
-<br>로딩, 오류 처리 등 UX를 위한 기본 요소도 Loader 컴포넌트로 통일
-<br><br>
-<br>파일명은 컴포넌트명 +&nbsp;.stories.jsx&nbsp;(예:&nbsp;Button.stories.jsx)
-<br>각 컴포넌트 상태(variant)별로 export const Primary, Secondary, WithIcon, Disabled 등 args를 통해 props를 쉽게 테스트하고 문서화 가능
-<br>Storybook 내에서 다양한 상태의 UI를 직접 시각적으로 확인 가능
-<br><br>
-<br>Docs 탭 : 컴포넌트 설명과 사용 예제 + 코드 시각화 확인 가능
-<br>Controls 탭 : props 값을 직접 조절해 UI 상태 실시간 테스트
-<br><img alt="node_storybook" src="https://seonohblog.netlify.app/assets/node_storybook.png" referrerpolicy="no-referrer"><br><br><br>
-<br>이번 프로젝트를 통해 RESTful API 구조를 직접 설계해보며, 서버와 클라이언트가 어떻게 통신하고 흐름이 이어지는지 더 체감할 수 있었다. 단순히 axios로 요청 보내는 걸 넘어서, 라우팅과 응답 구조까지 전부 내가 짜니까 더 이해가 깊어졌다.
-<br>컴포넌트를 어떻게 잘 나누고 독립적으로 개발할 수 있을지 고민하게 됐다. 그 과정에서 Storybook을 처음 써봤는데, UI 컴포넌트를 따로 문서화해서 테스트하고 관리할 수 있다는 게 너무 좋았다. 앞으로 실무에서도 꼭 쓰고 싶을 만큼 강력한 도구라는 걸 알게 됐다.
-<br>디자인 시스템의 기반을 잡으려고 노력했다. 아직 완성은 아니지만, 버튼, 인풋, 카드 컴포넌트를 재사용 가능하게 만들고, props로 확장할 수 있게 구성하면서 확장 가능한 구조에 한 발짝 다가간 느낌이었다.
-<br>특히 파일 구조나 역할별 컴포넌트, API 호출 분리를 깔끔하게 나누니까 유지보수나 가독성이 확실히 좋아졌고, “아, 이렇게 짜야 나중에 팀 프로젝트 할 때도 좋겠다”는 감이 생겼다.
-<br>마지막으로는 기능 구현뿐 아니라 문서화도 직접 챙겨보며, 진짜 하나의 작은 서비스가 돌아가는 느낌을 받았다. 이번 프로젝트를 통해 단순한 학습을 넘어서, 실제 현업 흐름에 가까운 개발 경험을 할 수 있었던 것 같아 굉장히 뿌듯했다.
-]]></description><link>2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html</link><guid isPermaLink="false">2.Dev Log/Express &amp; Node/Express 기반 유튜버 API 프로젝트.md</guid><pubDate>Wed, 30 Apr 2025 16:03:07 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/node_frontend_1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/node_frontend_1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[git error]]></title><description><![CDATA[ 
- <br>
-<br>error
-]]></description><link>3.트러블-슈팅/git/git-error.html</link><guid isPermaLink="false">3.트러블 슈팅/Git/git error.md</guid><pubDate>Wed, 30 Apr 2025 16:03:06 GMT</pubDate></item><item><title><![CDATA[error]]></title><description><![CDATA[ 
- <br>
-<br>error
-]]></description><link>3.트러블-슈팅/node.js/error.html</link><guid isPermaLink="false">3.트러블 슈팅/Node.js/error.md</guid><pubDate>Wed, 30 Apr 2025 16:03:05 GMT</pubDate></item><item><title><![CDATA[📘 2025-03-28 TIL]]></title><description><![CDATA[ 
- <br><br><br>
-<br>Markdown 문법 활용법과 버전 관리 시스템(VCS)의 개념 및 종류를 정리했다.
-<br><br><br>
-<br>Markdown은 간단한 문법으로 텍스트를 서식화할 수 있는 lightweight markup language다.
-<br>.md 확장자를 가진 텍스트 파일이며, GitHub, Notion, Obsidian 등 다양한 도구에서 사용된다.
-<br><br>
-# 제목 1
 
-## 제목 2
+var salary: SalaryInfo = {
+	junior: '100원',
+	mid: '400원',
+	senior: '700원',
+	ceo: '0원',
+	newbie: '50원',
+};
+<br>단순히 객체와 배열을 인덱싱 할 때 활용될 뿐만 아니라 객체의 속성 타입을 유연하게 정의할 때도 사용된다.<br>
+속성 이름이 문자열이고 속성 값의 타입이 문자열이기만 하면 1개든 100개든 모두 추가할 수 있는 장점이 생긴다.<br>interface User {
+	[property: string]: string;
+	id: string;
+	name: string;
+}
 
-### 제목 3
+var seho: User = {
+	id: '1',
+	name: '세호',
+	address: '판교'
+};
+<br>User라는 인터페이스에는 id와 name 속성이 무조건 들어간다고 한다면 섞어서 정의할 수도 있다.<br>
+이처럼 객체의 속성 이른과 속성 값이 정해져 있는 경우에는 속성 이름과 속성 값 타입을 명시해서 정의하고, 속성 이름은 모르지만 속성 이름의 타입과 값의 타입을 아는 경우에는 인덱스 시그니처를 활용한다.]]></description><link>1.개념-정리/js-&amp;-ts/인터페이스.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/인터페이스.md</guid><pubDate>Fri, 09 May 2025 10:48:15 GMT</pubDate></item><item><title><![CDATA[타입 정의, 타입 별칭]]></title><description><![CDATA[ 
+ <br><br><br><br>유니언 타입(union type)은 여러개의 타입 중 한개만 쓰고 싶을 때 사용하는 문법이다.<br>
+자바스크립트의 OR 연산자의 |를 이용하여 여러개의 타입 중 1개를 사용하겠다고 선언하는 방식이 바로 유니언 타입니다.<br>function logText(text: string | number) {
+	console.log(text);
+}
+logText('hi');
+logText(100);
+<br><br>유니언 타입은 다음과 같이 string과 number에서 모두 제공하는 toString()을 자동 완성할 수 있지만 any 타입은 자동 완성 되지 않는다.<br>function logText(text: string | number) {
+	console.log(text.toString());  //hi
+}
 
-<br><br>
-*기울임* 또는 _기울임_
+logText('hi');
+<br><br>타입스크립트 입장에서는 함수에 인자를 넘겨 실행할 때 Person 타입이 올지 Developer 타입이 올지 알 수 없기 때문에 어느 타입이 오더라도 문제 없을 공통 속성인 name 속성만 자동 완성해준다.<br>
+여기서 함수 내부에서 파라미터 타입의 종류에 따라 특정 로직을 실행하고 싶다면 다음과 같이 in 연산자를 사용해서 로직을 작성하면 된다. <br>interface Person {
+	name: string;
+	age: number;
+}
 
-**굵게** 또는 __굵게__
+interface Developer {
+	name: string;
+	skill: string;
+}
 
-~~취소선~~
+function introduce(someone: Person | Developer) {
+	if ('age' in someone) {
+		console.log(someone.age);
+		return;
+	}
+	if ('skill' in someone) {
+		console.log(someone.skill);
+		return;
+	}
+}
 
-<br><br>
-- 순서 없는 목록
+introduce({ name: 'captin', skill: 'lecture' });
+<br><br><br>interface Person {
+	name: string;
+	age: number;
+}
 
-  - 하위 항목
+function logAge(someone: Person) {
+	console.log(somenone.age);
+}
 
-1. 순서 있는 목록
+var captain = {name: 'Capt', age: 100};
+logAge(captain); //100
+<br>logAge()는 somenone이라는 인자를 받아 인자 안의 age 속성을 출력하는 간단한 함수이다.<br>
+이 코드는 Person이라는 인터페이스를 선언한 후 logAge() 함수의 파라미터인 someone에 Person 타입을 정의한다.<br>
+이름이 Capt이고 나이는 100인 객체를 captain이라는 변수에 할당하고 logAge() 함수에 넘긴 인자가 파라미터 타입을 만족하기 때문에 에러 없이 실행된다. <br><br>getPerson() 함수는 person 인터페이스 타입의 데이터를 받아 그대로 반환해 주고 있다.<br>
+이 함수의 반환 타입을 명시적으로 표시하기 위해 다음과 같이 인터페이스로 함수의 반환 타입을 정의할 수 있다.<br>interface Person {
+	name: string;
+	age: number;
+}
 
-2. 두 번째 항목
+function getPerson(someone: Person) {
+	return someone;
+}
 
-<br><br>`인라인 코드`
-<br>// 여러 줄 코드 블럭
-console.log('Hello Markdown');
-<br>
-#### ✅ 링크와 이미지
+var hulk = getPerson({ name: 'hulk', age: 99 });
+<br>getPerson() 함수의 호출 결과를 변수에 할당하면 다음과 같이 해당 변수가 Person 인터페이스 타입으로 추론된다.<br><br>interface Person {
+	name?: string;
+	age: number;
+}
+<br>속성을 2개 가진 객체에서 속성 1개만 필요할 때가 있다.<br>
+이때 사용할 수 있는 것이 옵션 속성(optional property) 이다.<br><br>상속은 객체 간 관계 형성하는 방법이며, 상위 클래스의 내용을 하위 클래스가 물려받아 사용하거나 확장하는 기법을 의미한다.<br>
+클래스를 상속받을 때 extends란 예약어를 사용했다. 인터페이스를 상속받을 때도 동일하게 extends 예약어를 사용한다. <br>interface Person {
+	name: string;
+	age: number;
+}
 
-```markdown
+interface Developer extends Person {
+	skill: string;
+}
 
-[링크 텍스트](https://example.com)
-
-![이미지 대체 텍스트](https://example.com/image.png)
-
-<br><br>
-&gt; 이것은 인용문입니다.
-
-- [x] 완료된 항목
-- [ ] 해야 할 일
-
-<br><br><br>Markdown에서는 | 기호와 - 기호를 이용해 간단하게 표를 만들 수 있다.<br><br>| 제목1 | 제목2 |
-|-------|-------|
-| 내용1 | 내용2 |
-| 내용3 | 내용4 |
-<br>🧾 출력 예시:<br><br><br><br>| 왼쪽 정렬 | 가운데 정렬 | 오른쪽 정렬 |
-|:----------|:------------:|------------:|
-| left      | center       | right       |
-| a         | b            | c           |
-<br>🧾 출력 예시:<br><br><br><br>| 할 일             | 상태     |
-|------------------|----------|
-| Markdown 정리하기 | ✅ 완료 |
-| Git 공부하기      | ⏳ 진행 중 |
-| 블로그 업로드     | ❌ 미완료 |
-<br>🧾 출력 예시:<br><br><br><br>- Python: ```python
-- JavaScript: ```javascript 또는 `js`
-- HTML: ```html
-- CSS: ```css
-- Java: ```java
-- C++: ```cpp
-- R: ```r
-- SQL: ```sql
-- YAML: ```yaml
-- JSON: ```json
-- Markdown: ```markdown
-<br><br>버전 관리 시스템(VCS)은 파일의 변경 이력을 관리하고, 협업 시 변경 사항을 추적할 수 있게 도와주는 시스템이다.  작업 내용의 백업, 변경 이력 확인, 협업 충돌 방지 등에 필수적이다.<br><br><br>
-<br>파일 변경 이력을 개인 컴퓨터에만 저장하는 방식
-<br>각 파일을 수동으로 복사해서 관리하거나, 간단한 툴을 사용
-<br>이력 관리가 로컬에만 국한됨 → 협업에 부적합
-<br>✅ 예시: RCS (Revision Control System)<br>장점: 간단하게 혼자서 버전 관리 가능  
-단점: 협업 불가, 백업/이력 손실 위험
-<br><br><br>
-<br>하나의 중앙 서버에서 버전 관리를 하고, 클라이언트들이 그 서버에서 코드를 받아 사용
-<br>변경 사항도 모두 서버로 전송됨
-<br>✅ 예시: CVS, Subversion(SVN), Perforce<br>장점: 통합된 관리, 실시간 협업 가능  
-단점: 서버 장애 시 전체 작업 불가, 인터넷 연결 필요
-<br> [ Client ] ←→ [ 중앙 서버 ] ←→ [ Client ]
-<br><br><br>
-<br>사용자가 전체 저장소(버전 이력 포함)를 로컬에 복제함
-<br>로컬에서도 커밋, 브랜치 가능하며, 필요 시 원격 저장소와 동기화
-<br>✅ 예시: Git, Mercurial<br>장점: 오프라인에서도 작업 가능, 병합 및 브랜치 기능 강력  
-단점: 초기 학습 곡선 있음, 충돌 해결 필요
-<br>[로컬 저장소] ←→ [원격 저장소] ←→ [다른 로컬 저장소]
-<br><br><br><br><br>오늘 배운 Markdown 문법을 활용해 GitHub에 나만의 자기소개용 README.md 파일을 작성했다. &nbsp;<br>
-이번 실습에서는 다음과 같은 요소를 중심으로 구성하였다:<br>
-<br>🎯 상단 배너: <a data-tooltip-position="top" aria-label="https://github.com/kyechan99/capsule-render" rel="noopener nofollow" class="external-link" href="https://github.com/kyechan99/capsule-render" target="_blank">capsule-render API</a>를 활용한 텍스트 배너 이미지 &nbsp;
-<br>🧑‍💼 자기소개: 개발자로서 나를 표현할 수 있는 간단한 소개 문장 &nbsp;
-<br>📁 포트폴리오 링크: details 태그를 이용해 접을 수 있는 형태로 구현 &nbsp;
-<br>🛠️ Tech Stack: Shields.io 뱃지를 통해 사용 기술을 시각적으로 정리 &nbsp;
-<br>🔗 Contact 정보: 이메일, 블로그 등 외부 링크를 배지 형태로 연결
-<br><br>
-<br>👉 실제 GitHub 프로필 링크: <a data-tooltip-position="top" aria-label="https://github.com/sunfivemin" rel="noopener nofollow" class="external-link" href="https://github.com/sunfivemin" target="_blank">sunfivemin</a> &nbsp;<br>
-<img alt="README 최종 화면" src="https://seonohblog.netlify.app/assets/readme.png" referrerpolicy="no-referrer">
-<br>👉 작성한 README.md는 Markdown과 HTML을 함께 활용하여 구성하였으며, GitHub에서 정상적으로 렌더링됨을 확인했다.
-<br><br>
-<br>Markdown 문법만으로도 충분히 풍부한 표현이 가능하다는 점이 흥미로웠고, 간단한 HTML을 함께 사용하면 표현 범위가 더 넓어진다는 것을 느꼈다.
-<br>Shields.io 뱃지를 활용해 기술 스택을 시각적으로 표현하는 것이 재밌었고, 포트폴리오나 블로그에도 유용하게 활용할 수 있을 것 같다.
-<br>나만의 GitHub 소개 페이지를 직접 구성해보며, 개발자로서의 브랜드를 꾸며가는 느낌이 들어 뿌듯했다.
-<br><br><br>• 새롭게 알게 된 점<br>
-그동안 Markdown을 글을 쓰기 위한 최소한의 문법으로만 인식했었는데, Obsidian과 같은 지식 관리 도구를 통해 구조적인 문서 작성과 정보 정리에 매우 유용하다는 점을 깨달았다.<br>
-특히 표, 체크리스트, 코드블럭 언어 설정 등은 TIL을 정리할 때 내용의 구조를 더 명확하게 해주고, 복습하기도 쉬워져 앞으로 꾸준히 활용할 생각이다.<br>• 어렵게 느껴졌던 부분<br>
-Markdown 문법 자체는 어렵지 않지만, 실제로 자연스럽게 문서 구조를 짜고 적절한 태그나 구문을 활용하려면 조금 익숙해지는 시간이 필요할 것 같다.<br>
-특히 코드블럭 안에서 코드블럭을 넣는 구조(백틱)나 접기 기능 등은 반복해서 써보며 손에 익혀야 할 것 같다.<br>• 다음에 학습할 주제<br>
-Git 명령어에 대한 기본 개념과 사용법을 익힐 예정이다.<br>
-git init, add, commit, push, pull 등의 기초 명령어부터 원격 저장소 연결, 브랜치 활용까지 단계적으로 정리하고 실습해볼 계획이다.<br><br>
-<br><a data-tooltip-position="top" aria-label="https://git-scm.com/doc" rel="noopener nofollow" class="external-link" href="https://git-scm.com/doc" target="_blank">Git 공식 문서</a>
-<br><a data-tooltip-position="top" aria-label="https://www.markdownguide.org/basic-syntax/" rel="noopener nofollow" class="external-link" href="https://www.markdownguide.org/basic-syntax/" target="_blank">Markdown Guide</a>
-]]></description><link>4.til/4월/2025-03-28-markdown.html</link><guid isPermaLink="false">4.TIL/4월/2025-03-28-Markdown.md</guid><pubDate>Wed, 30 Apr 2025 16:03:03 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/readme.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/readme.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-03-31 TIL]]></title><description><![CDATA[ 
- <br><br><br>
-<br>Git과 GitHub의 차이점 &nbsp;
-<br>CLI와 GUI의 개념 및 사용법 &nbsp;
-<br>Git 저장소 생성 및 커밋까지의 흐름 실습
-<br><br><br>
-<br>Git은 로컬(내 컴퓨터)에서 작동하는 버전 관리 시스템이다.<br>
-인터넷이 없어도 커밋, 브랜치, 이력 확인 등 모든 작업 가능하다.
-<br>GitHub는 Git의 저장소를 클라우드 서버에 저장하고, 원격에서 프로젝트를 백업, 버전 관리, 협업하게 해주는 플랫폼이다.
-<br><br><br><br><br>
-<br>CLI: 커맨드 라인 인터페이스 — 터미널에서 명령어로 조작
-<br>GUI: 그래픽 유저 인터페이스 — 마우스나 버튼으로 조작 (예: GitHub Desktop, VS Code Git 패널)
-<br><br><br>CLI로 Git 저장소를 생성하고, 파일을 Git이 추적하게 만든 뒤 커밋하는 과정까지 정리해본다.  <br><br># 파일 생성
-touch 파일이름.확장자
-
-# 폴더 생성
-mkdir 폴더명
-
-# 리스트 보기 (숨김 파일 포함)
-ls -a
-
-# 특정 폴더로 이동
-cd 폴더명
-
-# 이전(상위) 폴더로 이동
-cd ..
-
-# Git 저장소 초기화 (.git 폴더 생성)
-git init
-
-# 현재 Git 상태 확인
-git status
-
-# 파일을 Git 추적 대상으로 추가 (Staging)
-git add 파일명
-
-# 모든 변경된 파일을 한번에 add
-git add .
-
-# 변경된 내용을 커밋 (버전으로 저장)
-git commit -m "커밋 메시지"
-
-# 커밋 이력 보기
-git log
-
-<br><br><br>touch test.txt           # 파일 생성
-git init                 # Git 저장소 초기화
-git status               # 상태 확인 → untracked file
-git add test.txt         # Git 추적 시작
-git commit -m "Add file" # 커밋
-<br><br><br>git status
-<br>📌 출력 결과<br>
-fatal: not a git repository (or any of the parent directories): .git<br>🔍 원인<br>
-Git은 .git이라는 숨김 폴더가 있어야 그 디렉토리를 Git 저장소로 인식한다.<br>
-아직 git init을 하지 않았기 때문에 Git은 이 폴더를 추적할 수 없다.<br><br><br>git init
-<br>📌 출력 결과<br>
-Initialized empty Git repository in /Users/사용자명/GITTEST/.git/<br>🧠 설명<br>
-• 현재 폴더에 .git이라는 숨김 폴더가 생성된다.<br>
-• 이 폴더에는 프로젝트의 변경 이력, 설정, 브랜치 정보 등이 저장된다.<br>
-• 이 폴더가 존재함으로써 Git은 해당 폴더를 로컬 Git 저장소로 인식하게 된다.<br>
-• git status, git add, git commit 등의 명령어를 사용할 수 있다.<br><br><br>touch test.txt
-git status
-<br>📌 출력 결과<br>
-Untracked files:<br>
-(use "git add &lt;file&gt;..." to include in what will be committed)<br>
-test.txt<br>🔍설명<br>
-test.txt 파일은 존재하지만 Git이 아직 추적하고 있지 않은 상태(Untracked)이다.<br><br><br>git add test.txt
-git status
-<br>📌 출력 결과<br>
-Changes to be committed:<br>
-(use "git rm --cached &lt;file&gt;..." to unstage)<br>
-new file:   test.txt<br>🔍설명<br>
-test.txt는 이제 Git이 추적 중이며, 커밋을 할 수 있는 상태(Staged)가 된다.<br><br><br>git commit -m "Add test.txt file"
-<br>🧠 설명<br>
-커밋은 현재 변경된 파일 상태를 Git 저장소에 하나의 버전으로 기록하는 작업이다.<br>
-추후 git log 명령어로 이 기록을 조회할 수 있다.<br><br><br>
-<br>👉 &nbsp;Git CLI로 로컬 저장소를 초기화하고 파일을 생성한 뒤, git add, git commit을 통해 변경사항을 커밋까지 완료했다.
-<br><img alt="README 최종 화면" src="https://seonohblog.netlify.app/assets/git1.png" referrerpolicy="no-referrer"><br><br>
-<br>CLI보다 GUI가 익숙했지만, 직접 명령어를 사용해보니 Git의 작동 구조가 더 잘 이해됐다. 
-<br>git status → git add → git commit의 흐름이 명확해졌고, Untracked → Staged → Committed 과정을 직접 체감할 수 있었다.
-<br>Git History 확장 기능은 처음엔 복잡하게 느껴졌지만, 커밋 메시지를 클릭하면 상세 diff 를 확인할 수 있어 유용했다.
-<br><br><br>• 새롭게 알게 된 점<br>
-→ Git 저장소가 되려면 .git 폴더가 반드시 있어야 하며, git init은 그 폴더를 만드는 시작 명령이라는 걸 처음으로 체감했다.<br>
-→ 커밋은 단순 저장이 아니라 “버전 기록”의 핵심이라는 것도 이해하게 됐다.<br>• 어렵게 느껴졌던 부분<br>
-→ Git History 확장 기능은 처음엔 어떤 정보를 중점적으로 봐야 할지 몰랐지만, &nbsp;<br>
-커밋 메시지 클릭 시 변경된 파일 목록과 diff(변경 내용) 를 한눈에 확인할 수 있다는 점이 특히 유용했다. &nbsp;<br>
-또한, 브랜치 간의 흐름을 시각적으로 표현해줘서 복잡한 이력 구조를 파악할 때 CLI보다 훨씬 직관적이었다. &nbsp;<br>
-커밋별로 어떤 파일이 변경되었는지, 누가 언제 작업했는지를 빠르게 확인할 수 있어 팀 프로젝트나 협업 상황에서도 실용성이 높다는 걸 느꼈다.<br>• 다음에 학습할 주제<br>
-→ GitHub 원격 저장소 연결 (git remote add, git push) &nbsp;<br>
-→ GitHub 저장소 클론하기 (git clone) &nbsp;<br>
-→ 원격 저장소 동기화 (git pull, 충돌 해결법) &nbsp;<br>
-→ 브랜치 생성과 병합 (git branch, git merge) &nbsp;<br>
-→ CLI + GUI를 병행한 실전 프로젝트 관리<br><br>
-<br><a data-tooltip-position="top" aria-label="https://git-scm.com/docs" rel="noopener nofollow" class="external-link" href="https://git-scm.com/docs" target="_blank">Git CLI 명령어 정리</a>
-<br><a data-tooltip-position="top" aria-label="https://code.visualstudio.com/docs/sourcecontrol/overview" rel="noopener nofollow" class="external-link" href="https://code.visualstudio.com/docs/sourcecontrol/overview" target="_blank">VS Code Git 확장 기능</a>
-]]></description><link>4.til/4월/2025-03-31-git.html</link><guid isPermaLink="false">4.TIL/4월/2025-03-31-Git.md</guid><pubDate>Wed, 30 Apr 2025 16:03:02 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/git1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/git1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[📘 2025-04-01 TIL]]></title><description><![CDATA[ 
- <br><br><br>
-<br>GitHub에서 레포지토리를 새로 만들고, 로컬 프로젝트를 원격 저장소와 연결하는 전체 과정 실습
-<br>터미널에서 git push -u origin main으로 처음 푸시할 때 upstream 설정이 되는 원리 파악
-<br>다른 환경에서 git clone으로 프로젝트를 복제한 뒤, pull을 통해 변경 사항을 동기화하는 흐름까지 실습
-<br>branch, switch, checkout의 차이와 용도별 사용법 구분
-<br><br><br>
-<br>GitHub 에 가입 후, 복잡한 GUI 및 CLI를 통해 프로젝트 개발 및 환경을 관리할 수 있다.
-<br>GitHub 홈페이지 &nbsp;→ New Repository
-<br>이름, 설명, Public/Private 설정 후 Create
-<br><br># 로컬 저장소에 연결된 원격 저장소(remote) 목록을 보여줌.
-git remote -v 
-<br>**✅ 연결 전 : 원격 저장소가 아직 연결되지 않았기 때문에 아무것도 뜨지 않음.<br>
-이 상태에서는 git push, git pull 명령어를 사용할 수 없다.<br>origin  https://github.com/sunfivemin/GitTest.git (fetch)
-origin  https://github.com/sunfivemin/GitTest.git (push)
-<br>**✅ 연결 후 : URL을 기준으로 양방향 연결 완료<br>
-• origin : remote(원격저장소) 기본 별칭 (보통 origin, 별칭 변경 가능)<br>
-• (fetch) : GitHub에서 로컬로 받아오기 가능<br>
-• (push) : 로컬에서 GitHub로 보내기 가능<br><br><br><br>🧭 remote 연결 명령어<br># GitHub 저장소 URL을 얻어서 origin으로 연결
-git remote add origin https://github.com/sunfivemin/GitTest.git
-<br>🧠 설명:<br>
-• origin이라는 이름으로 이 GitHub 저장소 주소를 remote로 등록하겠다는 뜻<br>
-• 이후부터는 origin이라는 이름으로 간단히 원격 작업 가능<br><br>🧭 첫 업로드 시 git push -u origin main<br># 첫 통신일 경우 -u 옵션으로 upstream branch 설정
-$ git push -u origin main
-<br>🧠 구성 요소:<br>
-• push: 로컬 → 원격 저장소로 업로드<br>
-• -u: upstream 설정 (다음부터는 git push만 입력해도 main 브랜치로 연결됨)<br>
-• origin: 원격 저장소 이름<br>
-• main: 로컬의 현재 브랜치 이름<br>🎯 즉, 이 명령은 “내 로컬 main 브랜치를 GitHub의 origin 저장소에 업로드하겠다”는 뜻이고<br>
-처음 연결 시엔 -u 옵션으로 기본 푸시 대상(upstream) 도 설정함.<br>✅ 요약 흐름<br>
-<br>git remote -v → remote 연결 상태 확인
-<br>remote 없으면: git remote add origin [URL]으로 연결
-<br>최초 업로드 시: git push -u origin main → GitHub에 업로드 + 브랜치 연결
-<br>그 다음부터는: git push, git pull로 편하게 동기화
-<br><br>
-<br>👉 &nbsp;GitHub에서 레포지토리를 생성한 후, 로컬 저장소와 원격 저장소를 연결하고 git push 명령어로 성공적으로 동기화하였다.<br>
-<img alt="저장소생성" src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png" referrerpolicy="no-referrer">
-<br><img alt="깃허브에로컬업로드" src="https://seonohblog.netlify.app/assets/%EA%B9%83%ED%97%88%EB%B8%8C%EC%97%90%EB%A1%9C%EC%BB%AC%EC%97%85%EB%A1%9C%EB%93%9C.png" referrerpolicy="no-referrer"><br><img alt="저장소생성완료" src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1%EC%99%84%EB%A3%8C.png" referrerpolicy="no-referrer"><br><br><br><br>• git clone은 GitHub에 있는 원격 저장소 전체를 로컬로 복제하는 명령어다.<br>
-• 이 명령을 실행하면 저장소 이름과 동일한 폴더가 자동 생성되며, 내부에 Git이 인식할 수 있는 .git 폴더도 포함된다.<br>
-• 이후 해당 폴더 안에서 git status, git pull, git push 등을 사용할 수 있다.<br>git clone https://github.com/사용자이름/저장소이름.git
-cd 저장소이름
-git status  # 현재 상태 확인
-<br><br>❗️주의! pull이 안 될 때도 있다<br>
-clone은 정상적으로 됐는데, 다음과 같이 Git 명령어가 안 먹힐 수도 있다.<br>
-<img alt="pull오류" src="https://seonohblog.netlify.app/assets/pull%EC%98%A4%EB%A5%98.png" referrerpolicy="no-referrer"><br>⚠️ **fatal: not a git repository 에러<br>fatal: refusing to merge unrelated histories
-<br>• clone한 폴더 바깥에서 Git 명령어를 실행했기 때문이다.<br>
-• .git 폴더가 존재하지 않는 디렉토리에서는 Git이 “여긴 저장소가 아니야”라고 판단한다.<br>📌 • .git 폴더가 있는 폴더만 Git 저장소로 인식된다.<br>📁 현재 디렉토리/
-└── 📁 저장소이름/      ← clone으로 자동 생성된 폴더
-    ├── .git/          ← Git이 이 폴더를 저장소로 인식
-    └── 코드/파일들
-<br>✅ 해결 방법<br>cd 저장소이름   # .git 폴더가 있는 디렉토리로 이동
-git pull        # 정상 작동
-git remote -v   # 원격 저장소 확인 가능
-<br><img alt="gui에서clone" src="https://seonohblog.netlify.app/assets/gui%EC%97%90%EC%84%9Cclone.png" referrerpolicy="no-referrer"><br>➜  중요한 포인트: 복제한 건 어디서 열든 그대로다.<br>
-• git clone을 하면, 저장소 전체가 로컬에 복제되고 .git 폴더와 파일들이 포함된 폴더가 생성된다.<br>
-• 이 폴더 안에 Git 관련 이력, 설정, 브랜치 정보가 모두 담겨 있으므로, 어떤 방식으로 열든 (CLI, VS Code, GitHub Desktop) 결과는 동일하다.<br>
-• clone만 제대로 했다면, 어디서 열든 복제된 프로젝트는 그대로 살아 있다.<br>
-• 실수로 다른 폴더를 열었거나 Git 명령어가 안 됐다고 당황하지 말고,<br>
-.git 폴더가 있는 위치로만 잘 들어가면 언제든 다시 이어서 작업할 수 있다.<br><br><br>
-<br>브랜치는 프로젝트의 독립적인 작업 공간 (예: 로그인 기능, 회원가입 기능 개발용)
-<br>여러 개발자가 동시에 다른 기능을 개발할 수 있도록 도와주고, 협업이 쉬워진다.
-<br>git branch                # 현재 브랜치 목록 확인
-git branch dev            # 현재 브랜치를 기준으로 dev 브랜치 생성 (이동은 안 됨)
-
-git checkout dev          # dev 브랜치로 이동 (기존 방식)
-git checkout -b dev       # dev 브랜치 생성 + 이동 (기존 방식)
-
-git switch dev            # dev 브랜치로 이동 (권장 방식)
-git switch -c dev         # dev 브랜치 생성 + 이동 (권장 방식)
-<br> 💡 헷갈리지 말기!<br>
-<br>git branch<br>
-→ 현재 저장소에 존재하는 모든 브랜치 목록을 출력<br>
-→ * 표시된 브랜치가 현재 HEAD가 가리키고 있는 브랜치 (즉, 내가 작업 중인 브랜치)
-<br>git branch dev<br>
-→ 현재 브랜치를 기준으로 dev라는 브랜치를 생성만 함<br>
-→ 자동으로 이동하지 않음
-<br>git checkout dev 또는 git switch dev<br>
-→ 이미 존재하는 dev 브랜치로 이동만 함
-<br>git checkout -b dev 또는 git switch -c dev<br>
-→ 브랜치를 새로 만들고 곧바로 이동하는 명령어 
-<br><br>
-<br>처음에는 브랜치 생성과 이동이 헷갈렸지만, git branch, git switch 명령어를 직접 써보니 명확해졌다.
-<br>명령어를 단순히 외우는 것보다, 실제로 파일을 수정하고 commit 후 브랜치를 이동하며 실습하니 훨씬 기억에 잘 남는다.
-<br>checkout보다 switch가 실수 방지에도 좋고 직관적이라는 점도 체감할 수 있었고, 앞으로는 습관적으로 switch를 사용할 것 같다.
-<br><br><br>• 새롭게 알게 된 점<br>
-→ 브랜치를 그냥 ‘다른 작업 공간’ 정도로만 생각했었는데, 실제로 실습하면서 협업이나 기능 분리에 왜 필요한지를 체감할 수 있었다. &nbsp;<br>
-→ HEAD가 브랜치를 따라 이동하는 가상 포인터라는 개념도 흥미로웠고, log를 보며 흐름을 눈으로 확인하니 이해가 쉬웠다. &nbsp;<br>
-→ 또, git checkout -으로 이전 브랜치로 바로 돌아가는 게 꽤 유용하다는 것도 이번에 처음 알았다.<br>• 어렵게 느껴졌던 부분<br>
-→ 처음엔 checkout, switch, branch 개념이 비슷해서 헷갈렸는데, 직접 여러 번 실습하고 상태를 log/status로 확인하면서 확실히 감을 잡게 되었다. &nbsp;<br>
-→ 앞으로는 브랜치 이동 시 switch를 습관처럼 쓰고, 항상 현재 브랜치와 작업 상태를 status, log로 체크하는 습관을 들일 예정이다.<br>• 다음에 학습할 주제<br>
-→ 브랜치 이름 규칙과 테스트<br>
-→ 브랜치 전략 (예: Git Flow, Feature Branch 등)<br>
-→ Pull Request &amp; Merge<br>
-→ Merge된 GitHub 브랜치를 로컬 Git에 동기화하는 법<br>
-→ 충돌 발생 시 해결하는 방법 (merge conflict resolution)<br><br>
-<br><a data-tooltip-position="top" aria-label="https://git-scm.com/book/ko/v2" rel="noopener nofollow" class="external-link" href="https://git-scm.com/book/ko/v2" target="_blank">Pro Git Book (한국어 번역)</a>
-<br><a data-tooltip-position="top" aria-label="https://docs.github.com/en/get-started/quickstart/github-flow" rel="noopener nofollow" class="external-link" href="https://docs.github.com/en/get-started/quickstart/github-flow" target="_blank">GitHub Docs – Branches</a>
-]]></description><link>4.til/4월/2025-04-01-github.html</link><guid isPermaLink="false">4.TIL/4월/2025-04-01-GitHub.md</guid><pubDate>Wed, 30 Apr 2025 16:03:01 GMT</pubDate><enclosure url="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png" length="0" type="image/png"/><content:encoded>&lt;figure&gt;&lt;img src="https://seonohblog.netlify.app/assets/%EC%A0%80%EC%9E%A5%EC%86%8C%EC%83%9D%EC%84%B1.png"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[🏠 home]]></title><description><![CDATA[<a class="tag" href="?query=tag:home" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#home</a> <a class="tag" href="?query=tag:frontend" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#frontend</a> <a class="tag" href="?query=tag:devlog" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#devlog</a> <a class="tag" href="?query=tag:growth" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#growth</a> 
- <br><br>안녕하세요! 저는 프론트엔드 개발자 민선오입니다.<br>
-이 공간은 제가 공부하고 경험한 내용을 기록하고, 나중의 나와 누군가에게 도움이 되길 바라는 마음으로 운영되고 있어요.<br>
-💡 이 블로그는 단순한 기록을 넘어,<br>
-실제 프로젝트에서 겪은 문제 해결 과정,<br>
-새롭게 배운 기술,<br>
-프론트엔드 개발자로 성장해가는 여정을 담고 있습니다.
-<br><br><br>블로그 목표
-✔️ 내가 이해한 대로 쓰자 – 남의 말이 아니라, 내 언어로 정리하기<br>
-✔️ 지속적인 성장 기록 – 작게라도 매일/매주 무언가를 기록하기<br>
-✔️ 실무에 바로 써먹을 수 있도록 – 복붙이 가능한 코드, 실제 해결한 문제 위주
-<br><br><br><br>
-<br><a data-tooltip-position="top" aria-label="HTML_CSS" data-href="HTML_CSS" href="HTML_CSS" class="internal-link" target="_self" rel="noopener nofollow">HTML &amp; CSS</a>
-<br><a data-href="JavaScript" href="JavaScript" class="internal-link" target="_self" rel="noopener nofollow">JavaScript</a>
-<br><a data-href="Type Alias, Interface, Class" href="1.개념-정리/js-&amp;-ts/type-alias,-interface,-class.html" class="internal-link" target="_self" rel="noopener nofollow">Type Alias, Interface, Class</a>
-<br><br>
-<br><a data-href="React" href="React" class="internal-link" target="_self" rel="noopener nofollow">React</a>
-<br><a data-href="Next.js" href="Next.js" class="internal-link" target="_self" rel="noopener nofollow">Next.js</a>
-<br><a data-href="Vue" href="Vue" class="internal-link" target="_self" rel="noopener nofollow">Vue</a>
-<br><br>
-<br><a data-href="디자인 시스템" href="디자인 시스템" class="internal-link" target="_self" rel="noopener nofollow">디자인 시스템</a>
-<br><a data-href="컴포넌트 구조" href="컴포넌트 구조" class="internal-link" target="_self" rel="noopener nofollow">컴포넌트 구조</a>
-<br><a data-href="웹 접근성" href="웹 접근성" class="internal-link" target="_self" rel="noopener nofollow">웹 접근성</a>
-<br><br>
-<br><a data-href="브라우저 동작 원리" href="브라우저 동작 원리" class="internal-link" target="_self" rel="noopener nofollow">브라우저 동작 원리</a>
-<br><a data-href="성능 최적화" href="성능 최적화" class="internal-link" target="_self" rel="noopener nofollow">성능 최적화</a>
-<br><a data-href="보안" href="보안" class="internal-link" target="_self" rel="noopener nofollow">보안</a>
-<br><a data-href="테스팅" href="테스팅" class="internal-link" target="_self" rel="noopener nofollow">테스팅</a>
-<br><br>
-<br><a data-tooltip-position="top" aria-label="TIL" data-href="TIL" href="TIL" class="internal-link" target="_self" rel="noopener nofollow">Today I Learned</a>
-<br><a data-href="회고록" href="회고록" class="internal-link" target="_self" rel="noopener nofollow">회고록</a>
-<br><a data-href="문제 해결 모음" href="문제 해결 모음" class="internal-link" target="_self" rel="noopener nofollow">문제 해결 모음</a>
-<br><br><br>시작하기 좋은 글
-✔️ <a data-href="Type Alias, Interface, Class" href="1.개념-정리/js-&amp;-ts/type-alias,-interface,-class.html" class="internal-link" target="_self" rel="noopener nofollow">Type Alias, Interface, Class</a>
-<br><br><br>
-<br>2025-03-28: <a data-href="2025-03-28-Markdown" href="4.til/4월/2025-03-28-markdown.html" class="internal-link" target="_self" rel="noopener nofollow">2025-03-28-Markdown</a>
-<br>2025-03-27: <a data-href="Type Alias, Interface, Class" href="1.개념-정리/js-&amp;-ts/type-alias,-interface,-class.html" class="internal-link" target="_self" rel="noopener nofollow">Type Alias, Interface, Class</a>
-<br><br><br>
-틀려도 괜찮아요.<br>
-기록하고, 돌아보고, 고치고, 또 나아가는 것이 개발자의 길이니까요.
-<br><br><br>
-<br>GitHub: <a data-tooltip-position="top" aria-label="https://github.com/sunfivemin" rel="noopener nofollow" class="external-link" href="https://github.com/sunfivemin" target="_blank">@sunfivemin</a>
-<br>Blog: <a data-tooltip-position="top" aria-label="https://seonohblog.netlify.app/" rel="noopener nofollow" class="external-link" href="https://seonohblog.netlify.app/" target="_blank">sunfivemin 블로그</a>
-<br>Email: <a data-tooltip-position="top" aria-label="mailto:sunfivemin@gmail.com" rel="noopener nofollow" class="external-link" href="mailto:sunfivemin@gmail.com" target="_blank">sunfivemin@gmail.com</a>
-<br><br><a href=".?query=tag:home" class="tag" target="_blank" rel="noopener nofollow">#home</a> <a href=".?query=tag:frontend" class="tag" target="_blank" rel="noopener nofollow">#frontend</a> <a href=".?query=tag:devlog" class="tag" target="_blank" rel="noopener nofollow">#devlog</a> <a href=".?query=tag:growth" class="tag" target="_blank" rel="noopener nofollow">#growth</a>]]></description><link>home.html</link><guid isPermaLink="false">home.md</guid><pubDate>Mon, 21 Apr 2025 09:59:51 GMT</pubDate></item><item><title><![CDATA[Node.js 기본 생태계]]></title><description><![CDATA[ 
+var ironman: Developer = {
+	name: '아이언맨',
+	age: 21,
+	skill: '만들기'
+}
+<br>Person 인터페이스를 선언하고 Developer 인터페이스에 extends로 상속한 것이다.<br>
+이렇게 extends 키워드를 사용해서 인터페이스의 타입을 상속받아 확장하여 사용할 수 있고 여러번 상속을 받아서 정의할 수 있다. ]]></description><link>1.개념-정리/js-&amp;-ts/타입-정의,-타입-별칭.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/타입 정의, 타입 별칭.md</guid><pubDate>Fri, 09 May 2025 10:16:53 GMT</pubDate></item><item><title><![CDATA[타입스크립트 변수와 함수]]></title><description/></item><item><title><![CDATA[Node.js 기본 생태계]]></title><description><![CDATA[ 
  <br><br>Node.js는 백엔드 개발을 자바스크립트로 할 수 있게 해주는 런타임이며, 실제 개발에서는 패키지 매니저(NPM), 의존성 관리, 스크립트 실행 등 다양한 생태계 도구와 함께 사용된다.<br><br>
 <br>Node.js는 브라우저가 아닌 환경에서 자바스크립트를 실행할 수 있게 해주는 런타임
 <br>V8 JavaScript 엔진을 기반으로 하고 있으며, 비동기 I/O 처리에 강함
