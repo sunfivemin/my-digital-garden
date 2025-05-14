@@ -2,7 +2,7 @@
 ## ✍️ 회원가입
 
 - **Method**: `POST`  
-- **URI**: `/auth/join`  
+- **URI**: `/users/join`  
 - **Status**: `201 OK`
 
 ### Request Body
@@ -13,11 +13,9 @@
 }
 ```
 
-### Response Body
+### Response Cookie
 ```json
-{
-  "message": "회원가입 성공"
-}
+JWT Token
 ```
 
 
@@ -26,7 +24,7 @@
 ## 🔑 로그인
 
 - **Method**: `POST`  
-- **URI**: `/auth/login`  
+- **URI**: `/users/login`  
 - **Status**: `200 OK`
 
 ### Request Body
@@ -50,7 +48,7 @@
 ## 🔑 비밀번호 초기화 요청
 
 - **Method**: `POST`  
-- **URI**: `/reset`  
+- **URI**: `/users/reset`  
 - **Status**: `200 OK`
 
 ### Request Body
@@ -68,7 +66,7 @@
 ## ✍️ 비밀번호 초기화 (=수정)
 
 - **Method**: `PUT`  
-- **URI**: `/reset`  
+- **URI**: `/users/reset`  
 - **Status**: `200 OK`
 
 ### Request Body
