@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4.TIL/4월/2025-05-14-unauthorized.md",
+                "file": "4.TIL/5월/2025-05-15- books.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-05-14-unauthorized"
+              "title": "2025-05-15- books"
             }
           }
         ],
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "4.TIL/4월/2025-05-14-unauthorized.md",
+                "file": "4.TIL/5월/2025-05-15- books.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-05-14-unauthorized 의 개요"
+              "title": "2025-05-15- books 의 개요"
             }
           }
         ],
@@ -189,9 +189,10 @@
   "active": "c14b9aa0589f4c35",
   "lastOpenFiles": [
     "home.md",
-    "4.TIL/4월/2025-05-14-unauthorized.md",
-    "4.TIL/4월/2025-05-13-app.js.md",
-    "4.TIL/4월/2025-05-02-JWT.md",
+    "4.TIL/5월/2025-05-15- books.md",
+    "4.TIL/5월/2025-05-14-unauthorized.md",
+    "4.TIL/5월/2025-05-13-app.js.md",
+    "4.TIL/5월/2025-05-02-JWT.md",
     "4.TIL/4월/2025-04-30-유효성검사.md",
     "4.TIL/4월/2025-04-28-DB 테이블.md",
     "4.TIL/4월/2025-04-25-DBMS.md",
@@ -213,7 +214,7 @@
     "4.TIL/4월/2025-03-28-Markdown.md",
     "3.트러블 슈팅/Node.js/error.md",
     "3.트러블 슈팅/Git/git error.md",
-    "2.Dev Log/Express & Node/Express 기반 유튜버 API 프로젝트.md",
+    "4.TIL/5월",
     "1.개념 정리/SEO",
     "4.TIL/4월",
     "4.TIL",
@@ -225,7 +226,6 @@
     "무제.canvas",
     "ExpressMap.png",
     "1.개념 정리/프레임워크 & 라이브러리",
-    "1.개념 정리/Node",
     "merge.png",
     "동기화.png",
     "pr전.png",
