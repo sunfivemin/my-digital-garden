@@ -179,3 +179,22 @@ npm run dev
     - **C는 아이템/스킬 틀과 사용 로직.**
     - **E는 적 AI 행동 결정만. BattleManager에 안 넣음.**
     - **D는 UI만. 게임 흐름은 main.ts에서 BattleManager/AI 연결만.**
+
+
+
+
+git remote set-url origin https://github.com/chan8919/typeScriptStudy.git
+git checkout -b sunfive-tinytype-rpg
+git add .
+git commit -m "TinyType RPG 프로젝트 추가"
+git push --set-upstream origin sunfive-tinytype-rpg
+
+
+
+git fetch
+git checkout -b feature-someone-rpg origin/feature-someone-rpg
+# 수정하고
+
+git add .
+git commit -m "작업 내용 커밋"
+git push origin feature-someone-rpg
