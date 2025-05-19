@@ -84,9 +84,10 @@ JWT Token
 #  💡 도서 API
 
 ## 🔑 전체 도서 조회
+이미지 경로, n개씩 보내줘야함 (limit, offset 시작지점을 : req에 담아보낸다.)
 
 - **Method**: `GET`  
-- **URI**: `/books`  
+- **URI**: `/books?limit={page당 도서 수}&currentPage={현재 page}`  
 - **Status**: `200 OK`
 
 ### Response Body
@@ -139,7 +140,7 @@ JWT Token
 ---
 
 ## 🔑 카테고리별 도서 목록 조회
-
+new : true => 신간 조회(기준 : 출간일 1달 이내)
 - **Method**: `GET`  
 - **URI**: `/books/categoryId={categoryId}&new={boolean}`  
 - **Status**: `200 OK`
@@ -185,14 +186,30 @@ JWT Token
 
 ---
 
-
 # 💡  좋아요 API
 
-## ✍️ 좋아요 추가/취소
+## ✍️ 좋아요 추가
 
-- **Method**: `PUT`  
-- **URI**: `/likes/{bookId}`  
-- **Status**: `200 OK`
+|**항목**|**내용**|
+|---|---|
+|**Method**|POST|
+|**URI**|/likes/{bookId}|
+|**HTTP Status**|200 OK|
+|**Request Header**|Authorization: Bearer <token> (필요 시)|
+|**Request Body**|{ "user_id": number }|
+|**Response Body**|{ "message": "좋아요 등록 완료", ... } 또는 SQL 결과|
+
+
+## ✍️ 좋아요 취소
+|**항목**|**내용**|
+|---|---|
+|**Method**|DELETE|
+|**URI**|/likes/{bookId}|
+|**HTTP Status**|200 OK|
+|**Request Body**|{ "user_id": number }|
+|**Response Body**|{ "message": "좋아요 취소 완료", ... } 또는 SQL 결과|
+
+
 
 ---
 
@@ -247,7 +264,7 @@ JWT Token
 
 ---
 
-#   💡 주문 API
+# 💡주문 API
 
 ## ✍️ 장바구니에서 선택한 주문 예상상품 목록 조회
 
