@@ -223,7 +223,8 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 ```json
 {
   "bookId": "도서 ID",
-  "count": 수량
+  "quantity": 수량,
+  userId: "회원 ID"
 }
 ```
 
