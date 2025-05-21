@@ -15,5 +15,71 @@
 <span class="token key atrule">tags</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> frontend
   <span class="token punctuation">-</span> html</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="상태 관리"><p dir="auto">상태 관리</p></h1><div class="el-ul"><ul>
-<li data-line="0" dir="auto">Redux,Zustand</li>
-</ul></div><div class="mod-footer mod-ui"></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button is-collapsed" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html#상태 관리"><div class="tree-item-contents heading-link" heading-name="상태 관리"><span class="tree-item-title">상태 관리</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>
+<li data-line="0" dir="auto">Redux,Zustand<br>
+Pure Redux<br>
+플럭스 패턴 : action -&gt; dispatcher -&gt; store -&gt; view -&gt; action -&gt; dispatcher</li>
+</ul></div><div class="el-p"><p dir="auto">리덕스 : action -&gt; reducer -&gt; store -&gt; view<br>
+스토어라는 하나의 객체에서 관리가 되어있고 리듀서를 거친다.</p></div><div class="el-p"><p dir="auto">state는 전역상태로 관리할것만 저장해야한다.<br>
+Redux,Zustand 모두 전역상태 조작 도구들이다.<br>
+전역은 useState로 관리하면된다.<br>
+리덕스는 플러스패턴 , 리코일은 아토믹 패션</p></div><div class="el-p"><p dir="auto">Store를 구독하는 모든 컴포넌트가 리랜더링 되면 리덕스가 안좋은거 아닌가요?<br>
+-&gt; 안정성이 있다. </p></div><div class="el-p"><p dir="auto">npm install redux<br>
+node index.js</p></div><div class="el-pre"><pre class="language-js" tabindex="0"><code data-line="0" class="language-js is-loaded"><span class="token keyword">const</span> <span class="token punctuation">{</span> createStore <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'redux'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 초기 state 를 정의</span>
+<span class="token keyword">const</span> initState <span class="token operator">=</span> <span class="token punctuation">{</span>
+	<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'김코딩'</span><span class="token punctuation">,</span>
+	<span class="token literal-property property">post</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// action </span>
+<span class="token comment">// 객체. 액션 객체를 리턴하는 Action creator 함수를 작성</span>
+<span class="token comment">// 그 액션에 필요한 데이터를 넘기는 역할, 어떤 액션을 할 것인지 타입 지정</span>
+<span class="token keyword">const</span> <span class="token function-variable function">changeUsername</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword control-flow">return</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"CHANGE_NAME"</span><span class="token punctuation">,</span>
+		name
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">addPost</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">post</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword control-flow">return</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"ADD_POST"</span><span class="token punctuation">,</span>
+		post
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// reducer</span>
+<span class="token comment">// 액션의 타입에 따라서 새로운 State를 생성해내는 순수 함수</span>
+<span class="token keyword">const</span> <span class="token function-variable function">reducer</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">prevState<span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+	<span class="token keyword control-flow">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">case</span> <span class="token string">"CHANGE_NAME"</span><span class="token operator">:</span>
+			<span class="token keyword control-flow">return</span> <span class="token punctuation">{</span>
+				<span class="token spread operator">...</span>prevState<span class="token punctuation">,</span>
+				<span class="token literal-property property">name</span><span class="token operator">:</span> action<span class="token punctuation">.</span><span class="token property-access">name</span>
+			<span class="token punctuation">}</span>
+		<span class="token keyword">case</span> <span class="token string">"ADD_POST"</span><span class="token operator">:</span>
+			<span class="token keyword control-flow">return</span> <span class="token punctuation">{</span>
+				<span class="token spread operator">...</span>prevState<span class="token punctuation">,</span>
+				<span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token spread operator">...</span>prevState<span class="token punctuation">.</span><span class="token property-access">posts</span><span class="token punctuation">,</span> action<span class="token punctuation">.</span><span class="token property-access">post</span><span class="token punctuation">]</span>
+			<span class="token punctuation">}</span>
+		<span class="token keyword module">default</span><span class="token operator">:</span>
+			<span class="token keyword control-flow">return</span> prevState<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// store</span>
+<span class="token keyword">const</span> store <span class="token operator">=</span> <span class="token function">createStore</span><span class="token punctuation">(</span>reducer<span class="token punctuation">,</span> initState<span class="token punctuation">)</span> 
+
+
+<span class="token comment">// dispatch</span>
+store<span class="token punctuation">.</span><span class="token method function property-access">dispatch</span><span class="token punctuation">(</span><span class="token function">changeUsername</span><span class="token punctuation">(</span><span class="token string">'steve'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+store<span class="token punctuation">.</span><span class="token method function property-access">dispatch</span><span class="token punctuation">(</span><span class="token function">addPost</span><span class="token punctuation">(</span><span class="token string">'post 1'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+store<span class="token punctuation">.</span><span class="token method function property-access">dispatch</span><span class="token punctuation">(</span><span class="token function">addPost</span><span class="token punctuation">(</span><span class="token string">'post 2'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>store<span class="token punctuation">.</span><span class="token method function property-access">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-p"><p dir="auto">프론트엔드 과제 전형 기출 문제 리스트<br>
+퍼널 구조 / useFunnel<br>
+디바운싱과 쓰로틀링 - 요청 받은것에 대해 최적화<br>
+살펴보면 퀄리티 향상에 도움이 된다.</p></div><div class="el-p"><p dir="auto"><a rel="noopener nofollow" class="external-link" href="https://m.blog.naver.com/topblade71/222964598090" target="_blank">https://m.blog.naver.com/topblade71/222964598090</a><br>
+<a rel="noopener nofollow" class="external-link" href="https://m.blog.naver.com/topblade71/222964598090" target="_blank">https://m.blog.naver.com/topblade71/222964598090</a></p></div><div class="mod-footer mod-ui"></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button is-collapsed" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html#상태 관리"><div class="tree-item-contents heading-link" heading-name="상태 관리"><span class="tree-item-title">상태 관리</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

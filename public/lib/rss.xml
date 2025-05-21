@@ -1,5 +1,5 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 100 at column 295: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 20 May 2025 13:44:07 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 20 May 2025 13:43:42 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 166 at column 468: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 21 May 2025 14:48:02 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 21 May 2025 14:47:33 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
  <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
 “공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
 이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터, 어떻게 구성하면 실무에 유리한지, 그리고 Storybook을 통해 어떻게 문서화하고 협업까지 연결할 수 있는지를 정리해봤어요.<br><br><br>디자인 시스템은 일관된 UI/UX를 제공하기 위한 설계 기준이에요.<br>
@@ -97,8 +97,74 @@ export const Primary = {
 작은 프로젝트부터라도 토큰 하나, 버튼 하나부터 시작해보세요.<br>
 다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Wed, 30 Apr 2025 16:03:14 GMT</pubDate></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
  <br>
-<br>Redux,Zustand
-]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Wed, 30 Apr 2025 16:03:12 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
+<br>Redux,Zustand<br>
+Pure Redux<br>
+플럭스 패턴 : action -&gt; dispatcher -&gt; store -&gt; view -&gt; action -&gt; dispatcher
+<br>리덕스 : action -&gt; reducer -&gt; store -&gt; view<br>
+스토어라는 하나의 객체에서 관리가 되어있고 리듀서를 거친다.<br>state는 전역상태로 관리할것만 저장해야한다.<br>
+Redux,Zustand 모두 전역상태 조작 도구들이다.<br>
+전역은 useState로 관리하면된다.<br>
+리덕스는 플러스패턴 , 리코일은 아토믹 패션<br>Store를 구독하는 모든 컴포넌트가 리랜더링 되면 리덕스가 안좋은거 아닌가요?<br>
+-&gt; 안정성이 있다. <br>npm install redux<br>
+node index.js<br>const { createStore } = require('redux');
+
+// 초기 state 를 정의
+const initState = {
+	name: '김코딩',
+	post: []
+}
+
+// action 
+// 객체. 액션 객체를 리턴하는 Action creator 함수를 작성
+// 그 액션에 필요한 데이터를 넘기는 역할, 어떤 액션을 할 것인지 타입 지정
+const changeUsername = (name) =&gt; {
+	return {
+		type: "CHANGE_NAME",
+		name
+	}
+}
+
+const addPost = (post) =&gt; {
+	return {
+		type: "ADD_POST",
+		post
+	}
+}
+
+// reducer
+// 액션의 타입에 따라서 새로운 State를 생성해내는 순수 함수
+const reducer = (prevState, action) =&gt; {
+	switch (action.type) {
+		case "CHANGE_NAME":
+			return {
+				...prevState,
+				name: action.name
+			}
+		case "ADD_POST":
+			return {
+				...prevState,
+				name: [...prevState.posts, action.post]
+			}
+		default:
+			return prevState;
+	}
+}
+
+// store
+const store = createStore(reducer, initState) 
+
+
+// dispatch
+store.dispatch(changeUsername('steve'))
+store.dispatch(addPost('post 1'))
+store.dispatch(addPost('post 2'))
+
+console.log(store.getState())
+<br>프론트엔드 과제 전형 기출 문제 리스트<br>
+퍼널 구조 / useFunnel<br>
+디바운싱과 쓰로틀링 - 요청 받은것에 대해 최적화<br>
+살펴보면 퀄리티 향상에 도움이 된다.<br><a rel="noopener nofollow" class="external-link" href="https://m.blog.naver.com/topblade71/222964598090" target="_blank">https://m.blog.naver.com/topblade71/222964598090</a><br>
+<a rel="noopener nofollow" class="external-link" href="https://m.blog.naver.com/topblade71/222964598090" target="_blank">https://m.blog.naver.com/topblade71/222964598090</a>]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Wed, 21 May 2025 09:01:48 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
  <br><br><br>타입스크립트에서 인터페이스는 객체 타입을 정의할 때 사용하는 문법이다.<br><br>interface User {
 	name: string;
 	age: number;

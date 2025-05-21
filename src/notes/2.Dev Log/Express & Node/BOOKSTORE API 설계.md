@@ -267,7 +267,7 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 
 # 💡주문 API
 
-## ✍️ 장바구니에서 선택한 주문 예상상품 목록 조회
+## ✍️ 선택한 장바구니 상품 목록 조회
 
 - **Method**: `GET`  
 - **URI**: `/cartItems`  
@@ -276,7 +276,8 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 ### Request Body
 ```json
 {
- cartItemId, cartItemId, cartItemId, 
+	userId: 회원 id,
+	selected: [cartItemId, cartItemId, cartItemId ...]
 }
 ```
 
@@ -322,8 +323,10 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 		 address: "주소",
 		 receiver: "이름",
 		 contact: "010-0000-0000"
-	 }
-	 totalPrice: 총금액
+	 },
+	 totalQuantity: 총수량,
+	 totalPrice: 총금액,
+	 userId: 회원 id
 }
 ```
 
@@ -360,7 +363,7 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 	},
 	bookTitle: "대표 책 제목",
 	totalPrice: 결제 금액,
-	totalCount: 총 수량
+	totalQuantity: 총 수량
  }
 ]
 ```
