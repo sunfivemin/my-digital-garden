@@ -247,7 +247,7 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
     "bookId": "도서 ID",
     "title": "도서 제목",
     "summary": "도서 요약",
-    "count": 수량,
+    "quantity": 수량,
     "price": 가격
   }
 ]
@@ -289,7 +289,7 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
     "bookId": "도서 ID",
     "title": "도서 제목",
     "summary": "도서 요약",
-    "count": 수량,
+    "quantity": 수량,
     "price": 가격
   },
  {
@@ -297,7 +297,7 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
     "bookId": "도서 ID",
     "title": "도서 제목",
     "summary": "도서 요약",
-    "count": 수량,
+    "quantity": 수량,
     "price": 가격
   },
 ]
@@ -316,8 +316,8 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 ```json
 {
 	 items: [
-		 {cartItemId: 장바구니 도서 id, bookId: 도서 id, count: 수량},
-		 {cartItemId: 장바구니 도서 id, bookId: 도서 id, count: 수량}, ...
+		 {cartItemId: 장바구니 도서 id, bookId: 도서 id, quantity: 수량},
+		 {cartItemId: 장바구니 도서 id, bookId: 도서 id, quantity: 수량}, ...
 	 ],
 	 delivery: {
 		 address: "주소",
@@ -390,7 +390,7 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 	bookTitle: "대표 책 제목",
 	author: "작가명",
 	price: 가격,
-	count: 수량
+	quantity: 수량
  },
 {
 	book_id: 도서 id,
@@ -398,7 +398,7 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 	bookTitle: "대표 책 제목",
 	author: "작가명",
 	price: 가격,
-	count: 수량
+	quantity: 수량
  }
 ]
 ```

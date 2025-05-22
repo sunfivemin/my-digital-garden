@@ -1,6 +1,6 @@
 {
   "vaultName": "blog",
-  "lastExport": 1747838853329,
+  "lastExport": 1747903589720,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon codeblock-customizer codeblock-customizer-show-line-numbers codeblock-customizer-gutter-highlight codeblock-customizer-gutter-active-line codeblock-customizer-collapseIconNone theme-classic line-style-solid folder-rainbow-titles blockquote-normal callout-normal tag-default link-default increased-line-height responsive-tile-height codeblock-customizer-active-line-highlight",
   "useCustomHeadContent": true,
@@ -59,6 +59,7 @@
     "4.TIL/5월/2025-05-19-Like API.md",
     "4.TIL/5월/2025-05-20-cart API.md",
     "4.TIL/5월/2025-05-21-orders insert.md",
+    "4.TIL/5월/2025-05-22-async await.md",
     "home.md",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
@@ -159,609 +160,615 @@
   ],
   "fileInfo": {
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/6155340132a851f6089e.svg": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 315,
       "exportedPath": "lib/media/6155340132a851f6089e.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1747838853329,
-      "sourceSize": 52822,
+      "modifiedTime": 1747903589720,
+      "sourceSize": 53534,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 138258,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/other-plugins.css": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 65993,
       "exportedPath": "lib/styles/other-plugins.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 76856,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 262,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 155,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
     },
     "lib/styles/snippets.css": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 575,
       "exportedPath": "lib/styles/snippets.css",
       "dependencies": []
     },
     "lib/html/custom-head-content.html": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 830,
       "exportedPath": "lib/html/custom-head-content.html",
       "dependencies": []
     },
     "1.개념 정리/JS & TS/인터페이스.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 6184,
       "exportedPath": "1.개념-정리/js-&-ts/인터페이스.html",
       "dependencies": []
     },
     "1.개념 정리/프레임워크 & 라이브러리/디자인 시스템(Feat. Storybook).md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 6285,
       "exportedPath": "1.개념-정리/프레임워크-&-라이브러리/디자인-시스템(feat.-storybook).html",
       "dependencies": []
     },
     "1.개념 정리/프레임워크 & 라이브러리/상태 관리 (Redux, Zustand).md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 2154,
       "exportedPath": "1.개념-정리/프레임워크-&-라이브러리/상태-관리-(redux,-zustand).html",
       "dependencies": []
     },
     "1.개념 정리/JS & TS/타입 정의, 타입 별칭.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 10545,
       "exportedPath": "1.개념-정리/js-&-ts/타입-정의,-타입-별칭.html",
       "dependencies": []
     },
     "1.개념 정리/JS & TS/타입스크립트 변수와 함수.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 5827,
       "exportedPath": "1.개념-정리/js-&-ts/타입스크립트-변수와-함수.html",
       "dependencies": []
     },
     "1.개념 정리/JS & TS/DOM (Feat. REACT).md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 0,
       "exportedPath": "1.개념-정리/js-&-ts/dom-(feat.-react).html",
       "dependencies": []
     },
     "1.개념 정리/JS & TS/Type Alias, Interface, Class.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 4830,
       "exportedPath": "1.개념-정리/js-&-ts/type-alias,-interface,-class.html",
       "dependencies": []
     },
     "1.개념 정리/Node/Middleware.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 4410,
       "exportedPath": "1.개념-정리/node/middleware.html",
       "dependencies": []
     },
     "1.개념 정리/Node/MVC 패턴.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 4979,
       "exportedPath": "1.개념-정리/node/mvc-패턴.html",
       "dependencies": []
     },
     "1.개념 정리/Node/Node.js 기본 생태계.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 4797,
       "exportedPath": "1.개념-정리/node/node.js-기본-생태계.html",
       "dependencies": []
     },
     "1.개념 정리/Node/REST API 구조.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 6582,
       "exportedPath": "1.개념-정리/node/rest-api-구조.html",
       "dependencies": []
     },
     "1.개념 정리/SEO/웹접근성 - a11y.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 8754,
       "exportedPath": "1.개념-정리/seo/웹접근성-a11y.html",
       "dependencies": []
     },
     "1.개념 정리/SEO/SSR vs SPA.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 9626,
       "exportedPath": "1.개념-정리/seo/ssr-vs-spa.html",
       "dependencies": []
     },
     "2.Dev Log/Express & Node/공연 예매 사이트.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 606,
       "exportedPath": "2.dev-log/express-&-node/공연-예매-사이트.html",
       "dependencies": []
     },
     "2.Dev Log/Express & Node/BOOKSTORE API 설계.md": {
-      "modifiedTime": 1747838853329,
-      "sourceSize": 6109,
+      "modifiedTime": 1747903589720,
+      "sourceSize": 6130,
       "exportedPath": "2.dev-log/express-&-node/bookstore-api-설계.html",
       "dependencies": []
     },
     "2.Dev Log/Express & Node/Express 구조.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 5053,
       "exportedPath": "2.dev-log/express-&-node/express-구조.html",
       "dependencies": []
     },
     "2.Dev Log/Express & Node/Express 기반 유튜버 API 프로젝트.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 11476,
       "exportedPath": "2.dev-log/express-&-node/express-기반-유튜버-api-프로젝트.html",
       "dependencies": []
     },
     "3.트러블 슈팅/Git/git error.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 49,
       "exportedPath": "3.트러블-슈팅/git/git-error.html",
       "dependencies": []
     },
     "3.트러블 슈팅/Node.js/error.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 45,
       "exportedPath": "3.트러블-슈팅/node.js/error.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-03-28-Markdown.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 8279,
       "exportedPath": "4.til/4월/2025-03-28-markdown.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-03-31-Git.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 6783,
       "exportedPath": "4.til/4월/2025-03-31-git.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-01-GitHub.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 9483,
       "exportedPath": "4.til/4월/2025-04-01-github.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-02-Branch.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 10288,
       "exportedPath": "4.til/4월/2025-04-02-branch.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-03-Web.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 7352,
       "exportedPath": "4.til/4월/2025-04-03-web.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-04-JavaScript.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 8664,
       "exportedPath": "4.til/4월/2025-04-04-javascript.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-07-Node.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 8598,
       "exportedPath": "4.til/4월/2025-04-07-node.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-08-DBMS.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 7619,
       "exportedPath": "4.til/4월/2025-04-08-dbms.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-10-API.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 5152,
       "exportedPath": "4.til/4월/2025-04-10-api.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-11-Module.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 5633,
       "exportedPath": "4.til/4월/2025-04-11-module.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-15-Express.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 8562,
       "exportedPath": "4.til/4월/2025-04-15-express.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-16-Params.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 10418,
       "exportedPath": "4.til/4월/2025-04-16-params.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-17-Map.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 7703,
       "exportedPath": "4.til/4월/2025-04-17-map.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-18-Postman.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 9212,
       "exportedPath": "4.til/4월/2025-04-18-postman.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-22-회원 API 설계.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 5885,
       "exportedPath": "4.til/4월/2025-04-22-회원-api-설계.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-23-채널 API 설계.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 7222,
       "exportedPath": "4.til/4월/2025-04-23-채널-api-설계.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-24-Express Router와 회원-채널 ERD 설계 실습.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 4914,
       "exportedPath": "4.til/4월/2025-04-24-express-router와-회원-채널-erd-설계-실습.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-25-DBMS.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 4224,
       "exportedPath": "4.til/4월/2025-04-25-dbms.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-28-DB 테이블.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 6083,
       "exportedPath": "4.til/4월/2025-04-28-db-테이블.html",
       "dependencies": []
     },
     "4.TIL/4월/2025-04-30-유효성검사.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 5230,
       "exportedPath": "4.til/4월/2025-04-30-유효성검사.html",
       "dependencies": []
     },
     "home.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 2040,
       "exportedPath": "home.html",
       "dependencies": []
     },
     "1.개념 정리/JS & TS/이넘, 클래스.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 13354,
       "exportedPath": "1.개념-정리/js-&-ts/이넘,-클래스.html",
       "dependencies": []
     },
     "1.개념 정리/JS & TS/제네릭.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 354,
       "exportedPath": "1.개념-정리/js-&-ts/제네릭.html",
       "dependencies": []
     },
     "1.개념 정리/SEO/브라우저 렌더링 과정과 Web Vitals 성능 측정.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 7156,
       "exportedPath": "1.개념-정리/seo/브라우저-렌더링-과정과-web-vitals-성능-측정.html",
       "dependencies": []
     },
     "2.Dev Log/Express & Node/TinyType RPG.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 9403,
       "exportedPath": "2.dev-log/express-&-node/tinytype-rpg.html",
       "dependencies": []
     },
     "4.TIL/5월/2025-05-02-JWT.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 11624,
       "exportedPath": "4.til/5월/2025-05-02-jwt.html",
       "dependencies": []
     },
     "4.TIL/5월/2025-05-12-협업 Tool 솔루션별 특징.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 5618,
       "exportedPath": "4.til/5월/2025-05-12-협업-tool-솔루션별-특징.html",
       "dependencies": []
     },
     "4.TIL/5월/2025-05-13-app.js.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 5936,
       "exportedPath": "4.til/5월/2025-05-13-app.js.html",
       "dependencies": []
     },
     "4.TIL/5월/2025-05-14-unauthorized.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 11266,
       "exportedPath": "4.til/5월/2025-05-14-unauthorized.html",
       "dependencies": []
     },
     "1.개념 정리/SEO/JS 동작 원리부터 성능 최적화, 테스트 전략까지.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 6984,
       "exportedPath": "1.개념-정리/seo/js-동작-원리부터-성능-최적화,-테스트-전략까지.html",
       "dependencies": []
     },
     "lib/fonts/mathjax_zero.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 1368,
       "exportedPath": "lib/fonts/mathjax_zero.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_main-regular.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 34160,
       "exportedPath": "lib/fonts/mathjax_main-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_main-bold.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 34464,
       "exportedPath": "lib/fonts/mathjax_main-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_math-italic.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 19360,
       "exportedPath": "lib/fonts/mathjax_math-italic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_main-italic.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 20832,
       "exportedPath": "lib/fonts/mathjax_main-italic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_math-bolditalic.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 19776,
       "exportedPath": "lib/fonts/mathjax_math-bolditalic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size1-regular.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 5792,
       "exportedPath": "lib/fonts/mathjax_size1-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size2-regular.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 5464,
       "exportedPath": "lib/fonts/mathjax_size2-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size3-regular.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 3244,
       "exportedPath": "lib/fonts/mathjax_size3-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_size4-regular.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 5148,
       "exportedPath": "lib/fonts/mathjax_size4-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_ams-regular.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 40808,
       "exportedPath": "lib/fonts/mathjax_ams-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_calligraphic-regular.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 9600,
       "exportedPath": "lib/fonts/mathjax_calligraphic-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_calligraphic-bold.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 9908,
       "exportedPath": "lib/fonts/mathjax_calligraphic-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_fraktur-regular.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 21480,
       "exportedPath": "lib/fonts/mathjax_fraktur-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_fraktur-bold.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 22340,
       "exportedPath": "lib/fonts/mathjax_fraktur-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_sansserif-regular.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 12660,
       "exportedPath": "lib/fonts/mathjax_sansserif-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_sansserif-bold.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 15944,
       "exportedPath": "lib/fonts/mathjax_sansserif-bold.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_sansserif-italic.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 14628,
       "exportedPath": "lib/fonts/mathjax_sansserif-italic.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_script-regular.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 11852,
       "exportedPath": "lib/fonts/mathjax_script-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_typewriter-regular.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 17604,
       "exportedPath": "lib/fonts/mathjax_typewriter-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_vector-regular.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 1136,
       "exportedPath": "lib/fonts/mathjax_vector-regular.woff",
       "dependencies": []
     },
     "lib/fonts/mathjax_vector-bold.woff": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 1116,
       "exportedPath": "lib/fonts/mathjax_vector-bold.woff",
       "dependencies": []
     },
     "4.TIL/5월/2025-05-15-books.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 4213,
       "exportedPath": "4.til/5월/2025-05-15-books.html",
       "dependencies": []
     },
     "4.TIL/5월/2025-05-16-book list.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 6826,
       "exportedPath": "4.til/5월/2025-05-16-book-list.html",
       "dependencies": []
     },
     "4.TIL/5월/2025-05-19-Like API.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 6834,
       "exportedPath": "4.til/5월/2025-05-19-like-api.html",
       "dependencies": []
     },
     "4.TIL/5월/2025-05-20-cart API.md": {
-      "modifiedTime": 1747838853329,
+      "modifiedTime": 1747903589720,
       "sourceSize": 4057,
       "exportedPath": "4.til/5월/2025-05-20-cart-api.html",
       "dependencies": []
     },
     "4.TIL/5월/2025-05-21-orders insert.md": {
-      "modifiedTime": 1747838853329,
-      "sourceSize": 563,
+      "modifiedTime": 1747903589720,
+      "sourceSize": 6431,
       "exportedPath": "4.til/5월/2025-05-21-orders-insert.html",
+      "dependencies": []
+    },
+    "4.TIL/5월/2025-05-22-async await.md": {
+      "modifiedTime": 1747903589720,
+      "sourceSize": 5953,
+      "exportedPath": "4.til/5월/2025-05-22-async-await.html",
       "dependencies": []
     }
   }

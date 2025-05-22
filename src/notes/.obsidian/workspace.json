@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4.TIL/5월/2025-05-21-orders insert.md",
+                "file": "4.TIL/5월/2025-05-22-async await.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-05-21-orders insert"
+              "title": "2025-05-22-async await"
             }
           },
           {
@@ -41,16 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4.TIL/5월/2025-05-21-orders insert.md",
+                "file": "2.Dev Log/Express & Node/BOOKSTORE API 설계.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-05-21-orders insert"
+              "title": "BOOKSTORE API 설계"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "4.TIL/5월/2025-05-21-orders insert.md",
+                "file": "4.TIL/5월/2025-05-22-async await.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-05-21-orders insert 의 개요"
+              "title": "2025-05-22-async await 의 개요"
             }
           }
         ],
@@ -200,9 +200,11 @@
       "obsidian-rich-links:Rich Links": false
     }
   },
-  "active": "13938908506fcfea",
+  "active": "0e691eaf71b61630",
   "lastOpenFiles": [
     "home.md",
+    "4.TIL/5월/2025-05-22-async await.md",
+    "4.TIL/5월/2025-05-21-orders insert.md",
     "4.TIL/5월/2025-05-20-cart API.md",
     "4.TIL/5월/2025-05-19-Like API.md",
     "4.TIL/5월/2025-05-16-book list.md",
@@ -226,8 +228,6 @@
     "4.TIL/4월/2025-04-04-JavaScript.md",
     "4.TIL/4월/2025-04-03-Web.md",
     "4.TIL/4월/2025-04-02-Branch.md",
-    "4.TIL/4월/2025-04-01-GitHub.md",
-    "4.TIL/4월/2025-03-31-Git.md",
     "4.TIL/5월",
     "1.개념 정리/SEO",
     "4.TIL/4월",
