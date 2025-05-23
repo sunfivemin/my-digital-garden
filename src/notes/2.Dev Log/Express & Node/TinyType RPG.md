@@ -183,6 +183,10 @@ npm run dev
 
 
 
+
+
+
+
 git remote set-url origin https://github.com/chan8919/typeScriptStudy.git
 git checkout -b sunfive-tinytype-rpg
 git add .
