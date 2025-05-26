@@ -353,18 +353,26 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 ### Response Body
 ```json
 [
- {
-	order_id: 주문 id,
-	create_at: "주문일자",
-	delivery: {
-		address: "주소",
-		receiver: "이름",
-		contact: "전화번호"
-	},
-	bookTitle: "대표 책 제목",
-	totalPrice: 결제 금액,
-	totalQuantity: 총 수량
- }
+  {
+    "id": 1,
+    "created_at": "2023-12-13 08:23:00",
+    "address": "서울시 서초구",
+    "receiver": "영희",
+    "contact": "010-1111-1111",
+    "book_title": "홍길동전",
+    "total_quantity": 2,
+    "total_price": 10000
+  },
+  {
+    "id": 2,
+    "created_at": "2023-12-13 12:30:00",
+    "address": "서울시 강남구",
+    "receiver": "철수",
+    "contact": "010-2222-2222",
+    "book_title": "백설공주",
+    "total_quantity": 1,
+    "total_price": 5000
+  }
 ]
 ```
 
@@ -384,21 +392,19 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 ### Response Body
 ```json
 [
- {
-	book_id: 도서 id,
-	create_at: "주문일자",
-	bookTitle: "대표 책 제목",
-	author: "작가명",
-	price: 가격,
-	quantity: 수량
- },
-{
-	book_id: 도서 id,
-	create_at: "주문일자",
-	bookTitle: "대표 책 제목",
-	author: "작가명",
-	price: 가격,
-	quantity: 수량
- }
+  {
+    "book_id": 3,
+    "title": "홍길동전",
+    "author": "허균",
+    "price": 5000,
+    "quantity": 1
+  },
+  {
+    "book_id": 4,
+    "title": "심청전",
+    "author": "미상",
+    "price": 5000,
+    "quantity": 1
+  }
 ]
 ```
