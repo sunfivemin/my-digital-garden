@@ -83,27 +83,39 @@ JWT Token
 
 #  💡 도서 API
 
-## 🔑 전체 도서 조회
+## 🔑 전체 도서 조회 (Pagination)
 이미지 경로, n개씩 보내줘야함 (limit, offset 시작지점을 : req에 담아보낸다.)
 
-- **Method**: `GET`  
-- **URI**: `/books?limit={page당 도서 수}&currentPage={현재 page}`  
-- **Status**: `200 OK`
+| **항목**           | **내용**                                              |
+| ---------------- | --------------------------------------------------- |
+| **Method**       | GET                                                 |
+| **URI**          | /books?limit={page당 도서 수}&currentPage={현재 페이지}      |
+| **Status**       | 200 OK                                              |
+| **Query Params** | limit, currentPage, category_id(선택), news(선택, true) |
+
 
 ### Response Body
 ```json
-[
-  {
-    "id": "도서 ID",
-    "title": "도서 제목",
-    img: 이미지 id,
-    "summary": "요약 설명",
-    "author": "도서 작가",
-    "price": 가격,
-    "likes": 좋아요 수,
-    "pubDate": "출간일"
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "도서 제목",
+      "img": 1,
+      "summary": "요약 설명",
+      "author": "도서 작가",
+      "price": 20000,
+      "likes": 5,
+      "pubDate": "2024-12-10"
+    },
+    ...
+  ],
+  "pagination": {
+    "currentPage": 1,
+    "totalPages": 5,
+    "totalCount": 42
   }
-]
+}
 ```
 
 
@@ -111,54 +123,68 @@ JWT Token
 
 ## 🔑 개별 도서 조회
 
-- **Method**: `GET`  
-- **URI**: `/books/[bookId]`  
-- **Status**: `200 OK`
+|**항목**|**내용**|
+|---|---|
+|**Method**|GET|
+|**URI**|/books/{bookId}|
+|**Status**|200 OK|
+|**Request Header**|Authorization (로그인 시)|
 
 ### Response Body
 ```json
 {
-  "id": "도서 ID",
+  "id": 1,
   "title": "도서 제목",
-  img: 이미지 id,
-  "category": "카테고리",
-  "format": "포맷",
-  "isbn": "isbn",
+  "img": 1,
+  "category": "문학",
+  "format": "종이책",
+  "isbn": "978-11-123456-7-8",
   "summary": "요약 설명",
   "description": "상세 설명",
   "author": "도서 작가",
-  "pages": 쪽 수,
-  "index": "목차",
-  "price": 가격,
-  "likes": 좋아요 수,
+  "pages": 250,
+  "index": "목차 내용",
+  "price": 18000,
+  "likes": 3,
   "liked": true,
-  "pubDate": "출간일"
+  "pubDate": "2023-12-10"
 }
 ```
-
+- liked: 로그인한 사용자가 해당 도서를 좋아요 눌렀는지 여부 (true/false)
+- 비로그인 시 liked 필드는 포함되지 않음
 
 ---
 
 ## 🔑 카테고리별 도서 목록 조회
 new : true => 신간 조회(기준 : 출간일 1달 이내)
-- **Method**: `GET`  
-- **URI**: `/books/categoryId={categoryId}&new={boolean}`  
-- **Status**: `200 OK`
+
+| **항목**     | **내용**                                                         |
+| ---------- | -------------------------------------------------------------- |
+| **Method** | GET                                                            |
+| **URI**    | /books?category_id={카테고리ID}&new=true&limit={n}&currentPage={m} |
+| **Status** | 200 OK                                                         |
 
 ### Response Body
 ```json
-[
-  {
-    "id": "도서 ID",
-    "title": "도서 제목",
-    img: 이미지 id,
-    "summary": "요약 설명",
-    "author": "도서 작가",
-    "price": 가격,
-    "likes": 좋아요 수,
-    "pubDate": "출간일"
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "도서 제목",
+      "img": 1,
+      "summary": "요약 설명",
+      "author": "도서 작가",
+      "price": 20000,
+      "likes": 3,
+      "pubDate": "2023-12-10"
+    }
+  ],
+  "pagination": {
+    "currentPage": 1,
+    "totalPages": 2,
+    "totalCount": 8
   }
-]
+}
 ```
 
 
@@ -190,24 +216,23 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 
 ## ✍️ 좋아요 추가
 
-|**항목**|**내용**|
-|---|---|
-|**Method**|POST|
-|**URI**|/likes/{bookId}|
-|**HTTP Status**|200 OK|
-|**Request Header**|Authorization: Bearer <token> (필요 시)|
-|**Request Body**|{ "user_id": number }|
-|**Response Body**|{ "message": "좋아요 등록 완료", ... } 또는 SQL 결과|
+| **항목**             | **내용**                                   |
+| ------------------ | ---------------------------------------- |
+| **Method**         | POST                                     |
+| **URI**            | /likes/{bookId}                          |
+| **HTTP Status**    | 200 OK                                   |
+| **Request Header** | Authorization: 로그인할 때 받은 JWT Token (문자열) |
+
 
 
 ## ✍️ 좋아요 취소
-|**항목**|**내용**|
-|---|---|
-|**Method**|DELETE|
-|**URI**|/likes/{bookId}|
-|**HTTP Status**|200 OK|
-|**Request Body**|{ "user_id": number }|
-|**Response Body**|{ "message": "좋아요 취소 완료", ... } 또는 SQL 결과|
+| **항목**             | **내용**                                   |
+| ------------------ | ---------------------------------------- |
+| **Method**         | DELETE                                   |
+| **URI**            | /likes/{bookId}                          |
+| **HTTP Status**    | 200 OK                                   |
+| **Request Header** | Authorization: 로그인할 때 받은 JWT Token (문자열) |
+
 
 
 
@@ -218,6 +243,7 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 - **Method**: `POST`  
 - **URI**: `/cart`  
 - **Status**: `201 OK`
+- **Request Header** : Authorization: 로그인할 때 받은 JWT Token (문자열)
 
 ### Request Body
 ```json
@@ -307,35 +333,16 @@ new : true => 신간 조회(기준 : 출간일 1달 이내)
 
 ## ✍️ 결제하기 
 = 주문하기 = 주문등록 = 데이터베이스 주문 insert = 장바구니에서 주문된 상품은 delete
- 
-- **Method**: `POST`  
-- **URI**: `/orders`  
-- **Status**: `200 OK`
 
-### Request Body
-```json
-{
-	 items: [
-		 {cartItemId: 장바구니 도서 id, bookId: 도서 id, quantity: 수량},
-		 {cartItemId: 장바구니 도서 id, bookId: 도서 id, quantity: 수량}, ...
-	 ],
-	 delivery: {
-		 address: "주소",
-		 receiver: "이름",
-		 contact: "010-0000-0000"
-	 },
-	 totalQuantity: 총수량,
-	 totalPrice: 총금액,
-	 userId: 회원 id
-}
-```
-
-### Response Body
-```json
-[
-
-]
-```
+| **항목**             | **내용**                                               |
+| ------------------ | ---------------------------------------------------- |
+| **별칭**             | 주문하기, 주문 등록, 결제하기                                    |
+| **Method**         | POST                                                 |
+| **URI**            | /orders                                              |
+| **HTTP Status**    | 200 OK                                               |
+| **Request Header** | Authorization: Bearer <JWT Token> (로그인 시 발급된 토큰 사용)  |
+| **Request Body**   | 주문 정보 + 배송지 정보 + 장바구니 정보 포함                          |
+| **Response Body**  | { "success": true, "orderId": 1, "deliveryId": 3 } 등 |
 
 ---
 
