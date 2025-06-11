@@ -1,5 +1,5 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 166 at column 468: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 08 Jun 2025 11:44:38 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 08 Jun 2025 11:44:07 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 608 at column 1889: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 11 Jun 2025 05:16:37 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 11 Jun 2025 05:16:02 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
  <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
 “공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
 이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터, 어떻게 구성하면 실무에 유리한지, 그리고 Storybook을 통해 어떻게 문서화하고 협업까지 연결할 수 있는지를 정리해봤어요.<br><br><br>디자인 시스템은 일관된 UI/UX를 제공하기 위한 설계 기준이에요.<br>
@@ -95,7 +95,66 @@ export const Primary = {
 <br>이렇게 하면 디자이너가 디자인을 바꾸면, 바로 코드에 반영되도록 자동화할 수 있어요.<br><br><br>처음엔 ‘왜 굳이 이렇게까지 해야 해?’ 싶을 수 있지만,<br>
 컴포넌트가 많아지고, 팀원이 늘어나고, 유지보수를 하게 될수록 디자인 시스템의 필요성을 절실히 느낍니다.<br>
 작은 프로젝트부터라도 토큰 하나, 버튼 하나부터 시작해보세요.<br>
-다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Wed, 30 Apr 2025 16:03:14 GMT</pubDate></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
+다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Wed, 30 Apr 2025 16:03:14 GMT</pubDate></item><item><title><![CDATA[무제]]></title><description><![CDATA[ 
+ <br><br><br>dot-daily/
+├── public/                   # 정적 리소스 (이모지, 아이콘 등)
+├── src/
+│   ├── components/           # 공통 UI 컴포넌트
+│   │   ├── common/           # Button, Modal, Badge, Input 등
+│   │   ├── todos/            # TodoCard, PriorityBadge 등
+│   │   ├── review/           # EmotionSelector, ReviewEditor 등
+│   │   ├── calendar/         # DateSlider, CalendarHeader 등
+│   │   └── layout/           # Header, Footer, TabBar 등
+│
+│   ├── features/             # 도메인 단위 기능 묶음
+│   │   ├── todos/            
+│   │   │   ├── api.ts        # 투두 관련 API (fetch, add, delete 등)
+│   │   │   ├── store.ts      # Zustand 상태 관리
+│   │   │   ├── types.ts      # Todo 타입
+│   │   │   └── utils.ts      # 날짜 필터링 등 유틸
+│   │   ├── review/           # 회고 도메인
+│   │   ├── user/             # 사용자 정보 및 통계
+│   │   └── auth/             # 로그인, 회원가입, JWT 관리
+│
+│   ├── hooks/                # 커스텀 훅 (e.g. useTodoForm, useModal)
+│   ├── constants/            # 상수 (우선순위, 이모지, 색상 등)
+│   ├── utils/                # 날짜 포맷, 토큰 관리, 공용 유틸
+│   ├── store/                # 공통 전역 상태관리 (다중 도메인일 경우)
+│   ├── styles/               # Tailwind, reset.css 등
+│   ├── pages/                # Next.js 라우팅
+│   │   ├── index.tsx         # 홈 - 오늘의 할 일
+│   │   ├── review.tsx        # 회고 페이지
+│   │   ├── archive.tsx       # 보류함
+│   │   ├── login.tsx         
+│   │   ├── signup.tsx
+│   │   └── my.tsx            # 나의 정보
+│   └── storybook/            # Storybook 설정 및 preview.ts
+│
+├── .storybook/               # Storybook 설정
+├── tailwind.config.js
+├── tsconfig.json
+└── README.md
+<br>
+<br>처음부터 Zustand로 상태 관리
+<br>도메인 기반 분리 (todos, review, auth, user 등 기능 단위)
+<br>Storybook, constants, hooks, styles 등 공통 관리 폴더 유지
+<br>슬라이드/모션 애니메이션 → Framer Motion
+<br>드래그 앤 드랍 기능 → @dnd-kit/core or react-beautiful-dnd
+<br><br><br>// constants/priority.ts
+export const PRIORITY_OPTIONS = [
+  { id: 1, label: '오늘 무조건', color: 'red' },
+  { id: 2, label: '오늘이면 굿', color: 'green' },
+  { id: 3, label: '잊지 말자', color: 'blue' },
+];
+
+// constants/emotion.ts
+export const EMOTION_TAGS = [
+  { id: 'happy', label: '좋음', emoji: '😊', color: 'pink' },
+  { id: 'meh', label: '그냥그럼', emoji: '😐', color: 'gray' },
+  { id: 'tired', label: '지침', emoji: '😩', color: 'orange' },
+  // ...
+];
+]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/무제.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/무제.md</guid><pubDate>Tue, 10 Jun 2025 00:27:27 GMT</pubDate></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
  <br>
 <br>Redux,Zustand<br>
 Pure Redux<br>
@@ -164,7 +223,390 @@ console.log(store.getState())
 퍼널 구조 / useFunnel<br>
 디바운싱과 쓰로틀링 - 요청 받은것에 대해 최적화<br>
 살펴보면 퀄리티 향상에 도움이 된다.<br><a rel="noopener nofollow" class="external-link" href="https://m.blog.naver.com/topblade71/222964598090" target="_blank">https://m.blog.naver.com/topblade71/222964598090</a><br>
-<a rel="noopener nofollow" class="external-link" href="https://m.blog.naver.com/topblade71/222964598090" target="_blank">https://m.blog.naver.com/topblade71/222964598090</a>]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Wed, 21 May 2025 09:01:48 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
+<a rel="noopener nofollow" class="external-link" href="https://m.blog.naver.com/topblade71/222964598090" target="_blank">https://m.blog.naver.com/topblade71/222964598090</a>]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Wed, 21 May 2025 09:01:48 GMT</pubDate></item><item><title><![CDATA[폴더 구조]]></title><description><![CDATA[ 
+ <br><br>/src
+  /assets      # 이미지, 폰트 등
+  /components  # UI 컴포넌트
+  /constants   # 상수
+  /hooks       # 커스텀 훅
+  /models      # 유틸리티 함수
+  /services    # API 호출
+  /utils       # 유틸리티 함수
+<br>이러한 구조는 처음 시작할 때 매우 자연스럽고 명확합니다. "이건 UI 컴포넌트니까 components에, 이건 API 통신이니까 services에" 하는 식으로 직관적으로 파일을 분류할 수 있습니다. 그래서 대부분의 튜토리얼이나 스타터 키트들도 이런 구조를 채택하고 있고 입문자에게도 아주 친숙합니다.<br>작은 프로젝트나 시작 단계에서는 이 구조가 특히나 효과적입니다. 파일 수가 적고, 각 폴더의 역할이 명확하며, 특정 종류의 코드를 찾기 쉽기 때문입니다.&nbsp;개발을 시작할 때 정신적 부담 없이 코드를 쉽게 나눌 수 있는 구조라고 할 수 있겠습니다.<br><br><br>/components
+  /atoms            # 기본 요소
+    Button.tsx
+    Input.tsx
+    Label.tsx
+  /molecules        # 간단한 조합
+    FormField.tsx
+    SearchBar.tsx
+  /organisms        # 복잡한 조합
+    ProductCard.tsx
+    NavigationBar.tsx
+  /templates        # 페이지 템플릿
+    ProductDetailTemplate.tsx
+  /pages            # 전체 페이지
+    ProductDetailPage.tsx
+<br>실제 프로젝트의 폴더구조에 Atomic Design을 적용해보면 유용함과 한계점을 모두 마주하게 됩니다.&nbsp;분명 디자인 시스템을 직관적으로 보여주는데, 어디서 문제가 되는 걸까요? 한번 ProductCard 같은 컴포넌트를 생각해봅시다. ProductCard는 어디에 두어야 할까요? 내부적으로 Card와 Button을 사용하니 atom은 당연히 아닌 것 확실한데... 그래서 간단한 원자들로 조립했으니 molecules일까요? 아니면 비즈니스 로직을 포함하고 복잡하니 organisms?<br>
+문제은 이 뿐만이 아닙니다. 이렇게 원자 - 분자 - 유기체 이렇게 3개의 폴더 구조만으로는 점점 더 많아지는 컴포넌트들을 감당하기가 어려워 집니다.<br>
+왜 이런 문제가 생기는 걸까요? 그 이유는 Atomic Design Pattern이 간과한 중요한 점이 있었습니다.&nbsp;바로 모든 컴포넌트를 단순히 계층만으로 분류할 수 없다는 것이었죠.&nbsp;Atomic Design Pattern은 디자인 시스템에는 적합했지만, 실제 프로젝트의 컴포넌트들은 디자인 시스템에서 말하는 UI 컴포넌트로만 되어 있는 것이 아니었기 때문입니다.<br><br><br>프론트엔드 개발에는 근본적으로&nbsp;두 가지 다른 종류의 컴포넌트가 존재합니다. 디자인 시스템을 구성하는 순수한 UI 컴포넌트가 있다면, 그 컴포넌트들을 활용해서 비즈니스 로직을 구동하는 도메인 컴포넌트도 존재합니다.<br>
+Atomic Design Pattern은 디자인 시스템의&nbsp;계층(atoms, molecules, organisms)을 표현하기에는 유용했지만, 또 다른 중요한 축인&nbsp;도메인(product, user, order)을 다루는 컴포넌트들을 제대로 분류하지 못한다는 한계가 있었습니다.<br>도메인이란 무엇일까요?&nbsp;도메인이란 비즈니스에서 다루는 개념적 영역을 말합니다. 쇼핑몰을 예로 들면 '제품', '장바구니', '사용자', '주문' 등이 주요 도메인이 됩니다. 그리고 제품목록, 주문내역, 사용자 다이얼로그 등이 바로 도메인정보를 다루는 컴포넌트, 즉 도메인 컴포넌트가 되겠습니다.<br>도메인 정보를 다루는 컴포넌트들은 기존의 버튼, 드롭다운, 모달 같은 순수한 화면 요소를 다루는 것에서 확장되면서 어떤 차이점을 가지고 있는지 한번 자세히 알아보겠습니다.<br>웹 개발 방식이 컴포넌트 기반 개발이 주류가 되면서,&nbsp;"컴포넌트는 재사용 가능해야 한다"는 원칙이 프론트엔드 개발의 핵심 철학으로 자리잡았습니다. 개발자들은 반복되는 버튼, 카드, 입력필드등에서의 중복 코드를 줄이고 일관된 UI를 구현하고 싶어했습니다. 그러면서도 컴포넌트를 최대한 독립적으로 만들려고 노력했고, 공통 코드는 모으되 props를 통해 외부에서 모든 것을 주입받도록 설계하는 것이 베스트 프랙티스로 여겨졌습니다.<br>function Button({ children, onClick, variant, size, disabled }) {
+  return (
+    &lt;button 
+      className={`btn btn-${variant} btn-${size}`}
+      onClick={onClick}
+      disabled={disabled}
+    &gt;
+      {children}
+    &lt;/button&gt;
+  );
+}
+<br>Button 같은&nbsp;순수 UI 컴포넌트에서 이 접근법은 주효했습니다. 어디서든 사용할 수 있었고, 로그인 버튼이든, 장바구니 추가 버튼이든, 삭제 버튼이든 상관없이 일관된 동작을 보여주었습니다. 필요에 따라서 적절히 props를 통해서 공통 코드를 재사용하면서도 커스텀도 가능해지면서 컴포넌트를 "재사용성"이라는 원칙을 지키도록 작성하는 것은 중요한 덕목이 되었습니다.<br>이런 경험을 바탕으로 개발자들은 자연스럽게 다른 컴포넌트에도 같은 원칙을 적용하기 시작했습니다. 가령 상품 목록 리스트 항목을 그리는 ProductItem 같은 도메인 컴포넌트가 검색결과나 카탈로그, 찜 목록 등에 사용되니 다음과 같이 만들어 props를 통해 적절히 원하는대로 커스텀이 가능하도록 만들어 보았습니다.<br>function ProductItem({ product, onAddToCart, onToggleFavorite, showPrice, showRating }) {
+  return (
+    &lt;div className="product-item"&gt;
+      &lt;img src={product.image} alt={product.name} /&gt;
+      &lt;h3&gt;{product.name}&lt;/h3&gt;
+      {showPrice &amp;&amp; &lt;span&gt;{product.price}&lt;/span&gt;}
+      {showRating &amp;&amp; &lt;Rating value={product.rating} /&gt;}
+      &lt;Button onClick={() =&gt; onAddToCart(product)}&gt;장바구니&lt;/Button&gt;
+      &lt;Button onClick={() =&gt; onToggleFavorite(product)}&gt;♡&lt;/Button&gt;
+    &lt;/div&gt;
+  );
+}
+<br>이러한 방식은 초기에는 잘 작동했습니다. 두 화면 모두에서 ProductItem을 재사용할 수 있었고, 옵션에 따라 원하는 필드의 노출이나 기능을 달리 할 수 있었죠. Button에서처럼 컴포넌트의 재사용이라는 목표를 달성하는 것 같았습니다.<br>하지만 프로젝트가 복잡해지면서 컴포넌트의 재사용성에 대한 의문이 생기기 시작했습니다. 가령 장바구니에서는 수량 조절이, 위시리스트에서는 다른 UI가 필요해지니 아래와 같이 재사용을 하기 시작했습니다.<br>// 처음엔 간단했는데...
+&lt;ProductItem product={product} /&gt;
+
+// 장바구니용 기능이 필요해지니...
+&lt;ProductItem product={product} showQuantity={true} onQuantityChange={handleQuantity} /&gt;
+
+// 위시리스트용도 추가하니...
+&lt;ProductItem 
+  product={product} 
+  variant="wishlist" 
+  showDate={true}
+  showPriceAlert={true}
+  onRemove={handleRemove}
+/&gt;
+<br>각각의 새로운 요구사항마다 props를 추가하는 것이 재사용이라는 측면에서는 당연한 조치였지만 예상과는 달리 코드는 점점 더 복잡해져갔습니다. props가 늘어날수록 컴포넌트를 사용하기가 더 어려워졌고, 내부 로직은 조건문으로 가득해졌습니다. 또한 새로운 기능을 추가할 때마다 다른 variant에서는 문제가 없는지 계속 확인해야 했죠.<br>나중에야 알게 된 사실이지만 이런 유형의 컴포넌트들은 전통적인 방식으로는 재사용리 잘 되지 않습니다.&nbsp;카탈로그의 ProductItem과 장바구니의 ProductItem은 겉보기에 같은 컴포넌트였지만 실제로는 다른 목적과 동작을 가지고 있었습니다. 그럼에도 하나의 컴포넌트로 억지로 묶어두다 보니 둘 다 최적화되지 못한 어정쩡한 결과물이 나온 것입니다.<br>구체적으로 잘못된 재사용을 하는 경우란&nbsp;데이터가 다른 데도 같은 UI를 사용한다는 이유로 하나의 컴포넌트로 추상화를 하는 방식입니다.<br>가령 게시판를 만든다고 생각해 봅시다. 공지사항, 문의게시판, 방명록 등이 프로젝트 전체에서 유사한 기능과 화면을 가지고 있으니 이를 하나의 컴포넌트로 만들어 API나 일부 화면만 분기하는 방식으로 재사용을 하려고 합니다.<br>그래서 다음과 같이 BoardList와 같은 컴포넌트를 만들고 API와 타입 등을 받아서 다른 데이터들을 일부 분기되는 처리와 옵션을 달리 하는 방식으로 만들어 보았습니다.<br>function BoardList({ 
+  boardType, 
+  apiEndpoint, 
+  showAuthor = true, 
+  showCategory = false,
+  allowReply = false 
+}) {
+  const { data: posts } = useFetch(apiEndpoint);
+  
+  return (
+    &lt;div className="board-list"&gt;
+      {posts?.map(post =&gt; (
+        &lt;div key={post.id} className="board-item"&gt;
+          &lt;h3&gt;{post.title}&lt;/h3&gt;
+          {showAuthor &amp;&amp; &lt;span&gt;작성자: {post.author}&lt;/span&gt;}
+          {showCategory &amp;&amp; &lt;span&gt;분류: {post.category}&lt;/span&gt;}
+          &lt;span&gt;{post.createdAt}&lt;/span&gt;
+          {allowReply &amp;&amp; &lt;ReplyButton postId={post.id} /&gt;}
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+
+// 사용 예시
+&lt;BoardList boardType="notice" apiEndpoint="/api/notices" showCategory={true} /&gt;
+&lt;BoardList boardType="qna" apiEndpoint="/api/qna" allowReply={true} /&gt;
+&lt;BoardList boardType="guestbook" apiEndpoint="/api/guestbook" showAuthor={false} /&gt;
+<br>이러한 방식은 얼핏 괜찮은 방식처럼 보입니다. 실제로 더 이상 프로젝트가 변하지 않거나 이 요구사항으로만 모든 기획을 처리해야할때 까지는 맞는 이야기입니다. 이 하나의 컴포넌트로 여러 종류의 게시판을 처리할 수 있었고, 코드 중복도 줄일 수 있었죠. 하지만 문제는 서비스가 잘되면 프로젝트와 요구사항은 언제나 변하고 커진다는 데에 있습니다.<br>요구사항은 화면이 아니라 도메인에 따라 방향성이 달라집니다.&nbsp;공지사항은 '중요' 배지 기능을 요구했고, 문의 게시판은 답변 상태나 비밀글 기능이 필요했으며, 방명록은 본문 미리보기도 같이 보여달라는 등 처음에는 같은 화면이었지만 점점 요구사항이 특수성에 따라 달라지는 것이고 이는 도메인의 특성에 기인하는 것이죠.<br>만일 현명하게 이를 대처하고자 했다면 BoardList는 데이터와 무관하게 화면과 기능을 확장할 수 있도록 하고 props가 아니라 다양한 컴포넌트를 조립할 수 있도록 만들어야 합니다. 그리고 각자 도메인별로는 코드의 중복을 인정하고 BoardList를 활용해서 각자의 방식으로 독립적으로 발전 할 수 있는 구조로 만들어야 하죠.<br><br>순수 UI 컴포넌트:<br>
+<br>Button, Input, Modal, Dropdown 등
+<br>도메인 지식이 전혀 필요 없음
+<br>어떤 맥락에서든 동일하게 동작
+<br>높은 재사용성이 가능하고 재사용성을 갖추는게 바람직한 방향
+<br>디자인 시스템의 변화를 따라감
+<br>도메인 컴포넌트:<br>
+<br>ProductItem, UserProfile, OrderSummary 등
+<br>특정 비즈니스 도메인의 개념을 표현
+<br>맥락에 따라 다른 UI와 동작이 필요
+<br>컴포넌트의 재사용이 중요한 가치가 아님
+<br>비즈니스 요구사항의 변화를 따라감
+<br>우리가 얻은 교훈은&nbsp;요구사항은 도메인을 중심으로 발전한다는 것이었습니다. 그렇기에 같은 화면을 가진 컴포넌트라도 코드가 중복되더라도 도메인에 따라 분리하는 것이 장기적으로 더 유지보수하기 좋은 방향이 되는만큼,&nbsp;도메인을 다루는 컴포넌트와 UI를 다루는 컴포넌트는 서로 다른 관점에서 접근하고 이를 분리해서 관리하는 방향으로 진화하게 되었습니다.<br><br>문제의 핵심은 도메인 컴포넌트에 비즈니스 로직이 섞여 있다는 점이었습니다. 이를 해결하기 위해&nbsp;컨테이너-프레젠터 패턴이 등장했습니다.<br>
+이 패턴의 핵심은&nbsp;로직을 담당하는 컨테이너 컴포넌트와&nbsp;UI만 담당하는 프레젠터 컴포넌트를 분리하는 것이었습니다.<br>// 프레젠터: 순수하게 UI만 담당
+function ProductItemView({ 
+  product, 
+  isInCart, 
+  isFavorite, 
+  onAddToCart, 
+  onToggleFavorite 
+}) {
+  return (
+    &lt;div className="product-item"&gt;
+      &lt;img src={product.image} alt={product.name} /&gt;
+      &lt;h3&gt;{product.name}&lt;/h3&gt;
+      &lt;span&gt;{product.price}&lt;/span&gt;
+      &lt;Button 
+        onClick={onAddToCart}
+        disabled={isInCart}
+      &gt;
+        {isInCart ? '이미 담김' : '장바구니'}
+      &lt;/Button&gt;
+      &lt;Button 
+        onClick={onToggleFavorite}
+        variant={isFavorite ? 'filled' : 'outline'}
+      &gt;
+        ♡
+      &lt;/Button&gt;
+    &lt;/div&gt;
+  );
+}
+
+// 컨테이너: 로직을 담당
+function CatalogProductItem({ product }) {
+  const { addToCart, isInCart } = useCart();
+  const { toggleFavorite, isFavorite } = useFavorites();
+  
+  const handleAddToCart = () =&gt; {
+    addToCart(product);
+    // 카탈로그 특화 로직: 추천 시스템에 데이터 전송
+    analytics.track('product_added_from_catalog', { productId: product.id });
+  };
+  
+  const handleToggleFavorite = () =&gt; {
+    toggleFavorite(product);
+    // 카탈로그 특화 로직
+    analytics.track('product_favorited_from_catalog', { productId: product.id });
+  };
+  
+  return (
+    &lt;ProductItemView
+      product={product}
+      isInCart={isInCart(product.id)}
+      isFavorite={isFavorite(product.id)}
+      onAddToCart={handleAddToCart}
+      onToggleFavorite={handleToggleFavorite}
+    /&gt;
+  );
+}
+
+// 장바구니용 컨테이너는 완전히 다른 로직
+function CartProductItem({ item }) {
+  const { updateQuantity, removeItem } = useCart();
+  
+  const handleQuantityChange = (newQuantity) =&gt; {
+    updateQuantity(item.id, newQuantity);
+    analytics.track('cart_quantity_updated', { 
+      productId: item.product.id, 
+      quantity: newQuantity 
+    });
+  };
+  
+  // 장바구니에는 ProductItemView가 아닌 완전히 다른 UI 사용
+  return (
+    &lt;div className="cart-item"&gt;
+      &lt;img src={item.product.image} alt={item.product.name} /&gt;
+      &lt;div className="item-details"&gt;
+        &lt;h4&gt;{item.product.name}&lt;/h4&gt;
+        &lt;span&gt;{item.product.price} × {item.quantity}&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;QuantitySelector 
+        value={item.quantity}
+        onChange={handleQuantityChange}
+      /&gt;
+      &lt;Button onClick={() =&gt; removeItem(item.id)}&gt;삭제&lt;/Button&gt;
+    &lt;/div&gt;
+  );
+}
+<br>이런 접근법은 각 컨테이너가 자신의 맥락에 최적화된 로직을 가질 수 있게 해주었습니다. 카탈로그에서는 "구매 유도"에, 장바구니에서는 "수량 관리"에 집중할 수 있었죠.<br><br>하지만 컨테이너-프레젠터 패턴으로도 해결되지 않는 문제가 있었습니다. 바로&nbsp;Props Drilling이었습니다. 독립성을 위해 필요한 데이터와 함수들을 계속 props로 전달해야 했고, 중간 계층 컴포넌트들은 실제로는 데이터 전달만 하면서도 모든 props를 받아서 다시 전달해야 했습니다.<br>function ProductSection({ products, onAddToCart, onToggleFavorite }) {
+  return (
+    &lt;ProductList 
+      products={products} 
+      onAddToCart={onAddToCart}
+      onToggleFavorite={onToggleFavorite}
+    /&gt;
+  );
+}
+
+function ProductList({ products, onAddToCart, onToggleFavorite }) {
+  return (
+    &lt;div&gt;
+      {products.map(product =&gt; (
+        &lt;ProductItem 
+          key={product.id}
+          product={product} 
+          onAddToCart={onAddToCart}
+          onToggleFavorite={onToggleFavorite}
+        /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+<br>중간 계층의 컴포넌트들은 실제로는 데이터를 전달하는 역할만 하면서도, 독립성을 위해 모든 props를 받아서 다시 전달해야 했습니다. 재사용은 되지 않으면서 복잡도만 증가하는 상황이 벌어진 것입니다. 이는 UI 컴포넌트를 만들때에는 발생하지 않던 개념이었습니다.<br><br>이런 문제들을 해결하기 위해 프론트엔드 커뮤니티에서는 여러 패턴들이 자연스럽게 발전했습니다.&nbsp;Container-Presenter 패턴은 로직과 UI를 명확히 분리하려는 시도였고,&nbsp;커스텀 훅의 부상은 비즈니스 로직을 컴포넌트에서 분리하여 재사용 가능한 형태로 만드는 패턴이었습니다.&nbsp;Context API와 전역 상태 관리는 Props drilling 문제를 해결하고 도메인 상태를 효율적으로 관리하기 위한 패턴들이었습니다.<br>// 전역 상태를 활용한 도메인 컴포넌트
+function CatalogProductItem({ product }) {
+  // props drilling 없이 직접 필요한 로직에 접근
+  const { addToCart, isInCart } = useCart();
+  const { toggleFavorite, isFavorite } = useFavorites();
+  
+  return (
+    &lt;div className="product-item"&gt;
+      &lt;img src={product.image} alt={product.name} /&gt;
+      &lt;h3&gt;{product.name}&lt;/h3&gt;
+      &lt;span&gt;{product.price}&lt;/span&gt;
+      &lt;Button onClick={() =&gt; addToCart(product)}&gt;
+        {isInCart(product.id) ? '이미 담김' : '장바구니'}
+      &lt;/Button&gt;
+      &lt;Button onClick={() =&gt; toggleFavorite(product.id)}&gt;
+        {isFavorite(product.id) ? '❤️' : '♡'}
+      &lt;/Button&gt;
+    &lt;/div&gt;
+  );
+}
+<br>이런 패턴들이 등장한 배경에는 공통된 인식이 있었습니다.&nbsp;도메인 컴포넌트는 props drilling 없이 필요한 도메인 로직에 직접 접근할 수 있어야 한다는 것이었습니다. 이는 기존의 "모든 것을 props로"라는 패러다임에서 "필요한 것을 직접 가져오기"라는 패러다임으로의 전환을 의미했습니다.<br><br><br>컴포넌트를 통해 발견한 "순수 UI"와 "도메인"의 구분은 사실 컴포넌트만의 이야기가 아니었습니다. 프로젝트가 성장하면서 이런 구분이 프론트엔드 개발의 모든 영역에서 나타나기 시작했죠.<br>훅(Hooks)에서도 마찬가지였습니다.&nbsp;useToggle(),&nbsp;useDebounce(),&nbsp;useClickOutside()&nbsp;같은 훅들은 어떤 도메인 지식도 필요 없는 순수한 유틸리티 훅이었습니다. 반면&nbsp;useCart(),&nbsp;useAuth(),&nbsp;useProductSearch()&nbsp;같은 훅들은 특정 비즈니스 로직과 밀접하게 연관되어 있었죠.<br>// 순수 유틸리티 훅 - 어디서든 사용 가능
+function useDebounce(value: string, delay: number) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  
+  useEffect(() =&gt; {
+    const handler = setTimeout(() =&gt; setDebouncedValue(value), delay);
+    return () =&gt; clearTimeout(handler);
+  }, [value, delay]);
+  
+  return debouncedValue;
+}
+
+// 도메인 훅 - 장바구니 비즈니스 로직 포함
+function useCart() {
+  const dispatch = useDispatch();
+  const items = useSelector(selectCartItems);
+  
+  const addToCart = (product: Product) =&gt; {
+    dispatch(cartActions.add(product));
+    analytics.track('cart.item_added', { productId: product.id });
+  };
+  
+  return { items, addToCart, totalPrice: calculateTotal(items) };
+}
+<br>API 레이어에서도 동일한 패턴이 보였습니다.&nbsp;httpClient.get(),&nbsp;httpClient.post()&nbsp;같은 기본 HTTP 통신 유틸리티와&nbsp;productApi.getAll(),&nbsp;cartApi.checkout()&nbsp;같은 도메인 특화 API는 성격이 완전히 달랐습니다. 전자는 어떤 프로젝트에서도 그대로 사용할 수 있지만, 후자는 해당 도메인의 비즈니스 규칙을 반영하고 있었죠.<br>심지어 유틸리티 함수들도 마찬가지였습니다.&nbsp;formatDate(),&nbsp;debounce(),&nbsp;deepClone()&nbsp;같은 범용 유틸리티와&nbsp;calculateShippingFee(),&nbsp;validateProductCode(),&nbsp;formatProductPrice()&nbsp;같은 도메인 유틸리티는 근본적으로 다른 성격을 가지고 있었습니다.<br><br>이런 발견은 자연스럽게 폴더 구조에도 반영되기 시작했습니다. 처음에는 단순히&nbsp;/components,&nbsp;/hooks,&nbsp;/services,&nbsp;/utils로 나누었지만, 각 폴더 내부에서는 도메인을 기준으로 세분화가 일어났죠.<br>/hooks
+  /ui              # 순수 UI 관련 훅
+    useModal.ts
+    useDebounce.ts
+    useToggle.ts
+  /product         # 제품 도메인 훅
+    useProducts.ts
+    useProductDetail.ts
+  /cart            # 장바구니 도메인 훅
+    useCart.ts
+    useCheckout.ts
+
+/services
+  /common          # 기본 API 클라이언트
+    client.ts
+    interceptors.ts
+  /product         # 제품 도메인 API
+    productApi.ts
+  /cart            # 장바구니 도메인 API
+    cartApi.ts
+<br><br>컴포넌트는 도메인 중심의 세분화가 정착되면서 폴더 구조는 한층 체계적이 되었습니다. 하지만 여전히 해결되지 않은 불편함이 하나 있었죠. 바로 페이지 컴포넌트의 애매한 위치였습니다.<br>React로 처음 프로젝트를 시작했던 시절에는 모든 컴포넌트를 단순히&nbsp;/components&nbsp;폴더 안에 넣었습니다. HomePage, ProductListPage 같은 페이지 컴포넌트도, Button이나 Modal 같은 일반 컴포넌트도 모두 한 곳에 있었죠. 이름에 'Page'를 붙여서 구분하려 했지만, 프로젝트가 커질수록 이런 네이밍 컨벤션만으로는 부족했습니다.<br>/components
+  Button.tsx
+  Modal.tsx
+  Header.tsx
+  HomePage.tsx           # 페이지? 컴포넌트?
+  LoginPage.tsx          
+  ProductCard.tsx
+  ProductListPage.tsx    # 이름으로만 구분
+  ProductDetailPage.tsx
+  CartIcon.tsx
+  CartPage.tsx
+  UserProfile.tsx
+  UserSettingsPage.tsx
+<br>더 큰 문제는 라우팅 설정과 실제 컴포넌트 사이의 거리였습니다. React Router 설정은 보통 App.js나 별도의 routes.js 파일에 있었고, 실제 페이지 컴포넌트는 components 폴더 깊숙한 곳에 있었죠. 새로운 개발자가 "이 URL은 어떤 컴포넌트를 렌더링하지?"라는 질문을 받으면, 라우팅 설정 파일을 열어보고, 거기서 import 경로를 따라가서, 해당 컴포넌트를 찾아야 했습니다. 단순해 보이지만 은근히 번거로운 과정이었죠.<br>페이지 컴포넌트는 분명 다른 컴포넌트들과는 다른 역할을 했습니다. URL과 직접 연결되고, 데이터 페칭의 시작점이 되며, SEO와 관련된 메타데이터를 설정하는 곳이었죠. 하지만 폴더 구조상으로는 이런 특별함이 전혀 드러나지 않았습니다. Button 컴포넌트 옆에 HomePage 컴포넌트가 나란히 있는 것은 뭔가 어색했습니다.<br><br>이런 불편함을 해소한 것이 바로 파일 기반 라우팅이었습니다. 파일 시스템의 구조가 곧 URL 구조가 된다는 간단한 아이디어였지만, 그 영향력은 대단했습니다. 이제&nbsp;/pages/products/[id].tsx&nbsp;파일을 만들면 자동으로&nbsp;/products/:id&nbsp;라우트가 생성되었습니다.<br>이와 같은 방법은 라우팅 설정을 별도로 관리할 필요가 없었고, URL만 보면 어떤 파일을 찾아가야 하는지 즉시 알 수 있었죠. 이는 단순히 편의성의 문제가 아니었습니다. 페이지라는 개념이 다른 컴포넌트들과는 본질적으로 다른 역할을 한다는 것을 구조적으로 개념화 한것이죠.<br>페이지는 애플리케이션의 진입점입니다. 사용자가 URL을 통해 직접 접근하는 곳이고, SEO가 중요한 곳이며, 데이터 페칭이 시작되는 곳이죠. 이런 특별한 역할을 하는 컴포넌트들을 일반 컴포넌트와 같은 폴더에 두는 것은 그 중요성을 제대로 반영하지 못한 것이었습니다<br><br><br>이렇게 역할별 분류, 도메인별 세분화, 그리고 페이지의 독립이라는 세 가지 진화가 만나면서 현대 프론트엔드 프로젝트의 일반적인 구조가 형성되었습니다. 대부분의 스타터 키트나 보일러플레이트를 열어보면 비슷한 패턴을 발견할 수 있죠.<br>/src
+  /pages (또는 /app)     # 라우팅 진입점
+    index.tsx
+    about.tsx
+    /products
+      index.tsx
+      [id].tsx
+    /cart
+      index.tsx
+      checkout.tsx
+    /auth
+      login.tsx
+      register.tsx
+      
+  /components           # UI 컴포넌트
+    /ui                 # 순수 UI (도메인 무관)
+      Button.tsx
+      Modal.tsx
+      Card.tsx
+      Input.tsx
+    /product           # 제품 도메인
+      ProductCard.tsx
+      ProductList.tsx
+    /cart              # 장바구니 도메인
+      CartItem.tsx
+      CartSummary.tsx
+    /layout            # 레이아웃 컴포넌트
+      Header.tsx
+      Footer.tsx
+      Sidebar.tsx
+      
+  /hooks               # 커스텀 훅
+    /ui                
+      useModal.ts
+      useDebounce.ts
+    /product          
+      useProducts.ts
+      useProductDetail.ts
+    /cart             
+      useCart.ts
+    /auth
+      useAuth.ts
+      usePermissions.ts
+      
+  /services           # API 레이어
+    /api              
+      client.ts
+      interceptors.ts
+    /product          
+      productApi.ts
+    /cart             
+      cartApi.ts
+    /auth
+      authApi.ts
+      
+  /store              # 상태 관리
+    /slices
+      productSlice.ts
+      cartSlice.ts
+      authSlice.ts
+    store.ts
+    
+  /utils              # 유틸리티
+    /common
+      formatters.ts
+      validators.ts
+      constants.ts
+    /product
+      priceCalculator.ts
+    /date
+      dateHelpers.ts
+      
+  /types              # TypeScript 타입 정의
+    /models
+      product.ts
+      user.ts
+      cart.ts
+    /api
+      responses.ts
+      requests.ts
+      
+  /styles             # 스타일 파일
+    /globals
+      reset.css
+      variables.css
+    /components
+      button.module.css
+      
+  /assets             # 정적 리소스
+    /images
+    /fonts
+    /icons
+<br>최상위에는 여전히 components, hooks, services 같은 역할별 폴더들이 있습니다. 하지만 이제 각 폴더 내부를 들여다보면 ui, product, cart 같은 도메인별 하위 폴더들이 있죠. 그리고 pages나 app 폴더는 독립적으로 존재하며 라우팅 구조를 담당합니다.<br>이런 구조에서 개발자의 사고 흐름은 대체로 이렇습니다. "장바구니에 상품을 추가하는 훅이 필요해. 그러면 hooks 폴더로 가서, cart 하위 폴더를 찾아보자." 또는 "제품 상세 페이지를 수정해야 해. pages 폴더의 products 아래에 있겠군." 역할이라는 큰 분류 아래 도메인이라는 세부 분류가 있는 이중 구조는 직관적이면서도 체계적이었습니다.<br>특히 이 구조가 인기를 얻은 이유는 점진적인 확장이 가능했기 때문입니다. 처음에는 단순히 components와 pages만으로 시작할 수 있습니다. 프로젝트가 커지면서 hooks 폴더가 추가되고, API 호출이 복잡해지면 services가 생기고, 상태 관리가 필요하면 store가 추가되는 식이죠. 각 단계에서 기존 구조를 크게 바꾸지 않고도 새로운 관심사를 수용할 수 있었습니다.<br>또한 각 폴더 내부에서도 필요에 따라 도메인별 분류를 추가할 수 있었습니다. 처음에는 모든 컴포넌트가 components 폴더에 평평하게 있다가, 파일이 많아지면 ui와 도메인별 폴더로 나누는 식이죠. 이런 유연성 덕분에 팀의 규모나 프로젝트의 복잡도에 맞춰 구조를 조정할 수 있었습니다.]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/폴더-구조.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/폴더 구조.md</guid><pubDate>Mon, 09 Jun 2025 11:53:44 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
  <br><br><br>타입스크립트에서 인터페이스는 객체 타입을 정의할 때 사용하는 문법이다.<br><br>interface User {
 	name: string;
 	age: number;
