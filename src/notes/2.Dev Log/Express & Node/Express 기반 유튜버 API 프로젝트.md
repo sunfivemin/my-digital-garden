@@ -4,8 +4,7 @@
 유튜버 정보를 등록하고, 수정하며, 삭제할 수 있는 **풀스택 CRUD 프로젝트**입니다.
 **Express.js + React + Tailwind CSS + Storybook** 기반으로 직접 API 설계부터 UI 구현과 컴포넌트 문서화하였습니다.
 
-
-## **1️⃣ 프로젝트 목적**
+## 1️⃣ 프로젝트 목적
 
 - CRUD 구조 이해 및 직접 구현
 - RESTful API 설계 경험
@@ -14,7 +13,7 @@
 
 ---
 
-## **2️⃣ 기술 스택**
+## 2️⃣ 기술 스택
 
 | 영역                                      | 기술                                                                                                                                           |
 | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -25,7 +24,7 @@
 
 ---
 
-## **3️⃣ 백엔드: Node.js + Express**
+## 3️⃣ 백엔드: Node.js + Express
 
 - /youtubers 경로로 RESTful API 제공
 - db.json 파일 기반으로 CRUD 작동
@@ -171,7 +170,7 @@ app.listen(1234, () => {
 
 --- 
 
-## **4️⃣ 프론트엔드: React + Tailwind**
+## 4️⃣ 프론트엔드: React + Tailwind
 
 - Axios로 API 연동
 - Tailwind로 반응형 UI 구성
@@ -242,7 +241,7 @@ export default function YoutuberList() {
 
 ----
 
-## **5️⃣ 공통 컴포넌트 설계 (디자인 시스템 기반)**
+## 5️⃣ 공통 컴포넌트 설계 (디자인 시스템 기반)
 
 - `Button`, `Input`, `Header`, `YoutuberCard`, `Loader` 등 재사용 가능한 UI 컴포넌트로 구성
 - variant / icon / label 등 props과 함께 재사용 가능
@@ -260,7 +259,7 @@ components/
 
 ---
 
-## **6️⃣ Storybook 적용**
+## 6️⃣ Storybook 적용
 
 Storybook을 활용해 UI 컴포넌트를 **독립적으로 개발하고 시각적으로 테스트 및 문서화**
 - Button, Input, Header, Card 등은 components/에 따로 모아두고 variant, icon 등 props로 확장 가능하게 개발
@@ -268,13 +267,13 @@ Storybook을 활용해 UI 컴포넌트를 **독립적으로 개발하고 시각
 - Storybook을 통해 디자이너와 바로 UI 상태를 공유하거나 컴포넌트 테스트 가능
 - 로딩, 오류 처리 등 UX를 위한 기본 요소도 Loader 컴포넌트로 통일
 
-### **✅ 작성 방식 (Storybook)**
+### ✅ 작성 방식 (Storybook)
 
 - 파일명은 컴포넌트명 + `.stories.jsx` (예: `Button.stories.jsx`)
 - 각 컴포넌트 상태(variant)별로 export const Primary, Secondary, WithIcon, Disabled 등 args를 통해 props를 쉽게 테스트하고 문서화 가능
 - Storybook 내에서 다양한 상태의 UI를 직접 시각적으로 확인 가능
 
-### **✅ Storybook 사용 목적**
+### ✅ Storybook 사용 목적
 
 - **Docs 탭** : 컴포넌트 설명과 사용 예제 + 코드 시각화 확인 가능
 - **Controls 탭** : props 값을 직접 조절해 UI 상태 실시간 테스트

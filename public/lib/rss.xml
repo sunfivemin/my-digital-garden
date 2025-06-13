@@ -1,5 +1,5 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 608 at column 1889: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 11 Jun 2025 05:16:37 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 11 Jun 2025 05:16:02 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 779 at column 425: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 13 Jun 2025 02:29:38 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 13 Jun 2025 02:29:21 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
  <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
 “공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
 이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터, 어떻게 구성하면 실무에 유리한지, 그리고 Storybook을 통해 어떻게 문서화하고 협업까지 연결할 수 있는지를 정리해봤어요.<br><br><br>디자인 시스템은 일관된 UI/UX를 제공하기 위한 설계 기준이에요.<br>
@@ -95,66 +95,7 @@ export const Primary = {
 <br>이렇게 하면 디자이너가 디자인을 바꾸면, 바로 코드에 반영되도록 자동화할 수 있어요.<br><br><br>처음엔 ‘왜 굳이 이렇게까지 해야 해?’ 싶을 수 있지만,<br>
 컴포넌트가 많아지고, 팀원이 늘어나고, 유지보수를 하게 될수록 디자인 시스템의 필요성을 절실히 느낍니다.<br>
 작은 프로젝트부터라도 토큰 하나, 버튼 하나부터 시작해보세요.<br>
-다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Wed, 30 Apr 2025 16:03:14 GMT</pubDate></item><item><title><![CDATA[무제]]></title><description><![CDATA[ 
- <br><br><br>dot-daily/
-├── public/                   # 정적 리소스 (이모지, 아이콘 등)
-├── src/
-│   ├── components/           # 공통 UI 컴포넌트
-│   │   ├── common/           # Button, Modal, Badge, Input 등
-│   │   ├── todos/            # TodoCard, PriorityBadge 등
-│   │   ├── review/           # EmotionSelector, ReviewEditor 등
-│   │   ├── calendar/         # DateSlider, CalendarHeader 등
-│   │   └── layout/           # Header, Footer, TabBar 등
-│
-│   ├── features/             # 도메인 단위 기능 묶음
-│   │   ├── todos/            
-│   │   │   ├── api.ts        # 투두 관련 API (fetch, add, delete 등)
-│   │   │   ├── store.ts      # Zustand 상태 관리
-│   │   │   ├── types.ts      # Todo 타입
-│   │   │   └── utils.ts      # 날짜 필터링 등 유틸
-│   │   ├── review/           # 회고 도메인
-│   │   ├── user/             # 사용자 정보 및 통계
-│   │   └── auth/             # 로그인, 회원가입, JWT 관리
-│
-│   ├── hooks/                # 커스텀 훅 (e.g. useTodoForm, useModal)
-│   ├── constants/            # 상수 (우선순위, 이모지, 색상 등)
-│   ├── utils/                # 날짜 포맷, 토큰 관리, 공용 유틸
-│   ├── store/                # 공통 전역 상태관리 (다중 도메인일 경우)
-│   ├── styles/               # Tailwind, reset.css 등
-│   ├── pages/                # Next.js 라우팅
-│   │   ├── index.tsx         # 홈 - 오늘의 할 일
-│   │   ├── review.tsx        # 회고 페이지
-│   │   ├── archive.tsx       # 보류함
-│   │   ├── login.tsx         
-│   │   ├── signup.tsx
-│   │   └── my.tsx            # 나의 정보
-│   └── storybook/            # Storybook 설정 및 preview.ts
-│
-├── .storybook/               # Storybook 설정
-├── tailwind.config.js
-├── tsconfig.json
-└── README.md
-<br>
-<br>처음부터 Zustand로 상태 관리
-<br>도메인 기반 분리 (todos, review, auth, user 등 기능 단위)
-<br>Storybook, constants, hooks, styles 등 공통 관리 폴더 유지
-<br>슬라이드/모션 애니메이션 → Framer Motion
-<br>드래그 앤 드랍 기능 → @dnd-kit/core or react-beautiful-dnd
-<br><br><br>// constants/priority.ts
-export const PRIORITY_OPTIONS = [
-  { id: 1, label: '오늘 무조건', color: 'red' },
-  { id: 2, label: '오늘이면 굿', color: 'green' },
-  { id: 3, label: '잊지 말자', color: 'blue' },
-];
-
-// constants/emotion.ts
-export const EMOTION_TAGS = [
-  { id: 'happy', label: '좋음', emoji: '😊', color: 'pink' },
-  { id: 'meh', label: '그냥그럼', emoji: '😐', color: 'gray' },
-  { id: 'tired', label: '지침', emoji: '😩', color: 'orange' },
-  // ...
-];
-]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/무제.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/무제.md</guid><pubDate>Tue, 10 Jun 2025 00:27:27 GMT</pubDate></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
+다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Wed, 30 Apr 2025 16:03:14 GMT</pubDate></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
  <br>
 <br>Redux,Zustand<br>
 Pure Redux<br>
@@ -606,7 +547,237 @@ function useCart() {
     /images
     /fonts
     /icons
-<br>최상위에는 여전히 components, hooks, services 같은 역할별 폴더들이 있습니다. 하지만 이제 각 폴더 내부를 들여다보면 ui, product, cart 같은 도메인별 하위 폴더들이 있죠. 그리고 pages나 app 폴더는 독립적으로 존재하며 라우팅 구조를 담당합니다.<br>이런 구조에서 개발자의 사고 흐름은 대체로 이렇습니다. "장바구니에 상품을 추가하는 훅이 필요해. 그러면 hooks 폴더로 가서, cart 하위 폴더를 찾아보자." 또는 "제품 상세 페이지를 수정해야 해. pages 폴더의 products 아래에 있겠군." 역할이라는 큰 분류 아래 도메인이라는 세부 분류가 있는 이중 구조는 직관적이면서도 체계적이었습니다.<br>특히 이 구조가 인기를 얻은 이유는 점진적인 확장이 가능했기 때문입니다. 처음에는 단순히 components와 pages만으로 시작할 수 있습니다. 프로젝트가 커지면서 hooks 폴더가 추가되고, API 호출이 복잡해지면 services가 생기고, 상태 관리가 필요하면 store가 추가되는 식이죠. 각 단계에서 기존 구조를 크게 바꾸지 않고도 새로운 관심사를 수용할 수 있었습니다.<br>또한 각 폴더 내부에서도 필요에 따라 도메인별 분류를 추가할 수 있었습니다. 처음에는 모든 컴포넌트가 components 폴더에 평평하게 있다가, 파일이 많아지면 ui와 도메인별 폴더로 나누는 식이죠. 이런 유연성 덕분에 팀의 규모나 프로젝트의 복잡도에 맞춰 구조를 조정할 수 있었습니다.]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/폴더-구조.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/폴더 구조.md</guid><pubDate>Mon, 09 Jun 2025 11:53:44 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
+<br>최상위에는 여전히 components, hooks, services 같은 역할별 폴더들이 있습니다. 하지만 이제 각 폴더 내부를 들여다보면 ui, product, cart 같은 도메인별 하위 폴더들이 있죠. 그리고 pages나 app 폴더는 독립적으로 존재하며 라우팅 구조를 담당합니다.<br>이런 구조에서 개발자의 사고 흐름은 대체로 이렇습니다. "장바구니에 상품을 추가하는 훅이 필요해. 그러면 hooks 폴더로 가서, cart 하위 폴더를 찾아보자." 또는 "제품 상세 페이지를 수정해야 해. pages 폴더의 products 아래에 있겠군." 역할이라는 큰 분류 아래 도메인이라는 세부 분류가 있는 이중 구조는 직관적이면서도 체계적이었습니다.<br>특히 이 구조가 인기를 얻은 이유는 점진적인 확장이 가능했기 때문입니다. 처음에는 단순히 components와 pages만으로 시작할 수 있습니다. 프로젝트가 커지면서 hooks 폴더가 추가되고, API 호출이 복잡해지면 services가 생기고, 상태 관리가 필요하면 store가 추가되는 식이죠. 각 단계에서 기존 구조를 크게 바꾸지 않고도 새로운 관심사를 수용할 수 있었습니다.<br>또한 각 폴더 내부에서도 필요에 따라 도메인별 분류를 추가할 수 있었습니다. 처음에는 모든 컴포넌트가 components 폴더에 평평하게 있다가, 파일이 많아지면 ui와 도메인별 폴더로 나누는 식이죠. 이런 유연성 덕분에 팀의 규모나 프로젝트의 복잡도에 맞춰 구조를 조정할 수 있었습니다.<br>출처: <a rel="noopener nofollow" class="external-link" href="https://velog.io/@teo/folder-structure" target="_blank">https://velog.io/@teo/folder-structure</a>]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/폴더-구조.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/폴더 구조.md</guid><pubDate>Fri, 13 Jun 2025 01:47:05 GMT</pubDate></item><item><title><![CDATA[dot.daily 버튼 시스템 설계부터 적용, 문서화까지]]></title><description><![CDATA[ 
+ <br><br>Next.js 기반 사이드 프로젝트 dot.daily에서 공통 UI 컴포넌트를 설계하며 class-variance-authority (cva) 기반의 버튼 시스템을 구현했습니다. 또한 Tailwind의 사용자 정의 색상과 함께 Storybook으로 문서화하여 협업 가능성과 UI 일관성을 높였습니다. 이 글은 그 흐름과 실습 내용을 정리한 기술 회고입니다.<br><br><br>
+<br>✅ 다양한 버튼 스타일을 하나의 컴포넌트로 통합
+<br>✅&nbsp;variant,&nbsp;size,&nbsp;rounded,&nbsp;fullWidth&nbsp;등 옵션화하여 선언형 사용 가능
+<br>✅ Figma 디자인 토큰 (primary blue, text-strong 등) 반영
+<br>✅ Storybook을 활용한 UI 상태 시각화 및 문서화
+<br>✅ Tailwind v4 purge 이슈 해결 경험 공유
+<br><br><br>
+<br>Next.js (App Router)
+<br>Tailwind CSS (v3)
+<br>class-variance-authority (cva)
+<br>Storybook
+<br># 설치
+npm install class-variance-authority clsx
+npm install -D @storybook/nextjs
+<br><br><br>처음에는 Tailwind v4 환경에서 진행했지만 다음과 같은 문제가 발생:<br>
+<br>theme.extend.colors에 정의한 사용자 색상이 purge로 인해 적용되지 않음
+<br>.storybook/preview.ts에 글로벌 CSS가 정상 반영되지 않음
+<br><br>Tailwind를 v3로 다운그레이드:<br>npm uninstall tailwindcss
+npm install -D tailwindcss@3 postcss autoprefixer
+npx tailwindcss init -p
+<br>📍 .storybook/preview.ts에 글로벌 CSS 적용 필수:<br>import '../src/app/globals.css';
+<br><br>Tailwind 색상은 tailwind.config.ts에서 의미 기반으로 정의:<br>import colors from 'tailwindcss/colors';
+
+theme: {
+  extend: {
+    colors: {
+      brand: {
+		primary: colors.blue[500], // 로고 강조색
+		secondary: colors.indigo[500], // 보조 강조 텍스트
+      },
+      text: {
+        strong: '#1F2937',
+        weak: '#6B7280',
+      },
+      border: {
+        default: '#E5E7EB',
+      },
+    },
+  },
+},
+<br><br>cva는 다양한 조합의 Tailwind 클래스를 선언형으로 관리할 수 있는 도구입니다.<br>
+컴포넌트의 스타일 조합을 선언형으로 정의하고 타입까지 보장해줍니다. 특히 다양한 UI 상태를 미리 구성하고 문서화하거나 디자인 시스템과 연동할 때 유용합니다.<br>
+Storybook과 cva의 조합은 단순한 버튼 하나도 체계적으로 만들 수 있게 해줍니다.<br>
+<br>✅ 다양한 UI 상태를 미리 정의하고 문서화
+<br>✅ Figma → Token → UI 코드까지 일관된 흐름
+<br>✅ 협업/리팩토링 시 커뮤니케이션 비용 감소
+<br>✅ 타입 추론 지원 → 안전하고 예측 가능한 컴포넌트
+<br>✅ 스토리북/디자인 시스템 연동에 적합
+<br><br>import { cva } from 'class-variance-authority';
+
+export const buttonVariants = cva(
+  'inline-flex items-center justify-center font-semibold transition whitespace-nowrap disabled:opacity-50 disabled:pointer-events-none',
+  {
+    variants: {
+      variant: {
+        /** 강조 버튼: ex) 오늘 회고 작성하기 */
+        primary: 'bg-brand-primary text-white hover:bg-brand-primary/90',
+
+        /** 보조 버튼: ex) 선택한 날짜로 이동 */
+        secondary: 'bg-white text-brand-primary border border-brand-primary hover:bg-brand-primary/10',
+
+        /** 파괴적 액션: ex) 삭제하기 */
+        danger: 'bg-red-500 text-white hover:bg-red-600',
+
+        /** 텍스트 버튼: 배경 없음 */
+        ghost: 'bg-transparent text-brand-primary hover:bg-brand-primary/10',
+      },
+      size: {
+        /** 기본 모바일 버튼 (대부분의 경우) */
+        sm: 'h-9 px-3 text-sm',
+
+        /** 피그마 기준: 보통 버튼 (예: 회고 등록하기) */
+        md: 'h-10 px-4 text-base',
+
+        /** 큰 버튼이 필요할 경우 (거의 없음) */
+        lg: 'h-12 px-6 text-lg',
+      },
+      rounded: {
+        none: '',
+        md: 'rounded-md',
+        full: 'rounded-full',
+      },
+      fullWidth: {
+        true: 'w-full',
+        false: '',
+      },
+    },
+    defaultVariants: {
+      variant: 'primary',
+      size: 'md',
+      rounded: 'full',
+      fullWidth: false,
+    },
+  }
+);
+<br><br><br>&lt;Button label="오늘 회고 작성하기" variant="primary" size="md" fullWidth /&gt;
+&lt;Button label="선택한 날짜로 이동" variant="secondary" size="md" fullWidth /&gt;
+&lt;Button label="삭제" variant="danger" size="sm" /&gt;
+&lt;Button label="로그아웃" variant="ghost" size="sm" /&gt;
+<br><br><br>import { clsx } from 'clsx';
+import { buttonVariants } from '@/lib/styles/buttonVariants';
+import type { VariantProps } from 'class-variance-authority';
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes&lt;HTMLButtonElement&gt;,
+    VariantProps&lt;typeof buttonVariants&gt; {
+  label: string;
+}
+
+export const Button = ({
+  label,
+  variant,
+  size,
+  rounded,
+  fullWidth,
+  className,
+  ...props
+}: ButtonProps) =&gt; {
+  return (
+    &lt;button
+      className={clsx(buttonVariants({ variant, size, rounded, fullWidth }), className)}
+      {...props}
+    &gt;
+      {label}
+    &lt;/button&gt;
+  );
+};
+<br><br><br><br>export default {
+  stories: ['../src/**/*.stories.@(js|ts|jsx|tsx)'],
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  framework: '@storybook/nextjs',
+};
+<br><br>import '../src/app/globals.css';
+<br><br>import { Button } from './Button';
+
+export default {
+  title: 'UI/Button',
+  component: Button,
+};
+
+export const Primary = {
+  args: {
+    label: '오늘 회고 작성하기',
+    variant: 'primary',
+    size: 'md',
+  },
+};
+
+export const Outline = {
+  args: {
+    label: '선택한 날짜로 이동',
+    variant: 'outline',
+  },
+};
+<br><br><br>dot-daily/
+├── public/                            # 정적 리소스 (로고, 이모지, SVG 아이콘 등)
+│   └── logo.svg
+│   └── icons/                         # Footer 아이콘 on/off
+│
+├── src/
+│   ├── app/                           # Next.js App Router 기반 페이지 라우팅
+│   │   ├── page.tsx                   # / (MyDay 홈)
+│   │   ├── retrospect/page.tsx        # /retrospect (회고 탭)
+│   │   ├── archive/page.tsx           # /archive (보류함 탭)
+│   │   └── profile/page.tsx           # /profile (마이페이지 탭)
+│   │
+│   ├── components/                    # 공통 UI 컴포넌트 (디자인 시스템 기반)
+│   │   ├── ui/
+│   │   │   ├── Button.tsx             # 버튼 컴포넌트
+│   │   │   ├── Button.stories.tsx     # Storybook 문서화
+│   │   │   └── ...                    # Input, Modal 등 기타 공통 컴포넌트 예정
+│   │   ├── layout/
+│   │   │   ├── Header.tsx             # 공통 헤더 (title prop)
+│   │   │   └── Footer.tsx             # 공통 푸터 (탭 이동)
+│
+│   ├── features/                      # 도메인 기능별 구조화
+│   │   ├── myday/                     # 투두 기능 (홈)
+│   │   │   ├── components/            # 도메인 전용 UI 컴포넌트
+│   │   │   │   ├── TaskItem.tsx
+│   │   │   │   ├── TaskList.tsx
+│   │   │   │   ├── TaskInput.tsx
+│   │   │   │   ├── TaskSection.tsx
+│   │   │   │   └── index.ts           # barrel export
+│   │   │   ├── api.ts                 # /api/tasks 관련 fetch 함수
+│   │   │   ├── store.ts               # useMydayStore (Zustand 상태)
+│   │   │   └── utils.ts               # 날짜 정렬/필터 등 유틸 함수
+│   │   └── retrospect/                # 회고 기능 (예정)
+│   │       ├── components/
+│   │       ├── api.ts
+│   │       ├── store.ts
+│   │       └── utils.ts
+│
+│   ├── constants/                     # 우선순위/이모지/상태 라벨 등 공통 상수
+│   │   ├── priority.ts                # PRIORITY_OPTIONS
+│   │   ├── emotion.ts                 # EMOTION_TAGS
+│   │   └── ...
+│
+│   ├── lib/
+│   │   └── styles/
+│   │       └── buttonVariants.ts      # class-variance-authority 기반 버튼 스타일
+│
+│   ├── hooks/                         # 공통 커스텀 훅 저장소 (예: useModal, useOutsideClick)
+│
+│   ├── styles/                        # 글로벌 CSS 및 Tailwind 설정
+│   │   ├── globals.css                # tailwind base/components/utilities 포함
+│
+│   └── types/                         # 전역 타입 정의 (필요 시 추가)
+│
+├── .storybook/                       # Storybook 설정
+│   ├── main.ts                        # stories 경로, addons, 프레임워크 설정
+│   └── preview.ts                     # 글로벌 CSS 포함 등 환경 설정
+│
+├── tailwind.config.ts                # 디자인 토큰 (colors 등) 포함
+├── tsconfig.json                     # 타입스크립트 설정
+├── package.json
+└── README.md                         # 프로젝트 소개 및 실행 방법
+<br>
+<br>src/app/: 라우팅 전용 (App Router 기준)
+<br>components/: 공통 UI 컴포넌트 (Button, Header 등)
+<br>features/: 도메인별 상태/로직/컴포넌트 분리
+<br>lib/styles/buttonVariants.ts: class-variance-authority로 버튼 스타일 선언
+<br>storybook/: Storybook 설정과 preview 연동
+<br>constants/: 우선순위/이모지 등의 상수 정의
+<br>Tailwind + 글로벌 스타일 통합: purge 문제 없이 정상 작동
+<br><br><br>버튼 하나라도 디자인 시스템과 cva, Storybook을 활용해 설계하면 다음과 같은 이점이 있습니다:<br>
+<br>일관된 UI/UX 유지
+<br>유지보수 용이성 향상
+<br>팀 간 커뮤니케이션 최소화
+<br>상태 시각화 → QA/디자이너 확인 편의성
+<br>향후에는 모달, 토글, 인풋 등도 이 구조로 확장 예정입니다.]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/next.js-+-tailwind-+-storybook-기반-디자인-시스템-구축기.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/Next.js + Tailwind + Storybook 기반 디자인 시스템 구축기.md</guid><pubDate>Fri, 13 Jun 2025 01:57:26 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
  <br><br><br>타입스크립트에서 인터페이스는 객체 타입을 정의할 때 사용하는 문법이다.<br><br>interface User {
 	name: string;
 	age: number;
