@@ -1,5 +1,5 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 779 at column 425: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Fri, 13 Jun 2025 02:29:38 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Fri, 13 Jun 2025 02:29:21 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 776 at column 425: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 15 Jun 2025 11:38:31 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 15 Jun 2025 11:37:58 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
  <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
 “공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
 이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터, 어떻게 구성하면 실무에 유리한지, 그리고 Storybook을 통해 어떻게 문서화하고 협업까지 연결할 수 있는지를 정리해봤어요.<br><br><br>디자인 시스템은 일관된 UI/UX를 제공하기 위한 설계 기준이에요.<br>
@@ -95,7 +95,7 @@ export const Primary = {
 <br>이렇게 하면 디자이너가 디자인을 바꾸면, 바로 코드에 반영되도록 자동화할 수 있어요.<br><br><br>처음엔 ‘왜 굳이 이렇게까지 해야 해?’ 싶을 수 있지만,<br>
 컴포넌트가 많아지고, 팀원이 늘어나고, 유지보수를 하게 될수록 디자인 시스템의 필요성을 절실히 느낍니다.<br>
 작은 프로젝트부터라도 토큰 하나, 버튼 하나부터 시작해보세요.<br>
-다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Wed, 30 Apr 2025 16:03:14 GMT</pubDate></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
+다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!<br> 👉다음 글 : <a data-href="Express 기반 유튜버 API 프로젝트" href="2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html" class="internal-link" target="_self" rel="noopener nofollow">Express 기반 유튜버 API 프로젝트</a>]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Sun, 15 Jun 2025 09:29:49 GMT</pubDate></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
  <br>
 <br>Redux,Zustand<br>
 Pure Redux<br>
@@ -588,15 +588,12 @@ theme: {
     },
   },
 },
-<br><br>cva는 다양한 조합의 Tailwind 클래스를 선언형으로 관리할 수 있는 도구입니다.<br>
-컴포넌트의 스타일 조합을 선언형으로 정의하고 타입까지 보장해줍니다. 특히 다양한 UI 상태를 미리 구성하고 문서화하거나 디자인 시스템과 연동할 때 유용합니다.<br>
-Storybook과 cva의 조합은 단순한 버튼 하나도 체계적으로 만들 수 있게 해줍니다.<br>
-<br>✅ 다양한 UI 상태를 미리 정의하고 문서화
-<br>✅ Figma → Token → UI 코드까지 일관된 흐름
-<br>✅ 협업/리팩토링 시 커뮤니케이션 비용 감소
-<br>✅ 타입 추론 지원 → 안전하고 예측 가능한 컴포넌트
-<br>✅ 스토리북/디자인 시스템 연동에 적합
-<br><br>import { cva } from 'class-variance-authority';
+<br><br>CVA는  Tailwind CSS 환경에서 컴포넌트의 스타일 변형(variants) 관리를 돕는 라이브러리입니다.<br>
+Tailwind Variants는 Stitches에서 영감을 받아, variants, slots, compoundVariants 등 더 복잡한 컴포넌트 구조와 반응형 스타일링을 손쉽게 관리할 수 있습니다. 반면, CVA는 단일 컴포넌트의 변형 관리에 특화되어 있으며, TypeScript와의 통합으로 타입 안전성이 뛰어납니다.<br>•	Tailwind Variants는 더 복잡한 컴포넌트(슬롯, 컴파운드 variants 등)가 필요할 때 강점이 있지만,<br>
+•	dot.daily처럼 버튼, 인풋, 모달 등 단일 UI 컴포넌트 중심의 프로젝트에는 CVA가 더 심플하고 빠르게 적용할 수 있습니다.<br>
+•	특히 Storybook과의 연동, 타입스크립트 기반의 안전성, 팀 협업 측면에서 CVA가 더 널리 쓰이고 있습니다.<br>✅ Storybook과 CVA의 조합은 타입 안전한 스타일 선언과 시각적 문서화를 결합해, 디자인 시스템 기반 UI 개발에 최적화된 워크플로우를 제공합니다.<br>
+✅ 디자인 시스템 기반 폴더 구조는 Storybook 자체를 의미하는 것이 아니라, 컴포넌트, 스타일, 문서화 파일을 역할별로 분리해 관리하는 구조입니다.<br>
+✅ Storybook은 이런 구조에서 컴포넌트의 다양한 상태와 옵션을 문서화하는 도구로 활용됩니다.<br><br>import { cva } from 'class-variance-authority';
 
 export const buttonVariants = cva(
   'inline-flex items-center justify-center font-semibold transition whitespace-nowrap disabled:opacity-50 disabled:pointer-events-none',
@@ -777,7 +774,7 @@ export const Outline = {
 <br>유지보수 용이성 향상
 <br>팀 간 커뮤니케이션 최소화
 <br>상태 시각화 → QA/디자이너 확인 편의성
-<br>향후에는 모달, 토글, 인풋 등도 이 구조로 확장 예정입니다.]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/next.js-+-tailwind-+-storybook-기반-디자인-시스템-구축기.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/Next.js + Tailwind + Storybook 기반 디자인 시스템 구축기.md</guid><pubDate>Fri, 13 Jun 2025 01:57:26 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
+<br>향후에는 모달, 토글, 인풋 등도 이 구조로 확장 예정입니다.]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/next.js-+-tailwind-+-storybook-기반-디자인-시스템-구축기.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/Next.js + Tailwind + Storybook 기반 디자인 시스템 구축기.md</guid><pubDate>Sun, 15 Jun 2025 11:04:47 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
  <br><br><br>타입스크립트에서 인터페이스는 객체 타입을 정의할 때 사용하는 문법이다.<br><br>interface User {
 	name: string;
 	age: number;

@@ -115,6 +115,8 @@ export const useMydayStore = create<MyDayState>((set) => ({
 import '../src/styles/globals.css';
 ```
 
+스토리북 구축기 : [[Next.js + Tailwind + Storybook 기반 디자인 시스템 구축기]]
+
 ---
 
 ## 🧠 기타 특징 및 차별점

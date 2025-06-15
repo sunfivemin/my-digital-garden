@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4.TIL/6월/2025-06-13-props.md",
+                "file": "4.TIL/6월/2025-06-16-리덕스.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-06-13-props"
+              "title": "2025-06-16-리덕스"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "4.TIL/6월/2025-06-13-props.md",
+                "file": "4.TIL/6월/2025-06-16-리덕스.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-06-13-props 의 개요"
+              "title": "2025-06-16-리덕스 의 개요"
             }
           }
         ],
@@ -174,8 +174,10 @@
   "active": "ea158042f0b55b2b",
   "lastOpenFiles": [
     "home.md",
+    "4.TIL/6월/2025-06-16-리덕스.md",
     "4.TIL/6월/2025-06-13-props.md",
     "4.TIL/6월/2025-06-12-구조 분해 할당.md",
+    "4.TIL/6월/2025-06-11-React.md",
     "4.TIL/6월/2025-06-10-객체 리터럴.md",
     "4.TIL/6월/2025-06-09-타입스크립트.md",
     "4.TIL/6월/2025-06-04-객체지향.md",
@@ -197,8 +199,6 @@
     "4.TIL/4월/2025-04-30-유효성검사.md",
     "4.TIL/4월/2025-04-28-DB 테이블.md",
     "4.TIL/4월/2025-04-25-DBMS.md",
-    "4.TIL/4월/2025-04-24-Express Router와 회원-채널 ERD 설계 실습.md",
-    "4.TIL/4월/2025-04-23-채널 API 설계.md",
     "4.TIL/6월",
     "2.Dev Log/Typescript Project",
     "4.TIL/5월",
