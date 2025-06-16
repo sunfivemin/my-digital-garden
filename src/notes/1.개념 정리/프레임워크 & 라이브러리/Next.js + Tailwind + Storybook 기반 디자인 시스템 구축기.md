@@ -73,8 +73,49 @@ theme: {
 
 
 ### 💡 class-variance-authority (CVA)란?
-CVA는  Tailwind CSS 환경에서 컴포넌트의 스타일 변형(variants) 관리를 돕는 라이브러리입니다. 
-Tailwind Variants는 Stitches에서 영감을 받아, variants, slots, compoundVariants 등 더 복잡한 컴포넌트 구조와 반응형 스타일링을 손쉽게 관리할 수 있습니다. 반면, CVA는 단일 컴포넌트의 변형 관리에 특화되어 있으며, TypeScript와의 통합으로 타입 안전성이 뛰어납니다.
+- CVA는 Tailwind CSS 환경에서 컴포넌트의 스타일 변형(variants) 관리를 돕는 라이브러리입니다. 
+  단일 컴포넌트의 변형 관리에 특화되어 있으며, TypeScript와의 통합으로 타입 안전성이 뛰어납니다.
+- Tailwind Variants는 Stitches에서 영감을 받아, variants, slots, compoundVariants 등 더 복잡한 컴포넌트 구조와 반응형 스타일링을 손쉽게 관리할 수 있습니다. 
+
+#### ✅ class-variance-authority(CVA)
+- **Tailwind 유틸리티 클래스 조합을 깔끔하게 관리**하기 위한 라이브러리.
+- 조건부 클래스명(className)을 **타입 안전하게 선언적으로 구성**할 수 있게 해줍니다.
+- clsx보다 정형화된 구조를 제공하며, **단일 컴포넌트의 variants 관리에 특화**되어 있습니다.
+- Tailwind를 써야 쓸 수 있는 유틸리티입니다.
+
+```ts
+import { cva } from 'class-variance-authority';
+
+const button = cva('base-class', {
+  variants: {
+    color: {
+      primary: 'bg-blue-500',
+      danger: 'bg-red-500',
+    },
+  },
+});
+```
+
+
+#### ✅ tailwind-variants
+- **Tailwind 유틸리티 클래스 조합을 깔끔하게 관리**하기 위한 라이브러리.
+- 조건부 클래스명(className)을 **타입 안전하게 선언적으로 구성**할 수 있게 해줍니다.
+- clsx보다 정형화된 구조를 제공하며, **단일 컴포넌트의 variants 관리에 특화**되어 있습니다.
+- Tailwind를 써야 쓸 수 있는 유틸리티입니다.
+
+```ts
+import { tv } from 'tailwind-variants';
+
+const button = tv({
+  base: 'inline-flex',
+  variants: {
+    intent: {
+      primary: 'bg-blue-500',
+      danger: 'bg-red-500',
+    },
+  },
+});
+```
 
 •	Tailwind Variants는 더 복잡한 컴포넌트(슬롯, 컴파운드 variants 등)가 필요할 때 강점이 있지만,
 •	dot.daily처럼 버튼, 인풋, 모달 등 단일 UI 컴포넌트 중심의 프로젝트에는 CVA가 더 심플하고 빠르게 적용할 수 있습니다.
@@ -83,6 +124,7 @@ Tailwind Variants는 Stitches에서 영감을 받아, variants, slots, compoundV
 ✅ Storybook과 CVA의 조합은 타입 안전한 스타일 선언과 시각적 문서화를 결합해, 디자인 시스템 기반 UI 개발에 최적화된 워크플로우를 제공합니다.
 ✅ 디자인 시스템 기반 폴더 구조는 Storybook 자체를 의미하는 것이 아니라, 컴포넌트, 스타일, 문서화 파일을 역할별로 분리해 관리하는 구조입니다.
 ✅ Storybook은 이런 구조에서 컴포넌트의 다양한 상태와 옵션을 문서화하는 도구로 활용됩니다.
+
 
 #### 🧱 버튼 스타일 정의 (buttonVariants.ts)
 ```ts

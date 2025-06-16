@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "4.TIL/6월/2025-06-16-리덕스.md",
+                "file": "4.TIL/6월/2025-06-16-Redux Toolkit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-06-16-리덕스"
+              "title": "2025-06-16-Redux Toolkit"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "4.TIL/6월/2025-06-16-리덕스.md",
+                "file": "4.TIL/6월/2025-06-16-Redux Toolkit.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2025-06-16-리덕스 의 개요"
+              "title": "2025-06-16-Redux Toolkit 의 개요"
             }
           }
         ],
@@ -174,7 +174,10 @@
   "active": "ea158042f0b55b2b",
   "lastOpenFiles": [
     "home.md",
-    "4.TIL/6월/2025-06-16-리덕스.md",
+    "4.TIL/6월/2025-06-19-Drag And Drop.md",
+    "4.TIL/6월/2025-06-18-Modal Edit.md",
+    "4.TIL/6월/2025-06-17-Board List.md",
+    "4.TIL/6월/2025-06-16-Redux Toolkit.md",
     "4.TIL/6월/2025-06-13-props.md",
     "4.TIL/6월/2025-06-12-구조 분해 할당.md",
     "4.TIL/6월/2025-06-11-React.md",
@@ -196,9 +199,6 @@
     "4.TIL/5월/2025-05-14-unauthorized.md",
     "4.TIL/5월/2025-05-13-app.js.md",
     "4.TIL/5월/2025-05-02-JWT.md",
-    "4.TIL/4월/2025-04-30-유효성검사.md",
-    "4.TIL/4월/2025-04-28-DB 테이블.md",
-    "4.TIL/4월/2025-04-25-DBMS.md",
     "4.TIL/6월",
     "2.Dev Log/Typescript Project",
     "4.TIL/5월",
