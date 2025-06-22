@@ -1,5 +1,5 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 810 at column 425: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 16 Jun 2025 12:34:10 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 16 Jun 2025 12:33:53 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 882 at column 425: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 22 Jun 2025 10:34:30 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 22 Jun 2025 10:33:52 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
  <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
 “공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
 이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터, 어떻게 구성하면 실무에 유리한지, 그리고 Storybook을 통해 어떻게 문서화하고 협업까지 연결할 수 있는지를 정리해봤어요.<br><br><br>디자인 시스템은 일관된 UI/UX를 제공하기 위한 설계 기준이에요.<br>
@@ -95,13 +95,72 @@ export const Primary = {
 <br>이렇게 하면 디자이너가 디자인을 바꾸면, 바로 코드에 반영되도록 자동화할 수 있어요.<br><br><br>처음엔 ‘왜 굳이 이렇게까지 해야 해?’ 싶을 수 있지만,<br>
 컴포넌트가 많아지고, 팀원이 늘어나고, 유지보수를 하게 될수록 디자인 시스템의 필요성을 절실히 느낍니다.<br>
 작은 프로젝트부터라도 토큰 하나, 버튼 하나부터 시작해보세요.<br>
-다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!<br> 👉다음 글 : <a data-href="Express 기반 유튜버 API 프로젝트" href="2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html" class="internal-link" target="_self" rel="noopener nofollow">Express 기반 유튜버 API 프로젝트</a>]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Sun, 15 Jun 2025 09:29:49 GMT</pubDate></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
+다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!<br> 👉다음 글 : <a data-href="Express 기반 유튜버 API 프로젝트" href="2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html" class="internal-link" target="_self" rel="noopener nofollow">Express 기반 유튜버 API 프로젝트</a>]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템(feat.-storybook).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템(Feat. Storybook).md</guid><pubDate>Sun, 15 Jun 2025 09:29:49 GMT</pubDate></item><item><title><![CDATA[디자인 시스템과 CVA + Storybook]]></title><description><![CDATA[ 
  <br>
-<br>Redux,Zustand<br>
-Pure Redux<br>
-플럭스 패턴 : action -&gt; dispatcher -&gt; store -&gt; view -&gt; action -&gt; dispatcher
-<br>리덕스 : action -&gt; reducer -&gt; store -&gt; view<br>
-스토어라는 하나의 객체에서 관리가 되어있고 리듀서를 거친다.<br>state는 전역상태로 관리할것만 저장해야한다.<br>
+<br>Modal 모달창<br>
+• ✅ 할 일 등록 모달 (우선순위, 날짜 선택 등)<br>
+• ✅ 회고 작성/수정 모달<br>
+• ✅ 삭제 확인용 confirm 모달
+<br>구성 요소 예시:<br>
+• Modal.tsx: isOpen, onClose, children props로 제어<br>
+• 내부에 Dialog, Transition 라이브러리 쓰거나 div + z-index 조합<br>
+<br>Input 인풋 필드<br>
+• ✅ 기본 인풋 (할 일 제목, 회고 내용)<br>
+• ✅ 날짜 선택 (캘린더 아이콘 포함 가능)
+<br>컴포넌트 예시:<br>• TextInput.tsx<br>• DateInput.tsx 또는 DatePicker.tsx (react-day-picker나 date-fns 사용 가능)<br>components/
+  ui/
+    Input/
+      ├── Input.tsx            // ⭐️ 공통 스타일 및 base input (styled only)
+      ├── TextInput.tsx        // ✅ 텍스트 필드 (label, error, helperText 포함)
+      ├── TextareaInput.tsx    // ✅ 회고 입력 등 멀티라인 용
+      ├── DateInput.tsx        // ✅ 날짜 선택용 (아이콘 포함)
+      ├── SelectInput.tsx      // ✅ 우선순위 선택 등 라디오/셀렉트용
+      ├── Input.stories.tsx    // ✅ Storybook 문서화
+      └── index.ts             // ✅ barrel export
+<br>Toast, Dropdown, Modal 상태관리를 useUIStore처럼 zustand로 통합하는 설계 이거를 주스텐드로 설계하는게 낫지? 컴포넌트도 하나씩 만들어줘야해<br>
+<br>✅ SelectInput
+<br>• @headlessui/react 기반으로 구현했었지.<br>• 현재 라벨 애니메이션 문제 남아 있음 (Input과 동일한 방식으로 수정 필요).<br>
+<br>✅ DatePicker
+<br>• react-day-picker 기반.<br>• floating label 위치 문제 해결 필요.<br>
+<br>🔜 Modal, Toast
+<br>• 이미 코드만 있는 상태야. 디자인 시스템에 맞춰 다음을 정리해야 해:<br>• 상태별 색상 (성공/실패/정보 등)<br>• 애니메이션 (framer-motion 적용 가능)<br>• 모달은 포커스 트랩, Escape 닫기 기능 등 포함 여부 고려<br>const [open, setOpen] = useState(false);
+
+&lt;FullScreenModal isOpen={open} onClose={() =&gt; setOpen(false)}&gt;
+  &lt;div className="flex items-center justify-between"&gt;
+    &lt;h2 className="text-lg font-semibold"&gt;할일 추가 모달&lt;/h2&gt;
+    &lt;button onClick={() =&gt; setOpen(false)}&gt;닫기&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div className="mt-6 space-y-6"&gt;
+    &lt;Input label="오늘 할 일" placeholder="할 일 입력" /&gt;
+    &lt;SelectInput label="우선순위" options={...} /&gt;
+    &lt;DatePicker label="날짜" /&gt;
+  &lt;/div&gt;
+
+  &lt;Button className="mt-10 w-full rounded-full"&gt;할 일 등록하기&lt;/Button&gt;
+&lt;/FullScreenModal&gt;
+<br>
+<br>🔜 공통 Alert, Badge, Tag, Chip 등
+<br>• 예: StatusBadge, TagLabel, PriorityLabel<br>• 디자인 토큰 기반으로 status/priority 컬러 매핑 가능<br>
+<br>🔜 Skeleton, LoadingSpinner, EmptyState
+<br>• UX 향상을 위한 시각적 컴포넌트<br>• Skeleton은 추후 카드나 페이지에서 재사용 가능<br>⸻<br>
+필요하면 DatePicker 커스터마이징(react-day-picker, headlessui, flatpickr 등)이나 Select를 로 바꾸는 것도 가능해요. 원하면 다음 단계로 이어서 도와줄게요.<br>💡 점점 확장하면 좋은 공통 컴포넌트들<br>
+<br>Dropdown / Popover 메뉴
+<br>• ✅ 점 세개 눌렀을 때 메뉴 (수정, 삭제, 보류)<br>•  컴포넌트로 만들고 children 방식으로 활용<br>• radix-ui 또는 headless-ui 사용 가능<br>
+<br>Toast 알림
+<br>• ✅ “할 일이 등록되었습니다” 등 피드백용<br>• useToast() 훅 + ToastProvider, ToastItem 컴포넌트 구조 추천<br>• sonner 추천 (깔끔하고 Tailwind 호환 잘됨)<br>⸻<br>
+<br>Toggle 토글 버튼
+<br>• ✅ 예: 알림 켜기/끄기, 체크박스 대체용 등<br>• Toggle.tsx 또는 Switch.tsx로 구현<br>• optional: checked, onToggle, disabled 등 prop 포함<br>⸻<br>
+<br>Badge / Tag 컴포넌트
+<br>• ✅ “RETRY 1” 같은 태그 (색상/라벨)<br>• Badge.tsx에 variant 기반 스타일 지정 (ex: retry, success, neutral 등)<br>⸻<br>
+<br>RadioGroup / Selector
+<br>• ✅ 우선순위 선택 (1 오늘 무조건, 2 오늘이면 굿, 3 잊지말자)<br>• RadioGroup.tsx 또는 PrioritySelector.tsx로 분리<br>• 디자인 시스템에 따라 icon + label 조합도 가능]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/디자인-시스템과-cva-+-storybook.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/디자인 시스템과 CVA + Storybook.md</guid><pubDate>Thu, 19 Jun 2025 00:11:47 GMT</pubDate></item><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
+ <br>
+<br>Redux,Zustand
+<br><br><br>: action -&gt; dispatcher -&gt; store -&gt; view -&gt; action -&gt; dispatcher<br><br>: action -&gt; reducer -&gt; store -&gt; view<br>
+플럭스 패턴으로 리덕스를 만들었다.<br>slice : 도메인단위(기능단위)로 분류하여 리듀서들 모아둔것.<br>
+reducer : 리듀서를 하나로 합쳐서 index.ts에서 store에 리듀서 전달 <br><br>계속 반복되는 보일러플레이트를 최소화하는 장점이 있어서 쓴다.<br><br>redux.ts : useDispatch를 만들기위한 훅, dispatch라는 이름으로 담아주고 액션을 전달해주는 역할이다.<br>
+useAuth.ts : <br>아무나 바꾸면 안되니까 디스패치나 리듀서를 통해서만 쓸수잇다는 개념.<br>스토어라는 하나의 객체에서 관리가 되어있고 리듀서를 거친다.<br>state는 전역상태로 관리할것만 저장해야한다.<br>
 Redux,Zustand 모두 전역상태 조작 도구들이다.<br>
 전역은 useState로 관리하면된다.<br>
 리덕스는 플러스패턴 , 리코일은 아토믹 패션<br>Store를 구독하는 모든 컴포넌트가 리랜더링 되면 리덕스가 안좋은거 아닌가요?<br>
@@ -160,11 +219,24 @@ store.dispatch(addPost('post 1'))
 store.dispatch(addPost('post 2'))
 
 console.log(store.getState())
+<br><br>Redux나 API에서 “내가 지금 무슨 데이터를 보내고 싶어” 라고 전달하는 실제 데이터입니다.<br><br><br>Redux에서는 액션 객체가 이렇게 생겼어요:<br>{
+  type: 'UPDATE_TASK',   // 어떤 액션인지 식별
+  payload: {             // 그 액션에 필요한 데이터
+    taskId: 'task-1',
+    taskName: '새로운 이름',
+    ...
+  }
+}
+<br>즉, payload는 내가 하고 싶은 액션에 필요한 구체적인 정보(데이터)를 담고 있어요.<br><br><br>사용자의 행동에 따라 계속 바뀝니다.<br><br>이렇게 매 순간 그 시점에서 필요한 데이터만 payload에 담아 dispatch합니다.<br><br><br>Redux는 “불변성”을 유지하면서 상태를 업데이트해야 하므로,<br>
+기존 상태는 건드리지 않고 새로운 상태를 만들어주는 역할을 payload가 하게 됩니다.<br>예를 들어:<br>dispatch(updateTask({ boardId, listId, task }))
+<br>→ 이 payload 덕분에 reducers에서 정확히 어떤 task를 바꿀지 판단할 수 있어요.<br>
+<br>payload는 택배 상자의 내용물이고,
+<br>action type은 상자에 붙은 스티커(‘업데이트’, ‘삭제’ 등)입니다.
 <br>프론트엔드 과제 전형 기출 문제 리스트<br>
 퍼널 구조 / useFunnel<br>
 디바운싱과 쓰로틀링 - 요청 받은것에 대해 최적화<br>
 살펴보면 퀄리티 향상에 도움이 된다.<br><a rel="noopener nofollow" class="external-link" href="https://m.blog.naver.com/topblade71/222964598090" target="_blank">https://m.blog.naver.com/topblade71/222964598090</a><br>
-<a rel="noopener nofollow" class="external-link" href="https://m.blog.naver.com/topblade71/222964598090" target="_blank">https://m.blog.naver.com/topblade71/222964598090</a>]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Wed, 21 May 2025 09:01:48 GMT</pubDate></item><item><title><![CDATA[폴더 구조]]></title><description><![CDATA[ 
+<a rel="noopener nofollow" class="external-link" href="https://m.blog.naver.com/topblade71/222964598090" target="_blank">https://m.blog.naver.com/topblade71/222964598090</a>]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/상태-관리-(redux,-zustand).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/상태 관리 (Redux, Zustand).md</guid><pubDate>Fri, 20 Jun 2025 08:53:45 GMT</pubDate></item><item><title><![CDATA[폴더 구조]]></title><description><![CDATA[ 
  <br><br>/src
   /assets      # 이미지, 폰트 등
   /components  # UI 컴포넌트
