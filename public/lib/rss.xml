@@ -1,5 +1,5 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 1033 at column 590: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 23 Jun 2025 04:10:28 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 23 Jun 2025 04:09:28 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 1079 at column 530: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 23 Jun 2025 14:17:28 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 23 Jun 2025 14:16:46 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
  <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
 “공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
 이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터, 어떻게 구성하면 실무에 유리한지, 그리고 Storybook을 통해 어떻게 문서화하고 협업까지 연결할 수 있는지를 정리해봤어요.<br><br><br>디자인 시스템은 일관된 UI/UX를 제공하기 위한 설계 기준이에요.<br>
@@ -1021,7 +1021,53 @@ const { mutate } = useMutation({
 <br><br>
 <br>혁신적인 사용자 경험:&nbsp;사용자는 모든 인터랙션에 앱이 즉각적으로 반응한다고 느낌.
 <br>선언적인 코드:&nbsp;"데이터를 가져와라", "데이터를 수정해라" 라고 선언만&nbsp;하면, 복잡한 비동기 로직은 React Query가 알아서 처리. 개발자는 UI에만 집중 가능.
-<br><br>DateHeader에서&nbsp;prefetchQuery&nbsp;메소드를 사용했습니다.<br>// DateHeader.tsx
+<br><br><br>onMutate는&nbsp;useMutation의 옵션 중 하나로, 실제 서버 요청 함수(mutationFn)가 실행되기&nbsp;바로 직전에 호출되는 함수입니다.<br>
+가장 중요한 역할은,&nbsp;"서버의 응답을 기다리지 않고, 성공할 거라고 '낙관'하며 UI를 미리 업데이트하는 것"&nbsp;입니다.<br>
+사용자가 느린 네트워크 환경에 있더라도, 앱이 즉각적으로 반응하는 것처럼 느끼게 만드는 '마법'의 원천이죠.<br><br><br>우리가 작성한&nbsp;onMutate&nbsp;코드를 한 줄 한 줄 분해해서 그 의도를 파헤쳐 보겠습니다.<br>// onMutate는 mutation 함수가 받을 변수(variables)를 인자로 받습니다.
+// 여기서는 { priority, id, done } 객체입니다.
+onMutate: async (variables) =&gt; {
+  // ----------------------------------------------------
+  // 1단계: 충돌 방지 및 데이터 스냅샷
+  // ----------------------------------------------------
+  console.log('1. 이전 쿼리 취소');
+  await queryClient.cancelQueries({ queryKey });
+
+  console.log('2. UI 즉시 업데이트 (setQueryData)');
+  const previousTasks = queryClient.getQueryData&lt;Tasks&gt;(queryKey);
+
+  // ----------------------------------------------------
+  // 2단계: UI 즉시 업데이트 (가짜 성공)
+  // ----------------------------------------------------
+  if (previousTasks) {
+    // (여기서 캐시 데이터를 직접 조작하여 UI를 미리 변경)
+    queryClient.setQueryData&lt;Tasks&gt;(queryKey, newTasks);
+  }
+  
+  // ----------------------------------------------------
+  // 3단계: 롤백을 위한 데이터 반환
+  // ----------------------------------------------------
+  console.log('3. 이전 데이터 저장 (롤백 대비)');
+  return { previousTasks };
+},
+<br><br>
+<br>무슨 일인가?:&nbsp;['tasks', 오늘날짜]&nbsp;라는 이름표를 가진, 현재 진행 중인&nbsp;모든 데이터 요청(useQuery)을 취소시킵니다.
+<br>왜 필요한가?:&nbsp;레이스 컨디션(Race Condition)을 방지하기 위해서입니다. 만약 우리가 체크박스를 누르는 순간, 백그라운드에서 데이터를 새로고침하는 요청이 이미 진행 중이었다고 상상해보세요.
+<br>
+<br>우리가 체크박스를 눌러 UI를 '완료' 상태로 미리 바꿉니다&nbsp;(낙관적 업데이트).
+<br>그런데 직전에 시작됐던 백그라운드 요청이&nbsp;'미완료' 상태의 옛날 데이터를 가지고 돌아옵니다.
+<br>이 옛날 데이터가 우리의&nbsp;낙관적 업데이트를&nbsp;덮어써 버려서, UI가 다시 '미완료' 상태로 돌아가는 깜빡임 현상이 발생합니다.
+<br>
+<br>cancelQueries는 이런 비극을 막기 위해, "지금부터 내가 캐시를 직접 조작할 거니까, 관련된 다른 요청들은 다 멈춰!" 라고 선언하는 것입니다.
+<br><br>
+<br>무슨 일인가?: 현재 캐시에 저장된,&nbsp;변경되기 직전의 원본 데이터를&nbsp;가져와&nbsp;previousTasks&nbsp;변수에 저장합니다.
+<br>왜 필요한가?: 나중에 서버 요청이&nbsp;실패했을 때, 이 원본 데이터를 사용해서 UI를 원래 상태로&nbsp;롤백(Rollback)&nbsp;시켜야 하기 때문입니다. 이것이 우리의 '보험'입니다.
+<br><br>
+<br>무슨 일인가?: React Query 캐시를&nbsp;직접 조작합니다.&nbsp;newTasks는 우리가 체크박스를 '완료'로 바꾼 가짜 데이터입니다.
+<br>왜 필요한가?: 이것이 바로&nbsp;낙관적 업데이트의 핵심 실행부입니다.&nbsp;useQuery는 이&nbsp;queryKey에 해당하는 캐시 데이터를 구독하고 있으므로,&nbsp;setQueryData로 캐시를 바꾸는 순간, 별도의&nbsp;setState&nbsp;없이도 UI가&nbsp;즉시&nbsp;리렌더링됩니다.
+<br><br>
+<br>무슨&nbsp;일인가?:&nbsp;onMutate&nbsp;함수가 '보험'으로 저장해뒀던&nbsp;previousTasks&nbsp;객체를 반환합니다.
+<br>왜 필요한가?: 여기서 반환된 값은&nbsp;onError와&nbsp;onSettled&nbsp;함수의&nbsp;세 번째 인자인&nbsp;context&nbsp;객체로 전달됩니다. 이&nbsp;context&nbsp;덕분에, 우리는 실패했을 때 어떤 데이터로 롤백해야 할지 알 수 있습니다.
+<br><br>마치 잘 짜인 팀플레이 같습니다.<br><br><br><br>DateHeader에서&nbsp;prefetchQuery&nbsp;메소드를 사용했습니다.<br>// DateHeader.tsx
 const queryClient = useQueryClient();
 const prefetchTasks = () =&gt; {
   queryClient.prefetchQuery({ // 마우스를 올리면
@@ -1031,7 +1077,7 @@ const prefetchTasks = () =&gt; {
 };
 <br>
 <br>prefetchQuery: 사용자가&nbsp;클릭하기 전, 마우스를 올리는&nbsp;것만으로 데이터를 미리 캐시에 저장합니다. 클릭 시에는 캐시된 데이터를 즉시 보여줘 로딩 시간을&nbsp;0으로 만듭니다.
-<br><br><br><br>우리는 단순히 라이브러리 두&nbsp;개를 추가한 것이 아니라,&nbsp;애플리케이션을 설계하는 패러다임을 전환했습니다. 이를 통해 사용자와 개발자 모두를 만족시키는 더 나은 웹 애플리케이션을 만들 수 있었습니다.]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/react-query와-zustand.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/React Query와 Zustand.md</guid><pubDate>Mon, 23 Jun 2025 04:02:53 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
+<br><br><br><br>이 정교한 메커니즘 덕분에, 우리는 사용자에게는 즉각적인 반응성을 제공하면서도, 내부적으로는 데이터의 안정성과 정합성을 완벽하게 유지할 수 있는&nbsp;것입니다.]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/react-query와-zustand.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/React Query와 Zustand.md</guid><pubDate>Mon, 23 Jun 2025 05:55:28 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
  <br><br><br>타입스크립트에서 인터페이스는 객체 타입을 정의할 때 사용하는 문법이다.<br><br>interface User {
 	name: string;
 	age: number;
