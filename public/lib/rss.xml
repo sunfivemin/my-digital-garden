@@ -1,5 +1,5 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 882 at column 425: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Sun, 22 Jun 2025 10:34:30 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Sun, 22 Jun 2025 10:33:52 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 1033 at column 590: Invalid bytes in character encoding
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 23 Jun 2025 04:10:28 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 23 Jun 2025 04:09:28 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
  <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
 “공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
 이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터, 어떻게 구성하면 실무에 유리한지, 그리고 Storybook을 통해 어떻게 문서화하고 협업까지 연결할 수 있는지를 정리해봤어요.<br><br><br>디자인 시스템은 일관된 UI/UX를 제공하기 위한 설계 기준이에요.<br>
@@ -880,7 +880,158 @@ export const Outline = {
 <br>유지보수 용이성 향상
 <br>팀 간 커뮤니케이션 최소화
 <br>상태 시각화 → QA/디자이너 확인 편의성
-<br>향후에는 모달, 토글, 인풋 등도 이 구조로 확장 예정입니다.]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/next.js-+-tailwind-+-storybook-기반-디자인-시스템-구축기.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/Next.js + Tailwind + Storybook 기반 디자인 시스템 구축기.md</guid><pubDate>Mon, 16 Jun 2025 05:23:18 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
+<br>향후에는 모달, 토글, 인풋 등도 이 구조로 확장 예정입니다.]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/next.js-+-tailwind-+-storybook-기반-디자인-시스템-구축기.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/Next.js + Tailwind + Storybook 기반 디자인 시스템 구축기.md</guid><pubDate>Mon, 23 Jun 2025 02:05:28 GMT</pubDate></item><item><title><![CDATA[React Query와 Zustand]]></title><description><![CDATA[ 
+ <br><br>발표 목표:&nbsp;useState만으로 상태를 관리하던 초기 앱의 문제점을 알아보고,&nbsp;Zustand와&nbsp;React Query를 도입하여 어떻게 코드 품질과 사용자 경험을 극적으로 개선했는지 과정을 공유합니다.<br><br><br><br>
+<br>모든 상태를&nbsp;useState로&nbsp;관리했습니다.
+<br>날짜 상태:&nbsp;MyDayPage에서&nbsp;useState로 생성 후,&nbsp;DateHeader로&nbsp;props 전달&nbsp;(props drilling).
+<br>할 일 목록 상태:&nbsp;MyDayPage에&nbsp;하드코딩된 임시 데이터를&nbsp;useState로 관리.
+<br>// MyDayPage.tsx (개선 전, 요약)
+export default function MyDayPage() {
+  // 1. 날짜 상태 관리
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
+  // 2. 할 일 목록 관리
+  const [tasks, setTasks] = useState(initialTasks);
+
+  // 3. 자식에게 props로 전달
+  return (
+    &lt;MobileLayout&gt;
+      &lt;DateHeader
+        selectedDate={selectedDate}
+        onSelectDate={setSelectedDate}
+      /&gt;
+      {/* tasks.must.map(...) */}
+    &lt;/MobileLayout&gt;
+  );
+}
+<br><br>
+<br>복잡한 상태 로직:
+<br>
+<br>API 연동 시&nbsp;isLoading,&nbsp;isError&nbsp;상태를 위한&nbsp;useState가 추가로 필요.
+<br>데이터 동기화를 위한&nbsp;useEffect&nbsp;훅이 필수적이며, 코드가 길고 복잡해짐.
+<br>
+<br>Props Drilling:
+<br>
+<br>selectedDate가 필요 없는 중간 컴포넌트를 거쳐야 할 경우, 코드가 지저분해짐.
+<br>
+<br>끔찍한 사용자 경험 (만약 실제 API였다면):
+<br>
+<br>느린 데이터 로딩:&nbsp;날짜 변경 시, 매번 1초 이상 기다려야 화면이 바뀜.
+<br>느린 데이터 업데이트:&nbsp;체크박스 클릭 시, 서버와 통신이&nbsp;끝날 때까지 (약 1.5초) UI가 멈춰있어 매우 답답함.
+<br><br><br><br>① 클라이언트 상태 (Client State):&nbsp;오직 내&nbsp;앱(브라우저)에만 존재하는 상태.<br>
+<br>예시: 다크모드 ON/OFF, 모달창 열림/닫힘,&nbsp;오늘 내가 선택한 날짜.
+<br>서버는&nbsp;이 상태에 대해 전혀 모릅니다. 
+
+<br>해결사 →&nbsp;Zustand
+
+
+<br>② 서버 상태 (Server State):&nbsp;서버&nbsp;데이터베이스에서 가져와야 하는 상태.<br>
+<br>예시:&nbsp;오늘의 할 일 목록,&nbsp;내&nbsp;프로필 정보, 게시글 목록.
+<br>특징:&nbsp;비동기(Asynchronous)이며, 항상&nbsp;로딩/성공/실패&nbsp;상태를 가집니다.
+
+<br>해결사 →&nbsp;React Query
+
+
+<br><br><br><br>"아주 작고 간단한&nbsp;전역 상태 보관함" 이라고&nbsp;생각하시면 됩니다.&nbsp;Redux처럼 복잡한 설정 없이, 어떤 컴포넌트에서든 쉽게 꺼내 쓸 수 있는 공유 상자 같은 것입니다.<br><br><br>useState로 날짜를 관리하고, props로 자식에게 전달.<br><br>
+<br>useDateStore&nbsp;스토어 생성
+<br>
+<br>단 몇 줄의 코드로 전역 상태와 상태 변경 함수를 만듦.
+<br>&nbsp;Zustand의&nbsp;create&nbsp;함수로 '날짜 보관함'(useDateStore)을 만듭니다.
+<br>    // store/useDateStore.ts
+    export const useDateStore = create&lt;DateState&gt;((set) =&gt; ({
+      selectedDate: new Date(),
+      setSelectedDate: (date) =&gt; set({ selectedDate: date }),
+    }));
+<br>
+<br>컴포넌트에서 직접 사용
+<br>
+<br>이제&nbsp;DateHeader는&nbsp;부모에게&nbsp;props를 받을 필요 없이, 필요할 때 직접&nbsp;useDateStore라는 훅을 호출해서 상태를 가져옵니다.
+<br>    // features/myday/components/DateHeader.tsx
+    export default function DateHeader() {
+      const { selectedDate, setSelectedDate } = useDateStore();
+      // ...
+    }
+<br><br>
+<br>Props Drilling 해결:&nbsp;더 이상 불필요한 props&nbsp;전달이 사라짐.
+<br>컴포넌트 독립성 향상:&nbsp;DateHeader는 이제&nbsp;스스로 상태를 관리하는 독립적인 부품이 됨.
+<br><br><br><br>"데이터를 다루는 아주 유능한&nbsp;개인 비서" 입니다.&nbsp;fetch나&nbsp;axios처럼 단순히 데이터를 요청만 하는 도구가 아닙니다. 데이터를 가져오고, 캐싱(기억)하고, 로딩/에러 상태를 관리하고, 화면을 자동으로 업데이트하는 등&nbsp;서버 데이터와 관련된 모든 귀찮은 일을 대신&nbsp;해줍니다.<br><br><br>useState와 (상상 속의)&nbsp;useEffect로 API 데이터를 관리. 로딩/에러 처리, 캐싱, 업데이트 모두 수동으로 구현해야 함.<br>
+useState&nbsp;3개(data,&nbsp;loading,&nbsp;error)와&nbsp;useEffect&nbsp;1개, 총 4개가 필요했던 데이터 가져오기.<br><br><br>
+<br>useState,&nbsp;useEffect를 단 하나의&nbsp;useQuery&nbsp;훅으로 대체.
+<br>isLoading,&nbsp;isError&nbsp;상태를 무료로 제공받음.
+<br>// MyDayPage.tsx
+import { useQuery } from '@tanstack/react-query';
+import { getTasksByDate } from '@/lib/api/tasks';
+
+// ...
+const { data, isLoading, isError } = useQuery({
+  queryKey: ['tasks', selectedDate], // 데이터의 "이름표"
+  queryFn: () =&gt; getTasksByDate(selectedDate), // 실제 데이터를 가져오는 함수
+});
+<br>
+<br>useQuery&nbsp;훅:&nbsp;"데이터 좀 가져와 줘" 라고 요청하는 훅입니다.
+<br>queryKey: React Query가 데이터를 구별하기 위한&nbsp;고유한 이름표입니다.&nbsp;selectedDate가 바뀌면 이름표도 바뀌어서, 비서가 새로운 데이터를 가져옵니다. (캐싱의 핵심!)
+<br>queryFn: "어떻게" 데이터를 가져올지 알려주는 실제 비동기 함수입니다.
+<br>반환값:&nbsp;data(성공한 데이터),&nbsp;isLoading(로딩 중인지?),&nbsp;isError(실패했는지?) 상태를 알아서 제공합니다.
+<br><br><br>
+<br>스켈레톤 UI:&nbsp;"로딩 중..." 텍스트 대신, UI 뼈대를 보여주어 사용자가 느끼는 체감 성능 향상.
+<br>데이터 미리 가져오기 (Prefetching):&nbsp;사용자가 날짜에 마우스를 올리는 순간 데이터를 미리 로드. 클릭 시 로딩 없이 즉시 화면 전환!
+<br>// DateHeader.tsx
+    function DateItem({ date, onSelect }) {
+      const queryClient = useQueryClient();
+      const prefetchTasks = () =&gt; {
+        queryClient.prefetchQuery(...); // 마우스 올리면 미리 가져오기
+      };
+      return &lt;div onMouseEnter={prefetchTasks} onClick={onSelect} /&gt;;
+    }**
+
+<br><br>
+<br>문제:&nbsp;체크박스를 눌러도 1.5초 뒤에 반응하는&nbsp;끔찍한 경험.
+<br>해결:&nbsp;useMutation의&nbsp;onMutate&nbsp;옵션을 사용.
+<br>
+<br>UI 즉시 업데이트:&nbsp;React Query의&nbsp;onMutate&nbsp;훅을 사용 UI를 즉시 변경.
+<br>백그라운드 통신:&nbsp;UI 변경&nbsp;후, 서버에 조용히 업데이트 요청.
+<br>자동 롤백:&nbsp;만약 서버 요청이 실패하면, UI를 원래대로 되돌려 데이터 정합성 유지.
+<br>// MyDayPage.tsx
+const queryClient = useQueryClient();
+const { mutate } = useMutation({
+  mutationFn: updateTaskStatus, // "어떻게" 데이터를 수정할지 알려줌
+
+  // 여기가 마법의 핵심: 낙관적 업데이트(Optimistic Update)
+  onMutate: async (variables) =&gt; {
+    // 1. UI를 즉시 업데이트 (사용자는 바로 반응을 본다)
+    queryClient.setQueryData(queryKey, newOptimisticData);
+    return { previousTasks }; // 2. 실패 시 되돌릴 원본 데이터 저장
+  },
+
+  onError: (err, variables, context) =&gt; {
+    // 3. 만약 실패하면, 저장해 둔 원본 데이터로 UI를 롤백
+    queryClient.setQueryData(queryKey, context.previousTasks);
+  },
+
+  onSettled: () =&gt; {
+    // 4. 성공하든 실패하든, 마지막에 서버와 데이터를 최종 동기화
+    queryClient.invalidateQueries({ queryKey });
+  },
+});
+<br>
+<br>useMutation&nbsp;훅:&nbsp;"데이터를 수정/생성/삭제해 줘" 라고 요청하는 훅입니다.
+<br>onMutate: "일단 성공할거라 믿고 UI부터 바꿔!" - 사용자 경험의 핵심입니다.
+<br>onError: "앗, 실패했네. 얼른 원래대로 되돌리자!" - 데이터의&nbsp;안정성을 보장합니다.
+<br>invalidateQueries: "이제 이 데이터는 낡았으니, 새로고침해줘!" - 서버와의 동기화를 담당합니다.
+<br><br>
+<br>혁신적인 사용자 경험:&nbsp;사용자는 모든 인터랙션에 앱이 즉각적으로 반응한다고 느낌.
+<br>선언적인 코드:&nbsp;"데이터를 가져와라", "데이터를 수정해라" 라고 선언만&nbsp;하면, 복잡한 비동기 로직은 React Query가 알아서 처리. 개발자는 UI에만 집중 가능.
+<br><br>DateHeader에서&nbsp;prefetchQuery&nbsp;메소드를 사용했습니다.<br>// DateHeader.tsx
+const queryClient = useQueryClient();
+const prefetchTasks = () =&gt; {
+  queryClient.prefetchQuery({ // 마우스를 올리면
+    queryKey: ['tasks', date], // 해당 날짜의 데이터를
+    queryFn: () =&gt; getTasksByDate(date), // 미리 가져온다!
+  });
+};
+<br>
+<br>prefetchQuery: 사용자가&nbsp;클릭하기 전, 마우스를 올리는&nbsp;것만으로 데이터를 미리 캐시에 저장합니다. 클릭 시에는 캐시된 데이터를 즉시 보여줘 로딩 시간을&nbsp;0으로 만듭니다.
+<br><br><br><br>우리는 단순히 라이브러리 두&nbsp;개를 추가한 것이 아니라,&nbsp;애플리케이션을 설계하는 패러다임을 전환했습니다. 이를 통해 사용자와 개발자 모두를 만족시키는 더 나은 웹 애플리케이션을 만들 수 있었습니다.]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/react-query와-zustand.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/React Query와 Zustand.md</guid><pubDate>Mon, 23 Jun 2025 04:02:53 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
  <br><br><br>타입스크립트에서 인터페이스는 객체 타입을 정의할 때 사용하는 문법이다.<br><br>interface User {
 	name: string;
 	age: number;
