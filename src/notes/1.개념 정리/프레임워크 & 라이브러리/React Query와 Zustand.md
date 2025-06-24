@@ -147,7 +147,7 @@ const { data, isLoading, isError } = useQuery({
         queryClient.prefetchQuery(...); // 마우스 올리면 미리 가져오기
       };
       return <div onMouseEnter={prefetchTasks} onClick={onSelect} />;
-    }**
+    }
 
 ```
 

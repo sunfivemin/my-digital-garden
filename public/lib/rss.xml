@@ -1,5 +1,5 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 1079 at column 530: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 23 Jun 2025 14:17:28 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 23 Jun 2025 14:16:46 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 24 Jun 2025 11:35:51 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 24 Jun 2025 11:35:04 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[🎨 실무에서 통하는 디자인 시스템 설계와 Storybook 활용법]]></title><description><![CDATA[ 
  <br><br>React 프로젝트를 진행하다 보면 자연스럽게 드는 생각이 하나 있어요.<br>
 “공통 UI 요소가 자꾸 반복되는데, 좀 더 체계적으로 정리할 수 없을까?”<br>
 이때 필요한 게 바로 디자인 시스템입니다. 그리고 이를 문서화하고 테스트할 수 있는 최고의 도구는 바로 Storybook이죠.<br>이번 글에서는 디자인 시스템을 왜 쓰는지부터, 어떻게 구성하면 실무에 유리한지, 그리고 Storybook을 통해 어떻게 문서화하고 협업까지 연결할 수 있는지를 정리해봤어요.<br><br><br>디자인 시스템은 일관된 UI/UX를 제공하기 위한 설계 기준이에요.<br>
@@ -982,7 +982,7 @@ const { data, isLoading, isError } = useQuery({
         queryClient.prefetchQuery(...); // 마우스 올리면 미리 가져오기
       };
       return &lt;div onMouseEnter={prefetchTasks} onClick={onSelect} /&gt;;
-    }**
+    }
 
 <br><br>
 <br>문제:&nbsp;체크박스를 눌러도 1.5초 뒤에 반응하는&nbsp;끔찍한 경험.
@@ -1077,7 +1077,7 @@ const prefetchTasks = () =&gt; {
 };
 <br>
 <br>prefetchQuery: 사용자가&nbsp;클릭하기 전, 마우스를 올리는&nbsp;것만으로 데이터를 미리 캐시에 저장합니다. 클릭 시에는 캐시된 데이터를 즉시 보여줘 로딩 시간을&nbsp;0으로 만듭니다.
-<br><br><br><br>이 정교한 메커니즘 덕분에, 우리는 사용자에게는 즉각적인 반응성을 제공하면서도, 내부적으로는 데이터의 안정성과 정합성을 완벽하게 유지할 수 있는&nbsp;것입니다.]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/react-query와-zustand.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/React Query와 Zustand.md</guid><pubDate>Mon, 23 Jun 2025 05:55:28 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
+<br><br><br><br>이 정교한 메커니즘 덕분에, 우리는 사용자에게는 즉각적인 반응성을 제공하면서도, 내부적으로는 데이터의 안정성과 정합성을 완벽하게 유지할 수 있는&nbsp;것입니다.]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/react-query와-zustand.html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/React Query와 Zustand.md</guid><pubDate>Tue, 24 Jun 2025 00:47:07 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
  <br><br><br>타입스크립트에서 인터페이스는 객체 타입을 정의할 때 사용하는 문법이다.<br><br>interface User {
 	name: string;
 	age: number;
