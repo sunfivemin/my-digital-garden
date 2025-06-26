@@ -459,7 +459,7 @@ Vanilla Extract는 스타일을 타입 안전하게 구성하고 테마 분기�
 • **다음에 학습할 주제**
 - localStorage에 사용자 테마 저장 및 적용
 
-### **🔗 참고자료**
+### 🔗 참고자료
 - [Vanilla Extract 공식 문서](https://vanilla-extract.style/)
     - createGlobalTheme, createTheme, createThemeContract의 사용법
     - classList 기반 테마 전환 예시와 권장 방식 포함
