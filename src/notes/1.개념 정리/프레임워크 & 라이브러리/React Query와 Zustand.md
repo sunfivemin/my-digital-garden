@@ -1,8 +1,6 @@
-## 발표 자료: useState를 넘어서, React Query와 Zustand로 진화하는 프론트엔드
+# useState를 넘어서, React Query와 Zustand로 진화하는 프론트엔드
 
-발표 목표: useState만으로 상태를 관리하던 초기 앱의 문제점을 알아보고, Zustand와 React Query를 도입하여 어떻게 코드 품질과 사용자 경험을 극적으로 개선했는지 과정을 공유합니다.
-
----
+useState만으로 상태를 관리하던 초기 앱의 문제점을 알아보고, Zustand와 React Query를 도입하여 어떻게 코드 품질과 사용자 경험을 극적으로 개선했는지 과정을 공유합니다.
 
 ### 1. The "Before" : 우리의 시작점
 

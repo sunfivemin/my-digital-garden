@@ -1,6 +1,7 @@
 # 🗓 dot.daily — 성능개선
 
-## **실무에서 만난 성능 병목과 Next.js + React 최적화 전략**
+## 성능 병목과 Next.js + React 최적화 전략
+
 **dot.daily** 프로젝트에서 직접 개선하며 얻은 인사이트 기반
 
 ---
@@ -166,7 +167,7 @@ const handlePostpone = (task: Task) => { /* ... */ }; // 미사용
   ✓ Linting and checking validity of types
 ```
 
-![buildSuccess.png](https://seonohblog.netlify.app/assets/buildSuccess.png.png)
+![BuildSuccess.png](https://seonohblog.netlify.app/assets/BuildSuccess.png)
 
 
 ---

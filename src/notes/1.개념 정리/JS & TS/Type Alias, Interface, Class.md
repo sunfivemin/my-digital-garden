@@ -8,7 +8,7 @@ tags:
   - Class
 created: 2025-03-27
 ---
- 
+
 # 🚀 Type Alias, Interface, Class 
 
 ## 📌 Type Alias란?
