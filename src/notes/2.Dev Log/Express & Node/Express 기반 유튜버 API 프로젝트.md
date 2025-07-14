@@ -4,7 +4,7 @@
 유튜버 정보를 등록하고, 수정하며, 삭제할 수 있는 **풀스택 CRUD 프로젝트**입니다.
 **Express.js + React + Tailwind CSS + Storybook** 기반으로 직접 API 설계부터 UI 구현과 컴포넌트 문서화하였습니다.
 
-- github: https://github.com/sunfivemin/youtuber-api
+#### github: https://github.com/sunfivemin/youtuber-api
 
 ## 1️⃣ 프로젝트 목적
 

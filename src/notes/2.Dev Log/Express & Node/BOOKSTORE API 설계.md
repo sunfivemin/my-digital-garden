@@ -1,4 +1,4 @@
-🎯 github: https://github.com/sunfivemin/book-shop 
+#### 🎯 github: https://github.com/sunfivemin/book-shop 
 Node.js 기반 Express 프레임워크로 만든 도서 쇼핑몰 백엔드 프로젝트입니다. 프론트엔드 프로젝트는 [book-store (GitHub)](https://github.com/sunfivemin/book-store) 와 연결됩니다.
 JWT 기반 인증, 카테고리별 도서 조회, 장바구니, 좋아요, 주문 등 주요 기능을 구현했습니다.
 

@@ -37,6 +37,7 @@ aliases:
 ## 📚 카테고리
 
 ### 🚀 프레임워크 & 라이브러리
+- [[dot.daily - 프로젝트 발표]]
 - [[Storybook(Feat. 디자인 시스템 설계)]]
 - [[CVA + Zustand로 설계하는 디자인 시스템 기반 UI 컴포넌트 (with Storybook)]]
 - [[Redux & Zustand 상태 관리 정리]]
@@ -77,6 +78,7 @@ aliases:
 - **Jest, React Testing Library**를 활용한 **컴포넌트 테스트 자동화 적용**
 
 💡 모든 컴포넌트는 **재사용성, 확장성, 타입 안전성**을 고려해 설계했습니다.
+- [[dot.daily - 컴포넌트]]
 - [[2025-06-24-기본 컴포넌트]]
 
 ---
