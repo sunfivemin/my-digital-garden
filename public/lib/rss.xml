@@ -1,5 +1,5 @@
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><parsererror xmlns="http://www.w3.org/1999/xhtml" style="display: block; white-space: pre; border: 2px solid #c77; padding: 0 1em 0 1em; margin: 1em; background-color: #fdd; color: black"><h3>This page contains the following errors:</h3><div style="font-family:monospace;font-size:12px">error on line 1127 at column 712: Invalid bytes in character encoding
-</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Wed, 16 Jul 2025 13:52:29 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Wed, 16 Jul 2025 13:50:30 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
+</div><h3>Below is a rendering of the page up to the first error.</h3></parsererror><channel><title><![CDATA[blog]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib/media/favicon.ico</url><title>blog</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Mon, 21 Jul 2025 03:21:20 GMT</lastBuildDate><atom:link href="lib/rss.xml" rel="self" type="application/rss+xml"/><pubDate>Mon, 21 Jul 2025 03:20:34 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[상태 관리]]></title><description><![CDATA[ 
  <br><br><br>상태 관리는&nbsp;애플리케이션의 UI와 데이터 간의 동기화를 유지하는 핵심 역할입니다. 특히 전역적으로 공유해야 할 데이터(로그인 정보, 장바구니, 모달 상태 등)를 다룰 때 필요합니다.<br><br>
 <br>Redux: 구조적이고 명확한 상태 관리, 복잡한 상태 트리와 미들웨어 처리가 필요한 경우에 적합
 <br>Zustand: 간단한 API와 빠른 설정, 로직 분리가 자유롭고 보일러플레이트가 없음
@@ -1125,193 +1125,125 @@ export const Primary = {
 <br>이렇게 하면 디자이너가 디자인을 바꾸면, 바로 코드에 반영되도록 자동화할 수 있어요.<br><br><br>처음엔 ‘왜 굳이 이렇게까지 해야 해?’ 싶을 수 있지만,<br>
 컴포넌트가 많아지고, 팀원이 늘어나고, 유지보수를 하게 될수록 디자인 시스템의 필요성을 절실히 느낍니다.<br>
 작은 프로젝트부터라도 토큰 하나, 버튼 하나부터 시작해보세요.<br>
-다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!<br> 👉다음 글 : <a data-href="Express 기반 유튜버 API 프로젝트" href="2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html" class="internal-link" target="_self" rel="noopener nofollow">Express 기반 유튜버 API 프로젝트</a>]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/storybook(feat.-디자인-시스템-설계).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/Storybook(Feat. 디자인 시스템 설계).md</guid><pubDate>Sun, 15 Jun 2025 09:29:49 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[인터페이스]]></title><description><![CDATA[ 
- <br><br><br>타입스크립트에서 인터페이스는 객체 타입을 정의할 때 사용하는 문법이다.<br><br>interface User {
-	name: string;
-	age: number;
-}
+다음 글에서는 실제로 디자인 토큰을 자동 변환하고, Storybook을 GitHub Pages에 배포하는 과정을 공유할게요!<br> 👉다음 글 : <a data-href="Express 기반 유튜버 API 프로젝트" href="2.dev-log/express-&amp;-node/express-기반-유튜버-api-프로젝트.html" class="internal-link" target="_self" rel="noopener nofollow">Express 기반 유튜버 API 프로젝트</a>]]></description><link>1.개념-정리/프레임워크-&amp;-라이브러리/storybook(feat.-디자인-시스템-설계).html</link><guid isPermaLink="false">1.개념 정리/프레임워크 &amp; 라이브러리/Storybook(Feat. 디자인 시스템 설계).md</guid><pubDate>Sun, 15 Jun 2025 09:29:49 GMT</pubDate></item><item><title><![CDATA[이넘, 클래스]]></title><description/></item><item><title><![CDATA[dot.daily - 프로젝트 발표]]></title><description><![CDATA[ 
+ <br>여러분은 할 일 관리&nbsp;앱을 사용해보신 적&nbsp;있으신가요? 저는 기존의&nbsp;할 일 앱들을&nbsp;사용하면서&nbsp;몇 가지&nbsp;불편함을 느꼈습니다.<br>
+복잡한 기능들, 완료하지 못했을 때의&nbsp;죄책감,&nbsp;그리고 모바일에서 사용하기 불편한 인터페이스들&nbsp;말이죠.<br>
+그래서 이런&nbsp;문제들을 해결하고자&nbsp;dot.daily라는 모바일 중심의 일상&nbsp;관리 및 감정 기록 웹&nbsp;애플리케이션을 개발하게 되었습니다.<br><br><a rel="noopener nofollow" class="external-link" href="https://github.com/sunfivemin/DOT-DAILY" target="_blank">https://github.com/sunfivemin/DOT-DAILY</a><br><br><a data-tooltip-position="top" aria-label="https://dot-daily.vercel.app/" rel="noopener nofollow" class="external-link" title="https://dot-daily.vercel.app/" href="https://dot-daily.vercel.app/" target="_blank">dot-daily.vercel.app</a><br><br><br>먼저 기존 할 일&nbsp;관리 앱들의 문제점을&nbsp;살펴보겠습니다.<br>
+첫 번째, 복잡한&nbsp;기능 과부하입니다.<br>
+대부분의 할&nbsp;일 앱들이 프로젝트 관리, 팀 협업, 시간&nbsp;추적 등 너무 많은 기능을&nbsp;제공해서&nbsp;단순히&nbsp;"오늘&nbsp;뭘 할까?"라는 질문에 답하기에는 너무&nbsp;복잡했습니다.<br>
+두 번째, 완료&nbsp;압박감입니다.<br>
+기존 앱들은 "미완료 =&nbsp;실패"라는&nbsp;이분법적&nbsp;사고를 조장합니다. 할&nbsp;일을 완료하지 못하면 빨간색으로 표시되거나 경고 메시지가 뜨죠. 이는 오히려 스트레스를&nbsp;가중시킵니다.<br>
+세 번째, 모바일&nbsp;UX 부족입니다.<br>
+많은&nbsp;웹 기반&nbsp;할 일 앱들이 데스크톱 중심으로 설계되어 있어서, 이동 중이나 잠깐의&nbsp;시간에 모바일로&nbsp;빠르게 할&nbsp;일을 추가하거나 확인하기 어려웠습니다.<br>
+마지막으로, 감정과 분리된&nbsp;관리입니다.<br>
+기존 앱들은 단순히 "했다/안 했다"만&nbsp;체크할 뿐, "왜 못했는지", "그때&nbsp;어떤&nbsp;기분이었는지"에 대한 성찰 기능이 부족했습니다.<br><br>저 역시 기존&nbsp;할 일 앱을 사용하면서 완벽주의&nbsp;성향 때문에 스트레스를&nbsp;받았고, 결국 사용을&nbsp;포기한 경험이&nbsp;있습니다.<br>
+그리고 일상에서 모바일로&nbsp;빠르게 할 일을 기록하고&nbsp;확인할 필요성을 자주 느꼈습니다. 단순한 체크리스트를 넘어서&nbsp;나의 감정과&nbsp;생각을 함께 기록하며 성찰할&nbsp;수 있는&nbsp;도구가 필요하다고 생각했습니다.<br><br><br>이런 문제&nbsp;인식을 바탕으로 dot.daily는 세&nbsp;가지&nbsp;핵심 철학을 가지고 기획되었습니다.<br><br>기존 앱들이 "오늘&nbsp;할 일을 모두 완료하세요!"라고 압박한다면,<br>
+dot.daily는&nbsp;"못한 일은&nbsp;내일로, 보류할 일은 보류함으로" 보내도 괜찮다는 유연한 접근을 제공합니다.<br><br>언제 어디서나 빠른&nbsp;할 일&nbsp;등록과 확인이&nbsp;가능하도록 모바일 환경을 최우선으로 고려했습니다. 네이티브&nbsp;앱과 같은&nbsp;직관적인 사용자 경험을&nbsp;웹에서 구현하고자 했습니다.<br><br>단순한 할&nbsp;일 관리를&nbsp;넘어서&nbsp;감정 기록과 통합하여, 데이터를 기반으로 한&nbsp;개인 성향 분석과&nbsp;개선점&nbsp;도출이 가능하도록 설계했습니다.<br><br> 이번 프로젝트는&nbsp;Next.js 15(App Router)와 React 18 기반의 프론트엔드와,&nbsp;Express, Prisma, PostgreSQL 기반의 백엔드가 통신하는&nbsp;모바일 중심의 풀스택 웹 애플리케이션입니다.<br>
+프론트엔드에서는&nbsp;Zustand로 클라이언트 상태를,&nbsp;React Query로 서버 상태를 분리 관리하며, 효율적인 상태 흐름을 구축했습니다.<br>
+UI는&nbsp;Tailwind CSS를 기반으로, class-variance-authority(CVA)를 활용해 컴포넌트 스타일을 체계적으로 관리했고,&nbsp;Figma로 UI를 설계하고 Storybook으로 문서화하며 팀 간 협업의 기반을 다졌습니다.<br>
+또한&nbsp;Framer Motion을 통해 페이지 전환과 요소 등장 시 자연스러운 애니메이션을 구현해 사용자 경험을 향상시켰습니다.<br>
+백엔드는&nbsp;Prisma ORM과 PostgreSQL을 기반으로 데이터 모델링을 진행했고,&nbsp;Swagger를 통해 모든 API를 문서화하여 프론트엔드와의 협업을 원활하게 했습니다.<br>
+프론트엔드는&nbsp;Vercel, 백엔드는&nbsp;Render에 배포하여 실제 서비스처럼 운영 가능한 구조로 마무리했습니다.<br>
+특히 컴포넌트 설계 측면에서는&nbsp;CVA와 Storybook을 활용해 재사용성과 일관성을 확보했고, 버튼의 variant/size 조합으로 12가지 스타일을 하나의 컴포넌트로 관리할 수 있도록 구성했습니다.<br>
+구조적으로는 도메인 기반 폴더 구조(feature-based)를 도입해 각 기능별 독립성과 유지보수성을 높였고,<br>
+사용자 경험 측면에서는&nbsp;전체화면 모달과&nbsp;드래그 앤 드롭 기반 우선순위 변경 UI를 통해 모바일에서도 직관적인 사용성을 구현했습니다.<br>
+이번 프로젝트를 통해 설계부터 개발, 협업, 배포까지&nbsp;실제 서비스를 만드는 전 과정을 실전처럼 경험할 수 있었고, 프론트엔드 개발자로서&nbsp;기획부터 시스템 구축까지 전체적인 감각을 키우는 계기가 되었습니다.<br><br><br><br>Dotdaily는 일상 속 할 일을 단순히 "완료"하는 것을 넘어서, 감정과 함께 기록하고 돌아볼 수 있는 모바일 중심의 웹 애플리케이션입니다.<br>
+"완벽하지 않아도 괜찮다"는 철학 아래, 사용자의 감정과 리듬에 맞춘 유연한 할 일 관리와 회고 기능을 제공합니다.<br>
+언제 어디서나 빠르게 할 일을 추가하고,<br>
+오늘의 감정을 점처럼 기록해보세요.
+<br><br><br><br>
+<br>
+3단계 우선순위: 오늘 무조건, 오늘이면 굿, 잊지말자
 
-var seho: User = { name: '세호', age: 36 };
-<br>인터페이스라는 예약어를 이용하여 User라는 인터페이스를 선언한 코드이다.<br>
-인터페이스 속성으로 name과 age를 각각 문자열과 숫자 타입으로 정의했다.<br>
-객체의 속성과 들어갈 데이터 타입을 정의하게 정의할 수 있다.<br><br>객체가 활용되는 모든 곳에 인터페이스를 쓸 수 있다.<br>
-객체는 함수의 파라미터로도 사용되고 반환값으로도 사용될 수 있다.<br><br>interface Person {
-	name: string;
-	age: number;
-}
+<br>
+Drag &amp; Drop으로 직관적인 순서 변경
 
-function logAge(someone: Person) {
-	console.log(somenone.age);
-}
+<br>
+완료 상태에 따라 성공, 다시, 보류로 분기
 
-var captain = {name: 'Capt', age: 100};
-logAge(captain); //100
-<br>logAge()는 somenone이라는 인자를 받아 인자 안의 age 속성을 출력하는 간단한 함수이다.<br>
-이 코드는 Person이라는 인터페이스를 선언한 후 logAge() 함수의 파라미터인 someone에 Person 타입을 정의한다.<br>
-이름이 Capt이고 나이는 100인 객체를 captain이라는 변수에 할당하고 logAge() 함수에 넘긴 인자가 파라미터 타입을 만족하기 때문에 에러 없이 실행된다. <br><br>getPerson() 함수는 person 인터페이스 타입의 데이터를 받아 그대로 반환해 주고 있다.<br>
-이 함수의 반환 타입을 명시적으로 표시하기 위해 다음과 같이 인터페이스로 함수의 반환 타입을 정의할 수 있다.<br>interface Person {
-	name: string;
-	age: number;
-}
+<br>
+완료 시 애니메이션 효과로 성취감 제공
+<img src="https://github.com/user-attachments/assets/0d758696-316f-4e17-8e2e-f78785481125" alt="스크린샷 2025-07-13 오후 2 11 55" height="476" referrerpolicy="no-referrer" style="width: 847px; max-width: 100%;">
 
-function getPerson(someone: Person) {
-	return someone;
-}
+<br><br>
+<br>감정 태그:좋음, 나쁨, 그냥그럼, 뿌듯함, 감사함 중 1개 선택
+<br>텍스트 메모로 하루 마무리
+<br>캘린더 기반 감정 조회 및 패턴 분석
+<br><img src="https://github.com/user-attachments/assets/a74cff2e-ccb0-45fb-ba4a-ed5a60da76a3" alt="스크린샷 2025-07-13 오후 2 12 28" height="495" referrerpolicy="no-referrer" style="width: 661px; max-width: 100%;"><br><br>
+<br>보류한 할 일을 날짜별로 정리
+<br>다시 도전하거나 완료 처리 가능
+<br>보관함에서 성취 흐름 회고 가능
+<br><img src="https://github.com/user-attachments/assets/f3eec474-933b-4fe3-9d71-4be820a28e41" alt="스크린샷 2025-07-13 오후 2 12 45" height="490" referrerpolicy="no-referrer" style="width: 682px; max-width: 100%;"><br><br>
+<br>할 일 완료율, 감정 변화 추이 시각화
+<br>스트릭(연속 달성일) 시스템
+<br>개인 패턴 기반 인사이트 제공
+<br><img src="https://github.com/user-attachments/assets/3f2bb2b5-04b1-424a-bc4d-232d960fe11c" alt="스크린샷 2025-07-13 오후 2 14 13" height="483" referrerpolicy="no-referrer" style="width: 525px; max-width: 100%;"><br><br>
+<br>매일 자정 미완료 할 일 자동 분류 (RETRY 뱃지)
+<br><br><br><br>
+<br>Next.js 15 (App Router)
+<br>React 18, TypeScript
+<br>Tailwind CSS (커스텀 팔레트 적용)
+<br>class-variance-authority (CVA)
+<br>Zustand (클라이언트 상태 관리)
+<br>@tanstack/react-query (서버 상태 관리)
+<br>Framer Motion, Storybook
+<br><br>
+<br>Node.js + Express
+<br>Prisma ORM, PostgreSQL
+<br>Swagger (REST API 문서화)
+<br><br>
+<br>Vercel (프론트 배포), Render (백엔드 배포)
+<br>Figma, Notion, GitHub, CI/CD: GitHub Actions
+<br><br><br>frontend/
+ ├─ app/                # App Router 기반 페이지
+ ├─ components/         # 재사용 UI 컴포넌트
+ ├─ features/           # 도메인 단위 모듈화 구조 (my-day, archive 등)
+ ├─ styles/             # Tailwind + Vanilla Extract 스타일
+ └─ store/, hooks/, lib/, constants/
 
-var hulk = getPerson({ name: 'hulk', age: 99 });
-<br>getPerson() 함수의 호출 결과를 변수에 할당하면 다음과 같이 해당 변수가 Person 인터페이스 타입으로 추론된다.<br><br>interface Person {
-	name?: string;
-	age: number;
-}
-<br>속성을 2개 가진 객체에서 속성 1개만 필요할 때가 있다.<br>
-이때 사용할 수 있는 것이 옵션 속성(optional property) 이다.<br><br>상속은 객체 간 관계 형성하는 방법이며, 상위 클래스의 내용을 하위 클래스가 물려받아 사용하거나 확장하는 기법을 의미한다.<br>
-클래스를 상속받을 때 extends란 예약어를 사용했다. 인터페이스를 상속받을 때도 동일하게 extends 예약어를 사용한다. <br>interface Person {
-	name: string;
-	age: number;
-}
+backend/
+ ├─ controller/
+ ├─ service/
+ ├─ router/
+ ├─ prisma/
+ └─ validations/, middlewares/, docs/, jobs/
+<br><br><br><br># frontend/.env.local
+NEXT_PUBLIC_API_URL=https://your-api-endpoint
+<br># backend/.env
+DATABASE_URL=postgresql://...
+JWT_SECRET=your-secret
+<br><br># Frontend
+cd frontend
+npm install &amp;&amp; npm run dev
 
-interface Developer extends Person {
-	skill: string;
-}
+# Backend
+cd backend
+npm install &amp;&amp; npm run dev
+<br><br><br><br><br><br><br><br>git commit -m "feat: 투두 생성 기능 추가"
+git commit -m "fix: 로그인 오류 수정"
+git commit -m "docs: API 명세서 수정"
+<br><br><br><br>
+<br>
+소셜 로그인 미구현<br>
+계획: 카카오, 구글 로그인 연동<br>
+현실: 일반 로그인만 구현 (시간 제약)
 
-var ironman: Developer = {
-	name: '아이언맨',
-	age: 21,
-	skill: '만들기'
-}
-<br>Person 인터페이스를 선언하고 Developer 인터페이스에 extends로 상속한 것이다.<br>
-이렇게 extends 키워드를 사용해서 인터페이스의 타입을 상속받아 확장하여 사용할 수 있고 여러번 상속을 받아서 정의할 수 있다. <br><br>var user = {
-	name: '캡션',
-	admin: true 
-}
-console.log(user['name']); //캡션
+<br>
+테스트 코드 부족<br>
+계획: 단위 테스트, 통합 테스트 작성<br>
+현실: 수동 테스트 위주로 진행 
 
-var companies = ['삼성', '네이버', '구글'];
-console.log(companies[0]); //삼성
-<br>user['name'] 형태로 객체의 특정 속성에 접근하거나 companies[0] 형태로 배열의 특정 요소에 접근하는 것을 인덱싱이라고한다. <br><br>interface StringArray {
-	[index: number]: string;
-}
+<br>
+성능 최적화 여지<br>
+이미지 최적화, 코드 스플리팅 등&nbsp;추가 개선&nbsp;가능
 
-var companies = ['삼성', '네이버', '구글'];
-<br>StringArray 인터페이스의 속성의 [index: number] 가 어떤 숫자든 모두 속성의 이름이 될 수 있다는 의미이다.<br>
-[index: number]: string; 에서 속성 이름은 숫자고 그 속성 값으로 문자열 타입이 와야한다는 의미이다.<br>
-배열의 인덱스가 0이 될 수도 있고 99, 2000 등 어떤 숫자든 될 수 있기때문에 [index: number] 로 정의 한다.<br>companies[0]; //삼성
-companies[2]; //구글
-<br><br>interface SalaryMap {
-	[level: string]: number;
-}
-
-var salary: SalaryMap = {
-	junior: 100
-};
-
-var money = salary['junior'];
-<br>이 SalaryMap 인터페이스는 속성 이름이 문자열 타입이고 속성 값이 숫자인 타입인 모든 속성 이름/속성 값 쌍을 허용하겠다는 의미이다. 객체의 속성에 접근하는 방법은 salary['junior'] 또는 salary.junior 모두 가능하다.<br>
-다만 속성 이름에 숫자나 - 등 특수 기호가 들어가면 .junior 방식으로 접근할 수 없기 때문에 salary['junior'] 방식으로 접근해야한다.<br><br>이처럼 정확히 속성 이름을 명시하지 않고 속성 이름의 타입과 속성 값의 타입을 정의하는 문법을 인덱스 시그니처(index signature) 라고 한다. <br>interface SalaryMap {
-	[level: string]: string;
-}
-
-var salary: SalaryInfo = {
-	junior: '100원',
-	mid: '400원',
-	senior: '700원',
-	ceo: '0원',
-	newbie: '50원',
-};
-<br>단순히 객체와 배열을 인덱싱 할 때 활용될 뿐만 아니라 객체의 속성 타입을 유연하게 정의할 때도 사용된다.<br>
-속성 이름이 문자열이고 속성 값의 타입이 문자열이기만 하면 1개든 100개든 모두 추가할 수 있는 장점이 생긴다.<br>interface User {
-	[property: string]: string;
-	id: string;
-	name: string;
-}
-
-var seho: User = {
-	id: '1',
-	name: '세호',
-	address: '판교'
-};
-<br>User라는 인터페이스에는 id와 name 속성이 무조건 들어간다고 한다면 섞어서 정의할 수도 있다.<br>
-이처럼 객체의 속성 이른과 속성 값이 정해져 있는 경우에는 속성 이름과 속성 값 타입을 명시해서 정의하고, 속성 이름은 모르지만 속성 이름의 타입과 값의 타입을 아는 경우에는 인덱스 시그니처를 활용한다.]]></description><link>1.개념-정리/js-&amp;-ts/인터페이스.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/인터페이스.md</guid><pubDate>Fri, 09 May 2025 10:48:15 GMT</pubDate></item><item><title><![CDATA[타입 정의, 타입 별칭]]></title><description><![CDATA[ 
- <br><br><br><br>유니언 타입(union type)은 여러개의 타입 중 한개만 쓰고 싶을 때 사용하는 문법이다.<br>
-자바스크립트의 OR 연산자의 |를 이용하여 여러개의 타입 중 1개를 사용하겠다고 선언하는 방식이 바로 유니언 타입니다.<br>function logText(text: string | number) {
-	console.log(text);
-}
-logText('hi');
-logText(100);
-<br><br>유니언 타입은 다음과 같이 string과 number에서 모두 제공하는 toString()을 자동 완성할 수 있지만 any 타입은 자동 완성 되지 않는다.<br>function logText(text: string | number) {
-	console.log(text.toString());  //hi
-}
-
-logText('hi');
-<br><br>타입스크립트 입장에서는 함수에 인자를 넘겨 실행할 때 Person 타입이 올지 Developer 타입이 올지 알 수 없기 때문에 어느 타입이 오더라도 문제 없을 공통 속성인 name 속성만 자동 완성해준다.<br>
-여기서 함수 내부에서 파라미터 타입의 종류에 따라 특정 로직을 실행하고 싶다면 다음과 같이 in 연산자를 사용해서 로직을 작성하면 된다. <br>interface Person {
-	name: string;
-	age: number;
-}
-
-interface Developer {
-	name: string;
-	skill: string;
-}
-
-function introduce(someone: Person | Developer) {
-	if ('age' in someone) {
-		console.log(someone.age);
-		return;
-	}
-	if ('skill' in someone) {
-		console.log(someone.skill);
-		return;
-	}
-}
-
-introduce({ name: 'captin', skill: 'lecture' });
-<br><br><br>interface Person {
-	name: string;
-	age: number;
-}
-
-function logAge(someone: Person) {
-	console.log(somenone.age);
-}
-
-var captain = {name: 'Capt', age: 100};
-logAge(captain); //100
-<br>logAge()는 somenone이라는 인자를 받아 인자 안의 age 속성을 출력하는 간단한 함수이다.<br>
-이 코드는 Person이라는 인터페이스를 선언한 후 logAge() 함수의 파라미터인 someone에 Person 타입을 정의한다.<br>
-이름이 Capt이고 나이는 100인 객체를 captain이라는 변수에 할당하고 logAge() 함수에 넘긴 인자가 파라미터 타입을 만족하기 때문에 에러 없이 실행된다. <br><br>getPerson() 함수는 person 인터페이스 타입의 데이터를 받아 그대로 반환해 주고 있다.<br>
-이 함수의 반환 타입을 명시적으로 표시하기 위해 다음과 같이 인터페이스로 함수의 반환 타입을 정의할 수 있다.<br>interface Person {
-	name: string;
-	age: number;
-}
-
-function getPerson(someone: Person) {
-	return someone;
-}
-
-var hulk = getPerson({ name: 'hulk', age: 99 });
-<br>getPerson() 함수의 호출 결과를 변수에 할당하면 다음과 같이 해당 변수가 Person 인터페이스 타입으로 추론된다.<br><br>interface Person {
-	name?: string;
-	age: number;
-}
-<br>속성을 2개 가진 객체에서 속성 1개만 필요할 때가 있다.<br>
-이때 사용할 수 있는 것이 옵션 속성(optional property) 이다.<br><br>상속은 객체 간 관계 형성하는 방법이며, 상위 클래스의 내용을 하위 클래스가 물려받아 사용하거나 확장하는 기법을 의미한다.<br>
-클래스를 상속받을 때 extends란 예약어를 사용했다. 인터페이스를 상속받을 때도 동일하게 extends 예약어를 사용한다. <br>interface Person {
-	name: string;
-	age: number;
-}
-
-interface Developer extends Person {
-	skill: string;
-}
-
-var ironman: Developer = {
-	name: '아이언맨',
-	age: 21,
-	skill: '만들기'
-}
-<br>Person 인터페이스를 선언하고 Developer 인터페이스에 extends로 상속한 것이다.<br>
-이렇게 extends 키워드를 사용해서 인터페이스의 타입을 상속받아 확장하여 사용할 수 있고 여러번 상속을 받아서 정의할 수 있다. ]]></description><link>1.개념-정리/js-&amp;-ts/타입-정의,-타입-별칭.html</link><guid isPermaLink="false">1.개념 정리/JS &amp; TS/타입 정의, 타입 별칭.md</guid><pubDate>Fri, 09 May 2025 10:16:53 GMT</pubDate></item><item><title><![CDATA[Node.js 기본 생태계]]></title><description><![CDATA[ 
+<br><br>
+<br>게스트 모드 추가
+<br>카카오, 구글 로그인 연동
+<br>PWA 적용: 오프라인 지원,&nbsp;푸시 알림
+<br><br><br>👉 <a data-tooltip-position="top" aria-label="https://youtu.be/93k3VwY3FGg" rel="noopener nofollow" class="external-link" href="https://youtu.be/93k3VwY3FGg" target="_blank">Dotdaily 시연 영상 보기</a><br>이번&nbsp;프로젝트를 통해 기술적 구현뿐만 아니라&nbsp;사용자의 마음을 이해하고 공감하는 서비스를&nbsp;만드는 것의 중요성을 깨달았습니다.<br>
+완벽하지 않아도 괜찮다'는 메시지처럼, 저희&nbsp;프로젝트도 완벽하지는&nbsp;않지만 사용자에게 의미 있는 가치를 전달하고자 노력했습니다.<br>
+앞으로도 기술과 사람을 연결하는 따뜻한 서비스를 만드는 개발자가 되겠습니다.]]></description><link>2.dev-log/typescript-project/dot.daily-프로젝트-발표.html</link><guid isPermaLink="false">2.Dev Log/Typescript Project/dot.daily - 프로젝트 발표.md</guid><pubDate>Sun, 13 Jul 2025 12:52:50 GMT</pubDate><enclosure url="https://github.com/user-attachments/assets/0d758696-316f-4e17-8e2e-f78785481125" length="0" type="false"/><content:encoded>&lt;figure&gt;&lt;img src="https://github.com/user-attachments/assets/0d758696-316f-4e17-8e2e-f78785481125"&gt;&lt;/figure&gt;</content:encoded></item><item><title><![CDATA[Node.js 기본 생태계]]></title><description><![CDATA[ 
  <br><br>Node.js는 백엔드 개발을 자바스크립트로 할 수 있게 해주는 런타임이며, 실제 개발에서는 패키지 매니저(NPM), 의존성 관리, 스크립트 실행 등 다양한 생태계 도구와 함께 사용된다.<br><br>
 <br>Node.js는 브라우저가 아닌 환경에서 자바스크립트를 실행할 수 있게 해주는 런타임
 <br>V8 JavaScript 엔진을 기반으로 하고 있으며, 비동기 I/O 처리에 강함
