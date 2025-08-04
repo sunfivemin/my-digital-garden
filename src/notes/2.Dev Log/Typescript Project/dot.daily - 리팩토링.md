@@ -1,4 +1,339 @@
-# 1. 게스트 모드 구현 
+
+#### 깃허브 : 
+https://github.com/oneday-coding/DOT-DAILY
+#### 배포사이트 :
+[dot-daily.vercel.app](https://dot-daily.vercel.app/ "https://dot-daily.vercel.app/")
+
+# 1. 날짜 키 처리 방식 통일로 React Query 캐시 동기화 문제 해결
+
+**DOT.DAILY 프로젝트**를 진행하며 겪었던 가장 골치 아픈 버그 중 하나는,
+바로 **오늘 등록한 할 일이 내일로 저장되거나**,
+**할 일을 등록/삭제/이동했는데 실시간으로 UI에 반영되지 않는** 문제였습니다.
+API는 분명 정상 응답을 주고 있음에도…
+👀 **UI는 새로고침(F5)을 눌러야만 갱신**됐습니다.
+
+## 🚨 문제 상황
+
+### **1. 등록한 날짜가 하루 밀린다?**
+- 8월 4일에 등록했는데 → 데이터는 8월 5일로 저장됨
+- 같은 날짜인데도 다른 항목처럼 분리되어 보임
+
+### **2. 할 일 등록/삭제/이동 후에도 UI 무반응**
+- 삭제해도 화면에 계속 남아 있음
+- “재시도”, “보류함” 이동 후에도 반영되지 않음
+- 등록했는데 아무 변화 없음
+
+### 네트워크 로그 분석
+```bash
+# 콘솔에서는 API 요청이 성공적으로 처리됨
+✅ DELETE /api/v1/todos/139 - 200 OK
+✅ PUT /api/v1/todos/140/retry - 200 OK  
+✅ POST /api/v1/todos - 201 Created
+```
+서버에서는 정상 응답을 주고 있었고, DB에도 반영되고 있었습니다.
+
+---
+
+### 🔍 원인 1: 날짜가 하루 밀리는 이유는 UTC 때문
+
+#### ❌ 1. tasks.ts (API 호출)
+```typescript
+export const getTasksByDate = async (date: Date | string): Promise<Task[]> => {
+  // ❌ 문제: toISOString() 사용
+  const dateStr = typeof date === "string" ? date : date.toISOString().split("T")[0];
+  const response = await httpClient.get(`/todos?date=${dateStr}`);
+  return response.data.data;
+};
+```
+- toISOString()은 **UTC 기준 날짜**를 반환
+- 한국(KST) 기준으로 2025-08-04일지라도 → 2025-08-03T15:00:00.000Z
+- 결국 "2025-08-03"으로 잘림 → **하루 전 날짜로 저장**
+
+#### ✅ 해결 방법: toLocaleDateString("en-CA") 사용
+```typescript
+const dateStr = date.toLocaleDateString("en-CA");  // "2025-08-04"
+```
+- 로컬 시간(KST) 기준으로 날짜를 문자열로 변환
+- "en-CA"는 YYYY-MM-DD 포맷 제공
+- 날짜 밀림 문제 해결!
+
+### 🔍 원인 2: React Query 캐시 키 불일치
+
+| **위치**            | **키 생성 방식**                      |
+| ----------------- | -------------------------------- |
+| tasks.ts          | date.toISOString().split("T")[0] |
+| MyDayPage.tsx     | ["tasks", date]                  |
+| TaskFormModal.tsx | format(date, "yyyy-MM-dd")       |
+| TaskItem.tsx      | toISOString()                    |
+
+→ 날짜 표현이 제각각이라 React Query가 **다른 데이터로 인식**
+→ invalidateQueries()가 작동하지 않음 → **UI 미갱신**
+
+#### 2. TaskFormModal.tsx (할 일 등록/수정)
+```typescript
+const handleSubmit = async () => {
+  const taskData = {
+    title: label.trim(),
+    priority,
+    // ❌ 문제: format() 사용  
+    date: format(date, "yyyy-MM-dd"),
+  };
+  
+  // ❌ 문제: 다른 방식으로 캐시 키 생성
+  const dateKey = format(date, "yyyy-MM-dd");
+  queryClient.invalidateQueries({ queryKey: ["tasks", dateKey] });
+};
+```
+
+#### 3. MyDayPage.tsx (메인 페이지)
+```typescript
+const { data: tasks = [] } = useQuery({
+  // ❌ 문제: 또 다른 방식으로 키 생성
+  queryKey: ["tasks", selectedDate.toISOString().split("T")[0]],
+  queryFn: () => getTasksByDate(selectedDate),
+});
+```
+
+#### 4. TaskItem.tsx (개별 할 일 컴포넌트)
+```typescript
+const handleDelete = async () => {
+  await deleteTask(task.id as number);
+  
+  // ❌ 문제: 또 다른 방식
+  const dateKey = selectedDate.toISOString().split("T")[0];
+  queryClient.invalidateQueries({ queryKey: ["tasks", dateKey] });
+};
+```
+
+
+### 시간대 처리의 문제점
+
+각각 다른 방식으로 날짜를 처리하면서 **미묘한 시간대 차이**가 발생했습니다:
+```typescript
+// 방식 1: toISOString() - UTC 기준
+"2025-01-15T15:00:00.000Z" → "2025-01-15"
+
+// 방식 2: format() - 로컬 시간대 기준  
+format(new Date(), "yyyy-MM-dd") → "2025-01-16"
+
+// 방식 3: toLocaleDateString() - 로컬 시간대 기준
+date.toLocaleDateString("en-CA") → "2025-01-16"
+```
+
+**결과**: 캐시 키가 `"2025-01-15"`와 `"2025-01-16"`으로 달라져서 캐시 무효화가 제대로 동작하지 않았습니다.
+
+---
+
+## 🛠️ 해결 방법
+
+### **✅ 1단계: 날짜 처리 방식 통일 + KST 기준 정규화**
+
+**모든 날짜 관련 로직을 getTodayInKorea() 유틸 함수로 정리**하고,
+toLocaleDateString("en-CA")를 통해 YYYY-MM-DD 형식으로 통일했습니다.
+#### 📁 utils/dateUtils.ts
+```typescript
+/**
+ * 한국 시간 기준으로 오늘 날짜를 가져오는 함수
+ */
+export const getTodayInKorea = (): Date => {
+  const now = new Date();
+  const koreaTime = new Date(
+    now.toLocaleString("en-US", { timeZone: "Asia/Seoul" })
+  );
+  koreaTime.setHours(0, 0, 0, 0); // 00:00:00 정규화
+  return koreaTime;
+};
+```
+ ✅ UTC 기준으로 하루 밀리는 버그는 대부분 Date 객체가 생성 시 시차(타임존)를 고려하지 않기 때문에 발생합니다.
+ 이를 Asia/Seoul 기준으로 맞추고, 시각도 자정으로 맞춰야 버그 없이 날짜 비교가 가능합니다.
+
+### **✅ 2단계: 상태 관리 스토어 정규화 적용**
+#### 📁 store/useDateStore.ts
+```typescript
+import { getTodayInKorea } from "@/utils/dateUtils";
+
+export const useDateStore = create<DateState>()((set) => ({
+  selectedDate: getTodayInKorea(),
+
+  setSelectedDate: (date) => {
+    const normalizedDate = new Date(date);
+    normalizedDate.setHours(0, 0, 0, 0); // 항상 자정으로 맞춤
+    set({ selectedDate: normalizedDate });
+  },
+}));
+
+// reset 기능도 유틸화
+export const resetDateStore = () => {
+  useDateStore.setState({ selectedDate: getTodayInKorea() });
+};
+```
+
+### **✅ 3단계: 클라이언트 전역에서 날짜 포맷 통일**
+#### A. tasks.ts 수정
+```typescript
+export const getTasksByDate = async (date: Date | string): Promise<Task[]> => {
+  // ✅ 수정: 일관된 날짜 처리
+  const dateStr = typeof date === "string" ? date : date.toLocaleDateString("en-CA");
+  const response = await httpClient.get(`/todos?date=${dateStr}`);
+  return response.data.data;
+};
+```
+
+#### B. TaskFormModal.tsx 수정
+```typescript
+const handleSubmit = async () => {
+  const taskData = {
+    title: label.trim(),
+    priority,
+    // ✅ 수정: 통일된 방식
+    date: date.toLocaleDateString("en-CA"),
+  };
+
+  // ✅ 수정: 캐시 무효화 강화
+  const dateKey = date.toLocaleDateString("en-CA");
+  await queryClient.invalidateQueries({ queryKey: ["tasks", dateKey] });
+  await queryClient.refetchQueries({ queryKey: ["tasks", dateKey] });
+};
+```
+
+#### C. MyDayPage.tsx 수정
+```typescript
+const { data: tasks = [] } = useQuery({
+  // ✅ 수정: 통일된 키 생성
+  queryKey: ["tasks", selectedDate.toLocaleDateString("en-CA")],
+  queryFn: () => getTasksByDate(selectedDate),
+});
+```
+
+#### D. TaskItem.tsx 수정
+```typescript
+const handleDelete = async () => {
+  try {
+    await deleteTask(task.id as number);
+
+    // ✅ 수정: 통일된 날짜 키 + 강화된 캐시 처리
+    const dateKey = selectedDate.toLocaleDateString("en-CA");
+    
+    // 1. Optimistic Update (즉시 UI에서 제거)
+    queryClient.setQueryData(["tasks", dateKey], (old: Task[]) => {
+      return old?.filter((t) => t.id !== task.id) || [];
+    });
+
+    // 2. 서버와 동기화
+    await queryClient.invalidateQueries({ queryKey: ["tasks", dateKey] });
+    
+    showToast("할 일이 삭제되었습니다 🗑️");
+  } catch (error) {
+    // 실패 시 캐시 롤백
+    const dateKey = selectedDate.toLocaleDateString("en-CA");
+    queryClient.invalidateQueries({ queryKey: ["tasks", dateKey] });
+    showToast("할 일 삭제에 실패했습니다 😞");
+  }
+};
+```
+
+## 🔄 캐시 무효화 전략 개선
+
+#### ✅ Optimistic Updates (즉시 UI 반영 → 실패 시 롤백)
+```typescript
+// 즉시 UI 업데이트 → 서버 요청 → 실패 시 롤백
+queryClient.setQueryData(["tasks", dateKey], (old: Task[]) => {
+  return old?.filter((t) => t.id !== task.id) || [];
+});
+```
+
+#### ✅ 무효화 + 리패치로 서버 동기화
+```typescript
+await queryClient.invalidateQueries({ queryKey: ["tasks", dateKey] });
+await queryClient.refetchQueries({ queryKey: ["tasks", dateKey] });
+```
+
+#### ✅ 에러 핸들링 강화
+```typescript
+try {
+  await deleteTask(task.id);
+} catch (error) {
+  // 실패 시 캐시 상태 복구
+  queryClient.invalidateQueries({ queryKey: ["tasks", dateKey] });
+  showToast("작업에 실패했습니다 😞");
+}
+```
+
+---
+
+## 🎯 결과
+
+### Before (문제 상황)
+```bash
+사용자: 할 일 삭제 클릭
+→ API 요청 성공 ✅
+→ UI 변화 없음 ❌
+→ F5 새로고침 필요 😤
+```
+
+### After (해결 후)
+```bash
+사용자: 할 일 삭제 클릭  
+→ 즉시 UI에서 제거 ✅
+→ API 요청 성공 ✅
+→ 서버와 동기화 완료 ✅
+→ 새로고침 불필요 🎉
+```
+
+### 성능 개선
+- **사용자 경험**: 즉시 반응하는 인터페이스
+- **네트워크 효율성**: 불필요한 새로고침 제거
+- **상태 일관성**: 클라이언트-서버 동기화 보장
+
+## 💡 정리
+
+### 1. 날짜는 시간대 고려 + 포맷 통일이 핵심
+```typescript
+// ✅ 유틸 함수 사용
+getTodayInKorea();                        // → Date 객체 자체가 KST 자정 기준
+date.toLocaleDateString("en-CA");        // → YYYY-MM-DD 형식 보장
+
+// ❌ 피해야 할 방식
+date.toISOString().split("T")[0];        // → UTC 기준, 하루 밀림 발생 가능성
+```
+
+### 2. React Query 캐시 키 관리
+```typescript
+// ✅ 캐시 키 생성을 중앙화
+const getCacheKey = (date: Date) => ["tasks", date.toLocaleDateString("en-CA")];
+
+// ✅ 무효화도 재사용 가능하게
+const invalidateTaskCache = async (date: Date) => {
+  const key = getCacheKey(date);
+  await queryClient.invalidateQueries({ queryKey: key });
+  await queryClient.refetchQueries({ queryKey: key });
+};
+```
+
+### 3. Optimistic Updates 활용으로 UX 향상
+```typescript
+// 사용자 경험을 위한 즉시 UI 업데이트
+queryClient.setQueryData(key, optimisticUpdate);
+try {
+  await apiCall();
+} catch {
+  queryClient.invalidateQueries({ queryKey: key }); // 롤백
+}
+```
+
+### 4. **디버깅 팁**
+```typescript
+// 캐시 상태 확인
+console.log(queryClient.getQueryCache().getAll());
+
+// 특정 쿼리 데이터 확인  
+console.log(queryClient.getQueryData(['tasks', '2025-01-15']));
+```
+
+
+---
+
+# 2. 게스트 모드 구현 
 **문제**: 사용자가 로그인 없이 앱을 체험할 수 없어 이탈률 증가
 **해결**: 브라우저 localStorage를 활용한 게스트 모드 구현
 
@@ -73,11 +408,11 @@ if (isGuest) {
 
 ```
 
+
 ---
 
 
-
-# 2. 구글 로그인 구현
+# 3. 구글 로그인 구현
 프론트엔드 개발자로서 DOT-DAILY 프로젝트에서 구글 로그인을 구현한 경험을 공유하려고 합니다.
 DOT-DAILY는 개인 일정 관리 및 회고 서비스로, 사용자 편의성을 위해 소셜 로그인을 도입했습니다. 특히 구글 로그인은 가장 보편적이고 안정적인 OAuth 제공자 중 하나라서 선택하게 되었습니다.
 
@@ -403,7 +738,7 @@ const handleGoogleLogin = useCallback(() => {
 }, [googleLogin]);
 ```
 
-## 💡 개발 팁
+## 💡 정리
 
 ### 1. TypeScript 활용
 ```tsx
@@ -443,11 +778,3 @@ const API_BASE_URL = process.env.NODE_ENV === "production"
 ```
 
 
-
-
-
-#### 깃허브 : 
-https://github.com/sunfivemin/DOT-DAILY
-
-#### 배포사이트 :
-[dot-daily.vercel.app](https://dot-daily.vercel.app/ "https://dot-daily.vercel.app/")
