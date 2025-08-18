@@ -57,6 +57,15 @@ const dateStr = date.toLocaleDateString("en-CA");  // "2025-08-04"
 - "en-CA"는 YYYY-MM-DD 포맷 제공
 - 날짜 밀림 문제 해결!
 
+| **항목**   | toISOString()            | toLocaleDateString()  |
+| -------- | ------------------------ | --------------------- |
+| 기준 시간대   | UTC 기준                   | 로컬 시간대 (예: 한국은 UTC+9) |
+| 출력 형식    | YYYY-MM-DDTHH:mm:ss.sssZ | 국가별 읽기 쉬운 날짜 형식       |
+| 용도       | API 전송, DB 저장 등에 적합      | UI 표시용, 사용자 친화적 포맷    |
+| 시간 포함 여부 | 날짜 + 시간                  | 날짜만 (기본적으로)           |
+
+---
+
 ### 🔍 원인 2: React Query 캐시 키 불일치
 
 | **위치**            | **키 생성 방식**                      |
@@ -105,10 +114,8 @@ const handleDelete = async () => {
 };
 ```
 
+**결과**: 캐시 키가 `"2025-01-15"`와 `"2025-01-16"`으로 달라져서 캐시 무효화가 제대로 동작하지 않았습니다.
 
-### 시간대 처리의 문제점
-
-각각 다른 방식으로 날짜를 처리하면서 **미묘한 시간대 차이**가 발생했습니다:
 ```typescript
 // 방식 1: toISOString() - UTC 기준
 "2025-01-15T15:00:00.000Z" → "2025-01-15"
@@ -119,8 +126,6 @@ format(new Date(), "yyyy-MM-dd") → "2025-01-16"
 // 방식 3: toLocaleDateString() - 로컬 시간대 기준
 date.toLocaleDateString("en-CA") → "2025-01-16"
 ```
-
-**결과**: 캐시 키가 `"2025-01-15"`와 `"2025-01-16"`으로 달라져서 캐시 무효화가 제대로 동작하지 않았습니다.
 
 ---
 
@@ -232,6 +237,8 @@ const handleDelete = async () => {
 };
 ```
 
+---
+
 ## 🔄 캐시 무효화 전략 개선
 
 #### ✅ Optimistic Updates (즉시 UI 반영 → 실패 시 롤백)
@@ -247,6 +254,11 @@ queryClient.setQueryData(["tasks", dateKey], (old: Task[]) => {
 await queryClient.invalidateQueries({ queryKey: ["tasks", dateKey] });
 await queryClient.refetchQueries({ queryKey: ["tasks", dateKey] });
 ```
+
+| **함수**            | **설명**                     | **타이밍** |
+| ----------------- | -------------------------- | ------- |
+| invalidateQueries | 해당 쿼리를 무효화(다음 사용 시 새로 요청됨) | 지연됨     |
+| refetchQueries    | 해당 쿼리를 즉시 서버에서 다시 가져옴      | 즉시      |
 
 #### ✅ 에러 핸들링 강화
 ```typescript
@@ -284,6 +296,8 @@ try {
 - **사용자 경험**: 즉시 반응하는 인터페이스
 - **네트워크 효율성**: 불필요한 새로고침 제거
 - **상태 일관성**: 클라이언트-서버 동기화 보장
+
+---
 
 ## 💡 정리
 
